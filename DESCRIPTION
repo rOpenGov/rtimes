@@ -1,0 +1,18 @@
+Package: rtimes
+Description: Interface to various APIs for government data, including Sunlight
+    Foundation, and the NYTimes Congress API.
+Title: Interface to API methods for government data.
+Version: 0.2.0
+Date: 2014-01-14
+License: MIT + file LICENSE
+Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
+    email = "myrmecocystus@gmail.com")
+VignetteBuilder: knitr
+Imports:
+    RJSONIO,
+    RCurl (>= 1.6),
+    httr,
+    plyr,
+    stringr
+Suggests:
+    knitr

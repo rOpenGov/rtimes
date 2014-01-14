@@ -1,0 +1,14 @@
+base
+devtools
+govdat
+knitr
+lubridate
+plyr
+Rdocumentation
+rjson
+roxygen2
+rtimes
+sacbox
+slidify
+slidifyLibraries
+testthat
