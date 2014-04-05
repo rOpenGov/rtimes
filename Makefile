@@ -13,8 +13,8 @@ move:
 
 pandoc:
 		cd vignettes;\
-		pandoc -H margins.sty rtimes_vignette.md -o rtimes_vignette.pdf;\
-		pandoc -H margins.sty rtimes_vignette.md -o rtimes_vignette.html
+		pandoc -H margins.sty rtimes_vignette.md -o rtimes_vignette.pdf --highlight-style=tango;\
+		pandoc -H margins.sty rtimes_vignette.md -o rtimes_vignette.html --highlight-style=tango
 
 rmd2md:
 		cd vignettes;\
