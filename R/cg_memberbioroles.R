@@ -13,9 +13,9 @@
 #' @return List of members of a particular chamber in a particular Congress.
 #' @export
 #' @examples \dontrun{
-#' nyt_cg_memberbioroles('S001181')
+#' cg_memberbioroles('S001181')
 #' }
-nyt_cg_memberbioroles <- function(memberid = NULL,
+cg_memberbioroles <- function(memberid = NULL,
   key = getOption("NYTCongressKey", stop("need an API key for the NYT Congress API")),
   callopts = list()) 
 {

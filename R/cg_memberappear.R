@@ -15,9 +15,9 @@
 #'    House or Senate floor. 
 #' @export
 #' @examples \dontrun{
-#' nyt_cg_memberappear('S001181')
+#' cg_memberappear('S001181')
 #' }
-nyt_cg_memberappear <- function(memberid = NULL,
+cg_memberappear <- function(memberid = NULL,
   key = getOption("NYTCongressKey", stop("need an API key for the NYT Congress API")),
   callopts = list()) 
 {

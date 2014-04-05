@@ -18,9 +18,9 @@
 #'    Congress and chamber. 
 #' @export
 #' @examples \dontrun{
-#' nyt_cg_membersponsorcompare('S001181', 'A000368', 112, 'senate')
+#' cg_membersponsorcompare('S001181', 'A000368', 112, 'senate')
 #' }
-nyt_cg_membersponsorcompare <- function(memberid_1 = NULL, memberid_2 = NULL, 
+cg_membersponsorcompare <- function(memberid_1 = NULL, memberid_2 = NULL, 
   congress_no = NULL, chamber = NULL, 
   key = getOption("NYTCongressKey", stop("need an API key for the NYT Congress API")),
   callopts = list())

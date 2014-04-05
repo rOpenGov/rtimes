@@ -12,9 +12,9 @@
 #' @return List of new members of he current Congress.
 #' @export
 #' @examples \dontrun{
-#' nyt_cg_memberbystatedistrict('senate', 'NH')
+#' cg_memberbystatedistrict('senate', 'NH')
 #' }
-nyt_cg_memberbystatedistrict <- function(chamber = NULL, state = NULL, 
+cg_memberbystatedistrict <- function(chamber = NULL, state = NULL, 
   district = NULL,
   key = getOption("NYTCongressKey", stop("need an API key for the NYT Congress API")),
   callopts = list()) 

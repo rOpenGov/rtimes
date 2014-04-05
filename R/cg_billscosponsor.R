@@ -16,9 +16,9 @@
 #' @return List of new members of he current Congress.
 #' @export
 #' @examples \dontrun{
-#' nyt_cg_billscosponsor(memberid='S001181', type='cosponsored')
+#' cg_billscosponsor(memberid='S001181', type='cosponsored')
 #' }
-nyt_cg_billscosponsor <- function(memberid = NULL, type = NULL,
+cg_billscosponsor <- function(memberid = NULL, type = NULL,
   key = getOption("NYTCongressKey", stop("need an API key for the NYT Congress API")),
   callopts = list()) 
 {

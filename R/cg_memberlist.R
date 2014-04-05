@@ -13,11 +13,11 @@
 #' @return List of members of a particular chamber in a particular Congress.
 #' @export
 #' @examples \dontrun{
-#' nyt_cg_memberslist(112, 'senate')
-#' nyt_cg_memberslist(112, 'senate', 'NH')
-#' nyt_cg_memberslist(110, 'senate', 'NH', responseformat='xml')
+#' cg_memberslist(112, 'senate')
+#' cg_memberslist(112, 'senate', 'NH')
+#' cg_memberslist(110, 'senate', 'NH', responseformat='xml')
 #' }
-nyt_cg_memberslist <- function(congress_no = NULL, chamber = NULL, state = NULL, 
+cg_memberslist <- function(congress_no = NULL, chamber = NULL, state = NULL, 
   district = NULL,
   key = getOption("NYTCongressKey", stop("need an API key for the NYT Congress API")),
   callopts = list()) 

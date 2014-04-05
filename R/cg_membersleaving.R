@@ -8,9 +8,9 @@
 #' @return List of new members of he current Congress.
 #' @export
 #' @examples \dontrun{
-#' nyt_cg_membersleaving(112, 'house')
+#' cg_membersleaving(112, 'house')
 #' }
-nyt_cg_membersleaving <- function(congress_no = NULL, chamber = NULL,
+cg_membersleaving <- function(congress_no = NULL, chamber = NULL,
   key = getOption("NYTCongressKey", stop("need an API key for the NYT Congress API")),
   callopts = list()) 
 {

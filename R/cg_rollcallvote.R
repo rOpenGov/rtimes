@@ -16,9 +16,9 @@
 #'    positions. 
 #' @export
 #' @examples \dontrun{
-#' nyt_cg_rollcallvote(112, 'house', 1, 00235)
+#' cg_rollcallvote(112, 'house', 1, 00235)
 #' }
-nyt_cg_rollcallvote <- function(congress_no = NULL, chamber = NULL, 
+cg_rollcallvote <- function(congress_no = NULL, chamber = NULL, 
   session_no = NULL, rollcall_no = NULL,
   key = getOption("NYTCongressKey", stop("need an API key for the NYT Congress API")),
   callopts = list())

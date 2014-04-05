@@ -10,7 +10,6 @@ Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
 VignetteBuilder: knitr
 Imports:
     RJSONIO,
-    RCurl (>= 1.6),
     httr,
     plyr,
     stringr

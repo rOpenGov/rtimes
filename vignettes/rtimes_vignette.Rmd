@@ -37,7 +37,7 @@ library(rtimes)
 
 
 ```r
-out <- nyt_cg_billscosponsor(memberid = "S001181", type = "cosponsored")
+out <- cg_billscosponsor(memberid = "S001181", type = "cosponsored")
 ldply(out$results[[1]]$bills, function(x) data.frame(x[c("number", "cosponsors")]))
 ```
 
@@ -71,7 +71,7 @@ ldply(out$results[[1]]$bills, function(x) data.frame(x[c("number", "cosponsors")
 
 ```r
 library(plyr)
-out <- nyt_cg_memberappear(memberid = "S001181")
+out <- cg_memberappear(memberid = "S001181")
 ldply(out$results[[1]]$appearances, function(x) data.frame(x[c("date", "title")]))
 ```
 

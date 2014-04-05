@@ -45,7 +45,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rtimes)</code></pre>
 <p><em>Note: Member ID S001181 is Jeanne Shaheen</em></p>
 <h4 id="get-bill-cosponsorship-data-for-a-particular-member.">Get bill cosponsorship data for a particular member.</h4>
-<pre class="sourceCode r"><code class="sourceCode r">out &lt;-<span class="st"> </span><span class="kw">nyt_cg_billscosponsor</span>(<span class="dt">memberid =</span> <span class="st">&quot;S001181&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;cosponsored&quot;</span>)
+<pre class="sourceCode r"><code class="sourceCode r">out &lt;-<span class="st"> </span><span class="kw">cg_billscosponsor</span>(<span class="dt">memberid =</span> <span class="st">&quot;S001181&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;cosponsored&quot;</span>)
 <span class="kw">ldply</span>(out$results[[<span class="dv">1</span>]]$bills, function(x) <span class="kw">data.frame</span>(x[<span class="kw">c</span>(<span class="st">&quot;number&quot;</span>, <span class="st">&quot;cosponsors&quot;</span>)]))</code></pre>
 <pre><code>      number cosponsors
 1     S.1174         23
@@ -70,7 +70,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 20    S.1766          1</code></pre>
 <h4 id="get-information-about-a-particular-members-appearances-on-the-house-or-senate-floor.">Get information about a particular member's appearances on the House or Senate floor.</h4>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(plyr)
-out &lt;-<span class="st"> </span><span class="kw">nyt_cg_memberappear</span>(<span class="dt">memberid =</span> <span class="st">&quot;S001181&quot;</span>)
+out &lt;-<span class="st"> </span><span class="kw">cg_memberappear</span>(<span class="dt">memberid =</span> <span class="st">&quot;S001181&quot;</span>)
 <span class="kw">ldply</span>(out$results[[<span class="dv">1</span>]]$appearances, function(x) <span class="kw">data.frame</span>(x[<span class="kw">c</span>(<span class="st">&quot;date&quot;</span>, <span class="st">&quot;title&quot;</span>)]))</code></pre>
 <pre><code>         date
 1  2010-09-29
