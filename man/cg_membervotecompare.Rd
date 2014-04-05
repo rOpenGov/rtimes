@@ -4,7 +4,7 @@
 \title{Get a list of members who have left the Senate or House or have announced plans to do so.}
 \usage{
 cg_membervotecompare(memberid_1 = NULL, memberid_2 = NULL,
-  congress_no = NULL, chamber = NULL, key = getOption("NYTCongressKey",
+  congress_no = NULL, chamber = NULL, key = getOption("nytimes_cg_key",
   stop("need an API key for the NYT Congress API")), callopts = list())
 }
 \arguments{

@@ -3,7 +3,7 @@
 \alias{cg_memberbioroles}
 \title{Get biographical and Congressional role information for a particular member of Congress.}
 \usage{
-cg_memberbioroles(memberid = NULL, key = getOption("NYTCongressKey",
+cg_memberbioroles(memberid = NULL, key = getOption("nytimes_cg_key",
   stop("need an API key for the NYT Congress API")), callopts = list())
 }
 \arguments{

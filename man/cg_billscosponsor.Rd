@@ -4,7 +4,7 @@
 \title{Get bill cosponsorship data for a particular member.}
 \usage{
 cg_billscosponsor(memberid = NULL, type = NULL,
-  key = getOption("NYTCongressKey",
+  key = getOption("nytimes_cg_key",
   stop("need an API key for the NYT Congress API")), callopts = list())
 }
 \arguments{

@@ -9,9 +9,7 @@ Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com")
 VignetteBuilder: knitr
 Imports:
-    RJSONIO,
     httr,
-    plyr,
-    stringr
+    jsonlite
 Suggests:
     knitr

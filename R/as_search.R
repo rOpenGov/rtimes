@@ -2,8 +2,7 @@
 #' 
 #' See \url{http://developer.nytimes.com/docs/article_search_api/}
 #' 
-#' @import RJSONIO httr 
-#' @importFrom plyr compact
+#' @import jsonlite httr 
 #' @export
 #' @template articlesearch
 #' @examples \dontrun{
@@ -48,5 +47,5 @@
   ans <- GET(url, query = args, curlopts)
   stop_for_status(ans)
   tt <- content(ans, as = "text")
-  RJSONIO::fromJSON(tt)
+  jsonlite::fromJSON(tt, simplifyVector = FALSE)
 }

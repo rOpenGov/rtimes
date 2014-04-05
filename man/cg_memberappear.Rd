@@ -4,7 +4,7 @@
 \title{Get information about a particular member's appearances on the House or
 Senate floor.}
 \usage{
-cg_memberappear(memberid = NULL, key = getOption("NYTCongressKey",
+cg_memberappear(memberid = NULL, key = getOption("nytimes_cg_key",
   stop("need an API key for the NYT Congress API")), callopts = list())
 }
 \arguments{
@@ -30,7 +30,7 @@ Senate floor.
 }
 \examples{
 \dontrun{
-cg_memberappear('S001181')
+cg_memberappear(memberid='S001181')
 }
 }
 

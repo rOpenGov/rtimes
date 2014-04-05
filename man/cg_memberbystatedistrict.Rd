@@ -4,7 +4,7 @@
 \title{Get a list of the most recent new members of the current Congress.}
 \usage{
 cg_memberbystatedistrict(chamber = NULL, state = NULL, district = NULL,
-  key = getOption("NYTCongressKey",
+  key = getOption("nytimes_cg_key",
   stop("need an API key for the NYT Congress API")), callopts = list())
 }
 \arguments{

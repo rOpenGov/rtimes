@@ -4,7 +4,7 @@
 \title{Get a specific roll-call vote, including a complete list of member positions.}
 \usage{
 cg_rollcallvote(congress_no = NULL, chamber = NULL, session_no = NULL,
-  rollcall_no = NULL, key = getOption("NYTCongressKey",
+  rollcall_no = NULL, key = getOption("nytimes_cg_key",
   stop("need an API key for the NYT Congress API")), callopts = list())
 }
 \arguments{

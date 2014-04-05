@@ -4,7 +4,7 @@
 \title{Get a list of members of a particular chamber in a particular Congress.}
 \usage{
 cg_memberslist(congress_no = NULL, chamber = NULL, state = NULL,
-  district = NULL, key = getOption("NYTCongressKey",
+  district = NULL, key = getOption("nytimes_cg_key",
   stop("need an API key for the NYT Congress API")), callopts = list())
 }
 \arguments{
@@ -33,7 +33,7 @@ Get a list of members of a particular chamber in a particular Congress.
 \dontrun{
 cg_memberslist(112, 'senate')
 cg_memberslist(112, 'senate', 'NH')
-cg_memberslist(110, 'senate', 'NH', responseformat='xml')
+cg_memberslist(110, 'senate', 'NH')
 }
 }
 
