@@ -29,7 +29,7 @@ geo_search(name = NULL, latitude = NULL, longitude = NULL,
 \item{country_name}{(character) The country name of the specified place.}
 
 \item{admin_code1}{(character) A code for the first level administrative division containing
-the specified place. In the case of US locations this will be the containing state’s postal
+the specified place. In the case of US locations this will be the containing state's postal
 code. All geonames admin_code1 records can be found at
 http://download.geonames.org/export/dump/admin1Codes.txt.}
 
