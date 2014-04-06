@@ -8,7 +8,7 @@ cg_membervotepositions(memberid = NULL, key = getOption("nytimes_cg_key",
   stop("need an API key for the NYT Congress API")), callopts = list())
 }
 \arguments{
-\item{key}{your SunlightLabs API key; loads from .Rprofile}
+\item{key}{your New York Times API key; loads from .Rprofile}
 
 \item{callopts}{Optional additional curl options (debugging tools mostly)}
 

@@ -8,7 +8,7 @@ cg_rollcallvote(congress_no = NULL, chamber = NULL, session_no = NULL,
   stop("need an API key for the NYT Congress API")), callopts = list())
 }
 \arguments{
-\item{key}{your SunlightLabs API key; loads from .Rprofile}
+\item{key}{your New York Times API key; loads from .Rprofile}
 
 \item{callopts}{Optional additional curl options (debugging tools mostly)}
 

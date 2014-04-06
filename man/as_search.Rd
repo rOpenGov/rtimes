@@ -5,7 +5,7 @@
 \usage{
 as_search(q, fq = NULL, sort = NULL, begin_date = NULL, end_date = NULL,
   key = getOption("nytimes_as_key"), fl = NULL, hl = FALSE, page = 0,
-  facet_field = NULL, facet_filter = NULL, ..., curlopts = list())
+  facet_field = NULL, facet_filter = NULL, ..., callopts = list())
 }
 \arguments{
 \item{q}{Search query term. Search is performed on the article body, headline
@@ -24,10 +24,6 @@ dates of the date specified or later. In the form YYYYMMDD}
 
 \item{end_date}{End date - Restricts responses to results with publication dates
 of the date specified or earlier. In the form YYYYMMDD}
-
-\item{key}{API key, give in call, or set as
-\code{options(NYTimesAPI_articlesearch = "yourkey")}, or put that same line
-of code in your .Rprofile file and this function will read it in.}
 
 \item{fl}{Fields to get back, as vector. See Details for the.}
 
@@ -48,7 +44,9 @@ is required.}
 
 \item{...}{Futher args pass into query}
 
-\item{curlopts}{Args passed on to httr::GET for curl debugging}
+\item{key}{your New York Times API key; loads from .Rprofile}
+
+\item{callopts}{Optional additional curl options (debugging tools mostly)}
 }
 \description{
 See \url{http://developer.nytimes.com/docs/article_search_api/}
@@ -71,7 +69,7 @@ as_search(q="money", fq = 'news_desk:("Sports" "Foreign")')
 as_search(q="bailout", hl = TRUE)
 
 library(httr)
-as_search("iowa caucus", curlopts = verbose())
+as_search("iowa caucus", callopts = verbose())
 }
 }
 

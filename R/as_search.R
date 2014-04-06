@@ -5,6 +5,7 @@
 #' @import jsonlite httr 
 #' @export
 #' @template articlesearch
+#' @template nyt
 #' @examples \dontrun{
 #' as_search(q="bailout", begin_date = "20081001", end_date = '20081201')
 #' as_search(q="bailout", facet_field = 'section_name', begin_date = "20081001", 
@@ -14,12 +15,12 @@
 #' as_search(q="bailout", hl = TRUE)
 #' 
 #' library(httr)
-#' as_search("iowa caucus", curlopts = verbose())
+#' as_search("iowa caucus", callopts = verbose())
 #' }
 
 `as_search` <- function(q, fq=NULL, sort=NULL, begin_date=NULL, end_date=NULL, 
   key = getOption("nytimes_as_key"), fl = NULL, hl = FALSE, 
-  page = 0, facet_field = NULL, facet_filter = NULL, ..., curlopts=list())
+  page = 0, facet_field = NULL, facet_filter = NULL, ..., callopts=list())
 {
   url <- "http://api.nytimes.com/svc/search/v2/articlesearch.json"
   if(!is.null(begin_date)) {
@@ -44,7 +45,7 @@
                        begin_date=begin_date, end_date=end_date, `api-key`=key, 
                        facet_field=facet_field, facet_filter=facet_filter))
   args <- c(args, ...)
-  ans <- GET(url, query = args, curlopts)
+  ans <- GET(url, query = args, callopts)
   stop_for_status(ans)
   tt <- content(ans, as = "text")
   jsonlite::fromJSON(tt, simplifyVector = FALSE)

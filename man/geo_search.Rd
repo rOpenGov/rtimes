@@ -11,7 +11,7 @@ geo_search(name = NULL, latitude = NULL, longitude = NULL,
   feature_class = NULL, feature_class_name = NULL,
   feature_code_name = NULL, time_zone_id = NULL, dst_offset = NULL,
   gmt_offset = NULL, bounding_box = NULL, nearby = NULL, offset = NULL,
-  limit = 20, key = getOption("nytimes_geo_key"), curlopts = list())
+  limit = 20, key = getOption("nytimes_geo_key"), callopts = list())
 }
 \arguments{
 \item{name}{(character) A displayable name for the specified place.}
@@ -96,6 +96,10 @@ specified latitude/longitude pair.}
 
 \item{limit}{(numeric) If not specified 20 results are returned. Otherwise the specified number
 of results or a maximum of 20 results are returned.}
+
+\item{key}{your New York Times API key; loads from .Rprofile}
+
+\item{callopts}{Optional additional curl options (debugging tools mostly)}
 }
 \description{
 See \url{http://developer.nytimes.com/docs/geographic_api}

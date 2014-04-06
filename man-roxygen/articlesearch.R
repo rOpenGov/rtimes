@@ -10,9 +10,6 @@
 #' dates of the date specified or later. In the form YYYYMMDD
 #' @param end_date End date - Restricts responses to results with publication dates 
 #' of the date specified or earlier. In the form YYYYMMDD
-#' @param key API key, give in call, or set as 
-#' \code{options(NYTimesAPI_articlesearch = "yourkey")}, or put that same line
-#' of code in your .Rprofile file and this function will read it in.
 #' @param fl Fields to get back, as vector. See Details for the.
 #' @param hl (logical) Highlight or not, default is FALSE
 #' @param page Page number. The value of page corresponds to a set of 10 results 
@@ -26,7 +23,6 @@
 #' the main query term. To filter facet counts, specifying at least one facet_field 
 #' is required.
 #' @param ... Futher args pass into query
-#' @param curlopts Args passed on to httr::GET for curl debugging
 #' @details 
 #' fl parameter options are: web_url, snippet, lead_paragraph, abstract, print_page, 
 #' blog, source, multimedia, headline, keywords, pub_date, document_type, news_desk, 
