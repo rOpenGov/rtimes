@@ -16,20 +16,21 @@ Functions that wrap these sets of APIs are prefixed by two letter acronyms fo re
 * `cg` for the Congress API
 * `as` for the Article Search API
 * `cf` for the Campaign Finance API
-* `dis` for the Districs API
 * `geo` for the Geographic API
 
-Please get your own API keys if you plant to use these functions for Sunlight Labs (http://services.sunlightlabs.com/) and New York Times (http://developer.nytimes.com/apps/register).
+Please get your own API keys at http://developer.nytimes.com/apps/register - you'll need a different key for each API.
 
 Data from the New York Times API is provided by The New York Times.
 
 <a border="0" href="http://developer.nytimes.com" ><img src="http://graphics8.nytimes.com/packages/images/developer/logos/poweredby_nytimes_200b.png" alt="NYT API" /></a>
 
-I set up the functions so that you can put the key in your .Rprofile file, which will be called on startup of R, and then you don't have to enter your API key for each run of a function. For example, put this in your .Rprofile file:
+I set up the functions so that you can put the key in your .Rprofile file, which will be called on startup of R, and then you don't have to enter your API key for each run of a function. For example, put these entries in your .Rprofile file:
 
 ```
-# key for API access to the Sunlight Labs API methods
-options(NYTCongressKey = "YOURKEYHERE")
+options(nytimes_cg_key = "YOURKEYHERE")
+options(nytimes_as_key = "YOURKEYHERE")
+options(nytimes_cf_key = "YOURKEYHERE")
+options(nytimes_geo_key = "YOURKEYHERE")
 ```
 
 ## Quick start
