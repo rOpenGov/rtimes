@@ -1,44 +1,51 @@
 <!--
-%\VignetteEngine{knitr}
+%\VignetteEngine{knitr::knitr}
 %\VignetteIndexEntry{rtimes vignette}
 -->
 
-rtimes vignette - Interface to the New York Times APIs for government data.
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  warning = FALSE, 
+  message = FALSE
+)
+```
+
+rtimes vignette - R client for New York Times APIs
 ======
 
-### About the package
+## About the package
 
 `rtimes` is an R package to search and retrieve data from the New York Times congress API. 
 
 
-#### Install rtimes
+### Install rtimes
 
-```{r install, eval=FALSE, echo=TRUE}
+```{r install, eval=FALSE}
 install.packages("devtools")
-library(devtools)
-install_github("rtimes", "ropengov")
+devtools::install_github("ropengov/rtimes")
 ```
 
-********************
+### Load rtimes
 
-#### Load rtimes
-
-```{r load, comment=NA, warning=FALSE, message=FALSE}
+```{r load}
 library(rtimes)
 ```
 
-*Note: Member ID S001181 is Jeanne Shaheen*
+_Note: Member ID S001181 is Jeanne Shaheen_
 
-#### Get bill cosponsorship data for a particular member.
+### Get bill cosponsorship data for a particular member.
 
-```{r cg_billscosponsor, comment=NA, warning=FALSE, message=FALSE, cache=TRUE}
+```{r cg_billscosponsor}
+library("plyr")
 out <- cg_billscosponsor(memberid='S001181', type='cosponsored')
 ldply(out$results[[1]]$bills, function(x) data.frame(x[c('number','cosponsors')]))
 ```
 
-#### Get information about a particular member's appearances on the House or Senate floor.
+### Get information about a particular member's appearances on the House or Senate floor.
 
-```{r cg_memberappear, comment=NA, warning=FALSE, message=FALSE, cache=TRUE}
+```{r cg_memberappear}
 library(plyr)
 out <- cg_memberappear(memberid='S001181')
 ldply(out$results[[1]]$appearances, function(x) data.frame(x[c('date','title')]))
