@@ -84,9 +84,9 @@ http://download.geonames.org/export/dump/featureCodes_en.txt.}
 
 \item{gmt_offset}{(numeric) The offset from GMT during standard time.}
 
-\item{bounding_box}{(numeric) List of coordinates in the following format <North East Latitude>,
-<North East Longitude>,<South West Latitude>,<South West Longitude>. For example:
-39.985417852135356,-93.18850617968747,37.84003257271992,-95.94607453906247.}
+\item{bounding_box}{(numeric) Vector of coordinates in the following format <NE Latitude>,
+<NE Longitude>,<SW Latitude>,<SW Longitude>. For example:
+c(39.985417852135356,-93.18850617968747,37.84003257271992,-95.94607453906247)}
 
 \item{nearby}{(numeric) A latitude longitude pair (e.g. 41.9,12.5). When provided with this
 parameter, the geocodes API will return the 20 results that are geographically nearest to the

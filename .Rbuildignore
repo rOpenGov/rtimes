@@ -4,3 +4,5 @@ inst/vign
 .travis.yml
 .gitignore
 man-roxygen/
+^.*\.Rproj$
+^\.Rproj\.user$
