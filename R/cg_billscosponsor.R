@@ -1,6 +1,7 @@
 #' Get bill cosponsorship data for a particular member.
 #' 
-#' @import httr
+#' @export
+#' 
 #' @template nyt
 #' @param memberid The member's unique ID number (alphanumeric). To find a 
 #'    member's ID number, get the list of members for the appropriate House 
@@ -13,11 +14,12 @@
 #'    by member-id) or 'withdrawn' (the 20 most recently withdrawn 
 #'    cosponsorships for member-id). 
 #' @return List of new members of he current Congress.
-#' @export
+#' 
 #' @examples \dontrun{
 #' cg_billscosponsor(memberid='S001181', type='cosponsored')
 #' }
-cg_billscosponsor <- function(memberid = NULL, type = NULL,
+
+`cg_billscosponsor` <- function(memberid = NULL, type = NULL,
   key = getOption("nytimes_cg_key", stop("need an API key for the NYT Congress API")),
   callopts = list()) 
 {
@@ -28,5 +30,4 @@ cg_billscosponsor <- function(memberid = NULL, type = NULL,
   stop_for_status(tt)
   out <- content(tt, as = 'text')
   jsonlite::fromJSON(out, simplifyVector = FALSE)
-#   RJSONIO::fromJSON(out)
 }

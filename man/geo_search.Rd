@@ -11,7 +11,7 @@ geo_search(name = NULL, latitude = NULL, longitude = NULL,
   feature_class = NULL, feature_class_name = NULL,
   feature_code_name = NULL, time_zone_id = NULL, dst_offset = NULL,
   gmt_offset = NULL, bounding_box = NULL, nearby = NULL, offset = NULL,
-  limit = 20, key = getOption("nytimes_geo_key"), callopts = list())
+  limit = 20, key = getOption("nytimes_geo_key"), ...)
 }
 \arguments{
 \item{name}{(character) A displayable name for the specified place.}
@@ -102,7 +102,7 @@ of results or a maximum of 20 results are returned.}
 \item{callopts}{Optional additional curl options (debugging tools mostly)}
 }
 \description{
-See \url{http://developer.nytimes.com/docs/geographic_api}
+Geographic search NYTimes API
 }
 \examples{
 \dontrun{
@@ -113,5 +113,8 @@ geo_search(elevation = '2000_3000', feature_class='P')
 geo_search(feature_class='P', country_code='US', population='50000_')
 geo_search(nearby=c(38.920833,-94.622222), population='100000_', feature_class='P')
 }
+}
+\references{
+\url{http://developer.nytimes.com/docs/geographic_api}
 }
 
