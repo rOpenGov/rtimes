@@ -11,7 +11,7 @@ geo_search(name = NULL, latitude = NULL, longitude = NULL,
   feature_class = NULL, feature_class_name = NULL,
   feature_code_name = NULL, time_zone_id = NULL, dst_offset = NULL,
   gmt_offset = NULL, bounding_box = NULL, nearby = NULL, offset = NULL,
-  limit = 20, key = getOption("nytimes_geo_key"), ...)
+  limit = 100, key = getOption("nytimes_geo_key"), ...)
 }
 \arguments{
 \item{name}{(character) A displayable name for the specified place.}
@@ -92,10 +92,12 @@ c(39.985417852135356,-93.18850617968747,37.84003257271992,-95.94607453906247)}
 parameter, the geocodes API will return the 20 results that are geographically nearest to the
 specified latitude/longitude pair.}
 
-\item{offset}{(numeric) The offset in the results.}
+\item{offset}{(numeric) The offset in the results. BEWARE - this parameter doesn't work now
+(as of 2014-10-21).}
 
 \item{limit}{(numeric) If not specified 20 results are returned. Otherwise the specified number
-of results or a maximum of 20 results are returned.}
+of results or a maximum of 20 results are returned. BEWARE - this parameter doesn't work now
+(as of 2014-10-21).}
 
 \item{key}{your New York Times API key; loads from .Rprofile}
 

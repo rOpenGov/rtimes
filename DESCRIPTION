@@ -12,6 +12,7 @@ BugReports: https://github.com/ropengov/rtimes/issues
 VignetteBuilder: knitr
 Imports:
     httr,
-    jsonlite
+    jsonlite,
+    dplyr
 Suggests:
     knitr

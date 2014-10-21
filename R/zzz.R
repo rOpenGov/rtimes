@@ -1,6 +1,7 @@
 rtimes_compact <- function (x) Filter(Negate(is.null), x)
 
-ifnotnullcollapse <- function(x) if(!is.null(x)){ paste(x, collapse = ",")} else { NULL }
+nnlcol <- function(x) if(!is.null(x)) paste(x, collapse = ",") else NULL
+nnlna <- function(x) if(!is.null(x)) paste(x, collapse = ",") else NA
 
 t_base <- function() "http://api.nytimes.com/svc/"
 

@@ -1,6 +1,7 @@
 #' Geographic search NYTimes API
 #' 
 #' @import jsonlite httr 
+#' @importFrom dplyr rbind_all
 #' @export
 #' @template geographic
 #' @template nyt
@@ -19,11 +20,11 @@
   admin_name1 = NULL, admin_code2 = NULL, admin_name2 = NULL, admin_code3 = NULL, 
   admin_name3 = NULL, admin_code4 = NULL, admin_name4 = NULL, feature_class = NULL, 
   feature_class_name = NULL, feature_code_name = NULL, time_zone_id = NULL, dst_offset = NULL, 
-  gmt_offset = NULL, bounding_box = NULL, nearby = NULL, offset = NULL, limit=20, 
+  gmt_offset = NULL, bounding_box = NULL, nearby = NULL, offset = NULL, limit=100, 
   key=getOption("nytimes_geo_key"), ...)
 {
-  nearby <- ifnotnullcollapse(nearby)
-  bounding_box <- ifnotnullcollapse(bounding_box)
+  nearby <- nnlcol(nearby)
+  bounding_box <- nnlcol(bounding_box)
   args <- rtimes_compact(list(name=name,latitude=latitude,longitude=longitude,elevation=elevation,
       population=population,country_code=country_code,country_name=country_name,
       admin_code1=admin_code1,admin_name1=admin_name1,
@@ -33,7 +34,40 @@
       feature_code_name=feature_code_name,
       time_zone_id=time_zone_id,dst_offset=dst_offset,gmt_offset=gmt_offset,
       bounding_box=bounding_box,nearby=nearby,
-      offset=offset,limit=limit,`api-key`=key))
+      offset=offset, limit=limit, `api-key`=key))
   
-  rtimes_GET(paste0(t_base(), "semantic/v2/geocodes/query.json"), args, ...)
+  res <- rtimes_GET(paste0(t_base(), "semantic/v2/geocodes/query.json"), args, ...)
+  list(meta=meta(res), data=rbind_all(lapply(res$results, proc)))
 }
+
+proc <- function(y){
+  df <- data.frame(pop(y, "geocode"), stringsAsFactors = FALSE)
+  tmp <- data.frame(t(sapply(pop(y$geocode, "geocode_id"), nnlna, USE.NAMES = FALSE)), stringsAsFactors = FALSE)
+  cbind(df, tmp)
+}
+
+meta <- function(x){
+  data.frame(pop(x, c("results","copyright")), stringsAsFactors = FALSE)
+}
+
+pluck <- function(x, name, type) {
+  if (missing(type)) {
+    lapply(x, "[[", name)
+  } else {
+    vapply(x, "[[", name, FUN.VALUE = type)
+  }
+}
+
+pop <- function(x, namez) {
+  getnames <- names(x)[!names(x) %in% namez]
+  x[ getnames ]
+}
+
+# popply <- function(x, name, type) {
+#   getnames <- names(x)[!names(x) %in% name]
+#   if (missing(type)) {
+#     lapply(x, "[[", getnames)
+#   } else {
+#     vapply(x, "[[", getnames, FUN.VALUE = type)
+#   }
+# }

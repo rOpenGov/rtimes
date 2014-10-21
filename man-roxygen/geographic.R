@@ -53,6 +53,8 @@
 #' @param nearby (numeric) A latitude longitude pair (e.g. 41.9,12.5). When provided with this 
 #' parameter, the geocodes API will return the 20 results that are geographically nearest to the 
 #' specified latitude/longitude pair.
-#' @param offset (numeric) The offset in the results.
+#' @param offset (numeric) The offset in the results. BEWARE - this parameter doesn't work now 
+#' (as of 2014-10-21).
 #' @param limit	(numeric) If not specified 20 results are returned. Otherwise the specified number 
-#' of results or a maximum of 20 results are returned. 
+#' of results or a maximum of 20 results are returned. BEWARE - this parameter doesn't work now 
+#' (as of 2014-10-21).
