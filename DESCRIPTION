@@ -1,12 +1,14 @@
 Package: rtimes
-Description: Interface to various APIs for government data, including Sunlight
-    Foundation, and the NYTimes Congress API.
-Title: Interface to API methods for government data.
-Version: 0.2.0
-Date: 2014-04-05
+Description: Interface to Congress, Campaign Finance, Article Search, and 
+    Geographic APIs from the New York Times.
+Title: R client for four New York Times APIs.
+Version: 0.2.1.99
+Date: 2014-10-21
 License: MIT + file LICENSE
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com")
+URL: https://github.com/ropengov/rtimes
+BugReports: https://github.com/ropengov/rtimes/issues
 VignetteBuilder: knitr
 Imports:
     httr,
