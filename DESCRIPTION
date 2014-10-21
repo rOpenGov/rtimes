@@ -1,5 +1,5 @@
 Package: rtimes
-Description: Interface to Congress, Campaign Finance, Article Search, and 
+Description: Interface to Congress, Campaign Finance, Article Search, and
     Geographic APIs from the New York Times.
 Title: R client for four New York Times APIs.
 Version: 0.2.1.99
