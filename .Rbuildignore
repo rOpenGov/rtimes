@@ -6,3 +6,4 @@ inst/vign
 man-roxygen/
 ^.*\.Rproj$
 ^\.Rproj\.user$
+cran-comments.md
