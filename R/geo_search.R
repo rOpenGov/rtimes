@@ -4,7 +4,8 @@
 #' @importFrom dplyr rbind_all
 #' @export
 #' @template geographic
-#' @template nyt
+#' @param key your New York Times API key; loads from .Rprofile
+#' @param ... Optional curl options (debugging tools mostly)
 #' @references \url{http://developer.nytimes.com/docs/geographic_api}
 #' @examples \dontrun{
 #' geo_search(country_code = 'US')
@@ -36,31 +37,14 @@
       bounding_box=bounding_box,nearby=nearby,
       offset=offset, limit=limit, `api-key`=key))
   
-  res <- rtimes_GET(paste0(t_base(), "semantic/v2/geocodes/query.json"), args, ...)
-  list(meta=meta(res), data=rbind_all(lapply(res$results, proc)))
+  res <- rtimes_GET(paste0(t_base(), "semantic/v2/geocodes/query.json"), args, list(), ...)
+  list(copyright=cright(), meta=meta(res), data=rbind_all(lapply(res$results, geo_proc)))
 }
 
-proc <- function(y){
+geo_proc <- function(y){
   df <- data.frame(pop(y, "geocode"), stringsAsFactors = FALSE)
   tmp <- data.frame(t(sapply(pop(y$geocode, "geocode_id"), nnlna, USE.NAMES = FALSE)), stringsAsFactors = FALSE)
   cbind(df, tmp)
-}
-
-meta <- function(x){
-  data.frame(pop(x, c("results","copyright")), stringsAsFactors = FALSE)
-}
-
-pluck <- function(x, name, type) {
-  if (missing(type)) {
-    lapply(x, "[[", name)
-  } else {
-    vapply(x, "[[", name, FUN.VALUE = type)
-  }
-}
-
-pop <- function(x, namez) {
-  getnames <- names(x)[!names(x) %in% namez]
-  x[ getnames ]
 }
 
 # popply <- function(x, name, type) {

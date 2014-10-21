@@ -101,7 +101,7 @@ of results or a maximum of 20 results are returned. BEWARE - this parameter does
 
 \item{key}{your New York Times API key; loads from .Rprofile}
 
-\item{callopts}{Optional additional curl options (debugging tools mostly)}
+\item{...}{Optional curl options (debugging tools mostly)}
 }
 \description{
 Geographic search NYTimes API

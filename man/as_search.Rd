@@ -49,7 +49,7 @@ is required.}
 \item{callopts}{Optional additional curl options (debugging tools mostly)}
 }
 \description{
-See \url{http://developer.nytimes.com/docs/article_search_api/}
+Search articles
 }
 \details{
 fl parameter options are: web_url, snippet, lead_paragraph, abstract, print_page,
@@ -68,8 +68,11 @@ as_search(q="money", fq = 'The New York Times')
 as_search(q="money", fq = 'news_desk:("Sports" "Foreign")')
 as_search(q="bailout", hl = TRUE)
 
-library(httr)
+library('httr')
 as_search("iowa caucus", callopts = verbose())
 }
+}
+\references{
+\url{http://developer.nytimes.com/docs/article_search_api/}
 }
 
