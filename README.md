@@ -94,218 +94,88 @@ out$results$votes$vote$positions[1:3]
 
 ```r
 out <- as_search(q="bailout", begin_date = "20081001", end_date = '20081201')
-out$response$docs[[1]]$lead_paragraph
-#> [1] "Two years ago, Ron Gettelfinger, president of the United Automobile Workers union, offered a grim prognosis for the auto industry to union members at the group's convention in Las Vegas."
+out$data[1:3]
+#> [[1]]
+#> <NYTimes article>Autoworkers Worry More Givebacks Are in Store
+#>   Type: Blog
+#>   Published: 2008-12-01T07:44:16Z
+#>   Word count: 1109
+#>   URL: http://dealbook.nytimes.com/2008/12/01/autoworkers-worry-more-givebacks-are-in-store/
+#>   Snippet: Two years ago, Ron Gettelfinger, president of the United Automobile Workers union, offered a grim prognosis for the auto industry to union members at the group's convention in Las Vegas. "This isn't a cyclical downturn," Mr. Gettelfinger told the...
+#> 
+#> [[2]]
+#> <NYTimes article>Should Taxpayers Back Tesla Motors?
+#>   Type: Blog
+#>   Published: 2008-12-01T07:39:17Z
+#>   Word count: 1035
+#>   URL: http://dealbook.nytimes.com/2008/12/01/should-taxpayers-pay-to-back-tesla-motors/
+#>   Snippet: The Tesla Roadster is an electric car that goes fast, looks sensational and excites envy. But the seductive appearance, Randall Stross writes in The New York Times, obscures some inconvenient truths: its all-electric technology remains woefully...
+#> 
+#> [[3]]
+#> <NYTimes article>Each Player in Big Three to Bring Its Own Plan
+#>   Type: Blog
+#>   Published: 2008-12-01T07:29:04Z
+#>   Word count: 897
+#>   URL: http://dealbook.nytimes.com/2008/12/01/each-player-in-big-three-to-bring-its-own-plan/
+#>   Snippet: The Detroit automakers have been lumped together for decades as the Big Three, and for good reason; their goals have usually been aligned. But this week, as the automakers take a second run at Congress, hoping to persuade lawmakers to give them $25...
 ```
 
 ### Campaign Finance API
 
 
 ```r
-cf_candidate_details(campaign_cycle = 2008, fec_id = 'P80003338')
-#> $status
-#> [1] "OK"
-#> 
-#> $copyright
-#> [1] "Copyright (c) 2014 The New York Times Company. All Rights Reserved."
-#> 
-#> $base_uri
-#> [1] "http://api.nytimes.com/svc/elections/us/v3/finances/2008/"
-#> 
-#> $cycle
-#> [1] 2008
-#> 
-#> $results
-#> $results[[1]]
-#> $results[[1]]$id
+res <- cf_candidate_details(campaign_cycle = 2008, fec_id = 'P80003338')
+res$results[[1]][1:4]
+#> $id
 #> [1] "P80003338"
 #> 
-#> $results[[1]]$name
+#> $name
 #> [1] "OBAMA, BARACK"
 #> 
-#> $results[[1]]$party
+#> $party
 #> [1] "DEM"
 #> 
-#> $results[[1]]$district
+#> $district
 #> NULL
-#> 
-#> $results[[1]]$fec_uri
-#> [1] "http://docquery.fec.gov/cgi-bin/fecimg/?P80003338"
-#> 
-#> $results[[1]]$committee
-#> [1] "/committees/C00431445.json"
-#> 
-#> $results[[1]]$state
-#> NULL
-#> 
-#> $results[[1]]$mailing_address
-#> [1] "5450 SOUTH EAST VIEW PARK"
-#> 
-#> $results[[1]]$mailing_city
-#> [1] "CHICAGO"
-#> 
-#> $results[[1]]$mailing_state
-#> [1] "IL"
-#> 
-#> $results[[1]]$mailing_zip
-#> [1] "60615"
-#> 
-#> $results[[1]]$status
-#> [1] "O"
-#> 
-#> $results[[1]]$total_receipts
-#> [1] 778642962
-#> 
-#> $results[[1]]$total_from_individuals
-#> [1] 664872382
-#> 
-#> $results[[1]]$total_from_pacs
-#> [1] 12925
-#> 
-#> $results[[1]]$total_contributions
-#> [1] 664886457
-#> 
-#> $results[[1]]$candidate_loans
-#> [1] 0
-#> 
-#> $results[[1]]$total_disbursements
-#> [1] 760370195
-#> 
-#> $results[[1]]$begin_cash
-#> [1] 0
-#> 
-#> $results[[1]]$end_cash
-#> [1] 18272367
-#> 
-#> $results[[1]]$total_refunds
-#> [1] 5755955
-#> 
-#> $results[[1]]$debts_owed
-#> [1] 434954
-#> 
-#> $results[[1]]$date_coverage_from
-#> [1] "2007-01-01"
-#> 
-#> $results[[1]]$date_coverage_to
-#> [1] "2008-12-31"
-#> 
-#> $results[[1]]$independent_expenditures
-#> [1] 109592775
-#> 
-#> $results[[1]]$coordinated_expenditures
-#> [1] 6606695
-#> 
-#> $results[[1]]$other_cycles
-#> list()
 ```
-
 
 ### Geographic API
 
 
 ```r
-out <- geo_search(elevation = '2000_3000', feature_class='P')
-out$results[[1]]
-#> $concept_id
-#> [1] 3594
+geo_search(elevation = '2000_3000', feature_class='P')
+#> $copyright
+#> [1] "Copyright (c) 2013 The New York Times Company.  All Rights Reserved."
 #> 
-#> $geocode_id
-#> [1] 318
+#> $meta
+#>   status num_results source_database
+#> 1     OK          14           slave
 #> 
-#> $concept_name
-#> [1] "Aspen (Colo)"
+#> $data
+#> Source: local data frame [14 x 33]
 #> 
-#> $is_times_tag
-#> [1] 1
-#> 
-#> $concept_type_id
-#> [1] 2
-#> 
-#> $concept_status
-#> [1] "Active"
-#> 
-#> $concept_type
-#> [1] "nytd_geo"
-#> 
-#> $uri_prefix
-#> [1] "0"
-#> 
-#> $geocode
-#> $geocode$geocode_id
-#> [1] 318
-#> 
-#> $geocode$geoname_id
-#> [1] 5412230
-#> 
-#> $geocode$name
-#> [1] "Aspen"
-#> 
-#> $geocode$latitude
-#> [1] 39.19
-#> 
-#> $geocode$longitude
-#> [1] -106.8
-#> 
-#> $geocode$elevation
-#> [1] 2405
-#> 
-#> $geocode$population
-#> [1] 5760
-#> 
-#> $geocode$country_code
-#> [1] "US"
-#> 
-#> $geocode$country_name
-#> [1] "United States"
-#> 
-#> $geocode$admin_code1
-#> [1] "CO"
-#> 
-#> $geocode$admin_code2
-#> [1] "097"
-#> 
-#> $geocode$admin_code3
-#> NULL
-#> 
-#> $geocode$admin_code4
-#> NULL
-#> 
-#> $geocode$admin_name1
-#> [1] "Colorado"
-#> 
-#> $geocode$admin_name2
-#> [1] "Pitkin County"
-#> 
-#> $geocode$admin_name3
-#> NULL
-#> 
-#> $geocode$admin_name4
-#> NULL
-#> 
-#> $geocode$feature_class
-#> [1] "P"
-#> 
-#> $geocode$feature_class_name
-#> [1] "city, village,..."
-#> 
-#> $geocode$feature_code
-#> [1] "PPL"
-#> 
-#> $geocode$feature_code_name
-#> [1] "populated place"
-#> 
-#> $geocode$time_zone_id
-#> [1] "America/Denver"
-#> 
-#> $geocode$dst_offset
-#> [1] -6
-#> 
-#> $geocode$gmt_offset
-#> [1] -7
-#> 
-#> $geocode$attributionName
-#> [1] "GeoNames"
-#> 
-#> $geocode$attributionUrl
-#> [1] "http://geonames.org"
+#>    concept_id geocode_id             concept_name is_times_tag
+#> 1        3594        318             Aspen (Colo)            1
+#> 2        5220        320            Santa Fe (NM)            1
+#> 3        4980        380         Park City (Utah)            1
+#> 4        5499        386              Vail (Colo)            1
+#> 5        3764        556      Breckenridge (Colo)            1
+#> 6        5412        599         Telluride (Colo)            1
+#> 7        4672        763    Mammoth Lakes (Calif)            1
+#> 8        5406        776                Taos (NM)            1
+#> 9        5364        872 Steamboat Springs (Colo)            1
+#> 10       4170       1109         Flagstaff (Ariz)            1
+#> 11       3530       1143              Alta (Utah)            1
+#> 12       5184       1441            Salida (Colo)            1
+#> 13       5283       1449         Silverton (Colo)            1
+#> 14      48143       2203          Snowmass (Colo)            1
+#> Variables not shown: concept_type_id (int), concept_status (chr),
+#>   concept_type (chr), uri_prefix (chr), geoname_id (chr), name (chr),
+#>   latitude (chr), longitude (chr), elevation (chr), population (chr),
+#>   country_code (chr), country_name (chr), admin_code1 (chr), admin_code2
+#>   (chr), admin_code3 (chr), admin_code4 (chr), admin_name1 (chr),
+#>   admin_name2 (chr), admin_name3 (chr), admin_name4 (chr), feature_class
+#>   (chr), feature_class_name (chr), feature_code (chr), feature_code_name
+#>   (chr), time_zone_id (chr), dst_offset (chr), gmt_offset (chr),
+#>   attributionName (chr), attributionUrl (chr)
 ```
