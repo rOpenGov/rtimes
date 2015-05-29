@@ -4,9 +4,7 @@
 \alias{cg_billscosponsor}
 \title{Get bill cosponsorship data for a particular member.}
 \usage{
-cg_billscosponsor(memberid = NULL, type = NULL,
-  key = getOption("nytimes_cg_key",
-  stop("need an API key for the NYT Congress API")), ...)
+cg_billscosponsor(memberid = NULL, type = NULL, key = NULL, ...)
 }
 \arguments{
 \item{memberid}{The member's unique ID number (alphanumeric). To find a
@@ -21,7 +19,8 @@ Use the index ID as member-id in your request.}
 by member-id) or 'withdrawn' (the 20 most recently withdrawn
 cosponsorships for member-id).}
 
-\item{key}{your New York Times API key; loads from .Rprofile}
+\item{key}{your New York Times API key; pass in, or loads from .Rprofile as
+\code{nytimes_cg_key}, or from .Renviron as \code{NYTIMES_CG_KEY}}
 
 \item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }

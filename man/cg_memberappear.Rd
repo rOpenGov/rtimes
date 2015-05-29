@@ -5,8 +5,7 @@
 \title{Get information about a particular member's appearances on the House or
 Senate floor.}
 \usage{
-cg_memberappear(memberid = NULL, key = getOption("nytimes_cg_key",
-  stop("need an API key for the NYT Congress API")), ...)
+cg_memberappear(memberid = NULL, key = NULL, ...)
 }
 \arguments{
 \item{memberid}{The member's unique ID number (alphanumeric). To find a
@@ -17,7 +16,8 @@ name is linked to a record by index ID (e.g.,
 http://bioguide.congress.gov/scripts/biodisplay.pl?index=C001041).
 Use the index ID as member-id in your request.}
 
-\item{key}{your New York Times API key; loads from .Rprofile}
+\item{key}{your New York Times API key; pass in, or loads from .Rprofile as
+\code{nytimes_cg_key}, or from .Renviron as \code{NYTIMES_CG_KEY}}
 
 \item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }

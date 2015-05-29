@@ -12,11 +12,10 @@
 #' cf_candidate_search(campaign_cycle = 2008, query='obama')
 #' }
 
-`cf_candidate_search` <- function(campaign_cycle=NULL, query=NULL, 
-                                  key = getOption("nytimes_cf_key"), ...) {
+`cf_candidate_search` <- function(campaign_cycle=NULL, query=NULL, key = NULL, ...) {
   url <- sprintf("http://api.nytimes.com/svc/elections/us/v3/finances/%s/candidates/search.json", 
                  campaign_cycle)
-  args <- rtimes_compact(list(query=query,`api-key`=key))
+  args <- rtimes_compact(list(query=query,`api-key`=check_key(key, "nytimes_cg_key")))
   ans <- GET(url, query = args, ...)
   stop_for_status(ans)
   tt <- content(ans, as = "text")

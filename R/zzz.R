@@ -1,7 +1,7 @@
-rtimes_compact <- function (x) Filter(Negate(is.null), x)
+rtimes_compact <- function(x) Filter(Negate(is.null), x)
 
-nnlcol <- function(x) if(!is.null(x)) paste(x, collapse = ",") else NULL
-nnlna <- function(x) if(!is.null(x)) paste(x, collapse = ",") else NA
+nnlcol <- function(x) if (!is.null(x)) paste(x, collapse = ",") else NULL
+nnlna <- function(x) if (!is.null(x)) paste(x, collapse = ",") else NA
 
 t_base <- function() "http://api.nytimes.com/svc/"
 
@@ -33,4 +33,9 @@ pluck <- function(x, name, type) {
 pop <- function(x, namez) {
   getnames <- names(x)[!names(x) %in% namez]
   x[ getnames ]
+}
+
+check_key <- function(x, y = "nytimes_geo_key"){
+  tmp <- if (is.null(x)) Sys.getenv(toupper(y), "") else x
+  if (tmp == "") getOption(y, stop("need an API key for ", y)) else tmp
 }

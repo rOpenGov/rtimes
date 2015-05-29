@@ -12,7 +12,7 @@ geo_search(name = NULL, latitude = NULL, longitude = NULL,
   feature_class = NULL, feature_class_name = NULL,
   feature_code_name = NULL, time_zone_id = NULL, dst_offset = NULL,
   gmt_offset = NULL, bounding_box = NULL, nearby = NULL, offset = NULL,
-  limit = 100, key = getOption("nytimes_geo_key"), ...)
+  limit = 100, key = NULL, ...)
 }
 \arguments{
 \item{name}{(character) A displayable name for the specified place.}
@@ -100,7 +100,8 @@ specified latitude/longitude pair.}
 of results or a maximum of 20 results are returned. BEWARE - this parameter doesn't work now
 (as of 2014-10-21).}
 
-\item{key}{your New York Times API key; loads from .Rprofile}
+\item{key}{your New York Times API key; pass in, or loads from .Rprofile as
+\code{nytimes_geo_key}, or from .Renviron as \code{NYTIMES_GEO_KEY}}
 
 \item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }

@@ -1,7 +1,7 @@
 #' Get a specific roll-call vote, including a complete list of member positions.
 #' 
 #' @import httr
-#' @template nyt
+#' @template nytcgkey
 #' @param congress_no The number of the Congress during which the members served.
 #' @param chamber One of 'house' or 'senate.
 #' @param session_no 1, 2, or special session number (For a detailed list of 
@@ -18,12 +18,11 @@
 #' cg_rollcallvote(112, 'house', 1, 00235)
 #' }
 cg_rollcallvote <- function(congress_no = NULL, chamber = NULL, 
-  session_no = NULL, rollcall_no = NULL,
-  key = getOption("nytimes_cg_key", stop("need an API key for the NYT Congress API")), ...) {
+  session_no = NULL, rollcall_no = NULL, key = NULL, ...) {
   url = "http://api.nytimes.com/svc/politics/v3/us/legislative/congress/"
   url2 <- paste(url, congress_no, '/', chamber, '/sessions/', session_no, 
                 '/votes/', rollcall_no, '.json', sep='')
-  args <- list('api-key' = key)
+  args <- list('api-key' = check_key(key, "nytimes_cg_key"))
   tt <- GET(url2, query=args, ...)
   stop_for_status(tt)
   out <- content(tt, as = 'text')

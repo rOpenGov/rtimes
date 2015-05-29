@@ -16,7 +16,7 @@
 #' }
 
 `as_search` <- function(q, fq=NULL, sort=NULL, begin_date=NULL, end_date=NULL, 
-  key = getOption("nytimes_as_key"), fl = NULL, hl = FALSE, 
+  key = NULL, fl = NULL, hl = FALSE, 
   page = 0, facet_field = NULL, facet_filter = NULL, ..., callopts=list())
 {
   if(!is.null(begin_date)) {
@@ -38,8 +38,8 @@
   if(!is.logical(hl)) stop("hl parameter must be logical")
   if(hl){ hl = 'true' } else { hl = NULL }
   args <- rtimes_compact(list(q=q, fl=fl, fq=fq, sort=sort, hl=hl, page=page,
-                       begin_date=begin_date, end_date=end_date, `api-key`=key, 
-                       facet_field=facet_field, facet_filter=facet_filter))
+                begin_date=begin_date, end_date=end_date, `api-key`=check_key(key, "nytimes_as_key"), 
+                facet_field=facet_field, facet_filter=facet_filter))
   res <- rtimes_GET(paste0(t_base(), "search/v2/articlesearch.json"), c(args, ...), callopts, ...)
   dat <- if(is.null(fl)) lapply(res$response$docs, structure, class="as_search") else res$response
   list(copyright=cright(), meta=as_meta(res), data=dat)

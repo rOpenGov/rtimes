@@ -5,8 +5,7 @@
 \title{Get a list of the most recent new members of the current Congress.}
 \usage{
 cg_memberbystatedistrict(chamber = NULL, state = NULL, district = NULL,
-  key = getOption("nytimes_cg_key",
-  stop("need an API key for the NYT Congress API")), ...)
+  key = NULL, ...)
 }
 \arguments{
 \item{chamber}{One of 'house' or 'senate.}
@@ -18,7 +17,8 @@ a district, you must also specify a state. If the district number you
 specify is higher than the total number of districts for that state,
 a 404 response will be returned.}
 
-\item{key}{your New York Times API key; loads from .Rprofile}
+\item{key}{your New York Times API key; pass in, or loads from .Rprofile as
+\code{nytimes_cg_key}, or from .Renviron as \code{NYTIMES_CG_KEY}}
 
 \item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }

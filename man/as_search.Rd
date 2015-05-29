@@ -5,8 +5,8 @@
 \title{Search articles}
 \usage{
 as_search(q, fq = NULL, sort = NULL, begin_date = NULL, end_date = NULL,
-  key = getOption("nytimes_as_key"), fl = NULL, hl = FALSE, page = 0,
-  facet_field = NULL, facet_filter = NULL, ..., callopts = list())
+  key = NULL, fl = NULL, hl = FALSE, page = 0, facet_field = NULL,
+  facet_filter = NULL, ..., callopts = list())
 }
 \arguments{
 \item{q}{Search query term. Search is performed on the article body, headline
@@ -25,6 +25,9 @@ dates of the date specified or later. In the form YYYYMMDD}
 
 \item{end_date}{End date - Restricts responses to results with publication dates
 of the date specified or earlier. In the form YYYYMMDD}
+
+\item{key}{your New York Times API key; pass in, or loads from .Rprofile as
+\code{nytimes_as_key}, or from .Renviron as \code{NYTIMES_AS_KEY}}
 
 \item{fl}{Fields to get back, as vector. See Details for the.}
 

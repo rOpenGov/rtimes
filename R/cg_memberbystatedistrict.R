@@ -1,7 +1,7 @@
 #' Get a list of the most recent new members of the current Congress.
 #' 
 #' @import httr
-#' @template nyt
+#' @template nytcgkey
 #' @param chamber One of 'house' or 'senate.
 #' @param state Limits the list of members by state; two-letter state code (e.g., CA).
 #' @param district Limits the list of members by district (House only). If you specify
@@ -14,11 +14,10 @@
 #' cg_memberbystatedistrict('senate', 'NH')
 #' }
 cg_memberbystatedistrict <- function(chamber = NULL, state = NULL, 
-  district = NULL,
-  key = getOption("nytimes_cg_key", stop("need an API key for the NYT Congress API")), ...) {
+                                     district = NULL, key = NULL, ...) {
   url = "http://api.nytimes.com/svc/politics/v3/us/legislative/congress/members/"
   url2 <- paste(url, chamber, '/', state, '/', district, 'current.json', sep='')
-  args <- list('api-key' = key)
+  args <- list('api-key' = check_key(key, "nytimes_cg_key"))
   tt <- GET(url2, query=args, ...)
   stop_for_status(tt)
   out <- content(tt, as = 'text')

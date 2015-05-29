@@ -4,11 +4,11 @@
 \alias{cg_newmembers}
 \title{Get a list of the most recent new members of the current Congress.}
 \usage{
-cg_newmembers(key = getOption("nytimes_cg_key",
-  stop("need an API key for the NYT Congress API")), ...)
+cg_newmembers(key = NULL, ...)
 }
 \arguments{
-\item{key}{your New York Times API key; loads from .Rprofile}
+\item{key}{your New York Times API key; pass in, or loads from .Rprofile as
+\code{nytimes_cg_key}, or from .Renviron as \code{NYTIMES_CG_KEY}}
 
 \item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }

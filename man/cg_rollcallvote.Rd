@@ -5,8 +5,7 @@
 \title{Get a specific roll-call vote, including a complete list of member positions.}
 \usage{
 cg_rollcallvote(congress_no = NULL, chamber = NULL, session_no = NULL,
-  rollcall_no = NULL, key = getOption("nytimes_cg_key",
-  stop("need an API key for the NYT Congress API")), ...)
+  rollcall_no = NULL, key = NULL, ...)
 }
 \arguments{
 \item{congress_no}{The number of the Congress during which the members served.}
@@ -22,7 +21,8 @@ of the US Senate
 (http://www.senate.gov/pagelayout/legislative/a_three_sections_with_teasers/votes.htm),
 and US House (http://artandhistory.house.gov/house_history/index.aspx).}
 
-\item{key}{your New York Times API key; loads from .Rprofile}
+\item{key}{your New York Times API key; pass in, or loads from .Rprofile as
+\code{nytimes_cg_key}, or from .Renviron as \code{NYTIMES_CG_KEY}}
 
 \item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }

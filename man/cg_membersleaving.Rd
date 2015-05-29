@@ -4,16 +4,15 @@
 \alias{cg_membersleaving}
 \title{Get a list of members who have left the Senate or House or have announced plans to do so.}
 \usage{
-cg_membersleaving(congress_no = NULL, chamber = NULL,
-  key = getOption("nytimes_cg_key",
-  stop("need an API key for the NYT Congress API")), ...)
+cg_membersleaving(congress_no = NULL, chamber = NULL, key = NULL, ...)
 }
 \arguments{
 \item{congress_no}{The number of the Congress during which the members served.}
 
 \item{chamber}{One of 'house' or 'senate.}
 
-\item{key}{your New York Times API key; loads from .Rprofile}
+\item{key}{your New York Times API key; pass in, or loads from .Rprofile as
+\code{nytimes_cg_key}, or from .Renviron as \code{NYTIMES_CG_KEY}}
 
 \item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }

@@ -22,6 +22,8 @@
 #' facet counts will respect any applied filters (fq, date range, etc.) in addition to 
 #' the main query term. To filter facet counts, specifying at least one facet_field 
 #' is required.
+#' @param key your New York Times API key; pass in, or loads from .Rprofile as 
+#' \code{nytimes_as_key}, or from .Renviron as \code{NYTIMES_AS_KEY}
 #' @param ... Futher args pass into query
 #' @param callopts Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}
 #' @details 
