@@ -6,7 +6,7 @@
 \usage{
 cg_memberslist(congress_no = NULL, chamber = NULL, state = NULL,
   district = NULL, key = getOption("nytimes_cg_key",
-  stop("need an API key for the NYT Congress API")), callopts = list())
+  stop("need an API key for the NYT Congress API")), ...)
 }
 \arguments{
 \item{congress_no}{The number of the Congress during which the members served.}
@@ -22,7 +22,7 @@ a 404 response will be returned.}
 
 \item{key}{your New York Times API key; loads from .Rprofile}
 
-\item{callopts}{Optional additional curl options (debugging tools mostly)}
+\item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }
 \value{
 List of members of a particular chamber in a particular Congress.

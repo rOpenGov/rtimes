@@ -23,6 +23,7 @@
 #' the main query term. To filter facet counts, specifying at least one facet_field 
 #' is required.
 #' @param ... Futher args pass into query
+#' @param callopts Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}
 #' @details 
 #' fl parameter options are: web_url, snippet, lead_paragraph, abstract, print_page, 
 #' blog, source, multimedia, headline, keywords, pub_date, document_type, news_desk, 

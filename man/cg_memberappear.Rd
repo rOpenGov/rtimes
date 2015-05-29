@@ -6,7 +6,7 @@
 Senate floor.}
 \usage{
 cg_memberappear(memberid = NULL, key = getOption("nytimes_cg_key",
-  stop("need an API key for the NYT Congress API")), callopts = list())
+  stop("need an API key for the NYT Congress API")), ...)
 }
 \arguments{
 \item{memberid}{The member's unique ID number (alphanumeric). To find a
@@ -19,7 +19,7 @@ Use the index ID as member-id in your request.}
 
 \item{key}{your New York Times API key; loads from .Rprofile}
 
-\item{callopts}{Optional additional curl options (debugging tools mostly)}
+\item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }
 \value{
 Get information about a particular member's appearances on the

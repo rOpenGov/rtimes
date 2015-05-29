@@ -2,7 +2,6 @@
 #' 
 #' @export
 #' @template articlesearch
-#' @template nyt
 #' @references \url{http://developer.nytimes.com/docs/article_search_api/}
 #' @examples \dontrun{
 #' as_search(q="bailout", begin_date = "20081001", end_date = '20081201')

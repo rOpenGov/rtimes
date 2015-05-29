@@ -26,8 +26,6 @@ dates of the date specified or later. In the form YYYYMMDD}
 \item{end_date}{End date - Restricts responses to results with publication dates
 of the date specified or earlier. In the form YYYYMMDD}
 
-\item{key}{your New York Times API key; loads from .Rprofile}
-
 \item{fl}{Fields to get back, as vector. See Details for the.}
 
 \item{hl}{(logical) Highlight or not, default is FALSE}
@@ -47,7 +45,7 @@ is required.}
 
 \item{...}{Futher args pass into query}
 
-\item{callopts}{Optional additional curl options (debugging tools mostly)}
+\item{callopts}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }
 \description{
 Search articles

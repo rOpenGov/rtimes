@@ -12,11 +12,10 @@
 #' }
 
 `cf_candidate_details` <- function(campaign_cycle=NULL, fec_id=NULL, 
-                                   key=getOption("nytimes_cf_key"), callopts=list())
-{
+                                   key=getOption("nytimes_cf_key"), ...) {
   url <- sprintf("http://api.nytimes.com/svc/elections/us/v3/finances/%s/candidates/%s.json", campaign_cycle, fec_id)
   args <- rtimes_compact(list(`api-key`=key))
-  ans <- GET(url, query = args, callopts)
+  ans <- GET(url, query = args, ...)
   stop_for_status(ans)
   tt <- content(ans, as = "text")
   jsonlite::fromJSON(tt, simplifyVector = FALSE)

@@ -5,16 +5,17 @@
 \title{Campaign finance NYTimes API - candidate search}
 \usage{
 cf_candidate_search(campaign_cycle = NULL, query = NULL,
-  key = getOption("nytimes_cf_key"), callopts = list())
+  key = getOption("nytimes_cf_key"), ...)
 }
 \arguments{
-\item{campaign_cycle}{An even-numbdered year in YYYY format. Presidential data: 2008-present; Congressional data: 2000-present}
+\item{campaign_cycle}{An even-numbdered year in YYYY format. Presidential data:
+2008-present; Congressional data: 2000-present}
 
 \item{query}{Last name of a candidate}
 
 \item{key}{your New York Times API key; loads from .Rprofile}
 
-\item{callopts}{Optional additional curl options (debugging tools mostly)}
+\item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }
 \description{
 See \url{http://developer.nytimes.com/docs/campaign_finance_api/}

@@ -6,7 +6,7 @@
 \usage{
 cg_membersleaving(congress_no = NULL, chamber = NULL,
   key = getOption("nytimes_cg_key",
-  stop("need an API key for the NYT Congress API")), callopts = list())
+  stop("need an API key for the NYT Congress API")), ...)
 }
 \arguments{
 \item{congress_no}{The number of the Congress during which the members served.}
@@ -15,7 +15,7 @@ cg_membersleaving(congress_no = NULL, chamber = NULL,
 
 \item{key}{your New York Times API key; loads from .Rprofile}
 
-\item{callopts}{Optional additional curl options (debugging tools mostly)}
+\item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }
 \value{
 List of new members of he current Congress.
