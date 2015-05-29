@@ -2,7 +2,7 @@ Package: rtimes
 Title: Client for New York Times APIs
 Description: Interface to Congress, Campaign Finance, Article Search, and
     Geographic APIs from the New York Times.
-Version: 0.2.2.9000
+Version: 0.2.2.9100
 Date: 2015-05-29
 License: MIT + file LICENSE
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
