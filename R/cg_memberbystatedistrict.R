@@ -13,7 +13,7 @@
 #' @examples \dontrun{
 #' cg_memberbystatedistrict('senate', 'NH')
 #' }
-cg_memberbystatedistrict <- function(chamber = NULL, state = NULL, 
+`cg_memberbystatedistrict` <- function(chamber = NULL, state = NULL, 
                                      district = NULL, key = NULL, ...) {
   url = "http://api.nytimes.com/svc/politics/v3/us/legislative/congress/members/"
   url2 <- paste(url, chamber, '/', state, '/', district, 'current.json', sep='')

@@ -14,11 +14,11 @@
 #' @examples \dontrun{
 #' cg_memberbioroles('S001181')
 #' }
-cg_memberbioroles <- function(memberid = NULL, key = NULL, ...) {
+`cg_memberbioroles` <- function(memberid = NULL, key = NULL, ...) {
   url = "http://api.nytimes.com/svc/politics/v3/us/legislative/congress/members/"
-  url2 <- paste(url, memberid, '.json', sep='')
+  url2 <- paste(url, memberid, '.json', sep = '')
   args <- list('api-key' = check_key(key, "nytimes_cg_key"))
-  tt <- GET(url2, query=args, ...)
+  tt <- GET(url2, query = args, ...)
   stop_for_status(tt)
   out <- content(tt, as = 'text')
   jsonlite::fromJSON(out, simplifyVector = FALSE)

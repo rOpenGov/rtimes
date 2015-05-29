@@ -2,7 +2,7 @@
 % Please edit documentation in R/cg_memberlist.R
 \name{cg_memberslist}
 \alias{cg_memberslist}
-\title{Get a list of members of a particular chamber in a particular Congress.}
+\title{Get a list of members of a particular chamber in a particular Congress}
 \usage{
 cg_memberslist(congress_no = NULL, chamber = NULL, state = NULL,
   district = NULL, key = NULL, ...)
@@ -28,11 +28,11 @@ a 404 response will be returned.}
 List of members of a particular chamber in a particular Congress.
 }
 \description{
-Get a list of members of a particular chamber in a particular Congress.
+Get a list of members of a particular chamber in a particular Congress
 }
 \examples{
 \dontrun{
-cg_memberslist(112, 'senate')
+cg_memberslist(112, 'senate', "TX")
 cg_memberslist(112, 'senate', 'NH')
 cg_memberslist(110, 'senate', 'NH')
 }
