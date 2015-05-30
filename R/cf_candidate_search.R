@@ -1,23 +1,26 @@
 #' Campaign finance NYTimes API - candidate search
-#' 
-#' See \url{http://developer.nytimes.com/docs/campaign_finance_api/}
-#' 
-#' @import jsonlite httr 
+#'
 #' @export
 #' @template finance
 #' @template nyt
 #' @param query Last name of a candidate
+#' @references \url{http://developer.nytimes.com/docs/campaign_finance_api/}
 #' @examples \dontrun{
 #' cf_candidate_search(campaign_cycle = 2010, query='smith')
 #' cf_candidate_search(campaign_cycle = 2008, query='obama')
 #' }
 
 `cf_candidate_search` <- function(campaign_cycle=NULL, query=NULL, key = NULL, ...) {
-  url <- sprintf("http://api.nytimes.com/svc/elections/us/v3/finances/%s/candidates/search.json", 
-                 campaign_cycle)
-  args <- rtimes_compact(list(query=query,`api-key`=check_key(key, "nytimes_cf_key")))
+  url <- sprintf("%s%s/candidates/search.json", cf_base(), campaign_cycle)
+  args <- rc(list(query = query,`api-key` = check_key(key, "nytimes_cf_key")))
   ans <- GET(url, query = args, ...)
   stop_for_status(ans)
   tt <- content(ans, as = "text")
-  jsonlite::fromJSON(tt, simplifyVector = FALSE)
+  res <- jsonlite::fromJSON(tt, simplifyVector = FALSE)
+  tmp <- pop(res, "results")
+  tmp$data <- dplyr::rbind_all(lapply(res$results, function(x){
+    x[sapply(x, is.null)] <- NA
+    data.frame(x, stringsAsFactors = FALSE)
+  }))
+  tmp
 }

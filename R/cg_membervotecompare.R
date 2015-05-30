@@ -1,6 +1,5 @@
 #' Get a list of members who have left the Senate or House or have announced plans to do so.
 #' 
-#' @import httr
 #' @template nytcgkey
 #' @param memberid_1 The member's unique ID number (alphanumeric). To find a 
 #'    member's ID number, get the list of members for the appropriate House 
@@ -19,11 +18,10 @@
 #' }
 cg_membervotecompare <- function(memberid_1 = NULL, memberid_2 = NULL, 
   congress_no = NULL, chamber = NULL,  key = NULL, ...) {
-  url = "http://api.nytimes.com/svc/politics/v3/us/legislative/congress/members/"
-  url2 <- paste(url, memberid_1, '/votes/', memberid_2, '/', congress_no, '/', 
-                chamber, '.json', sep='')
+  url2 <- paste(paste0(cg_base(), "members/"), memberid_1, '/votes/', 
+                memberid_2, '/', congress_no, '/', chamber, '.json', sep = '')
   args <- list('api-key' = check_key(key, "nytimes_cg_key"))
-  tt <- GET(url2, query=args, ...)
+  tt <- GET(url2, query = args, ...)
   stop_for_status(tt)
   out <- content(tt, as = 'text')
   jsonlite::fromJSON(out, simplifyVector = FALSE)

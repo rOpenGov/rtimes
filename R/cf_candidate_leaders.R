@@ -1,8 +1,5 @@
 #' Campaign finance NYTimes API - candidate leaders
-#' 
-#' See \url{http://developer.nytimes.com/docs/campaign_finance_api/}
-#' 
-#' @import jsonlite httr 
+#'
 #' @export
 #' @template finance
 #' @template nyt
@@ -18,15 +15,15 @@
 #'  \item Receipts Total `receipts-total`
 #'  \item Refund Total `refund-total`
 #' }
+#' @references \url{http://developer.nytimes.com/docs/campaign_finance_api/}
 #' @examples \dontrun{
 #' cf_candidate_leaders(campaign_cycle = 2010, category='end-cash')
 #' cf_candidate_leaders(campaign_cycle = 2008, category='receipts-total')
 #' }
 
-`cf_candidate_leaders` <- function(campaign_cycle=NULL, category=NULL, 
-                                   key=getOption("nytimes_cf_key"), ...) {
-  url <- sprintf("http://api.nytimes.com/svc/elections/us/v3/finances/%s/candidates/leaders/%s.json", campaign_cycle, category)
-  args <- rtimes_compact(list(`api-key`=check_key(key, "nytimes_cf_key")))
+`cf_candidate_leaders` <- function(campaign_cycle=NULL, category=NULL, key=NULL, ...) {
+  url <- sprintf("%s%s/candidates/leaders/%s.json", cf_base(), campaign_cycle, category)
+  args <- rc(list(`api-key` = check_key(key, "nytimes_cf_key")))
   ans <- GET(url, query = args, ...)
   stop_for_status(ans)
   tt <- content(ans, as = "text")

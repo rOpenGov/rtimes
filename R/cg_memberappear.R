@@ -1,7 +1,7 @@
 #' Get information about a particular member's appearances on the House or 
 #' Senate floor.
 #' 
-#' @import httr
+#' @export
 #' @template nytcgkey
 #' @param memberid The member's unique ID number (alphanumeric). To find a 
 #'    member's ID number, get the list of members for the appropriate House 
@@ -12,15 +12,13 @@
 #'    Use the index ID as member-id in your request.
 #' @return Get information about a particular member's appearances on the 
 #'    House or Senate floor. 
-#' @export
 #' @examples \dontrun{
 #' cg_memberappear(memberid='S001181')
 #' }
 cg_memberappear <- function(memberid = NULL, key = NULL, ...)  {
-  url = "http://api.nytimes.com/svc/politics/v3/us/legislative/congress/members/"
-  url2 <- paste(url, memberid, '/floor_appearances.json', sep='')
+  url2 <- paste(paste0(cg_base(), "members/"), memberid, '/floor_appearances.json', sep = '')
   args <- list('api-key' = check_key(key, "nytimes_cg_key"))
-  tt <- GET(url2, query=args, ...)
+  tt <- GET(url2, query = args, ...)
   stop_for_status(tt)
   out <- content(tt, as = 'text')
   jsonlite::fromJSON(out, simplifyVector = FALSE)

@@ -19,11 +19,15 @@ cf_candidate_details(campaign_cycle = NULL, fec_id = NULL, key = NULL,
 \item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }
 \description{
-See \url{http://developer.nytimes.com/docs/campaign_finance_api/}
+Campaign finance NYTimes API - candidate details
 }
 \examples{
 \dontrun{
 cf_candidate_details(campaign_cycle = 2008, fec_id = 'P80003338')
+cf_candidate_details(campaign_cycle = 2012, fec_id = 'P80003338')
 }
+}
+\references{
+\url{http://developer.nytimes.com/docs/campaign_finance_api/}
 }
 

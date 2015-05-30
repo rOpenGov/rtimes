@@ -18,12 +18,15 @@ cf_candidate_search(campaign_cycle = NULL, query = NULL, key = NULL, ...)
 \item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }
 \description{
-See \url{http://developer.nytimes.com/docs/campaign_finance_api/}
+Campaign finance NYTimes API - candidate search
 }
 \examples{
 \dontrun{
 cf_candidate_search(campaign_cycle = 2010, query='smith')
 cf_candidate_search(campaign_cycle = 2008, query='obama')
 }
+}
+\references{
+\url{http://developer.nytimes.com/docs/campaign_finance_api/}
 }
 

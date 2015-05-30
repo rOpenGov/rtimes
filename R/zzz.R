@@ -1,9 +1,11 @@
-rtimes_compact <- function(x) Filter(Negate(is.null), x)
+rc <- function(x) Filter(Negate(is.null), x)
 
 nnlcol <- function(x) if (!is.null(x)) paste(x, collapse = ",") else NULL
 nnlna <- function(x) if (!is.null(x)) paste(x, collapse = ",") else NA
 
 t_base <- function() "http://api.nytimes.com/svc/"
+cg_base <- function() paste0(t_base(), "politics/v3/us/legislative/congress/")
+cf_base <- function() paste0(t_base(), "elections/us/v3/finances/")
 
 rtimes_GET <- function(url, args, callopts, ...){
   ans <- GET(url, query = args, callopts, ...)
@@ -20,7 +22,7 @@ as_meta <- function(x){
   data.frame(x$response$meta, stringsAsFactors = FALSE)
 }
 
-cright <- function() "Copyright (c) 2013 The New York Times Company.  All Rights Reserved."
+cright <- function() "Copyright (c) 2015 The New York Times Company.  All Rights Reserved."
 
 pluck <- function(x, name, type) {
   if (missing(type)) {

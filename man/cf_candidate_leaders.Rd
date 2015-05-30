@@ -4,8 +4,8 @@
 \alias{cf_candidate_leaders}
 \title{Campaign finance NYTimes API - candidate leaders}
 \usage{
-cf_candidate_leaders(campaign_cycle = NULL, category = NULL,
-  key = getOption("nytimes_cf_key"), ...)
+cf_candidate_leaders(campaign_cycle = NULL, category = NULL, key = NULL,
+  ...)
 }
 \arguments{
 \item{campaign_cycle}{An even-numbdered year in YYYY format. Presidential data:
@@ -30,12 +30,15 @@ cf_candidate_leaders(campaign_cycle = NULL, category = NULL,
 \item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }
 \description{
-See \url{http://developer.nytimes.com/docs/campaign_finance_api/}
+Campaign finance NYTimes API - candidate leaders
 }
 \examples{
 \dontrun{
 cf_candidate_leaders(campaign_cycle = 2010, category='end-cash')
 cf_candidate_leaders(campaign_cycle = 2008, category='receipts-total')
 }
+}
+\references{
+\url{http://developer.nytimes.com/docs/campaign_finance_api/}
 }
 

@@ -17,8 +17,7 @@
 #' }
 `cg_memberslist` <- function(congress_no = NULL, chamber = NULL, state = NULL, 
   district = NULL, key = NULL, ...) {
-  url = "http://api.nytimes.com/svc/politics/v3/us/legislative/congress/"
-  url2 <- paste(url, congress_no, '/', chamber, '/members.json', sep = '')
+  url2 <- paste(cg_base(), congress_no, '/', chamber, '/members.json', sep = '')
   args <- list('api-key' = check_key(key, "nytimes_cg_key"), state = state, district = district)
   tt <- GET(url2, query = args, ...)
   stop_for_status(tt)
