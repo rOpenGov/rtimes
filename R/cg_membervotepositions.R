@@ -1,6 +1,7 @@
 #' Get a list of members who have left the Senate or House or have announced 
 #' plans to do so.
 #' 
+#' @export
 #' @template nytcgkey
 #' @param memberid The member's unique ID number (alphanumeric). To find a 
 #'    member's ID number, get the list of members for the appropriate House 
@@ -10,7 +11,6 @@
 #'    http://bioguide.congress.gov/scripts/biodisplay.pl?index=C001041). 
 #'    Use the index ID as member-id in your request.
 #' @return List of new members of he current Congress.
-#' @export
 #' @examples \dontrun{
 #' cg_membervotepositions('S001181')
 #' }

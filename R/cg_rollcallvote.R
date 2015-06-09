@@ -1,5 +1,8 @@
 #' Get a specific roll-call vote, including a complete list of member positions.
 #' 
+#' CURRENTLY NOT WORKING
+#' 
+#' @export
 #' @template nytcgkey
 #' @param congress_no The number of the Congress during which the members served.
 #' @param chamber One of 'house' or 'senate.
@@ -12,12 +15,11 @@
 #'    and US House (http://artandhistory.house.gov/house_history/index.aspx).
 #' @return Get a specific roll-call vote, including a complete list of member 
 #'    positions. 
-#' @export
 #' @examples \dontrun{
-#' cg_rollcallvote(112, 'house', 1, 00235)
+#' cg_rollcallvote(105, 'house', 2, 38)
 #' }
-cg_rollcallvote <- function(congress_no = NULL, chamber = NULL, 
-  session_no = NULL, rollcall_no = NULL, key = NULL, ...) {
+cg_rollcallvote <- function(congress_no = NULL, chamber = NULL, session_no = NULL, 
+                            rollcall_no = NULL, key = NULL, ...) {
   url2 <- paste(cg_base(), congress_no, '/', chamber, '/sessions/', session_no, 
                 '/votes/', rollcall_no, '.json', sep = '')
   args <- list('api-key' = check_key(key, "nytimes_cg_key"))

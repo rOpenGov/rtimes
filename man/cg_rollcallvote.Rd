@@ -31,11 +31,11 @@ Get a specific roll-call vote, including a complete list of member
    positions.
 }
 \description{
-Get a specific roll-call vote, including a complete list of member positions.
+CURRENTLY NOT WORKING
 }
 \examples{
 \dontrun{
-cg_rollcallvote(112, 'house', 1, 00235)
+cg_rollcallvote(105, 'house', 2, 38)
 }
 }
 
