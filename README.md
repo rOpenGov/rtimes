@@ -4,6 +4,7 @@ rtimes
 
 
 [![Build Status](https://api.travis-ci.org/rOpenGov/rtimes.png)](https://travis-ci.org/rOpenGov/rtimes)
+[![codecov.io](https://codecov.io/github/ropengov/rtimes/coverage.svg?branch=master)](https://codecov.io/github/ropengov/rtimes?branch=master)
 
 + Maintainer: Scott Chamberlain
 + License: MIT
