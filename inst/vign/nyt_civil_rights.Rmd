@@ -1,6 +1,7 @@
 <!--
 %\VignetteEngine{knitr::knitr}
 %\VignetteIndexEntry{NYTimes Civil Rights}
+%\VignetteEncoding{UTF-8}
 -->
 
 ```{r echo=FALSE}

@@ -1,6 +1,7 @@
 <!--
 %\VignetteEngine{knitr::knitr}
 %\VignetteIndexEntry{rtimes vignette}
+%\VignetteEncoding{UTF-8}
 -->
 
 ```{r echo=FALSE}
@@ -30,7 +31,7 @@ devtools::install_github("ropengov/rtimes")
 ### Load rtimes
 
 ```{r load}
-library(rtimes)
+library('rtimes')
 ```
 
 _Note: Member ID S001181 is Jeanne Shaheen_
@@ -46,7 +47,7 @@ ldply(out$results[[1]]$bills, function(x) data.frame(x[c('number','cosponsors')]
 ### Get information about a particular member's appearances on the House or Senate floor.
 
 ```{r cg_memberappear}
-library(plyr)
+library('plyr')
 out <- cg_memberappear(memberid='S001181')
 ldply(out$results[[1]]$appearances, function(x) data.frame(x[c('date','title')]))
 ```
