@@ -57,4 +57,4 @@
 #' (as of 2014-10-21).
 #' @param limit	(numeric) If not specified 20 results are returned. Otherwise the specified number 
 #' of results or a maximum of 20 results are returned. BEWARE - this parameter doesn't work now 
-#' (as of 2014-10-21).
+#' (as of 2015-08-10).

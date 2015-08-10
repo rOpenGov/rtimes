@@ -98,7 +98,7 @@ specified latitude/longitude pair.}
 
 \item{limit}{(numeric) If not specified 20 results are returned. Otherwise the specified number
 of results or a maximum of 20 results are returned. BEWARE - this parameter doesn't work now
-(as of 2014-10-21).}
+(as of 2015-08-10).}
 
 \item{key}{your New York Times API key; pass in, or loads from .Rprofile as
 \code{nytimes_geo_key}, or from .Renviron as \code{NYTIMES_GEO_KEY}}

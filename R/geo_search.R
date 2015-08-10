@@ -36,16 +36,23 @@
       feature_code_name=feature_code_name,
       time_zone_id=time_zone_id,dst_offset=dst_offset,gmt_offset=gmt_offset,
       bounding_box=bounding_box,nearby=nearby,
-      offset=offset, limit=limit, `api-key`=check_key(key)))
+      offset=offset, perpage=limit, `api-key`=check_key(key)))
 
   res <- rtimes_GET(paste0(t_base(), "semantic/v2/geocodes/query.json"), args, list(), ...)
-  list(copyright=cright(), meta=meta(res), data=rbind_all(lapply(res$results, geo_proc)))
+  list(copyright = cright(), meta = meta(res), data = rbind_all(lapply(res$results, geo_proc)))
 }
 
-geo_proc <- function(y){
-  df <- data.frame(pop(y, "geocode"), stringsAsFactors = FALSE)
-  tmp <- data.frame(t(sapply(pop(y$geocode, "geocode_id"), nnlna, USE.NAMES = FALSE)), stringsAsFactors = FALSE)
-  cbind(df, tmp)
+geo_proc <- function(y) {
+  y <- null_to_na(y)
+  data.frame(y, stringsAsFactors = FALSE)
+#   df <- data.frame(pop(y, "geocode"), stringsAsFactors = FALSE)
+#   tmp <- data.frame(t(sapply(pop(y$geocode, "geocode_id"), nnlna, USE.NAMES = FALSE)), stringsAsFactors = FALSE)
+#   cbind(df, tmp)
+}
+
+null_to_na <- function(y) {
+  y[sapply(y, is.null)] <- NA
+  y
 }
 
 # popply <- function(x, name, type) {
