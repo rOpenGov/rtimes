@@ -21,10 +21,13 @@
 
 `cg_billscosponsor` <- function(memberid = NULL, type = NULL, key = NULL, ...) {
   url = "http://api.nytimes.com/svc/politics/v3/us/legislative/congress/members/"
-  url2 <- paste(url, memberid, '/bills/', type, '.json', sep='')
+  url2 <- paste(url, memberid, '/bills/', type, '.json', sep = '')
   args <- list('api-key' = check_key(key, "nytimes_cg_key"))
-  tt <- GET(url2, query=args, ...)
+  tt <- GET(url2, query = args, ...)
   stop_for_status(tt)
   out <- content(tt, as = 'text')
-  jsonlite::fromJSON(out, simplifyVector = FALSE)
+  res <- jsonlite::fromJSON(out, simplifyVector = FALSE)
+  dat <- rbind_all_df(res$results[[1]]$bills)
+  meta <- data.frame(pop(res$results[[1]], "bills"), stringsAsFactors = FALSE)
+  list(copyright = cright(), meta = meta, data = dat)
 }

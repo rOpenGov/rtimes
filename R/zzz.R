@@ -41,3 +41,13 @@ check_key <- function(x, y = "nytimes_geo_key"){
   tmp <- if (is.null(x)) Sys.getenv(toupper(y), "") else x
   if (tmp == "") getOption(y, stop("need an API key for ", y)) else tmp
 }
+
+do_data_frame <- function(x) {
+  data.frame(pop(x$results[[1]], "members"), stringsAsFactors = FALSE)
+}
+
+rbind_all_df <- function(x) {
+  tmpdf <- rbind_all(lapply(x, data.frame, stringsAsFactors = FALSE))
+  tmpdf$label <- names(x)
+  tmpdf
+}

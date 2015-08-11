@@ -28,10 +28,10 @@ and US House (http://artandhistory.house.gov/house_history/index.aspx).}
 }
 \value{
 Get a specific roll-call vote, including a complete list of member
-   positions.
+   positions. A list with metadata about the bill, and vote results.
 }
 \description{
-CURRENTLY NOT WORKING
+Get a specific roll-call vote, including a complete list of member positions.
 }
 \examples{
 \dontrun{

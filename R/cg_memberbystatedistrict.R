@@ -10,7 +10,7 @@
 #'    a 404 response will be returned.
 #' @return List of new members of he current Congress.
 #' @examples \dontrun{
-#' cg_memberbystatedistrict('senate', 'NH')
+#' cg_memberbystatedistrict(chamber='senate', state='NH')
 #' }
 `cg_memberbystatedistrict` <- function(chamber = NULL, state = NULL, 
                                      district = NULL, key = NULL, ...) {
@@ -20,5 +20,8 @@
   tt <- GET(url2, query = args, ...)
   stop_for_status(tt)
   out <- content(tt, as = 'text')
-  jsonlite::fromJSON(out, simplifyVector = FALSE)
+  res <- jsonlite::fromJSON(out, simplifyVector = FALSE)
+  dat <- rbind_all_df(res$results[[1]]$bills)
+  meta <- data.frame(pop(res$results[[1]], "bills"), stringsAsFactors = FALSE)
+  list(copyright = cright(), meta = meta, data = dat)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/cg_memberbioroles.R
 \name{cg_memberbioroles}
 \alias{cg_memberbioroles}
-\title{Get biographical and Congressional role information for a particular member of Congress.}
+\title{Member bio roles}
 \usage{
 cg_memberbioroles(memberid = NULL, key = NULL, ...)
 }

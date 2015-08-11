@@ -12,5 +12,7 @@ cg_newmembers <- function(key = NULL, ...) {
   tt <- GET(url2, query = args, ...)
   stop_for_status(tt)
   out <- content(tt, as = 'text')
-  jsonlite::fromJSON(out, simplifyVector = FALSE)
+  res <- jsonlite::fromJSON(out, simplifyVector = FALSE)
+  dat <- rbind_all(lapply(res$results[[1]]$members, data.frame, stringsAsFactors = FALSE))
+  list(copyright = cright(), meta = do_data_frame(res), data = dat)
 }

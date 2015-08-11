@@ -1,7 +1,5 @@
 #' Get a specific roll-call vote, including a complete list of member positions.
 #' 
-#' CURRENTLY NOT WORKING
-#' 
 #' @export
 #' @template nytcgkey
 #' @param congress_no The number of the Congress during which the members served.
@@ -14,7 +12,7 @@
 #'    (http://www.senate.gov/pagelayout/legislative/a_three_sections_with_teasers/votes.htm),
 #'    and US House (http://artandhistory.house.gov/house_history/index.aspx).
 #' @return Get a specific roll-call vote, including a complete list of member 
-#'    positions. 
+#'    positions. A list with metadata about the bill, and vote results.
 #' @examples \dontrun{
 #' cg_rollcallvote(105, 'house', 2, 38)
 #' }
@@ -26,5 +24,13 @@ cg_rollcallvote <- function(congress_no = NULL, chamber = NULL, session_no = NUL
   tt <- GET(url2, query = args, ...)
   stop_for_status(tt)
   out <- content(tt, as = 'text')
-  jsonlite::fromJSON(out, simplifyVector = FALSE)
+  res <- jsonlite::fromJSON(out, simplifyVector = FALSE)
+  dat <- rbind_all_df(res$results$votes$vote$positions)
+  meta <- data.frame(res$results$votes$vote[c('congress', 'session', 'chamber', 'roll_call', 
+      'question', 'description', 'vote_type', 'date', 'time', 'result')], stringsAsFactors = FALSE)
+  votes <- rbind_all_df(res$results$votes$vote[c('democratic', 'republican', 'independent', 'total')])
+  list(copyright = cright(), 
+       bill_info = res$results$votes$vote$bill, 
+       meta = meta, 
+       votes = votes)
 }

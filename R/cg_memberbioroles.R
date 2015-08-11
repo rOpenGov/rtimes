@@ -1,4 +1,6 @@
-#' Get biographical and Congressional role information for a particular member of Congress.
+#' @title Member bio roles
+#' 
+#' @description Get biographical and Congressional role information for a particular member of Congress.
 #' 
 #' @export
 #' @template nytcgkey
@@ -19,5 +21,16 @@
   tt <- GET(url2, query = args, ...)
   stop_for_status(tt)
   out <- content(tt, as = 'text')
-  jsonlite::fromJSON(out, simplifyVector = FALSE)
+  res <- jsonlite::fromJSON(out, simplifyVector = FALSE)
+  dat <- lapply(res$results[[1]]$roles, function(z) {
+    if (length(z$committees) == 0) {
+      list(meta = data.frame(null_to_na(pop(z, "committees")), stringsAsFactors = FALSE),
+           data = NULL)
+    } else {
+      list(meta = data.frame(null_to_na(pop(z, "committees")), stringsAsFactors = FALSE),
+           data = rbind_all_df(z$committees))
+    }
+  })
+  meta <- data.frame(pop(res$results[[1]], "roles"), stringsAsFactors = FALSE)
+  list(copyright = cright(), meta = meta, data = dat)
 }

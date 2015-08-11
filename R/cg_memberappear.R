@@ -21,5 +21,9 @@ cg_memberappear <- function(memberid = NULL, key = NULL, ...)  {
   tt <- GET(url2, query = args, ...)
   stop_for_status(tt)
   out <- content(tt, as = 'text')
-  jsonlite::fromJSON(out, simplifyVector = FALSE)
+  res <- jsonlite::fromJSON(out, simplifyVector = FALSE)
+  dat <- rbind_all_df(res$results[[1]]$appearances)
+  meta <- data.frame(res$results[[1]][c('member_id','name','api_uri','num_results')], 
+                     stringsAsFactors = FALSE)
+  list(copyright = cright(), meta = meta, data = dat)
 }
