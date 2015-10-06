@@ -8,12 +8,6 @@ rtimes
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/rtimes?color=2ED968)](https://github.com/metacran/cranlogs.app)
 [![cran version](http://www.r-pkg.org/badges/version/rtimes)](http://cran.rstudio.com/web/packages/rtimes)
 
-+ Maintainer: Scott Chamberlain
-+ License: MIT
-+ Report any problems in the [Issues Tracker](https://github.com/ropengov/rtimes/issues), or just fork and submit changes, etc.
-
-## Description
-
 `rtimes` is a collection of functions to search and acquire data from various New York Times APIs.
 
 Functions in `rtimes` that wrap these APIs are prefixed by two letter acronyms fo reach API + the function name itself, e.g.: `cg` + `fxn`
@@ -38,9 +32,16 @@ options(nytimes_cf_key = "YOURKEYHERE")
 options(nytimes_geo_key = "YOURKEYHERE")
 ```
 
-## Quick start
+## Installation
 
-### Installation
+From CRAN
+
+
+```r
+install.packages("rtimes")
+```
+
+Development version from GitHub
 
 
 ```r
@@ -53,52 +54,28 @@ devtools::install_github("ropengov/rtimes")
 library("rtimes")
 ```
 
-### Congress API
+## Congress API
 
 
 ```r
 out <- cg_rollcallvote(congress_no = 105, chamber = 'house', session_no = 2, rollcall_no = 38)
-#> Error in cg_rollcallvote(congress_no = 105, chamber = "house", session_no = 2, : server error: (504) Gateway Timeout
-out$results$votes$vote$positions[1:3]
-#> [[1]]
-#> [[1]]$member_id
-#> [1] "A000014"
+out$votes
+#> Source: local data frame [4 x 6]
 #> 
-#> [[1]]$vote_position
-#> [1] "Yes"
-#> 
-#> [[1]]$dw_nominate
-#> [1] ""
-#> 
-#> 
-#> [[2]]
-#> [[2]]$member_id
-#> [1] "A000022"
-#> 
-#> [[2]]$vote_position
-#> [1] "Yes"
-#> 
-#> [[2]]$dw_nominate
-#> [1] ""
-#> 
-#> 
-#> [[3]]
-#> [[3]]$member_id
-#> [1] "A000055"
-#> 
-#> [[3]]$vote_position
-#> [1] "Yes"
-#> 
-#> [[3]]$dw_nominate
-#> [1] ""
+#>     yes    no present not_voting majority_position       label
+#>   (chr) (chr)   (chr)      (chr)             (chr)       (chr)
+#> 1   194     0       0          9               Yes  democratic
+#> 2   219     1       0          6               Yes  republican
+#> 3     1     0       0          0                NA independent
+#> 4   414     1       0         15                NA       total
 ```
 
-### Article Search API
+## Article Search API
 
 
 ```r
-out <- as_search(q="bailout", begin_date = "20081001", end_date = '20081201')
-out$data[1:3]
+out <- as_search(q = "bailout", begin_date = "20081001", end_date = '20081201')
+out$data[1:2]
 #> [[1]]
 #> <NYTimes article>Toxic Bailout
 #>   Type: News
@@ -108,14 +85,6 @@ out$data[1:3]
 #>   Snippet: How can you be naked wearing shorts?
 #> 
 #> [[2]]
-#> <NYTimes article>Bailout (and Buildup)
-#>   Type: Op-Ed
-#>   Published: 2008-10-22T00:00:00Z
-#>   Word count: 810
-#>   URL: http://www.nytimes.com/2008/10/22/opinion/22friedman.html
-#>   Snippet: We can’t afford a financial bailout that also isn’t a green buildup — a buildup of a new clean energy industry that strengthens America.
-#> 
-#> [[3]]
 #> <NYTimes article>Bailout narratives
 #>   Type: Blog
 #>   Published: 2008-10-01T10:08:26Z
@@ -124,41 +93,43 @@ out$data[1:3]
 #>   Snippet: There seem to be two prevailing narratives about the bailout plan(s). Both have elements of truth, but are fundamentally wrong. One narrative is that of the Wise Men and the Destructive Yahoos. According to this narrative, men who Understand What...
 ```
 
-### Campaign Finance API
+## Campaign Finance API
 
 
 ```r
 res <- cf_candidate_details(campaign_cycle = 2008, fec_id = 'P80003338')
-res$results[[1]][1:4]
-#> $id
-#> [1] "P80003338"
+res$data
+#> Source: local data frame [2 x 19]
 #> 
-#> $name
-#> [1] "OBAMA, BARACK"
-#> 
-#> $party
-#> [1] "DEM"
-#> 
-#> $district
-#> NULL
+#>   cycle.id cycle.fecid                       cycle.name cycle.party
+#>      (chr)       (chr)                            (chr)       (chr)
+#> 1     2896   P80003338 /BIDEN, JOSEPH R., OBAMA, BARACK         DEM
+#> 2    50162   P80003338 /BIDEN, JOSEPH R., OBAMA, BARACK         DEM
+#> Variables not shown: cycle.status (chr), cycle.address_one (chr),
+#>   cycle.address_two (chr), cycle.city (chr), cycle.state (chr), cycle.zip
+#>   (chr), cycle.fec_committee_id (chr), cycle.cycle (chr), cycle.district
+#>   (chr), cycle.office_state (chr), cycle.cand_status (chr), cycle.branch
+#>   (chr), relative_uri (chr), cycle.created_at (chr), cycle.updated_at
+#>   (chr)
 ```
 
-### Geographic API
+## Geographic API
 
 
 ```r
-geo_search(elevation = '2000_3000', feature_class='P')
+geo_search(elevation = '2000_3000', feature_class = 'P')
 #> $copyright
 #> [1] "Copyright (c) 2015 The New York Times Company.  All Rights Reserved."
 #> 
 #> $meta
 #>   status num_results
-#> 1     OK          20
+#> 1     OK         100
 #> 
 #> $data
-#> Source: local data frame [20 x 27]
+#> Source: local data frame [100 x 27]
 #> 
 #>    concept_id          concept_name geocode_id geoname_id          name
+#>         (chr)                 (chr)      (int)      (int)         (chr)
 #> 1       26660   Los Angeles (Calif)        132    5368361   Los Angeles
 #> 2       27500      New Orleans (La)        148    4335045   New Orleans
 #> 3       24084         Chicago (Ill)        160    4887398       Chicago
@@ -169,16 +140,7 @@ geo_search(elevation = '2000_3000', feature_class='P')
 #> 8       26636      London (England)        308    2643743        London
 #> 9       23196       Beijing (China)        312    1816670       Beijing
 #> 10      24576        Detroit (Mich)        328    4990729       Detroit
-#> 11      26488       Las Vegas (Nev)        352    5506956     Las Vegas
-#> 12      27008           Miami (Fla)        356    4164138         Miami
-#> 13      25788         Houston (Tex)        396    4699066       Houston
-#> 14      28132     Philadelphia (Pa)        436    4560349  Philadelphia
-#> 15      22564           Albany (NY)        464    5106834        Albany
-#> 16      22912          Atlanta (Ga)        472    4180439       Atlanta
-#> 17      23284      Berlin (Germany)        476    2950159        Berlin
-#> 18      29720         Tokyo (Japan)        484    1850147         Tokyo
-#> 19      29016        Seattle (Wash)        496    5809844       Seattle
-#> 20      27764              Oklahoma        500    4544349 Oklahoma City
+#> ..        ...                   ...        ...        ...           ...
 #> Variables not shown: latitude (dbl), longitude (dbl), elevation (int),
 #>   population (int), country_code (chr), country_name (chr), admin_code1
 #>   (chr), admin_code2 (chr), admin_code3 (chr), admin_code4 (chr),
@@ -187,3 +149,10 @@ geo_search(elevation = '2000_3000', feature_class='P')
 #>   time_zone_id (chr), dst_offset (dbl), gmt_offset (dbl), geocodes_created
 #>   (chr), geocodes_updated (chr)
 ```
+
+## Meta
+
++ Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
++ Maintainer: Scott Chamberlain
++ License: MIT
++ Report any problems in the [Issues Tracker](https://github.com/ropengov/rtimes/issues), or just fork and submit changes, etc.
