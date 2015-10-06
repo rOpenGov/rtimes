@@ -1,8 +1,5 @@
 #' Geographic search NYTimes API
 #'
-#' @importFrom httr GET content stop_for_status
-#' @importFrom jsonlite fromJSON
-#' @importFrom dplyr rbind_all
 #' @export
 #' @template geographic
 #' @param key your New York Times API key; pass in, or loads from .Rprofile as
@@ -16,6 +13,10 @@
 #' geo_search(elevation = '2000_3000', feature_class='P')
 #' geo_search(feature_class='P', country_code='US', population='50000_')
 #' geo_search(nearby=c(38.920833,-94.622222), population='100000_', feature_class='P')
+#' 
+#' # curl options
+#' library("httr")
+#' geo_search(country_code = 'US', config = verbose())
 #' }
 
 `geo_search` <- function(name = NULL, latitude = NULL, longitude = NULL, elevation = NULL,

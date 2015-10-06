@@ -22,11 +22,12 @@ Campaign finance NYTimes API - candidate search
 }
 \examples{
 \dontrun{
-cf_candidate_search(campaign_cycle = 2010, query='smith')
-cf_candidate_search(campaign_cycle = 2008, query='obama')
+# cf_candidate_search(campaign_cycle = 2010, query='smith')
+# cf_candidate_search(campaign_cycle = 2008, query='obama')
 }
 }
 \references{
 \url{http://developer.nytimes.com/docs/campaign_finance_api/}
 }
+\keyword{internal}
 

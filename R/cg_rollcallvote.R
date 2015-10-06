@@ -18,13 +18,11 @@
 #' }
 cg_rollcallvote <- function(congress_no = NULL, chamber = NULL, session_no = NULL, 
                             rollcall_no = NULL, key = NULL, ...) {
+  
   url2 <- paste(cg_base(), congress_no, '/', chamber, '/sessions/', session_no, 
                 '/votes/', rollcall_no, '.json', sep = '')
   args <- list('api-key' = check_key(key, "nytimes_cg_key"))
-  tt <- GET(url2, query = args, ...)
-  stop_for_status(tt)
-  out <- content(tt, as = 'text')
-  res <- jsonlite::fromJSON(out, simplifyVector = FALSE)
+  res <- rtimes_GET(url2, args, ...)
   dat <- rbind_all_df(res$results$votes$vote$positions)
   meta <- data.frame(res$results$votes$vote[c('congress', 'session', 'chamber', 'roll_call', 
       'question', 'description', 'vote_type', 'date', 'time', 'result')], stringsAsFactors = FALSE)

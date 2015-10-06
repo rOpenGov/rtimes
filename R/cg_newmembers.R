@@ -9,10 +9,8 @@
 cg_newmembers <- function(key = NULL, ...) {
   url2 <- paste(paste0(cg_base(), "members/new"), '.json', sep = '')
   args <- list('api-key' = check_key(key, "nytimes_cg_key"))
-  tt <- GET(url2, query = args, ...)
-  stop_for_status(tt)
-  out <- content(tt, as = 'text')
-  res <- jsonlite::fromJSON(out, simplifyVector = FALSE)
-  dat <- rbind_all(lapply(res$results[[1]]$members, data.frame, stringsAsFactors = FALSE))
-  list(copyright = cright(), meta = do_data_frame(res), data = dat)
+  res <- rtimes_GET(url2, args, ...)
+  df <- to_df(res$results[[1]]$members)
+  list(status = res$status, copyright = res$copyright, 
+       meta = do_data_frame(res), data = df)
 }

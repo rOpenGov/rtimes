@@ -116,6 +116,10 @@ geo_search(elevation = '_3000', feature_class='P')
 geo_search(elevation = '2000_3000', feature_class='P')
 geo_search(feature_class='P', country_code='US', population='50000_')
 geo_search(nearby=c(38.920833,-94.622222), population='100000_', feature_class='P')
+
+# curl options
+library("httr")
+geo_search(country_code = 'US', config = verbose())
 }
 }
 \references{

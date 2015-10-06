@@ -23,8 +23,8 @@ cg_membersponsorcompare <- function(memberid_1 = NULL, memberid_2 = NULL,
   url2 <- paste(paste0(cg_base(), "members/"), memberid_1, '/bills/', memberid_2, '/',
                 congress_no, '/', chamber, '.json', sep = '')
   args <- list('api-key' = check_key(key, "nytimes_cg_key"))
-  tt <- GET(url2, query = args, ...)
-  stop_for_status(tt)
-  out <- content(tt, as = 'text')
-  jsonlite::fromJSON(out, simplifyVector = FALSE)
+  res <- rtimes_GET(url2, args, ...)
+  df <- to_df(res$results[[1]]$bills)
+  list(status = res$status, copyright = res$copyright, 
+       meta = do_data_frame(res, "bills"), data = df)  
 }

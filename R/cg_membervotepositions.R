@@ -17,8 +17,12 @@
 cg_membervotepositions <- function(memberid = NULL, key = NULL, ...) {
   url2 <- paste(paste0(cg_base(), "members/"), memberid, '/votes.json', sep = '')
   args <- list('api-key' = check_key(key, "nytimes_cg_key"))
-  tt <- GET(url2, query = args, ...)
-  stop_for_status(tt)
-  out <- content(tt, as = 'text')
-  jsonlite::fromJSON(out, simplifyVector = FALSE)
+  res <- rtimes_GET(url2, args, ...)
+  dat <-  lapply(res$results[[1]]$votes, function(z) {
+    if (length(z$bill) == 0) z$bill <- NULL
+    as.list(unlist(z, recursive = TRUE))
+  })
+  df <- to_df(dat)
+  list(status = res$status, copyright = res$copyright, 
+       meta = do_data_frame(res, "votes"), data = df)  
 }

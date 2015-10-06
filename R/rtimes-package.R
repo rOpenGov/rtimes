@@ -27,6 +27,9 @@
 #'  \item \code{options(nytimes_geo_key = "YOURKEYHERE")}
 #' }
 #' 
+#' @importFrom httr GET content stop_for_status
+#' @importFrom jsonlite fromJSON
+#' @importFrom dplyr rbind_all
 #' @name rtimes-package
 #' @aliases rtimes
 #' @docType package

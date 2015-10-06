@@ -6,8 +6,8 @@ test_that("returns the correct stuff", {
   skip_on_cran()
   
   a <- geo_search(country_code = 'US', key = key)
-  b <- geo_search(elevation = '1_', feature_class = 'P', key = key)
-  d <- geo_search(elevation = '_3000', feature_class = 'P', key = key)
+  # b <- geo_search(elevation = '1_', feature_class = 'P', key = key, limit = 2)
+  # d <- geo_search(elevation = '_3000', feature_class = 'P', key = key, limit = 2)
   e <- geo_search(feature_class = 'P', country_code = 'US', population = '50000_', key = key)
   
   # retruns the correct classes
@@ -16,12 +16,12 @@ test_that("returns the correct stuff", {
   expect_match(a$copyright, "Copyright")
   expect_is(a$data, "data.frame")
   
-  expect_is(b, "list")
-  expect_is(b$meta, "data.frame")
-  expect_is(b$data, "data.frame")
-  
-  expect_is(d, "list")
-  expect_is(d$meta, "data.frame")
+  # expect_is(b, "list")
+  # expect_is(b$meta, "data.frame")
+  # expect_is(b$data, "data.frame")
+  # 
+  # expect_is(d, "list")
+  # expect_is(d$meta, "data.frame")
   expect_is(e$data, "data.frame")
   
   expect_is(e, "list")

@@ -1,13 +1,13 @@
 #' Campaign finance NYTimes API - candidate search
-#'
-#' @export
+#' 
+#' @keywords internal
 #' @template finance
 #' @template nyt
 #' @param query Last name of a candidate
 #' @references \url{http://developer.nytimes.com/docs/campaign_finance_api/}
 #' @examples \dontrun{
-#' cf_candidate_search(campaign_cycle = 2010, query='smith')
-#' cf_candidate_search(campaign_cycle = 2008, query='obama')
+#' # cf_candidate_search(campaign_cycle = 2010, query='smith')
+#' # cf_candidate_search(campaign_cycle = 2008, query='obama')
 #' }
 
 `cf_candidate_search` <- function(campaign_cycle=NULL, query=NULL, key = NULL, ...) {

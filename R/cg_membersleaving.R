@@ -11,8 +11,8 @@
 cg_membersleaving <- function(congress_no = NULL, chamber = NULL, key = NULL, ...) {
   url2 <- paste(cg_base(), congress_no, '/', chamber, '/members/leaving.json', sep = '')
   args <- list('api-key' = check_key(key, "nytimes_cg_key"))
-  tt <- GET(url2, query = args, ...)
-  stop_for_status(tt)
-  out <- content(tt, as = 'text')
-  jsonlite::fromJSON(out, simplifyVector = FALSE)
+  res <- rtimes_GET(url2, args, ...)
+  df <- to_df(res$results[[1]]$members)
+  list(status = res$status, copyright = res$copyright, 
+       meta = do_data_frame(res), data = df)
 }

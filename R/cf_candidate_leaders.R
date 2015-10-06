@@ -24,8 +24,7 @@
 `cf_candidate_leaders` <- function(campaign_cycle=NULL, category=NULL, key=NULL, ...) {
   url <- sprintf("%s%s/candidates/leaders/%s.json", cf_base(), campaign_cycle, category)
   args <- rc(list(`api-key` = check_key(key, "nytimes_cf_key")))
-  ans <- GET(url, query = args, ...)
-  stop_for_status(ans)
-  tt <- content(ans, as = "text")
-  jsonlite::fromJSON(tt, simplifyVector = FALSE)
+  res <- rtimes_GET(url, args, ...)
+  df <- to_df(res$results)
+  list(status = res$status, copyright = res$copyright, meta = NULL, data = df)
 }

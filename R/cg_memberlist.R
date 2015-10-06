@@ -19,15 +19,8 @@
   district = NULL, key = NULL, ...) {
   url2 <- paste(cg_base(), congress_no, '/', chamber, '/members.json', sep = '')
   args <- list('api-key' = check_key(key, "nytimes_cg_key"), state = state, district = district)
-  tt <- GET(url2, query = args, ...)
-  stop_for_status(tt)
-  out <- content(tt, as = 'text')
-  res <- jsonlite::fromJSON(out, simplifyVector = FALSE)
-  df <- dplyr::rbind_all(lapply(res$results[[1]]$members, function(x) {
-    x[sapply(x, is.null)] <- NA
-    data.frame(x, stringsAsFactors = FALSE)
-  }))
-  meta <- res$results[[1]]
-  meta <- data.frame(pop(meta, "members"), stringsAsFactors = FALSE)
-  list(status = res$status, copyright = res$copyright, meta = meta, data = df)
+  res <- rtimes_GET(url2, args, ...)
+  df <- to_df(res$results[[1]]$members)
+  list(status = res$status, copyright = res$copyright, 
+       meta = do_data_frame(res), data = df)
 }

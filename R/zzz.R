@@ -7,8 +7,8 @@ t_base <- function() "http://api.nytimes.com/svc/"
 cg_base <- function() paste0(t_base(), "politics/v3/us/legislative/congress/")
 cf_base <- function() paste0(t_base(), "elections/us/v3/finances/")
 
-rtimes_GET <- function(url, args, callopts, ...){
-  ans <- GET(url, query = args, callopts, ...)
+rtimes_GET <- function(url, args, ...) {
+  ans <- GET(url, query = args, ...)
   stop_for_status(ans)
   tt <- content(ans, as = "text")
   jsonlite::fromJSON(tt, FALSE) 
@@ -42,12 +42,21 @@ check_key <- function(x, y = "nytimes_geo_key"){
   if (tmp == "") getOption(y, stop("need an API key for ", y)) else tmp
 }
 
-do_data_frame <- function(x) {
-  data.frame(pop(x$results[[1]], "members"), stringsAsFactors = FALSE)
+do_data_frame <- function(x, z = "members") {
+  tmp <- pop(x$results[[1]], z)
+  tmp <- as.list(unlist(tmp, TRUE))
+  data.frame(tmp, stringsAsFactors = FALSE)
 }
 
 rbind_all_df <- function(x) {
   tmpdf <- rbind_all(lapply(x, data.frame, stringsAsFactors = FALSE))
   tmpdf$label <- names(x)
   tmpdf
+}
+
+to_df <- function(x) {
+  dplyr::rbind_all(lapply(x, function(x) {
+    x[sapply(x, is.null)] <- NA
+    data.frame(x, stringsAsFactors = FALSE)
+  }))
 }
