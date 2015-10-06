@@ -30,7 +30,7 @@ Get a list of the most recent new members of the current Congress.
 }
 \examples{
 \dontrun{
-cg_memberbystatedistrict('senate', 'NH')
+cg_memberbystatedistrict(chamber='senate', state='NH')
 }
 }
 
