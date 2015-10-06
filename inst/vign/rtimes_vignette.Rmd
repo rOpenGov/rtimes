@@ -20,15 +20,40 @@ rtimes vignette - R client for New York Times APIs
 
 `rtimes` is an R package to search and retrieve data from the New York Times congress API. 
 
+Functions in `rtimes` that wrap these APIs are prefixed by two letter acronyms fo reach API + the function name itself, e.g.: `cg` + `fxn`
 
-### Install rtimes
+* `cg` for the [Congress API](http://developer.nytimes.com/docs/congress_api)
+* `as` for the [Article Search API](http://developer.nytimes.com/docs/read/article_search_api_v2)
+* `cf` for the [Campaign Finance API](http://developer.nytimes.com/docs/campaign_finance_api/)
+* `geo` for the [Geographic API](http://developer.nytimes.com/docs/geographic_api)
+
+Please get your own API keys at http://developer.nytimes.com/apps/register - you'll need a different key for each API.
+
+We set up the functions so that you can put the key in your `.Rprofile` file, which will be called on startup of R, and then you don't have to enter your API key for each run of a function. For example, put these entries in your `.Rprofile` file:
+
+```
+options(nytimes_cg_key = "YOURKEYHERE")
+options(nytimes_as_key = "YOURKEYHERE")
+options(nytimes_cf_key = "YOURKEYHERE")
+options(nytimes_geo_key = "YOURKEYHERE")
+```
+
+## Install rtimes
+
+From CRAN
+
+```{r eval=FALSE}
+install.packages("rtimes")
+```
+
+Development version from GitHub
 
 ```{r install, eval=FALSE}
 install.packages("devtools")
 devtools::install_github("ropengov/rtimes")
 ```
 
-### Load rtimes
+## Load rtimes
 
 ```{r load}
 library('rtimes')
@@ -36,18 +61,80 @@ library('rtimes')
 
 _Note: Member ID S001181 is Jeanne Shaheen_
 
-### Get bill cosponsorship data for a particular member.
+## Congress API 
+
+There are currently 11 functions to work with the congress API
+
+* `cg_billscosponsor`
+* `cg_memberappear`
+* `cg_memberbioroles`
+* `cg_memberbystatedistrict`
+* `cg_membersleaving`
+* `cg_memberslist`
+* `cg_membersponsorcompare`
+* `cg_membervotecompare`
+* `cg_membervotepositions`
+* `cg_newmembers`
+* `cg_rollcallvote`
+
+### Bill cosponsorship data for a member
 
 ```{r cg_billscosponsor}
-library("plyr")
 out <- cg_billscosponsor(memberid='S001181', type='cosponsored')
-ldply(out$results[[1]]$bills, function(x) data.frame(x[c('number','cosponsors')]))
+out$data
 ```
 
-### Get information about a particular member's appearances on the House or Senate floor.
+### Member appearances
 
 ```{r cg_memberappear}
-library('plyr')
 out <- cg_memberappear(memberid='S001181')
-ldply(out$results[[1]]$appearances, function(x) data.frame(x[c('date','title')]))
+out$data
+```
+
+## Article search API
+
+This function in most cases outputs a series of S3 objects, one for each item 
+found. Each element, an object of class `as_search`, is a summary of a list
+of data. You can `unclass()` the object if you want, or index into particular
+elements (see egs below).
+
+Here, we search for _bailout_ between two dates, Oct 1 2008 and Dec 1 2008
+
+```{r}
+res <- as_search(q="bailout", begin_date = "20081001", end_date = '20081201')
+res$copyright # copyright
+res$meta # number of hits
+res$data[[1]]
+res$data[[1]]$snippet
+```
+
+Another e.g., Search for keyword _money_, within the _Sports_ and _Foreign_ news desks
+
+```{r}
+res <- as_search(q = "money", fq = 'news_desk:("Sports" "Foreign")')
+res$data[1:3]
+```
+
+## Campaign Finance API
+
+There are currently two functions to work with the campaign finance API
+
+* `cf_candidate_details`
+* `cf_candidate_leaders`
+
+Here, we search for campaign details for the 2008 cycle, with FEC ID number P80003338
+
+```{r}
+cf_candidate_details(campaign_cycle = 2008, fec_id = 'P80003338')
+```
+
+## Geographic API
+
+The geographic API allows you to do geo based searches of place names. It's built on
+the Geonames database.
+
+Here, we search for results for locations in the US
+
+```{r}
+geo_search(country_code = 'US')
 ```

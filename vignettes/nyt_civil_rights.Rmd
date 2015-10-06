@@ -1,6 +1,7 @@
 <!--
 %\VignetteEngine{knitr::knitr}
 %\VignetteIndexEntry{NYTimes Civil Rights}
+%\VignetteEncoding{UTF-8}
 -->
 
 
@@ -47,8 +48,7 @@ Make a data.frame to put data in to
 
 
 ```r
-results <- data.frame(startDate=NA, endDate=NA, afam=NA, racial=NA, 
-                      aa=NA, black=NA, negro=NA, rd=NA, cr=NA, seg=NA)
+results <- data.frame(startDate=NA, endDate=NA, afam=NA)
 ```
 
 Loop through dates

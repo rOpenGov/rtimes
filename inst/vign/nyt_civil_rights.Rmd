@@ -50,8 +50,7 @@ dates <- format(seq(as.Date("1851/1/1"), as.Date("2015/1/1"), by = "3 months"), 
 Make a data.frame to put data in to
 
 ```{r}
-results <- data.frame(startDate=NA, endDate=NA, afam=NA, racial=NA, 
-                      aa=NA, black=NA, negro=NA, rd=NA, cr=NA, seg=NA)
+results <- data.frame(startDate=NA, endDate=NA, afam=NA)
 ```
 
 Loop through dates
