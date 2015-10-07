@@ -6,7 +6,6 @@ rtimes
 [![Build Status](https://api.travis-ci.org/rOpenGov/rtimes.png)](https://travis-ci.org/rOpenGov/rtimes)
 [![codecov.io](https://codecov.io/github/rOpenGov/rtimes/coverage.svg?branch=master)](https://codecov.io/github/rOpenGov/rtimes?branch=master)
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/rtimes?color=2ED968)](https://github.com/metacran/cranlogs.app)
-[![cran version](http://www.r-pkg.org/badges/version/rtimes)](http://cran.rstudio.com/web/packages/rtimes)
 
 `rtimes` is a collection of functions to search and acquire data from various New York Times APIs.
 
