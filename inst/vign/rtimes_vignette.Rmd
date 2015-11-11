@@ -29,14 +29,28 @@ Functions in `rtimes` that wrap these APIs are prefixed by two letter acronyms f
 
 Please get your own API keys at http://developer.nytimes.com/apps/register - you'll need a different key for each API.
 
-We set up the functions so that you can put the key in your `.Rprofile` file, which will be called on startup of R, and then you don't have to enter your API key for each run of a function. For example, put these entries in your `.Rprofile` file:
+I set up the functions so that you can put the key in your `.Renviron` file, which will
+be called on startup of R, and then you don't have to enter your API key for each run
+of a function. Add entries for an R session like
 
 ```
-options(nytimes_cg_key = "YOURKEYHERE")
-options(nytimes_as_key = "YOURKEYHERE")
-options(nytimes_cf_key = "YOURKEYHERE")
-options(nytimes_geo_key = "YOURKEYHERE")
+Sys.setenv(NYTIMES_CG_KEY = "YOURKEYHERE")
+Sys.setenv(NYTIMES_AS_KEY = "YOURKEYHERE")
+Sys.setenv(NYTIMES_CF_KEY = "YOURKEYHERE")
+Sys.setenv(NYTIMES_GEO_KEY = "YOURKEYHERE")
 ```
+
+Or set them across sessions by putting entries in your `.Renviron` file like
+
+```
+NYTIMES_GEO_KEY=<yourkey>
+NYTIMES_AS_KEY=<yourkey>
+NYTIMES_CG_KEY=<yourkey>
+NYTIMES_CF_KEY=<yourkey>
+```
+
+You can also pass in your key in a function call, but be careful not to expose your keys in 
+code committed to public repositories. If you do pass in a function call, use e.g., `Sys.getenv("NYTIMES_CG_KEY")`.
 
 ## Install rtimes
 
