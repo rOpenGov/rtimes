@@ -1,8 +1,8 @@
 Package: rtimes
 Title: Client for New York Times 'APIs'
 Description: Interface to Congress, Campaign Finance, Article Search, and
-    Geographic 'APIs' from the New York Times. Documentation for New York 
-    Times 'APIs' (http://developer.nytimes.com/docs/). This client covers 
+    Geographic 'APIs' from the New York Times. Documentation for New York
+    Times 'APIs' (http://developer.nytimes.com/docs/). This client covers
     a subset of the New York Times 'APIs'.
 Version: 0.3.0.9000
 License: MIT + file LICENSE
@@ -22,3 +22,4 @@ Suggests:
     ggplot2,
     scales,
     grid
+RoxygenNote: 5.0.1
