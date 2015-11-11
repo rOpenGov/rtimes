@@ -11,7 +11,7 @@ rtimes vignette - R client for New York Times APIs
 
 ## About the package
 
-`rtimes` is an R package to search and retrieve data from the New York Times congress API. 
+`rtimes` is an R package to search and retrieve data from the New York Times congress API.
 
 Functions in `rtimes` that wrap these APIs are prefixed by two letter acronyms fo reach API + the function name itself, e.g.: `cg` + `fxn`
 
@@ -22,14 +22,28 @@ Functions in `rtimes` that wrap these APIs are prefixed by two letter acronyms f
 
 Please get your own API keys at http://developer.nytimes.com/apps/register - you'll need a different key for each API.
 
-We set up the functions so that you can put the key in your `.Rprofile` file, which will be called on startup of R, and then you don't have to enter your API key for each run of a function. For example, put these entries in your `.Rprofile` file:
+I set up the functions so that you can put the key in your `.Renviron` file, which will
+be called on startup of R, and then you don't have to enter your API key for each run
+of a function. Add entries for an R session like
 
 ```
-options(nytimes_cg_key = "YOURKEYHERE")
-options(nytimes_as_key = "YOURKEYHERE")
-options(nytimes_cf_key = "YOURKEYHERE")
-options(nytimes_geo_key = "YOURKEYHERE")
+Sys.setenv(NYTIMES_CG_KEY = "YOURKEYHERE")
+Sys.setenv(NYTIMES_AS_KEY = "YOURKEYHERE")
+Sys.setenv(NYTIMES_CF_KEY = "YOURKEYHERE")
+Sys.setenv(NYTIMES_GEO_KEY = "YOURKEYHERE")
 ```
+
+Or set them across sessions by putting entries in your `.Renviron` file like
+
+```
+NYTIMES_GEO_KEY=<yourkey>
+NYTIMES_AS_KEY=<yourkey>
+NYTIMES_CG_KEY=<yourkey>
+NYTIMES_CF_KEY=<yourkey>
+```
+
+You can also pass in your key in a function call, but be careful not to expose your keys in 
+code committed to public repositories. If you do pass in a function call, use e.g., `Sys.getenv("NYTIMES_CG_KEY")`.
 
 ## Install rtimes
 
@@ -57,7 +71,7 @@ library('rtimes')
 
 _Note: Member ID S001181 is Jeanne Shaheen_
 
-## Congress API 
+## Congress API
 
 There are currently 11 functions to work with the congress API
 
@@ -144,7 +158,7 @@ out$data
 
 ## Article search API
 
-This function in most cases outputs a series of S3 objects, one for each item 
+This function in most cases outputs a series of S3 objects, one for each item
 found. Each element, an object of class `as_search`, is a summary of a list
 of data. You can `unclass()` the object if you want, or index into particular
 elements (see egs below).
@@ -158,7 +172,7 @@ res$copyright # copyright
 #> [1] "Copyright (c) 2015 The New York Times Company.  All Rights Reserved."
 res$meta # number of hits
 #>   hits time offset
-#> 1 1210   26      0
+#> 1 1208   37      0
 res$data[[1]]
 #> <NYTimes article>Toxic Bailout
 #>   Type: News
@@ -177,28 +191,28 @@ Another e.g., Search for keyword _money_, within the _Sports_ and _Foreign_ news
 res <- as_search(q = "money", fq = 'news_desk:("Sports" "Foreign")')
 res$data[1:3]
 #> [[1]]
-#> <NYTimes article>Switzerland Investigates Fund Executives in Malaysian Scandal
-#>   Type: News
-#>   Published: 2015-09-03T00:00:00Z
-#>   Word count: 485
-#>   URL: http://www.nytimes.com/2015/09/03/world/asia/switzerland-investigates-fund-executives-in-malaysian-corruption-case.html
-#>   Snippet: The Attorney General’s Office said it had begun an inquiry into two executives of an investment fund at the center of a scandal in which Malaysia’s prime minister is suspected of misconduct.
+#> <NYTimes article>Nigeria: Former Official Pleads Not Guilty in Corruption Case
+#>   Type: Brief
+#>   Published: 2015-10-27T00:00:00Z
+#>   Word count: 150
+#>   URL: http://www.nytimes.com/2015/10/27/world/africa/nigeria-former-official-pleads-not-guilty-in-corruption-case.html
+#>   Snippet: The former national security adviser made the plea in connection with $423,000 in Nigerian and United States currency seized at his homes.
 #> 
 #> [[2]]
+#> <NYTimes article>U.S. Indicts Members of Powerful Honduran Family
+#>   Type: News
+#>   Published: 2015-10-08T00:00:00Z
+#>   Word count: 487
+#>   URL: http://www.nytimes.com/2015/10/08/world/americas/us-indicts-members-of-powerful-honduran-family.html
+#>   Snippet: Jaime Rolando Rosenthal, Honduras&#8217;s vice president in the 1980s and one of its wealthiest men, is among those facing money laundering charges.
+#> 
+#> [[3]]
 #> <NYTimes article>Ukraine: U.S. Judge Tosses Tymoshenko Lawsuit
 #>   Type: Brief
 #>   Published: 2015-09-19T00:00:00Z
 #>   Word count: 161
 #>   URL: http://www.nytimes.com/2015/09/19/world/europe/ukraine-us-judge-tosses-tymoshenko-lawsuit.html
 #>   Snippet: A federal judge in Manhattan on Friday dismissed a civil lawsuit filed by Yulia V. Tymoshenko, the former Ukrainian prime minister and presidential candidate.
-#> 
-#> [[3]]
-#> <NYTimes article>Romanian Prime Minister to Face Corruption Trial
-#>   Type: News
-#>   Published: 2015-09-18T00:00:00Z
-#>   Word count: 297
-#>   URL: http://www.nytimes.com/2015/09/18/world/europe/romanian-prime-minister-to-face-corruption-trial.html
-#>   Snippet: Prime Minister Victor Ponta is accused of forgery, money laundering and being an accessory to tax evasion, and will face charges in Romania’s top court.
 ```
 
 ## Campaign Finance API
@@ -240,7 +254,7 @@ cf_candidate_details(campaign_cycle = 2008, fec_id = 'P80003338')
 #> 
 #>   cycle.id cycle.fecid                       cycle.name cycle.party
 #>      (chr)       (chr)                            (chr)       (chr)
-#> 1     2896   P80003338 /BIDEN, JOSEPH R., OBAMA, BARACK         DEM
+#> 1     2896   P80003338  OBAMA, BARACK / JOSEPH R. BIDEN         DEM
 #> 2    50162   P80003338 /BIDEN, JOSEPH R., OBAMA, BARACK         DEM
 #> Variables not shown: cycle.status (chr), cycle.address_one (chr),
 #>   cycle.address_two (chr), cycle.city (chr), cycle.state (chr), cycle.zip
