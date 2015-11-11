@@ -26,8 +26,8 @@ dates of the date specified or later. In the form YYYYMMDD}
 \item{end_date}{End date - Restricts responses to results with publication dates
 of the date specified or earlier. In the form YYYYMMDD}
 
-\item{key}{your New York Times API key; pass in, or loads from .Rprofile as
-\code{nytimes_as_key}, or from .Renviron as \code{NYTIMES_AS_KEY}}
+\item{key}{your New York Times API key; pass in, or loads from .Renviron as 
+\code{NYTIMES_AS_KEY}}
 
 \item{fl}{Fields to get back, as vector. See Details for the.}
 

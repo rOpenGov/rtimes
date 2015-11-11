@@ -24,8 +24,8 @@ cf_candidate_leaders(campaign_cycle = NULL, category = NULL, key = NULL,
  \item Refund Total `refund-total`
 }}
 
-\item{key}{your New York Times API key; pass in, or loads from .Rprofile as
-\code{nytimes_cf_key}, or from .Renviron as \code{NYTIMES_CF_KEY}}
+\item{key}{your New York Times API key; pass in, or loads from .Renviron as 
+\code{NYTIMES_CF_KEY}}
 
 \item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }

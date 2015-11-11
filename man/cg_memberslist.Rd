@@ -19,8 +19,8 @@ a district, you must also specify a state. If the district number you
 specify is higher than the total number of districts for that state,
 a 404 response will be returned.}
 
-\item{key}{your New York Times API key; pass in, or loads from .Rprofile as
-\code{nytimes_cg_key}, or from .Renviron as \code{NYTIMES_CG_KEY}}
+\item{key}{your New York Times API key; pass in, or loads from .Renviron
+as \code{NYTIMES_CG_KEY}.}
 
 \item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }

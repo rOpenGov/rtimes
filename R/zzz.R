@@ -37,9 +37,9 @@ pop <- function(x, namez) {
   x[ getnames ]
 }
 
-check_key <- function(x, y = "nytimes_geo_key"){
-  tmp <- if (is.null(x)) Sys.getenv(toupper(y), "") else x
-  if (tmp == "") getOption(y, stop("need an API key for ", y)) else tmp
+check_key <- function(x, y = "NYTIMES_GEO_KEY"){
+  tmp <- if (is.null(x)) Sys.getenv(y, "") else x
+  if (tmp == "") stop("need an API key for ", y, call. = FALSE) else tmp
 }
 
 do_data_frame <- function(x, z = "members") {

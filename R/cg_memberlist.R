@@ -18,7 +18,7 @@
 `cg_memberslist` <- function(congress_no = NULL, chamber = NULL, state = NULL,
   district = NULL, key = NULL, ...) {
   url2 <- paste(cg_base(), congress_no, '/', chamber, '/members.json', sep = '')
-  args <- list('api-key' = check_key(key, "nytimes_cg_key"), state = state, district = district)
+  args <- list('api-key' = check_key(key, "NYTIMES_CG_KEY"), state = state, district = district)
   res <- rtimes_GET(url2, args, ...)
   df <- to_df(res$results[[1]]$members)
   list(status = res$status, copyright = res$copyright,

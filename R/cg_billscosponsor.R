@@ -22,7 +22,7 @@
 `cg_billscosponsor` <- function(memberid = NULL, type = NULL, key = NULL, ...) {
   url = "http://api.nytimes.com/svc/politics/v3/us/legislative/congress/members/"
   url2 <- paste(url, memberid, '/bills/', type, '.json', sep = '')
-  args <- list('api-key' = check_key(key, "nytimes_cg_key"))
+  args <- list('api-key' = check_key(key, "NYTIMES_CG_KEY"))
   tt <- GET(url2, query = args, ...)
   stop_for_status(tt)
   out <- content(tt, as = 'text')

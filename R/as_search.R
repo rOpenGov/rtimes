@@ -38,7 +38,8 @@
   if(!is.logical(hl)) stop("hl parameter must be logical")
   if(hl){ hl = 'true' } else { hl = NULL }
   args <- rc(list(q=q, fl=fl, fq=fq, sort=sort, hl=hl, page=page,
-                begin_date=begin_date, end_date=end_date, `api-key`=check_key(key, "nytimes_as_key"),
+                begin_date=begin_date, end_date=end_date, 
+                `api-key` = check_key(key, "NYTIMES_AS_KEY"),
                 facet_field=facet_field, facet_filter=facet_filter))
   res <- rtimes_GET(paste0(t_base(), "search/v2/articlesearch.json"), c(args, ...), callopts, ...)
   dat <- if(is.null(fl)) lapply(res$response$docs, structure, class="as_search") else res$response

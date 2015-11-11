@@ -10,7 +10,7 @@
 #' }
 cg_membersleaving <- function(congress_no = NULL, chamber = NULL, key = NULL, ...) {
   url2 <- paste(cg_base(), congress_no, '/', chamber, '/members/leaving.json', sep = '')
-  args <- list('api-key' = check_key(key, "nytimes_cg_key"))
+  args <- list('api-key' = check_key(key, "NYTIMES_CG_KEY"))
   res <- rtimes_GET(url2, args, ...)
   df <- to_df(res$results[[1]]$members)
   list(status = res$status, copyright = res$copyright,

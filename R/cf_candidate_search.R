@@ -12,7 +12,7 @@
 
 `cf_candidate_search` <- function(campaign_cycle=NULL, query=NULL, key = NULL, ...) {
   url <- sprintf("%s%s/candidates/search.json", cf_base(), campaign_cycle)
-  args <- rc(list(query = query,`api-key` = check_key(key, "nytimes_cf_key")))
+  args <- rc(list(query = query,`api-key` = check_key(key, "NYTIMES_CF_KEY")))
   ans <- GET(url, query = args, ...)
   stop_for_status(ans)
   tt <- content(ans, as = "text")

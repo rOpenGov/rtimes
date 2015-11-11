@@ -17,7 +17,7 @@
 #' }
 `cg_memberbioroles` <- function(memberid = NULL, key = NULL, ...) {
   url2 <- paste(paste0(cg_base(), "members/"), memberid, '.json', sep = '')
-  args <- list('api-key' = check_key(key, "nytimes_cg_key"))
+  args <- list('api-key' = check_key(key, "NYTIMES_CG_KEY"))
   tt <- GET(url2, query = args, ...)
   stop_for_status(tt)
   out <- content(tt, as = 'text')

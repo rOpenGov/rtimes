@@ -21,7 +21,7 @@ cg_rollcallvote <- function(congress_no = NULL, chamber = NULL, session_no = NUL
 
   url2 <- paste(cg_base(), congress_no, '/', chamber, '/sessions/', session_no,
                 '/votes/', rollcall_no, '.json', sep = '')
-  args <- list('api-key' = check_key(key, "nytimes_cg_key"))
+  args <- list('api-key' = check_key(key, "NYTIMES_CG_KEY"))
   res <- rtimes_GET(url2, args, ...)
   dat <- rbind_all_df(res$results$votes$vote$positions)
   meta <- data.frame(res$results$votes$vote[c('congress', 'session', 'chamber', 'roll_call',

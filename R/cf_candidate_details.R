@@ -12,7 +12,7 @@
 
 `cf_candidate_details` <- function(campaign_cycle=NULL, fec_id=NULL, key=NULL, ...) {
   url <- sprintf("%s%s/candidates/%s.json", cf_base(), campaign_cycle, fec_id)
-  args <- rc(list(`api-key` = check_key(key, "nytimes_cf_key")))
+  args <- rc(list(`api-key` = check_key(key, "NYTIMES_CF_KEY")))
   res <- rtimes_GET(url, args, ...)
   dat <-  lapply(res$results[[1]]$other_cycles, function(z) {
     if (length(z$bill) == 0) z$bill <- NULL

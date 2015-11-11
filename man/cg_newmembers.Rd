@@ -7,8 +7,8 @@
 cg_newmembers(key = NULL, ...)
 }
 \arguments{
-\item{key}{your New York Times API key; pass in, or loads from .Rprofile as
-\code{nytimes_cg_key}, or from .Renviron as \code{NYTIMES_CG_KEY}}
+\item{key}{your New York Times API key; pass in, or loads from .Renviron
+as \code{NYTIMES_CG_KEY}.}
 
 \item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }

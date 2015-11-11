@@ -16,7 +16,7 @@
 #' }
 cg_membervotepositions <- function(memberid = NULL, key = NULL, ...) {
   url2 <- paste(paste0(cg_base(), "members/"), memberid, '/votes.json', sep = '')
-  args <- list('api-key' = check_key(key, "nytimes_cg_key"))
+  args <- list('api-key' = check_key(key, "NYTIMES_CG_KEY"))
   res <- rtimes_GET(url2, args, ...)
   dat <-  lapply(res$results[[1]]$votes, function(z) {
     if (length(z$bill) == 0) z$bill <- NULL

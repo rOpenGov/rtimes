@@ -19,7 +19,7 @@ cg_membervotecompare <- function(memberid_1 = NULL, memberid_2 = NULL,
   congress_no = NULL, chamber = NULL,  key = NULL, ...) {
   url2 <- paste(paste0(cg_base(), "members/"), memberid_1, '/votes/',
                 memberid_2, '/', congress_no, '/', chamber, '.json', sep = '')
-  args <- list('api-key' = check_key(key, "nytimes_cg_key"))
+  args <- list('api-key' = check_key(key, "NYTIMES_CG_KEY"))
   res <- rtimes_GET(url2, args, ...)
   df <- data.frame(res$results[[1]], stringsAsFactors = FALSE)
   list(status = res$status, copyright = res$copyright, meta = NULL, data = df)
