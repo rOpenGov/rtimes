@@ -8,7 +8,7 @@
 knitr::opts_chunk$set(
   comment = "#>",
   collapse = TRUE,
-  warning = FALSE, 
+  warning = FALSE,
   message = FALSE
 )
 ```
@@ -18,7 +18,7 @@ rtimes vignette - R client for New York Times APIs
 
 ## About the package
 
-`rtimes` is an R package to search and retrieve data from the New York Times congress API. 
+`rtimes` is an R package to search and retrieve data from the New York Times congress API.
 
 Functions in `rtimes` that wrap these APIs are prefixed by two letter acronyms fo reach API + the function name itself, e.g.: `cg` + `fxn`
 
@@ -61,7 +61,7 @@ library('rtimes')
 
 _Note: Member ID S001181 is Jeanne Shaheen_
 
-## Congress API 
+## Congress API
 
 There are currently 11 functions to work with the congress API
 
@@ -93,7 +93,7 @@ out$data
 
 ## Article search API
 
-This function in most cases outputs a series of S3 objects, one for each item 
+This function in most cases outputs a series of S3 objects, one for each item
 found. Each element, an object of class `as_search`, is a summary of a list
 of data. You can `unclass()` the object if you want, or index into particular
 elements (see egs below).

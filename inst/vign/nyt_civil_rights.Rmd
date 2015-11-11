@@ -8,7 +8,7 @@
 knitr::opts_chunk$set(
   comment = "#>",
   collapse = TRUE,
-  warning = FALSE, 
+  warning = FALSE,
   message = FALSE
 )
 ```
@@ -16,15 +16,14 @@ knitr::opts_chunk$set(
 Use case - Civil Rights Coverage in NYT over time
 =================================================
 
-This is an example use of `rtimes` from [Gaurav Soodoku](http://gbytes.gsood.com/). Find the original code [at GitHub](https://github.com/soodoku/nyt-civil-rights). 
+This is an example use of `rtimes` from [Gaurav Soodoku](http://gbytes.gsood.com/). Find the original code [at GitHub](https://github.com/soodoku/nyt-civil-rights).
 
 This example is a smaller subset of the analysis in the original code, just looking at one phrase: _Affirmative Action_
 
 ## Installation
 
 ```{r install, eval=FALSE}
-install.packages("devtools")
-devtools::install_github("ropengov/rtimes")
+install.packages("rtimes")
 ```
 
 ```{r}
@@ -50,16 +49,17 @@ dates <- format(seq(as.Date("1851/1/1"), as.Date("2015/1/1"), by = "3 months"), 
 Make a data.frame to put data in to
 
 ```{r}
-results <- data.frame(startDate=NA, endDate=NA, afam=NA)
+results <- data.frame(startDate = NA, endDate = NA, afam = NA)
 ```
 
 Loop through dates
 
 ```{r cache=TRUE}
 for (i in 1:(length(dates) - 1)) {
+  Sys.sleep(1)
   counts <- NA
-  counts <- as_search(q = "affirmative action", 
-                      begin_date = dates[i], 
+  counts <- as_search(q = "affirmative action",
+                      begin_date = dates[i],
                       end_date = dates[i + 1])$meta[1]
   results[i, ] <- c(dates[i], dates[i + 1], counts)
 }
@@ -85,14 +85,14 @@ results$startDate <- as.Date(as.character(results$startDate), format = "%Y%m%d")
 Plot mentions of _Affirmative Action_
 
 ```{r fig.width=10, tidy=FALSE}
-ggplot(results, aes(x = startDate, y = cr)) +
-  geom_point(width = 1, color = "#42C4C7") +
-  geom_smooth(method = "gam", formula = y ~ s(x), aes(group = 1), 
+ggplot(results, aes(x = startDate, y = afam)) +
+  geom_point(size = 1, color = "#42C4C7") +
+  geom_smooth(method = "gam", formula = y ~ s(x), aes(group = 1),
               size = 1, colour = "#777777", alpha = 0.05, se = FALSE) +
   ylab("No. Articles Containing the phrase 'Affirmative Action'") +
   xlab("Year") +
   theme_bw() +
-  scale_x_date(breaks = pretty_breaks(n = 10)) + 
+  scale_x_date(breaks = pretty_breaks(n = 10)) +
   theme(panel.grid.major.y = element_line(colour = "#e3e3e3", linetype = "dotted"),
         panel.grid.minor.x = element_blank(),
         panel.grid.major.x = element_line(colour = "#f7f7f7", linetype = "solid"),

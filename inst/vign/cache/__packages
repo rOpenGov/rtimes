@@ -1,11 +1,8 @@
 base
-methods
 devtools
 sacbox
-datasets
-utils
-grDevices
-graphics
-stats
 scimapClient
 rtimes
+lubridate
+ggplot2
+scales
