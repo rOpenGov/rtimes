@@ -27,7 +27,7 @@ dates of the date specified or later. In the form YYYYMMDD}
 of the date specified or earlier. In the form YYYYMMDD}
 
 \item{key}{your New York Times API key; pass in, or loads from .Renviron as 
-\code{NYTIMES_AS_KEY}}
+\code{NYTIMES_AS_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
 
 \item{fl}{Fields to get back, as vector. See Details for the.}
 
