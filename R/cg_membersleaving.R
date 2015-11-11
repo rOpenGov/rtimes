@@ -1,5 +1,5 @@
 #' Get a list of members who have left the Senate or House or have announced plans to do so.
-#' 
+#'
 #' @export
 #' @template nytcgkey
 #' @param congress_no The number of the Congress during which the members served.
@@ -13,6 +13,6 @@ cg_membersleaving <- function(congress_no = NULL, chamber = NULL, key = NULL, ..
   args <- list('api-key' = check_key(key, "nytimes_cg_key"))
   res <- rtimes_GET(url2, args, ...)
   df <- to_df(res$results[[1]]$members)
-  list(status = res$status, copyright = res$copyright, 
+  list(status = res$status, copyright = res$copyright,
        meta = do_data_frame(res), data = df)
 }

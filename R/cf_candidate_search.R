@@ -1,5 +1,5 @@
 #' Campaign finance NYTimes API - candidate search
-#' 
+#'
 #' @keywords internal
 #' @template finance
 #' @template nyt

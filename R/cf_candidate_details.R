@@ -19,6 +19,6 @@
     as.list(unlist(z, recursive = TRUE))
   })
   df <- to_df(dat)
-  list(status = res$status, copyright = res$copyright, 
+  list(status = res$status, copyright = res$copyright,
        meta = do_data_frame(res, "other_cycles"), data = df)
 }

@@ -11,7 +11,7 @@ rtimes_GET <- function(url, args, ...) {
   ans <- GET(url, query = args, ...)
   stop_for_status(ans)
   tt <- content(ans, as = "text")
-  jsonlite::fromJSON(tt, FALSE) 
+  jsonlite::fromJSON(tt, FALSE)
 }
 
 meta <- function(x){
