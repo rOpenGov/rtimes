@@ -2,7 +2,7 @@
 #'
 #' @export
 #' @template articlesearch
-#' @references \url{http://developer.nytimes.com/docs/article_search_api/}
+#' @references \url{http://developer.nytimes.com/docs/read/article_search_api_v2}
 #' @examples \dontrun{
 #' as_search(q="bailout", begin_date = "20081001", end_date = '20081201')
 #' as_search(q="bailout", facet_field = 'section_name', begin_date = "20081001",

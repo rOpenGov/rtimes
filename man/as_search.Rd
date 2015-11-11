@@ -75,6 +75,6 @@ as_search("iowa caucus", callopts = verbose())
 }
 }
 \references{
-\url{http://developer.nytimes.com/docs/article_search_api/}
+\url{http://developer.nytimes.com/docs/read/article_search_api_v2}
 }
 

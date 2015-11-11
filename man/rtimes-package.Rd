@@ -4,36 +4,62 @@
 \name{rtimes-package}
 \alias{rtimes}
 \alias{rtimes-package}
-\title{R interface to some of the New York Times APIs.}
+\title{New York Times APIs client}
 \description{
-R interface to some of the New York Times APIs.
+Interface to Congress, Campaign Finance, Article Search, and
+Geographic 'APIs' from the New York Times
 }
-\details{
+\section{rtimes API}{
+
 Functions that wrap these sets of APIs are prefixed by two letter
 acronyms fo reach API endpoint + the function name itself as for example
 `cg` + `fxn`
 
-\describe{
-  \item{cg}{for the Congress API}
-  \item{as}{for the Article Search API}
-  \item{cf}{for the Campaign Finance API}
-  \item{geo}{for the Geographic API}
+\itemize{
+  \item cg - for the Congress API
+  \item as - for the Article Search API
+  \item cf - for the Campaign Finance API
+  \item geo- for the Geographic API
 }
 
 See the vignette for help.
+}
+
+\section{Authentication}{
 
 Please get your own API keys at http://developer.nytimes.com/apps/register - you'll
 need a different key for each API.
 
-I set up the functions so that you can put the key in your .Rprofile file, which will
+I set up the functions so that you can put the key in your \code{.Renviron} file, which will
 be called on startup of R, and then you don't have to enter your API key for each run
-of a function. Put these entries in your .Rprofile file
+of a function. Add entries for an R session like
 
 \itemize{
- \item \code{options(nytimes_cg_key = "YOURKEYHERE")}
- \item \code{options(nytimes_as_key = "YOURKEYHERE")}
- \item \code{options(nytimes_cf_key = "YOURKEYHERE")}
- \item \code{options(nytimes_geo_key = "YOURKEYHERE")}
+ \item \code{Sys.setenv(NYTIMES_CG_KEY = "YOURKEYHERE")}
+ \item \code{Sys.setenv(NYTIMES_AS_KEY = "YOURKEYHERE")}
+ \item \code{Sys.setenv(NYTIMES_CF_KEY = "YOURKEYHERE")}
+ \item \code{Sys.setenv(NYTIMES_GEO_KEY = "YOURKEYHERE")}
+}
+
+Or set them across sessions by putting entries in your \code{.Renviron} file like
+
+\itemize{
+ \item \code{NYTIMES_GEO_KEY=<yourkey>}
+ \item \code{NYTIMES_AS_KEY=<yourkey>}
+ \item \code{NYTIMES_CG_KEY=<yourkey>}
+ \item \code{NYTIMES_CF_KEY=<yourkey>}
+}
+}
+
+\section{Rate limits}{
+
+Rate limits vary for the different APIs:
+
+\itemize{
+ \item Congress API: 2/sec, 5,000/day
+ \item Article Search API: 10/sec, 10,000/day
+ \item Campaign Finance API: 50/sec, 5,000/day
+ \item Geographic API: 8/sec, 5,000/day
 }
 }
 \author{
