@@ -21,5 +21,6 @@ Suggests:
     lubridate,
     ggplot2,
     scales,
-    grid
+    grid,
+    covr
 RoxygenNote: 5.0.1
