@@ -49,13 +49,13 @@ do_data_frame <- function(x, z = "members") {
 }
 
 rbind_all_df <- function(x) {
-  tmpdf <- rbind_all(lapply(x, data.frame, stringsAsFactors = FALSE))
+  tmpdf <- bind_rows(lapply(x, data.frame, stringsAsFactors = FALSE))
   tmpdf$label <- names(x)
   tmpdf
 }
 
 to_df <- function(x) {
-  dplyr::rbind_all(lapply(x, function(x) {
+  dplyr::bind_rows(lapply(x, function(x) {
     x[sapply(x, is.null)] <- NA
     data.frame(x, stringsAsFactors = FALSE)
   }))

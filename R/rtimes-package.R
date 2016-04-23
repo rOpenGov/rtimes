@@ -41,13 +41,13 @@
 #'  \item \code{NYTIMES_CF_KEY=<yourkey>}
 #' }
 #'
-#' You can also pass in your key in a function call, but be careful not to expose 
-#' your keys in code committed to public repositories. If you do pass in a function 
+#' You can also pass in your key in a function call, but be careful not to expose
+#' your keys in code committed to public repositories. If you do pass in a function
 #' call, use e.g., \code{Sys.getenv("NYTIMES_CG_KEY")}.
 #'
 #' @section Rate limits:
 #' Rate limits vary for the different APIs:
-#' 
+#'
 #' \itemize{
 #'  \item Congress API: 2/sec, 5,000/day
 #'  \item Article Search API: 10/sec, 10,000/day
@@ -57,7 +57,7 @@
 #'
 #' @importFrom httr GET content stop_for_status
 #' @importFrom jsonlite fromJSON
-#' @importFrom dplyr rbind_all
+#' @importFrom dplyr bind_rows
 #' @name rtimes-package
 #' @aliases rtimes
 #' @docType package

@@ -18,7 +18,7 @@
   tt <- content(ans, as = "text")
   res <- jsonlite::fromJSON(tt, simplifyVector = FALSE)
   tmp <- pop(res, "results")
-  tmp$data <- dplyr::rbind_all(lapply(res$results, function(x){
+  tmp$data <- dplyr::bind_rows(lapply(res$results, function(x){
     x[sapply(x, is.null)] <- NA
     data.frame(x, stringsAsFactors = FALSE)
   }))
