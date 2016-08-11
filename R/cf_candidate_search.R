@@ -1,19 +1,19 @@
-#' Campaign finance NYTimes API - candidate search
+#' Campaign finance - candidate search
 #'
 #' @keywords internal
 #' @template finance
 #' @template nyt
 #' @param query Last name of a candidate
-#' @references \url{http://developer.nytimes.com/docs/campaign_finance_api/}
+#' @references \url{http://propublica.github.io/campaign-finance-api-docs}
 #' @examples \dontrun{
-#' # cf_candidate_search(campaign_cycle = 2010, query='smith')
-#' # cf_candidate_search(campaign_cycle = 2008, query='obama')
+#' cf_candidate_search(campaign_cycle = 2016, query='Wilson')
+#' cf_candidate_search(campaign_cycle = 2008, query='obama')
 #' }
 
 `cf_candidate_search` <- function(campaign_cycle=NULL, query=NULL, key = NULL, ...) {
-  url <- sprintf("%s%s/candidates/search.json", cf_base(), campaign_cycle)
-  args <- rc(list(query = query,`api-key` = check_key(key, "NYTIMES_CF_KEY")))
-  ans <- GET(url, query = args, ...)
+  url <- sprintf("%s/%s/candidates/search.json", cf_base(), campaign_cycle)
+  args <- rc(list(query = query))
+  ans <- GET(url, query = args, add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
   stop_for_status(ans)
   tt <- content(ans, as = "text")
   res <- jsonlite::fromJSON(tt, simplifyVector = FALSE)

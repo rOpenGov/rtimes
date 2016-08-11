@@ -5,7 +5,10 @@ nnlna <- function(x) if (!is.null(x)) paste(x, collapse = ",") else NA
 
 t_base <- function() "http://api.nytimes.com/svc/"
 cg_base <- function() paste0(t_base(), "politics/v3/us/legislative/congress/")
-cf_base <- function() paste0(t_base(), "elections/us/v3/finances/")
+
+p_base <- function() "https://api.propublica.org/"
+cf_base <- function(version = "v1") paste0(p_base(), "campaign-finance/", version)
+add_key <- function(x) add_headers('X-API-Key' = x)
 
 rtimes_GET <- function(url, args, ...) {
   ans <- GET(url, query = args, ...)

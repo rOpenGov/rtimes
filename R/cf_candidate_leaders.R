@@ -1,4 +1,4 @@
-#' Campaign finance NYTimes API - candidate leaders
+#' Campaign finance - candidate leaders
 #'
 #' @export
 #' @template finance
@@ -15,16 +15,15 @@
 #'  \item Receipts Total `receipts-total`
 #'  \item Refund Total `refund-total`
 #' }
-#' @references \url{http://developer.nytimes.com/docs/campaign_finance_api/}
+#' @references \url{http://propublica.github.io/campaign-finance-api-docs}
 #' @examples \dontrun{
 #' cf_candidate_leaders(campaign_cycle = 2010, category='end-cash')
 #' cf_candidate_leaders(campaign_cycle = 2008, category='receipts-total')
 #' }
 
 `cf_candidate_leaders` <- function(campaign_cycle=NULL, category=NULL, key=NULL, ...) {
-  url <- sprintf("%s%s/candidates/leaders/%s.json", cf_base(), campaign_cycle, category)
-  args <- rc(list(`api-key` = check_key(key, "NYTIMES_CF_KEY")))
-  res <- rtimes_GET(url, args, ...)
+  url <- sprintf("%s/%s/candidates/leaders/%s.json", cf_base(), campaign_cycle, category)
+  res <- rtimes_GET(url, list(), add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
   df <- to_df(res$results)
   list(status = res$status, copyright = res$copyright, meta = NULL, data = df)
 }

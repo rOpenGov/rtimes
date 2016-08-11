@@ -24,7 +24,7 @@ Functions in `rtimes` that wrap these APIs are prefixed by two letter acronyms f
 
 * `cg` for the [Congress API](http://developer.nytimes.com/docs/congress_api)
 * `as` for the [Article Search API](http://developer.nytimes.com/docs/read/article_search_api_v2)
-* `cf` for the [Campaign Finance API](http://developer.nytimes.com/docs/campaign_finance_api/)
+* `cf` for the [Campaign Finance API](http://propublica.github.io/campaign-finance-api-docs)
 * `geo` for the [Geographic API](http://developer.nytimes.com/docs/geographic_api)
 
 Please get your own API keys at http://developer.nytimes.com/apps/register - you'll need a different key for each API.
@@ -49,7 +49,7 @@ NYTIMES_CG_KEY=<yourkey>
 NYTIMES_CF_KEY=<yourkey>
 ```
 
-You can also pass in your key in a function call, but be careful not to expose your keys in 
+You can also pass in your key in a function call, but be careful not to expose your keys in
 code committed to public repositories. If you do pass in a function call, use e.g., `Sys.getenv("NYTIMES_CG_KEY")`.
 
 ## Install rtimes

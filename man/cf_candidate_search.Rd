@@ -2,7 +2,7 @@
 % Please edit documentation in R/cf_candidate_search.R
 \name{cf_candidate_search}
 \alias{cf_candidate_search}
-\title{Campaign finance NYTimes API - candidate search}
+\title{Campaign finance - candidate search}
 \usage{
 cf_candidate_search(campaign_cycle = NULL, query = NULL, key = NULL, ...)
 }
@@ -18,16 +18,16 @@ cf_candidate_search(campaign_cycle = NULL, query = NULL, key = NULL, ...)
 \item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }
 \description{
-Campaign finance NYTimes API - candidate search
+Campaign finance - candidate search
 }
 \examples{
 \dontrun{
-# cf_candidate_search(campaign_cycle = 2010, query='smith')
-# cf_candidate_search(campaign_cycle = 2008, query='obama')
+cf_candidate_search(campaign_cycle = 2016, query='Wilson')
+cf_candidate_search(campaign_cycle = 2008, query='obama')
 }
 }
 \references{
-\url{http://developer.nytimes.com/docs/campaign_finance_api/}
+\url{http://propublica.github.io/campaign-finance-api-docs}
 }
 \keyword{internal}
 

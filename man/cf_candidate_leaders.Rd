@@ -2,7 +2,7 @@
 % Please edit documentation in R/cf_candidate_leaders.R
 \name{cf_candidate_leaders}
 \alias{cf_candidate_leaders}
-\title{Campaign finance NYTimes API - candidate leaders}
+\title{Campaign finance - candidate leaders}
 \usage{
 cf_candidate_leaders(campaign_cycle = NULL, category = NULL, key = NULL,
   ...)
@@ -30,7 +30,7 @@ cf_candidate_leaders(campaign_cycle = NULL, category = NULL, key = NULL,
 \item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }
 \description{
-Campaign finance NYTimes API - candidate leaders
+Campaign finance - candidate leaders
 }
 \examples{
 \dontrun{
@@ -39,6 +39,6 @@ cf_candidate_leaders(campaign_cycle = 2008, category='receipts-total')
 }
 }
 \references{
-\url{http://developer.nytimes.com/docs/campaign_finance_api/}
+\url{http://propublica.github.io/campaign-finance-api-docs}
 }
 
