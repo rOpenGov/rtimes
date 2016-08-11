@@ -2,7 +2,7 @@
 #' plans to do so.
 #'
 #' @export
-#' @template nytcgkey
+#' @template propubkey
 #' @param memberid The member's unique ID number (alphanumeric). To find a
 #'    member's ID number, get the list of members for the appropriate House
 #'    or Senate. You can also use the Biographical Directory of the United
@@ -15,14 +15,13 @@
 #' cg_membervotepositions('S001181')
 #' }
 cg_membervotepositions <- function(memberid = NULL, key = NULL, ...) {
-  url2 <- paste(paste0(cg_base(), "members/"), memberid, '/votes.json', sep = '')
-  args <- list('api-key' = check_key(key, "NYTIMES_CG_KEY"))
-  res <- rtimes_GET(url2, args, ...)
+  url <- sprintf("%s/members/%s/votes.json", cg_base(), memberid)
+  res <- rtimes_GET(url, list(), add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
   dat <-  lapply(res$results[[1]]$votes, function(z) {
     if (length(z$bill) == 0) z$bill <- NULL
     as.list(unlist(z, recursive = TRUE))
   })
-  df <- to_df(dat)
+  df <- tibble::as_data_frame(to_df(dat))
   list(status = res$status, copyright = res$copyright,
        meta = do_data_frame(res, "votes"), data = df)
 }

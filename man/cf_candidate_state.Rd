@@ -19,8 +19,8 @@ cf_candidate_state(campaign_cycle = NULL, state = NULL, chamber = NULL,
 with a single representative. (House requests only - districts with 
 Senate requests will be ignored.)}
 
-\item{key}{your New York Times API key; pass in, or loads from .Renviron as 
-\code{NYTIMES_CF_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
+\item{key}{(character) your Propublica API key; pass in, or loads from .Renviron as 
+\code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
 
 \item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }

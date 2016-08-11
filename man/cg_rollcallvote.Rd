@@ -21,8 +21,8 @@ of the US Senate
 (http://www.senate.gov/pagelayout/legislative/a_three_sections_with_teasers/votes.htm),
 and US House (http://artandhistory.house.gov/house_history/index.aspx).}
 
-\item{key}{your New York Times API key; pass in, or loads from .Renviron
-as \code{NYTIMES_CG_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
+\item{key}{(character) your Propublica API key; pass in, or loads from .Renviron
+as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
 
 \item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }
@@ -35,7 +35,7 @@ Get a specific roll-call vote, including a complete list of member positions.
 }
 \examples{
 \dontrun{
-cg_rollcallvote(105, 'house', 2, 38)
+cg_rollcallvote(congress_no = 105, chamber = 'house', session_no = 2, rollcall_no = 38)
 }
 }
 

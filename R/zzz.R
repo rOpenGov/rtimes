@@ -4,25 +4,27 @@ nnlcol <- function(x) if (!is.null(x)) paste(x, collapse = ",") else NULL
 nnlna <- function(x) if (!is.null(x)) paste(x, collapse = ",") else NA
 
 t_base <- function() "http://api.nytimes.com/svc/"
-cg_base <- function() paste0(t_base(), "politics/v3/us/legislative/congress/")
+#cg_base <- function() paste0(t_base(), "politics/v3/us/legislative/congress/")
 
 p_base <- function() "https://api.propublica.org/"
 cf_base <- function(version = "v1") paste0(p_base(), "campaign-finance/", version)
-add_key <- function(x) add_headers('X-API-Key' = x)
+cg_base <- function(version = "v1") paste0(p_base(), "congress/", version)
+add_key <- function(x) httr::add_headers('X-API-Key' = x)
 
 rtimes_GET <- function(url, args, ...) {
   ans <- GET(url, query = args, ...)
   stop_for_status(ans)
-  tt <- content(ans, as = "text")
-  jsonlite::fromJSON(tt, FALSE)
+  jsonlite::fromJSON(cu8(ans), FALSE)
 }
+
+cu8 <- function(x) content(x, as = "text", encoding = "UTF-8")
 
 meta <- function(x){
   data.frame(pop(x, c("results","copyright")), stringsAsFactors = FALSE)
 }
 
 as_meta <- function(x){
-  data.frame(x$response$meta, stringsAsFactors = FALSE)
+  tibble::as_data_frame(x$response$meta)
 }
 
 cright <- function() "Copyright (c) 2015 The New York Times Company.  All Rights Reserved."
@@ -48,11 +50,11 @@ check_key <- function(x, y = "NYTIMES_GEO_KEY"){
 do_data_frame <- function(x, z = "members") {
   tmp <- pop(x$results[[1]], z)
   tmp <- as.list(unlist(tmp, TRUE))
-  data.frame(tmp, stringsAsFactors = FALSE)
+  tibble::as_data_frame(tmp)
 }
 
 rbind_all_df <- function(x) {
-  tmpdf <- bind_rows(lapply(x, data.frame, stringsAsFactors = FALSE))
+  tmpdf <- dplyr::bind_rows(lapply(x, data.frame, stringsAsFactors = FALSE))
   tmpdf$label <- names(x)
   tmpdf
 }

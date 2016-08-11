@@ -1,6 +1,6 @@
 #' Get a list of members who have left the Senate or House or have announced plans to do so.
 #'
-#' @template nytcgkey
+#' @template propubkey
 #' @param memberid_1,memberid_2 The member's unique ID number (alphanumeric). To find a
 #'    member's ID number, get the list of members for the appropriate House
 #'    or Senate. You can also use the Biographical Directory of the United
@@ -13,14 +13,15 @@
 #' @return List of new members of he current Congress.
 #' @export
 #' @examples \dontrun{
-#' cg_membervotecompare('S001181', 'A000368', 112, 'senate')
+#' cg_membervotecompare(memberid_1 = 'S001181', memberid_2 = 'A000368', 
+#'  congress_no = 112, chamber = 'senate')
 #' }
 cg_membervotecompare <- function(memberid_1 = NULL, memberid_2 = NULL,
   congress_no = NULL, chamber = NULL,  key = NULL, ...) {
-  url2 <- paste(paste0(cg_base(), "members/"), memberid_1, '/votes/',
-                memberid_2, '/', congress_no, '/', chamber, '.json', sep = '')
-  args <- list('api-key' = check_key(key, "NYTIMES_CG_KEY"))
-  res <- rtimes_GET(url2, args, ...)
-  df <- data.frame(res$results[[1]], stringsAsFactors = FALSE)
+  
+  url <- sprintf('%s/members/%s/votes/%s/%s/%s.json', cg_base(), memberid_1, 
+                 memberid_2, congress_no, chamber)
+  res <- rtimes_GET(url, list(), add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
+  df <- tibble::as_data_frame(res$results[[1]])
   list(status = res$status, copyright = res$copyright, meta = NULL, data = df)
 }

@@ -1,16 +1,15 @@
 #' Get a list of the most recent new members of the current Congress.
 #'
 #' @export
-#' @template nytcgkey
+#' @template propubkey
 #' @return List of new members of he current Congress.
 #' @examples \dontrun{
 #' cg_newmembers()
 #' }
 cg_newmembers <- function(key = NULL, ...) {
-  url2 <- paste(paste0(cg_base(), "members/new"), '.json', sep = '')
-  args <- list('api-key' = check_key(key, "NYTIMES_CG_KEY"))
-  res <- rtimes_GET(url2, args, ...)
-  df <- to_df(res$results[[1]]$members)
+  url <- file.path(cg_base(), "members/new.json")
+  res <- rtimes_GET(url, list(), add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
+  df <- tibble::as_data_frame(to_df(res$results[[1]]$members))
   list(status = res$status, copyright = res$copyright,
        meta = do_data_frame(res), data = df)
 }

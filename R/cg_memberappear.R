@@ -2,7 +2,7 @@
 #' Senate floor.
 #'
 #' @export
-#' @template nytcgkey
+#' @template propubkey
 #' @param memberid The member's unique ID number (alphanumeric). To find a
 #'    member's ID number, get the list of members for the appropriate House
 #'    or Senate. You can also use the Biographical Directory of the United
@@ -16,14 +16,9 @@
 #' cg_memberappear(memberid='S001181')
 #' }
 cg_memberappear <- function(memberid = NULL, key = NULL, ...)  {
-  url2 <- paste(paste0(cg_base(), "members/"), memberid, '/floor_appearances.json', sep = '')
-  args <- list('api-key' = check_key(key, "NYTIMES_CG_KEY"))
-  tt <- GET(url2, query = args, ...)
-  stop_for_status(tt)
-  out <- content(tt, as = 'text')
-  res <- jsonlite::fromJSON(out, simplifyVector = FALSE)
-  dat <- rbind_all_df(res$results[[1]]$appearances)
-  meta <- data.frame(res$results[[1]][c('member_id','name','api_uri','num_results')],
-                     stringsAsFactors = FALSE)
+  url <- sprintf("%s/members/%s/floor_appearances.json", cg_base(), memberid)
+  res <- rtimes_GET(url, list(), add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
+  dat <- tibble::as_data_frame(rbind_all_df(res$results[[1]]$appearances))
+  meta <- tibble::as_data_frame(res$results[[1]][c('member_id','name','api_uri','num_results')])
   list(copyright = cright(), meta = meta, data = dat)
 }

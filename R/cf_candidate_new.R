@@ -2,12 +2,6 @@
 #'
 #' @export
 #' @template finance
-#' @template nyt
-#' @param state	(character) Two-letter state abbreviation
-#' @param chamber	(character) house or senate (optional)
-#' @param district (character) Specify the district number. Use 1 for states 
-#' with a single representative. (House requests only - districts with 
-#' Senate requests will be ignored.)
 #' @references \url{http://propublica.github.io/campaign-finance-api-docs}
 #' @examples \dontrun{
 #' cf_candidate_new(campaign_cycle = 2016)

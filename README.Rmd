@@ -13,31 +13,39 @@ knitr::opts_chunk$set(
 [![Build Status](https://api.travis-ci.org/rOpenGov/rtimes.png)](https://travis-ci.org/rOpenGov/rtimes)
 [![codecov.io](https://codecov.io/github/rOpenGov/rtimes/coverage.svg?branch=master)](https://codecov.io/github/rOpenGov/rtimes?branch=master)
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/rtimes?color=2ED968)](https://github.com/metacran/cranlogs.app)
-[![cran version](http://www.r-pkg.org/badges/version/rtimes)](http://cran.rstudio.com/web/packages/rtimes)
+[![cran version](http://www.r-pkg.org/badges/version/rtimes)](https://cran.r-project.org/package=rtimes)
 
-`rtimes` is a collection of functions to search and acquire data from various New York Times APIs.
+`rtimes` is a collection of functions to search and acquire data from various New York Times APIs,
+some of which now live at Propublica.
 
 Functions in `rtimes` that wrap these APIs are prefixed by two letter acronyms fo reach API + the function name itself, e.g.: `cg` + `fxn`
 
-* `cg` for the [Congress API](http://developer.nytimes.com/docs/congress_api)
+* `cg` for the [Congress API](https://propublica.github.io/congress-api-docs)
 * `as` for the [Article Search API](http://developer.nytimes.com/docs/read/article_search_api_v2)
-* `cf` for the [Campaign Finance API](http://developer.nytimes.com/docs/campaign_finance_api/)
+* `cf` for the [Campaign Finance API](https://propublica.github.io/campaign-finance-api-docs)
 * `geo` for the [Geographic API](http://developer.nytimes.com/docs/geographic_api)
 
-Please get your own API keys at http://developer.nytimes.com/apps/register - you'll need a different key for each API.
+Please get your own API keys at <http://developer.nytimes.com/apps/register> for `as` and `geo` 
+functions, and for `cg` and `cf` functions by emailing Propublica at [apihelp@propublica.org](mailto:apihelp@propublica.org). 
+
+You'll need a different key for each API of the Nytimes APIs, but only one key for the Propublica
+APIs
 
 Data from the New York Times API is provided by The New York Times.
 
 <a border="0" href="http://developer.nytimes.com" ><img src="http://graphics8.nytimes.com/packages/images/developer/logos/poweredby_nytimes_200b.png" alt="NYT API" /></a>
 
-I set up the functions so that you can put the key in your `.Rprofile` file, which will be called on startup of R, and then you don't have to enter your API key for each run of a function. For example, put these entries in your `.Rprofile` file:
+And data from Propublica API is provided by Propublica
 
-```
-options(nytimes_cg_key = "YOURKEYHERE")
-options(nytimes_as_key = "YOURKEYHERE")
-options(nytimes_cf_key = "YOURKEYHERE")
-options(nytimes_geo_key = "YOURKEYHERE")
-```
+xxxx
+
+I set up the functions so that you can put the key in your `.Renviron` file (or any
+file on your system that holds env vars), which will be called on startup of R, and then you 
+don't have to enter your API key for each run of a function. Use the following env var names 
+
+* `NYTIMES_GEO_KEY` - for `geo` methods
+* `NYTIMES_AS_KEY` - for `as` methods
+* `PROPUBLICA_API_KEY` - for `cg` and `cf` methods
 
 ## Installation
 
@@ -68,15 +76,14 @@ out$votes
 ## Article Search API
 
 ```{r}
-out <- as_search(q = "bailout", begin_date = "20081001", end_date = '20081201')
-out$data[1:2]
+x <- as_search(q = "bailout", begin_date = "20081001", end_date = '20081201')
+x$data[1:3]
 ```
 
 ## Campaign Finance API
 
 ```{r}
-res <- cf_candidate_details(campaign_cycle = 2008, fec_id = 'P80003338')
-res$data
+cf_candidate_details(campaign_cycle = 2008, fec_id = 'P80003338')
 ```
 
 ## Geographic API

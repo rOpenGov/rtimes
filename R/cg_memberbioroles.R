@@ -3,7 +3,7 @@
 #' @description Get biographical and Congressional role information for a particular member of Congress.
 #'
 #' @export
-#' @template nytcgkey
+#' @template propubkey
 #' @param memberid The member's unique ID number (alphanumeric). To find a
 #'    member's ID number, get the list of members for the appropriate House
 #'    or Senate. You can also use the Biographical Directory of the United
@@ -13,24 +13,22 @@
 #'    Use the index ID as member-id in your request.
 #' @return List of members of a particular chamber in a particular Congress.
 #' @examples \dontrun{
-#' cg_memberbioroles('S001181')
+#' cg_memberbioroles(memberid = 'S001181')
 #' }
 `cg_memberbioroles` <- function(memberid = NULL, key = NULL, ...) {
-  url2 <- paste(paste0(cg_base(), "members/"), memberid, '.json', sep = '')
-  args <- list('api-key' = check_key(key, "NYTIMES_CG_KEY"))
-  tt <- GET(url2, query = args, ...)
-  stop_for_status(tt)
-  out <- content(tt, as = 'text')
-  res <- jsonlite::fromJSON(out, simplifyVector = FALSE)
+  url <- sprintf("%s/members/%s.json", cg_base(), memberid)
+  res <- rtimes_GET(url, list(), add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
   dat <- lapply(res$results[[1]]$roles, function(z) {
     if (length(z$committees) == 0) {
-      list(meta = data.frame(null_to_na(pop(z, "committees")), stringsAsFactors = FALSE),
-           data = NULL)
+      list(meta = tibble::as_data_frame(null_to_na(pop(z, "committees"))),
+           data = tibble::data_frame())
     } else {
-      list(meta = data.frame(null_to_na(pop(z, "committees")), stringsAsFactors = FALSE),
-           data = rbind_all_df(z$committees))
+      list(meta = tibble::as_data_frame(null_to_na(pop(z, "committees"))),
+           data = tibble::as_data_frame(rbind_all_df(z$committees)))
     }
   })
-  meta <- data.frame(pop(res$results[[1]], "roles"), stringsAsFactors = FALSE)
+  meta <- pop(res$results[[1]], "roles")
+  meta <- meta[!duplicated(names(meta))]
+  meta <- tibble::as_data_frame(meta)
   list(copyright = cright(), meta = meta, data = dat)
 }

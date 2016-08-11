@@ -8,7 +8,7 @@ cg_memberbystatedistrict(chamber = NULL, state = NULL, district = NULL,
   key = NULL, ...)
 }
 \arguments{
-\item{chamber}{One of 'house' or 'senate.}
+\item{chamber}{One of 'house' or 'senate'.}
 
 \item{state}{Limits the list of members by state; two-letter state code (e.g., CA).}
 
@@ -17,8 +17,8 @@ a district, you must also specify a state. If the district number you
 specify is higher than the total number of districts for that state,
 a 404 response will be returned.}
 
-\item{key}{your New York Times API key; pass in, or loads from .Renviron
-as \code{NYTIMES_CG_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
+\item{key}{(character) your Propublica API key; pass in, or loads from .Renviron
+as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
 
 \item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }
@@ -31,6 +31,9 @@ Get a list of the most recent new members of the current Congress.
 \examples{
 \dontrun{
 cg_memberbystatedistrict(chamber='senate', state='NH')
+cg_memberbystatedistrict(chamber='senate', state='CA')
+cg_memberbystatedistrict(chamber='senate', state='OR')
+cg_memberbystatedistrict(chamber='house', state='OR', district=1)
 }
 }
 

@@ -1,7 +1,7 @@
 #' Get a list of members of a particular chamber in a particular Congress
 #'
 #' @export
-#' @template nytcgkey
+#' @template propubkey
 #' @param congress_no The number of the Congress during which the members served.
 #' @param chamber One of 'house' or 'senate.
 #' @param state Limits the list of members by state; two-letter state code (e.g., CA).
@@ -11,16 +11,17 @@
 #'    a 404 response will be returned.
 #' @return List of members of a particular chamber in a particular Congress.
 #' @examples \dontrun{
-#' cg_memberslist(112, 'senate', "TX")
+#' cg_memberslist(congress_no = 112, chamber = 'senate', state = "TX")
 #' cg_memberslist(112, 'senate', 'NH')
 #' cg_memberslist(110, 'senate', 'NH')
 #' }
 `cg_memberslist` <- function(congress_no = NULL, chamber = NULL, state = NULL,
   district = NULL, key = NULL, ...) {
-  url2 <- paste(cg_base(), congress_no, '/', chamber, '/members.json', sep = '')
-  args <- list('api-key' = check_key(key, "NYTIMES_CG_KEY"), state = state, district = district)
-  res <- rtimes_GET(url2, args, ...)
-  df <- to_df(res$results[[1]]$members)
+  
+  url <- sprintf("%s/%s/%s/members.json", cg_base(), congress_no, chamber)
+  args <- rc(list(state = state, district = district))
+  res <- rtimes_GET(url, args, add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
+  df <- tibble::as_data_frame(to_df(res$results[[1]]$members))
   list(status = res$status, copyright = res$copyright,
        meta = do_data_frame(res), data = df)
 }

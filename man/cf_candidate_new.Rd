@@ -10,18 +10,8 @@ cf_candidate_new(campaign_cycle = NULL, key = NULL, ...)
 \item{campaign_cycle}{An even-numbdered year in YYYY format. Presidential data:
 2008-present; Congressional data: 2000-present}
 
-\item{key}{your New York Times API key; pass in, or loads from .Renviron as 
-\code{NYTIMES_CF_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
-
-\item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
-
-\item{state}{(character) Two-letter state abbreviation}
-
-\item{chamber}{(character) house or senate (optional)}
-
-\item{district}{(character) Specify the district number. Use 1 for states 
-with a single representative. (House requests only - districts with 
-Senate requests will be ignored.)}
+\item{key}{(character) your Propublica API key; pass in, or loads from .Renviron as 
+\code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
 }
 \description{
 Campaign finance - get new candidates

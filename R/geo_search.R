@@ -40,7 +40,11 @@
       offset=offset, perpage=limit, `api-key`=check_key(key)))
 
   res <- rtimes_GET(paste0(t_base(), "semantic/v2/geocodes/query.json"), args, list(), ...)
-  list(copyright = cright(), meta = meta(res), data = bind_rows(lapply(res$results, geo_proc)))
+  list(
+    copyright = cright(), 
+    meta = meta(res), 
+    data = tibble::as_data_frame(bind_rows(lapply(res$results, geo_proc)))
+  )
 }
 
 geo_proc <- function(y) {

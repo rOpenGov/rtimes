@@ -1,7 +1,7 @@
 #' Compare bill sponsorship between two members who served in the same Congress
 #' and chamber.
 #'
-#' @template nytcgkey
+#' @template propubkey
 #' @param memberid_1 The member's unique ID number (alphanumeric). To find a
 #'    member's ID number, get the list of members for the appropriate House
 #'    or Senate. You can also use the Biographical Directory of the United
@@ -16,15 +16,16 @@
 #'    Congress and chamber.
 #' @export
 #' @examples \dontrun{
-#' cg_membersponsorcompare('S001181', 'A000368', 112, 'senate')
+#' cg_membersponsorcompare(memberid_1 = 'S001181', memberid_2 = 'A000368', 
+#'  congress_no = 112, chamber = 'senate')
 #' }
 cg_membersponsorcompare <- function(memberid_1 = NULL, memberid_2 = NULL,
   congress_no = NULL, chamber = NULL,  key = NULL, ...) {
-  url2 <- paste(paste0(cg_base(), "members/"), memberid_1, '/bills/', memberid_2, '/',
-                congress_no, '/', chamber, '.json', sep = '')
-  args <- list('api-key' = check_key(key, "NYTIMES_CG_KEY"))
-  res <- rtimes_GET(url2, args, ...)
-  df <- to_df(res$results[[1]]$bills)
+  
+  url <- sprintf('%s/members/%s/bills/%s/%s/%s.json', cg_base(), memberid_1, memberid_2, 
+                 congress_no, chamber)
+  res <- rtimes_GET(url, list(), add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
+  df <- tibble::as_data_frame(to_df(res$results[[1]]$bills))
   list(status = res$status, copyright = res$copyright,
        meta = do_data_frame(res, "bills"), data = df)
 }

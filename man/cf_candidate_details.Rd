@@ -13,8 +13,8 @@ cf_candidate_details(campaign_cycle = NULL, fec_id = NULL, key = NULL,
 
 \item{fec_id}{FEC id}
 
-\item{key}{your New York Times API key; pass in, or loads from .Renviron as 
-\code{NYTIMES_CF_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
+\item{key}{(character) your Propublica API key; pass in, or loads from .Renviron as 
+\code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
 
 \item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }

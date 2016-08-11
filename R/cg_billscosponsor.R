@@ -2,7 +2,7 @@
 #'
 #' @export
 #'
-#' @template nytcgkey
+#' @template propubkey
 #' @param memberid The member's unique ID number (alphanumeric). To find a
 #'    member's ID number, get the list of members for the appropriate House
 #'    or Senate. You can also use the Biographical Directory of the United
@@ -16,18 +16,13 @@
 #' @return List of new members of he current Congress.
 #'
 #' @examples \dontrun{
-#' cg_billscosponsor(memberid='S001181', type='cosponsored')
+#' cg_billscosponsor(memberid='B001260', type='cosponsored', config=verbose())
 #' }
 
 `cg_billscosponsor` <- function(memberid = NULL, type = NULL, key = NULL, ...) {
-  url = "http://api.nytimes.com/svc/politics/v3/us/legislative/congress/members/"
-  url2 <- paste(url, memberid, '/bills/', type, '.json', sep = '')
-  args <- list('api-key' = check_key(key, "NYTIMES_CG_KEY"))
-  tt <- GET(url2, query = args, ...)
-  stop_for_status(tt)
-  out <- content(tt, as = 'text')
-  res <- jsonlite::fromJSON(out, simplifyVector = FALSE)
-  dat <- rbind_all_df(res$results[[1]]$bills)
-  meta <- data.frame(pop(res$results[[1]], "bills"), stringsAsFactors = FALSE)
+  url <- sprintf("%s/members/%s/bills/%s.json", cg_base(), memberid, type)
+  res <- rtimes_GET(url, list(), add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
+  dat <- tibble::as_data_frame(rbind_all_df(res$results[[1]]$bills))
+  meta <- tibble::as_data_frame(pop(res$results[[1]], "bills"))
   list(copyright = cright(), meta = meta, data = dat)
 }
