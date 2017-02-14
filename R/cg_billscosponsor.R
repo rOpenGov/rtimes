@@ -16,12 +16,13 @@
 #' @return List of new members of he current Congress.
 #'
 #' @examples \dontrun{
-#' cg_billscosponsor(memberid='B001260', type='cosponsored', config=verbose())
+#' cg_billscosponsor(memberid='B001260', type='cosponsored')
 #' }
 
 `cg_billscosponsor` <- function(memberid = NULL, type = NULL, key = NULL, ...) {
   url <- sprintf("%s/members/%s/bills/%s.json", cg_base(), memberid, type)
-  res <- rtimes_GET(url, list(), add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
+  res <- rtimes_GET(url, list(), FALSE, 
+                    add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
   dat <- tibble::as_data_frame(rbind_all_df(res$results[[1]]$bills))
   meta <- tibble::as_data_frame(pop(res$results[[1]], "bills"))
   list(copyright = cright(), meta = meta, data = dat)

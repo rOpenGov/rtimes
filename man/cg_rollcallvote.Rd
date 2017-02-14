@@ -35,7 +35,8 @@ Get a specific roll-call vote, including a complete list of member positions.
 }
 \examples{
 \dontrun{
-cg_rollcallvote(congress_no = 105, chamber = 'house', session_no = 2, rollcall_no = 38)
+cg_rollcallvote(congress_no = 105, chamber = 'house', session_no = 2, 
+  rollcall_no = 38)
 }
 }
 

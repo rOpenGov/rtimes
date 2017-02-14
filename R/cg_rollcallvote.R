@@ -14,19 +14,23 @@
 #' @return Get a specific roll-call vote, including a complete list of member
 #'    positions. A list with metadata about the bill, and vote results.
 #' @examples \dontrun{
-#' cg_rollcallvote(congress_no = 105, chamber = 'house', session_no = 2, rollcall_no = 38)
+#' cg_rollcallvote(congress_no = 105, chamber = 'house', session_no = 2, 
+#'   rollcall_no = 38)
 #' }
 cg_rollcallvote <- function(congress_no = NULL, chamber = NULL, session_no = NULL,
                             rollcall_no = NULL, key = NULL, ...) {
 
   url <- sprintf('%s/%s/%s/sessions/%s/votes/%s.json', cg_base(), congress_no, 
                  chamber, session_no, rollcall_no)
-  res <- rtimes_GET(url, list(),  add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
+  res <- rtimes_GET(url, list(), FALSE, 
+                    add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
   dat <- tibble::as_data_frame(rbind_all_df(res$results$votes$vote$positions))
-  meta <- tibble::as_data_frame(res$results$votes$vote[c('congress', 'session', 'chamber', 'roll_call',
+  meta <- tibble::as_data_frame(res$results$votes$vote[c('congress', 'session', 
+                                                         'chamber', 'roll_call',
       'question', 'description', 'vote_type', 'date', 'time', 'result')])
   votes <- bind_rows(
-    res$results$votes$vote[c('democratic', 'republican', 'independent', 'total')], 
+    res$results$votes$vote[c('democratic', 'republican', 
+                             'independent', 'total')], 
     .id = "category"
   )
   list(copyright = cright(),

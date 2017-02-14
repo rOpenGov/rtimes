@@ -32,7 +32,7 @@ Get bill cosponsorship data for a particular member.
 }
 \examples{
 \dontrun{
-cg_billscosponsor(memberid='B001260', type='cosponsored', config=verbose())
+cg_billscosponsor(memberid='B001260', type='cosponsored')
 }
 }
 

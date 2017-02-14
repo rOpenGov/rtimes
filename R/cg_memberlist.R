@@ -20,7 +20,7 @@
   
   url <- sprintf("%s/%s/%s/members.json", cg_base(), congress_no, chamber)
   args <- rc(list(state = state, district = district))
-  res <- rtimes_GET(url, args, add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
+  res <- rtimes_GET(url, args, FALSE, add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
   df <- tibble::as_data_frame(to_df(res$results[[1]]$members))
   list(status = res$status, copyright = res$copyright,
        meta = do_data_frame(res), data = df)

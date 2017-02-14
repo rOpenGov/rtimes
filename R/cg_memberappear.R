@@ -17,7 +17,7 @@
 #' }
 cg_memberappear <- function(memberid = NULL, key = NULL, ...)  {
   url <- sprintf("%s/members/%s/floor_appearances.json", cg_base(), memberid)
-  res <- rtimes_GET(url, list(), add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
+  res <- rtimes_GET(url, list(), FALSE, add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
   dat <- tibble::as_data_frame(rbind_all_df(res$results[[1]]$appearances))
   meta <- tibble::as_data_frame(res$results[[1]][c('member_id','name','api_uri','num_results')])
   list(copyright = cright(), meta = meta, data = dat)
