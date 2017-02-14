@@ -129,7 +129,7 @@
   dat <- tibble::as_tibble(dat)
   
   list(copyright = cright(), meta = tibble::as_tibble(res$response$meta), 
-       data = dat, facet = res$response$facet)
+       data = dat, facets = res$response$facet)
 }
 
 bind <- function(x, ...) {

@@ -15,21 +15,22 @@ test_that("returns the correct stuff", {
   expect_is(a$copyright, "character")
   expect_match(a$copyright, "Copyright")
   expect_is(a$meta, "data.frame")
-  expect_is(a$data, "list")
-  expect_is(a$data[[1]], "as_search")
+  expect_is(a$data, "tbl_df")
+  expect_is(a$data$web_url, "character")
   
   expect_is(b, "list")
   expect_is(b$meta, "data.frame")
-  expect_is(b$data, "list")
-  expect_named(b$data, c("meta", "docs", "facets"))
+  expect_is(b$data, "tbl_df")
+  expect_named(b, c("copyright", "meta", "data", "facets"))
+  expect_named(b$data, c("word_count"))
   
   expect_is(d, "list")
   expect_is(d$meta, "data.frame")
-  expect_is(e$data, "list")
+  expect_is(e$data, "tbl_df")
   
   expect_is(e, "list")
   expect_is(e$meta, "data.frame")
-  expect_is(e$data, "list")
+  expect_is(e$data, "tbl_df")
 })
 
 test_that("fails well", {
