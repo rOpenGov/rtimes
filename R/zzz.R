@@ -3,7 +3,7 @@ rc <- function(x) Filter(Negate(is.null), x)
 nnlcol <- function(x) if (!is.null(x)) paste(x, collapse = ",") else NULL
 nnlna <- function(x) if (!is.null(x)) paste(x, collapse = ",") else NA
 
-t_base <- function() "http://api.nytimes.com/svc/"
+t_base <- function() "https://api.nytimes.com/svc/"
 #cg_base <- function() paste0(t_base(), "politics/v3/us/legislative/congress/")
 
 p_base <- function() "https://api.propublica.org/"
