@@ -4,20 +4,20 @@
 \alias{cf_candidate_state}
 \title{Campaign finance - candidates from a state}
 \usage{
-cf_candidate_state(campaign_cycle = NULL, state = NULL, chamber = NULL,
-  district = NULL, key = NULL, ...)
+cf_candidate_state(campaign_cycle, state, chamber = NULL, district = NULL,
+  key = NULL, ...)
 }
 \arguments{
 \item{campaign_cycle}{An even-numbdered year in YYYY format. Presidential data:
 2008-present; Congressional data: 2000-present}
 
-\item{state}{(character) Two-letter state abbreviation}
+\item{state}{(character) Two-letter state abbreviation. required.}
 
-\item{chamber}{(character) house or senate (optional)}
+\item{chamber}{(character) house or senate. required.}
 
 \item{district}{(character) Specify the district number. Use 1 for states 
 with a single representative. (House requests only - districts with 
-Senate requests will be ignored.)}
+Senate requests will be ignored.). required.}
 
 \item{key}{(character) your Propublica API key; pass in, or loads from .Renviron as 
 \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
@@ -29,8 +29,11 @@ Campaign finance - candidates from a state
 }
 \examples{
 \dontrun{
-cf_candidate_state(campaign_cycle = 2016, state = "DE")
-cf_candidate_state(campaign_cycle = 2016, state = "CA")
+cf_candidate_state(campaign_cycle = 2014, state = "TX")
+cf_candidate_state(campaign_cycle = 2012, state = "NM")
+cf_candidate_state(campaign_cycle = 2016, state = "OR", chamber = "senate")
+cf_candidate_state(campaign_cycle = 2016, state = "CA", 
+  chamber = "house", district = 2)
 }
 }
 \references{

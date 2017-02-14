@@ -23,7 +23,7 @@
 
 `cf_candidate_leaders` <- function(campaign_cycle=NULL, category=NULL, key=NULL, ...) {
   url <- sprintf("%s/%s/candidates/leaders/%s.json", cf_base(), campaign_cycle, category)
-  res <- rtimes_GET(url, list(), add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
+  res <- rtimes_GET(url, list(), FALSE, add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
   df <- to_df(res$results)
   list(status = res$status, copyright = res$copyright, meta = NULL, data = df)
 }
