@@ -11,9 +11,10 @@ cf_base <- function(version = "v1") paste0(p_base(), "campaign-finance/", versio
 cg_base <- function(version = "v1") paste0(p_base(), "congress/", version)
 add_key <- function(x) httr::add_headers('X-API-Key' = x)
 
-rtimes_GET <- function(url, args, ...) {
+rtimes_GET <- function(url, args, parse = TRUE, ...) {
   ans <- GET(url, query = args, ...)
   stop_for_status(ans)
+  if (parse) return(jsonlite::fromJSON(cu8(ans), TRUE, flatten = TRUE))
   jsonlite::fromJSON(cu8(ans), FALSE)
 }
 

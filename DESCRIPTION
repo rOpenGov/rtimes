@@ -15,7 +15,8 @@ Imports:
     httr,
     jsonlite,
     dplyr,
-    tibble
+    tibble,
+    data.table
 Suggests:
     knitr,
     testthat,
