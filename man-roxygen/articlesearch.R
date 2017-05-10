@@ -30,7 +30,10 @@
 #' @param ... Futher args pass into query
 #' @param callopts Curl options (debugging tools mostly) passed to 
 #' \code{\link[httr]{GET}}
-#' @param all_results (logical) return all results. Default: \code{FALSE} 
+#' @param all_results (logical) return all results. Default: \code{FALSE}
+#' @param try_flatten (logical) attempt to completely flatten data.frame, 
+#' which may fail in some cases as its hard to account for all edge cases. 
+#' Default: \code{FALSE}
 #' @param sleep (integer) seconds to sleep between successive requests, only
 #' used when \code{all_results=TRUE}
 #' 

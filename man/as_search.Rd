@@ -6,8 +6,8 @@
 \usage{
 as_search(q, fq = NULL, sort = NULL, begin_date = NULL, end_date = NULL,
   key = NULL, fl = NULL, hl = FALSE, page = 0, all_results = FALSE,
-  facet_field = NULL, facet_filter = NULL, sleep = 2, ...,
-  callopts = list())
+  try_flatten = FALSE, facet_field = NULL, facet_filter = NULL,
+  sleep = 2, ..., callopts = list())
 }
 \arguments{
 \item{q}{Search query term. Search is performed on the article body, 
@@ -41,6 +41,10 @@ example, page=0 corresponds to records 0-9. To return records 10-19, set
 page to 1, not 10.}
 
 \item{all_results}{(logical) return all results. Default: \code{FALSE}}
+
+\item{try_flatten}{(logical) attempt to completely flatten data.frame, 
+which may fail in some cases as its hard to account for all edge cases. 
+Default: \code{FALSE}}
 
 \item{facet_field}{(character) Specifies the sets of facet values to include 
 in the facets array at the end of response, which collects the facet values 
@@ -103,23 +107,26 @@ x$copyright
 x$meta
 x$data
 x$facet
+Sys.sleep(1)
 
-as_search(q="money", fq = 'The New York Times')
 as_search(q="money", fq = 'The New York Times', fl = c('word_count', 
   'snippet', 'headline'))
-as_search(q="money", fq = 'news_desk:("Sports" "Foreign")')
+Sys.sleep(1)
 x <- as_search(q="bailout", hl = TRUE)
 x$data$snippet
+Sys.sleep(1)
 
 # all results
 (x <- as_search(q="bailout", begin_date = "20081001", 
   end_date = '20081003', all_results = TRUE))
 x$meta
 x$data
+Sys.sleep(1)
 
 # facetting
 as_search(q="bailout", facet_field = 'section_name', begin_date = "20081001",
    end_date = '20081201')
+Sys.sleep(1)
 ## with facet filtering
 as_search(q="bailout", facet_field = 'section_name', begin_date = "20081001",
    end_date = '20081201', facet_filter = TRUE)

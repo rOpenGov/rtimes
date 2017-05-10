@@ -6,8 +6,8 @@
 #' @param query Last name of a candidate
 #' @references \url{http://propublica.github.io/campaign-finance-api-docs}
 #' @examples \dontrun{
-#' cf_candidate_search(campaign_cycle = 2016, query='Wilson')
-#' cf_candidate_search(campaign_cycle = 2008, query='obama')
+#' # cf_candidate_search(campaign_cycle = 2016, query='Wilson')
+#' # cf_candidate_search(campaign_cycle = 2008, query='obama')
 #' }
 
 `cf_candidate_search` <- function(campaign_cycle=NULL, query=NULL, key = NULL, ...) {

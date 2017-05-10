@@ -13,23 +13,26 @@
 #' x$meta
 #' x$data
 #' x$facet
+#' Sys.sleep(1)
 #' 
-#' as_search(q="money", fq = 'The New York Times')
 #' as_search(q="money", fq = 'The New York Times', fl = c('word_count', 
 #'   'snippet', 'headline'))
-#' as_search(q="money", fq = 'news_desk:("Sports" "Foreign")')
+#' Sys.sleep(1)
 #' x <- as_search(q="bailout", hl = TRUE)
 #' x$data$snippet
+#' Sys.sleep(1)
 #' 
 #' # all results
 #' (x <- as_search(q="bailout", begin_date = "20081001", 
 #'   end_date = '20081003', all_results = TRUE))
 #' x$meta
 #' x$data
+#' Sys.sleep(1)
 #' 
 #' # facetting
 #' as_search(q="bailout", facet_field = 'section_name', begin_date = "20081001",
 #'    end_date = '20081201')
+#' Sys.sleep(1)
 #' ## with facet filtering
 #' as_search(q="bailout", facet_field = 'section_name', begin_date = "20081001",
 #'    end_date = '20081201', facet_filter = TRUE)
@@ -37,7 +40,8 @@
 `as_search` <- function(
   q, fq=NULL, sort=NULL, begin_date=NULL, end_date=NULL,
   key = NULL, fl = NULL, hl = FALSE, page = 0, all_results = FALSE, 
-  facet_field = NULL, facet_filter = NULL, sleep = 2, ..., callopts = list()) {
+  try_flatten = FALSE, facet_field = NULL, facet_filter = NULL, 
+  sleep = 2, ..., callopts = list()) {
   
   if (!is.null(begin_date)) {
     if (is.null(end_date))
@@ -82,50 +86,52 @@
     dat <- res$response$docs
   }
   
-  # completely flatten dataframe
-  dat$.id <- seq_len(NROW(dat))
-  todo <- which(vapply(dat, class, "") == "list")
-  databin <- list()
-  for (i in seq_along(todo)) {
-    tmp <- dat[, todo[[i]]]
-    clzz <- unique(vapply(tmp, class, character(1)))
-    if (all("list" %in% clzz)) {
-      tmp[vapply(tmp, length, 1) == 0] <- NA_character_
-      dat[[todo[[i]]]] <- unlist(tmp)
-    } else if ("data.frame" %in% clzz) {
-      ncol_ <- vapply(tmp, NCOL, 1)
-      if (any(ncol_  > 0)) {
-        col_names <- paste(names(todo)[i], names(tmp[which.max(ncol_)][[1]]), 
-                           sep = "_")
-        z <- lapply(tmp, function(w) {
-          if (NCOL(w) > 0 && inherits(w, "data.frame")) {
-            stats::setNames(
-              w, 
-              paste(names(todo)[i], names(w), sep = "_")
-            )
-          } else {
-            df <- tibble::as_tibble(t(rep(NA_character_, times = max(ncol_))))
-            stats::setNames(df, col_names)
-          }
-        })
-        zdat <- bind(z, idcol = TRUE)
-        databin[[i]] <- zdat
-      }
-    } else {
-      databin[[i]] <- todo[[i]]
-    }
-  }
-  
-  # remove old columns
-  if (length(databin)) {
+  if (try_flatten) {
+    # completely flatten dataframe
+    dat$.id <- seq_len(NROW(dat))
+    todo <- which(vapply(dat, class, "") == "list")
+    databin <- list()
     for (i in seq_along(todo)) {
-      if (!is.null(databin[[i]])) {
-        dat <- merge(dat, databin[[i]], by = ".id")
+      tmp <- dat[, todo[[i]]]
+      clzz <- unique(vapply(tmp, class, character(1)))
+      if (all("list" %in% clzz)) {
+        tmp[vapply(tmp, length, 1) == 0] <- NA_character_
+        dat[[todo[[i]]]] <- unlist(tmp)
+      } else if ("data.frame" %in% clzz) {
+        ncol_ <- vapply(tmp, NCOL, 1)
+        if (any(ncol_  > 0)) {
+          col_names <- paste(names(todo)[i], names(tmp[which.max(ncol_)][[1]]), 
+                             sep = "_")
+          z <- lapply(tmp, function(w) {
+            if (NCOL(w) > 0 && inherits(w, "data.frame")) {
+              stats::setNames(
+                w, 
+                paste(names(todo)[i], names(w), sep = "_")
+              )
+            } else {
+              df <- tibble::as_tibble(t(rep(NA_character_, times = max(ncol_))))
+              stats::setNames(df, col_names)
+            }
+          })
+          zdat <- bind(z, idcol = TRUE)
+          databin[[i]] <- zdat
+        }
+      } else {
+        databin[[i]] <- todo[[i]]
       }
-      dat[[ names(todo)[i] ]] <- NULL
     }
+    
+    # remove old columns
+    if (length(databin)) {
+      for (i in seq_along(todo)) {
+        if (!is.null(databin[[i]])) {
+          dat <- merge(dat, databin[[i]], by = ".id")
+        }
+        dat[[ names(todo)[i] ]] <- NULL
+      }
+    }
+    dat$.id <- NULL
   }
-  dat$.id <- NULL
   
   # tibblize
   dat <- tibble::as_tibble(dat)

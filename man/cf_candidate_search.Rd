@@ -22,8 +22,8 @@ Campaign finance - candidate search
 }
 \examples{
 \dontrun{
-cf_candidate_search(campaign_cycle = 2016, query='Wilson')
-cf_candidate_search(campaign_cycle = 2008, query='obama')
+# cf_candidate_search(campaign_cycle = 2016, query='Wilson')
+# cf_candidate_search(campaign_cycle = 2008, query='obama')
 }
 }
 \references{
