@@ -6,9 +6,12 @@ test_that("returns the correct stuff", {
   skip_on_cran()
   
   a <- as_search(q = "bailout", begin_date = "20081001", end_date = '20081201')
+  Sys.sleep(0.5)
   b <- as_search(q = "bailout", facet_field = 'section_name', begin_date = "20081001", 
      end_date = '20081201', fl = 'word_count')
+  Sys.sleep(0.5)
   d <- as_search(q = "money", fq = 'The New York Times')
+  Sys.sleep(0.5)
   e <- as_search(q = "money", fq = 'news_desk:("Sports" "Foreign")')
   
   expect_is(a, "list")
