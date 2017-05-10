@@ -33,4 +33,3 @@ plans to do so.
 cg_membervotepositions('S001181')
 }
 }
-

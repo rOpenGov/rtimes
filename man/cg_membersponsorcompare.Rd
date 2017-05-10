@@ -42,4 +42,3 @@ cg_membersponsorcompare(memberid_1 = 'S001181', memberid_2 = 'A000368',
  congress_no = 112, chamber = 'senate')
 }
 }
-

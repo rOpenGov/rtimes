@@ -35,4 +35,3 @@ Get bill cosponsorship data for a particular member.
 cg_billscosponsor(memberid='B001260', type='cosponsored')
 }
 }
-

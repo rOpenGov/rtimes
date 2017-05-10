@@ -27,4 +27,3 @@ Get a list of members who have left the Senate or House or have announced plans 
 cg_membersleaving(congress_no = 112, chamber = 'house')
 }
 }
-

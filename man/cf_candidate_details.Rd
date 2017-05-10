@@ -30,4 +30,3 @@ cf_candidate_details(campaign_cycle = 2012, fec_id = 'P80003338')
 \references{
 \url{http://propublica.github.io/campaign-finance-api-docs}
 }
-

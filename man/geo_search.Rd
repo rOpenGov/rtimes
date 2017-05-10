@@ -125,4 +125,3 @@ geo_search(country_code = 'US', config = verbose())
 \references{
 \url{http://developer.nytimes.com/docs/geographic_api}
 }
-

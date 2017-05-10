@@ -26,4 +26,3 @@ cf_candidate_new(campaign_cycle = 2014)
 \references{
 \url{http://propublica.github.io/campaign-finance-api-docs}
 }
-

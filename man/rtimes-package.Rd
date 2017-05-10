@@ -2,8 +2,8 @@
 % Please edit documentation in R/rtimes-package.R
 \docType{package}
 \name{rtimes-package}
-\alias{rtimes}
 \alias{rtimes-package}
+\alias{rtimes}
 \title{New York Times APIs client}
 \description{
 Interface to Congress, Campaign Finance, Article Search, and
@@ -66,8 +66,8 @@ Rate limits vary for the different APIs:
  \item Geographic API: 8/sec, 5,000/day
 }
 }
+
 \author{
 Scott Chamberlain \email{myrmecocystus@gmail.com}
 }
 \keyword{package}
-

@@ -39,4 +39,3 @@ cf_candidate_state(campaign_cycle = 2016, state = "CA",
 \references{
 \url{http://propublica.github.io/campaign-finance-api-docs}
 }
-

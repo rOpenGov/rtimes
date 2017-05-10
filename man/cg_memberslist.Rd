@@ -37,4 +37,3 @@ cg_memberslist(112, 'senate', 'NH')
 cg_memberslist(110, 'senate', 'NH')
 }
 }
-

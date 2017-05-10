@@ -34,4 +34,3 @@ Senate floor.
 cg_memberappear(memberid='S001181')
 }
 }
-

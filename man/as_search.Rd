@@ -124,4 +124,3 @@ as_search(q="bailout", facet_field = 'section_name', begin_date = "20081001",
 \url{http://developer.nytimes.com/docs/read/article_search_api_v2}
 \url{http://developer.nytimes.com/article_search_v2.json#/README}
 }
-

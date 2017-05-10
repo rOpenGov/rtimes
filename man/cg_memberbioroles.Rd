@@ -31,4 +31,3 @@ Get biographical and Congressional role information for a particular member of C
 cg_memberbioroles(memberid = 'S001181')
 }
 }
-

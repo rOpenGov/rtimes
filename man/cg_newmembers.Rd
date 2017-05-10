@@ -23,4 +23,3 @@ Get a list of the most recent new members of the current Congress.
 cg_newmembers()
 }
 }
-

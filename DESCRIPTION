@@ -18,10 +18,11 @@ Imports:
     tibble,
     data.table
 Suggests:
+    roxygen2 (>= 6.0.1),
     knitr,
     testthat,
     lubridate,
     ggplot2,
     scales,
     grid
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

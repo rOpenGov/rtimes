@@ -36,4 +36,3 @@ cg_memberbystatedistrict(chamber='senate', state='OR')
 cg_memberbystatedistrict(chamber='house', state='OR', district=1)
 }
 }
-
