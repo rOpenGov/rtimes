@@ -15,10 +15,10 @@ rtimes vignette - R client for New York Times APIs
 
 Functions in `rtimes` that wrap these APIs are prefixed by two letter acronyms fo reach API + the function name itself, e.g.: `cg` + `fxn`
 
-* `cg` for the [Congress API](http://developer.nytimes.com/docs/congress_api)
-* `as` for the [Article Search API](http://developer.nytimes.com/docs/read/article_search_api_v2)
-* `cf` for the [Campaign Finance API](http://developer.nytimes.com/docs/campaign_finance_api/)
-* `geo` for the [Geographic API](http://developer.nytimes.com/docs/geographic_api)
+* `cg` for the [Congress API](https://propublica.github.io/congress-api-docs)
+* `as` for the [Article Search API](http://developer.nytimes.com/article_search_v2.json)
+* `cf` for the [Campaign Finance API](https://propublica.github.io/campaign-finance-api-docs)
+* `geo` for the [Geographic API](http://developer.nytimes.com/geo_api_v2.json)
 
 Please get your own API keys at http://developer.nytimes.com/apps/register - you'll need a different key for each API.
 
@@ -27,10 +27,9 @@ be called on startup of R, and then you don't have to enter your API key for eac
 of a function. Add entries for an R session like
 
 ```
-Sys.setenv(NYTIMES_CG_KEY = "YOURKEYHERE")
-Sys.setenv(NYTIMES_AS_KEY = "YOURKEYHERE")
-Sys.setenv(NYTIMES_CF_KEY = "YOURKEYHERE")
 Sys.setenv(NYTIMES_GEO_KEY = "YOURKEYHERE")
+Sys.setenv(NYTIMES_AS_KEY = "YOURKEYHERE")
+Sys.setenv(PROPUBLICA_API_KEY = "YOURKEYHERE")
 ```
 
 Or set them across sessions by putting entries in your `.Renviron` file like
@@ -38,12 +37,11 @@ Or set them across sessions by putting entries in your `.Renviron` file like
 ```
 NYTIMES_GEO_KEY=<yourkey>
 NYTIMES_AS_KEY=<yourkey>
-NYTIMES_CG_KEY=<yourkey>
-NYTIMES_CF_KEY=<yourkey>
+PROPUBLICA_API_KEY=<yourkey>
 ```
 
-You can also pass in your key in a function call, but be careful not to expose your keys in 
-code committed to public repositories. If you do pass in a function call, use e.g., `Sys.getenv("NYTIMES_CG_KEY")`.
+You can also pass in your key in a function call, but be careful not to expose your keys in
+code committed to public repositories. If you do pass in a function call, use e.g., `Sys.getenv("NYTIMES_GEO_KEY")`.
 
 ## Install rtimes
 
@@ -73,53 +71,43 @@ _Note: Member ID S001181 is Jeanne Shaheen_
 
 ## Congress API
 
-There are currently 11 functions to work with the congress API
-
-* `cg_billscosponsor`
-* `cg_memberappear`
-* `cg_memberbioroles`
-* `cg_memberbystatedistrict`
-* `cg_membersleaving`
-* `cg_memberslist`
-* `cg_membersponsorcompare`
-* `cg_membervotecompare`
-* `cg_membervotepositions`
-* `cg_newmembers`
-* `cg_rollcallvote`
-
 ### Bill cosponsorship data for a member
 
 
 ```r
 out <- cg_billscosponsor(memberid='S001181', type='cosponsored')
 out$data
-#> Source: local data frame [20 x 11]
-#> 
-#>    congress    number
-#>       (chr)     (chr)
-#> 1       114    S.2126
-#> 2       114    S.2110
-#> 3       114    S.2101
-#> 4       114     S.812
-#> 5       114    S.2089
-#> 6       114    S.2075
-#> 7       114 S.RES.269
-#> 8       114 S.RES.267
-#> 9       114    S.1169
-#> 10      114    S.1911
-#> 11      114 S.RES.262
-#> 12      114     S.423
-#> 13      114     S.524
-#> 14      114 S.RES.257
-#> 15      114 S.RES.259
-#> 16      114    S.2035
-#> 17      114    S.1831
-#> 18      114    S.1559
-#> 19      114    S.1503
-#> 20      114 S.RES.242
-#> Variables not shown: bill_uri (chr), title (chr), cosponsored_date (chr),
-#>   sponsor_id (chr), introduced_date (chr), cosponsors (chr), committees
-#>   (chr), latest_major_action_date (chr), latest_major_action (chr)
+#> # A tibble: 20 x 25
+#>    congress       bill_id bill_type       number
+#>       <chr>         <chr>     <chr>        <chr>
+#>  1      115     s1068-115         s       S.1068
+#>  2      115     s1045-115         s       S.1045
+#>  3      115   sres154-115      sres    S.RES.154
+#>  4      115   sres155-115      sres    S.RES.155
+#>  5      115     s1035-115         s       S.1035
+#>  6      115     s1025-115         s       S.1025
+#>  7      115   sres153-115      sres    S.RES.153
+#>  8      115     s1006-115         s       S.1006
+#>  9      115      s372-115         s        S.372
+#> 10      115      s708-115         s        S.708
+#> 11      115      s985-115         s        S.985
+#> 12      115      s980-115         s        S.980
+#> 13      115      s955-115         s        S.955
+#> 14      115      s954-115         s        S.954
+#> 15      115      s944-115         s        S.944
+#> 16      115 sconres13-115   sconres S.CON.RES.13
+#> 17      115      s497-115         s        S.497
+#> 18      115      s936-115         s        S.936
+#> 19      115      s766-115         s        S.766
+#> 20      115      s912-115         s        S.912
+#> # ... with 21 more variables: bill_uri <chr>, title <chr>,
+#> #   cosponsored_date <chr>, sponsor_id <chr>, sponsor_uri <chr>,
+#> #   gpo_pdf_uri <chr>, congressdotgov_url <chr>, govtrack_url <chr>,
+#> #   introduced_date <chr>, active <chr>, house_passage <chr>,
+#> #   senate_passage <chr>, enacted <chr>, vetoed <chr>, cosponsors <chr>,
+#> #   committees <chr>, primary_subject <chr>, summary <chr>,
+#> #   summary_short <chr>, latest_major_action_date <chr>,
+#> #   latest_major_action <chr>
 ```
 
 ### Member appearances
@@ -128,19 +116,18 @@ out$data
 ```r
 out <- cg_memberappear(memberid='S001181')
 out$data
-#> Source: local data frame [20 x 5]
-#> 
+#> # A tibble: 20 x 5
 #>          date
-#>         (chr)
-#> 1  2010-09-29
-#> 2  2010-09-22
-#> 3  2010-09-17
-#> 4  2010-09-16
-#> 5  2010-08-03
-#> 6  2010-07-29
-#> 7  2010-07-28
-#> 8  2010-07-22
-#> 9  2010-07-21
+#>         <chr>
+#>  1 2010-09-29
+#>  2 2010-09-22
+#>  3 2010-09-17
+#>  4 2010-09-16
+#>  5 2010-08-03
+#>  6 2010-07-29
+#>  7 2010-07-28
+#>  8 2010-07-22
+#>  9 2010-07-21
 #> 10 2010-07-21
 #> 11 2010-07-20
 #> 12 2010-07-15
@@ -152,8 +139,8 @@ out$data
 #> 18 2010-06-16
 #> 19 2010-06-10
 #> 20 2010-06-09
-#> Variables not shown: title (chr), url (chr), start_time (chr), end_time
-#>   (chr)
+#> # ... with 4 more variables: title <chr>, url <chr>, start_time <chr>,
+#> #   end_time <chr>
 ```
 
 ## Article search API
@@ -168,20 +155,45 @@ Here, we search for _bailout_ between two dates, Oct 1 2008 and Dec 1 2008
 
 ```r
 res <- as_search(q="bailout", begin_date = "20081001", end_date = '20081201')
-res$copyright # copyright
+res$copyright
 #> [1] "Copyright (c) 2015 The New York Times Company.  All Rights Reserved."
-res$meta # number of hits
-#>   hits time offset
-#> 1 1208   37      0
-res$data[[1]]
-#> <NYTimes article>Toxic Bailout
-#>   Type: News
-#>   Published: 2008-10-05T00:00:00Z
-#>   Word count: 913
-#>   URL: http://www.nytimes.com/2008/10/05/magazine/05wwln-safire-t.html
-#>   Snippet: How can you be naked wearing shorts?
-res$data[[1]]$snippet
-#> [1] "How can you be naked wearing shorts?"
+res$meta
+#> # A tibble: 1 x 3
+#>    hits  time offset
+#>   <int> <int>  <int>
+#> 1  1209     6      0
+res$data
+#> # A tibble: 38 x 41
+#>                                                               web_url
+#>                                                                 <chr>
+#>  1   https://www.nytimes.com/2008/10/05/magazine/05wwln-safire-t.html
+#>  2   https://www.nytimes.com/2008/10/05/magazine/05wwln-safire-t.html
+#>  3   https://www.nytimes.com/2008/10/05/magazine/05wwln-safire-t.html
+#>  4   https://www.nytimes.com/2008/10/05/magazine/05wwln-safire-t.html
+#>  5   https://krugman.blogs.nytimes.com/2008/10/01/bailout-narratives/
+#>  6       https://economix.blogs.nytimes.com/2008/10/28/bailout-tally/
+#>  7 https://www.nytimes.com/2008/11/19/business/economy/19bailout.html
+#>  8 https://www.nytimes.com/2008/11/19/business/economy/19bailout.html
+#>  9 https://www.nytimes.com/2008/11/19/business/economy/19bailout.html
+#> 10 https://www.nytimes.com/2008/11/19/business/economy/19bailout.html
+#> # ... with 28 more rows, and 40 more variables: snippet <chr>,
+#> #   lead_paragraph <chr>, abstract <chr>, print_page <chr>, source <chr>,
+#> #   pub_date <chr>, document_type <chr>, news_desk <chr>,
+#> #   section_name <chr>, subsection_name <chr>, type_of_material <chr>,
+#> #   `_id` <chr>, word_count <chr>, slideshow_credits <lgl>,
+#> #   headline.main <chr>, headline.content_kicker <chr>,
+#> #   headline.kicker <chr>, headline.print_headline <chr>,
+#> #   byline.original <chr>, multimedia_width <chr>, multimedia_url <chr>,
+#> #   multimedia_height <chr>, multimedia_subtype <chr>,
+#> #   multimedia_type <chr>, multimedia_legacy.xlargewidth <chr>,
+#> #   multimedia_legacy.xlarge <chr>, multimedia_legacy.xlargeheight <chr>,
+#> #   multimedia_legacy.thumbnailheight <chr>,
+#> #   multimedia_legacy.thumbnail <chr>,
+#> #   multimedia_legacy.thumbnailwidth <chr>, keywords_rank <chr>,
+#> #   keywords_is_major <chr>, keywords_name <chr>, keywords_value <chr>,
+#> #   byline.person_organization <chr>, byline.person_role <chr>,
+#> #   byline.person_firstname <chr>, byline.person_rank <chr>,
+#> #   byline.person_lastname <chr>, byline.person_middlename <chr>
 ```
 
 Another e.g., Search for keyword _money_, within the _Sports_ and _Foreign_ news desks
@@ -189,38 +201,44 @@ Another e.g., Search for keyword _money_, within the _Sports_ and _Foreign_ news
 
 ```r
 res <- as_search(q = "money", fq = 'news_desk:("Sports" "Foreign")')
-res$data[1:3]
-#> [[1]]
-#> <NYTimes article>Nigeria: Former Official Pleads Not Guilty in Corruption Case
-#>   Type: Brief
-#>   Published: 2015-10-27T00:00:00Z
-#>   Word count: 150
-#>   URL: http://www.nytimes.com/2015/10/27/world/africa/nigeria-former-official-pleads-not-guilty-in-corruption-case.html
-#>   Snippet: The former national security adviser made the plea in connection with $423,000 in Nigerian and United States currency seized at his homes.
-#> 
-#> [[2]]
-#> <NYTimes article>U.S. Indicts Members of Powerful Honduran Family
-#>   Type: News
-#>   Published: 2015-10-08T00:00:00Z
-#>   Word count: 487
-#>   URL: http://www.nytimes.com/2015/10/08/world/americas/us-indicts-members-of-powerful-honduran-family.html
-#>   Snippet: Jaime Rolando Rosenthal, Honduras&#8217;s vice president in the 1980s and one of its wealthiest men, is among those facing money laundering charges.
-#> 
-#> [[3]]
-#> <NYTimes article>Ukraine: U.S. Judge Tosses Tymoshenko Lawsuit
-#>   Type: Brief
-#>   Published: 2015-09-19T00:00:00Z
-#>   Word count: 161
-#>   URL: http://www.nytimes.com/2015/09/19/world/europe/ukraine-us-judge-tosses-tymoshenko-lawsuit.html
-#>   Snippet: A federal judge in Manhattan on Friday dismissed a civil lawsuit filed by Yulia V. Tymoshenko, the former Ukrainian prime minister and presidential candidate.
+res$data
+#> # A tibble: 92 x 44
+#>                                                                        web_url
+#>                                                                          <chr>
+#>  1 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
+#>  2 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
+#>  3 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
+#>  4 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
+#>  5 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
+#>  6 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
+#>  7 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
+#>  8 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
+#>  9 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
+#> 10 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
+#> # ... with 82 more rows, and 43 more variables: snippet <chr>,
+#> #   lead_paragraph <chr>, abstract <chr>, print_page <chr>, source <chr>,
+#> #   pub_date <chr>, document_type <chr>, news_desk <chr>,
+#> #   section_name <chr>, subsection_name <chr>, type_of_material <chr>,
+#> #   `_id` <chr>, word_count <int>, slideshow_credits <lgl>,
+#> #   headline.main <chr>, headline.print_headline <chr>,
+#> #   headline.kicker <chr>, byline.original <chr>, multimedia_width <chr>,
+#> #   multimedia_url <chr>, multimedia_rank <chr>, multimedia_height <chr>,
+#> #   multimedia_subtype <chr>, multimedia_type <chr>,
+#> #   multimedia_legacy.thumbnailheight <chr>,
+#> #   multimedia_legacy.thumbnail <chr>,
+#> #   multimedia_legacy.thumbnailwidth <chr>,
+#> #   multimedia_legacy.xlargewidth <chr>, multimedia_legacy.xlarge <chr>,
+#> #   multimedia_legacy.xlargeheight <chr>, multimedia_legacy.wide <chr>,
+#> #   multimedia_legacy.widewidth <chr>, multimedia_legacy.wideheight <chr>,
+#> #   keywords_isMajor <chr>, keywords_rank <int>, keywords_name <chr>,
+#> #   keywords_value <chr>, byline.person_organization <chr>,
+#> #   byline.person_role <chr>, byline.person_rank <int>,
+#> #   byline.person_firstname <chr>, byline.person_lastname <chr>,
+#> #   byline.person_middlename <chr>
 ```
 
 ## Campaign Finance API
 
-There are currently two functions to work with the campaign finance API
-
-* `cf_candidate_details`
-* `cf_candidate_leaders`
 
 Here, we search for campaign details for the 2008 cycle, with FEC ID number P80003338
 
@@ -231,37 +249,22 @@ cf_candidate_details(campaign_cycle = 2008, fec_id = 'P80003338')
 #> [1] "OK"
 #> 
 #> $copyright
-#> [1] "Copyright (c) 2015 The New York Times Company. All Rights Reserved."
-#> 
-#> $meta
-#>          id          name party
-#> 1 P80003338 OBAMA, BARACK   DEM
-#>                                             fec_uri
-#> 1 http://docquery.fec.gov/cgi-bin/fecimg/?P80003338
-#>                    committee           mailing_address mailing_city
-#> 1 /committees/C00431445.json 5450 SOUTH EAST VIEW PARK      CHICAGO
-#>   mailing_state mailing_zip status total_receipts total_from_individuals
-#> 1            IL       60615      O    778642962.3            664872382.3
-#>   total_from_pacs total_contributions candidate_loans total_disbursements
-#> 1           12925         664886457.3               0         760370195.4
-#>   begin_cash    end_cash total_refunds debts_owed date_coverage_from
-#> 1          0 18272367.39     5755955.2   434954.4         2007-01-01
-#>   date_coverage_to independent_expenditures coordinated_expenditures
-#> 1       2008-12-31              110078819.6                        0
+#> [1] "Copyright (c) 2017 ProPublica Inc. All Rights Reserved."
 #> 
 #> $data
-#> Source: local data frame [2 x 19]
-#> 
-#>   cycle.id cycle.fecid                       cycle.name cycle.party
-#>      (chr)       (chr)                            (chr)       (chr)
-#> 1     2896   P80003338  OBAMA, BARACK / JOSEPH R. BIDEN         DEM
-#> 2    50162   P80003338 /BIDEN, JOSEPH R., OBAMA, BARACK         DEM
-#> Variables not shown: cycle.status (chr), cycle.address_one (chr),
-#>   cycle.address_two (chr), cycle.city (chr), cycle.state (chr), cycle.zip
-#>   (chr), cycle.fec_committee_id (chr), cycle.cycle (chr), cycle.district
-#>   (chr), cycle.office_state (chr), cycle.cand_status (chr), cycle.branch
-#>   (chr), relative_uri (chr), cycle.created_at (chr), cycle.updated_at
-#>   (chr)
+#> # A tibble: 1 x 24
+#>          id          name party
+#>       <chr>         <chr> <chr>
+#> 1 P80003338 OBAMA, BARACK   DEM
+#> # ... with 21 more variables: fec_uri <chr>, committee <chr>,
+#> #   mailing_address <chr>, mailing_city <chr>, mailing_state <chr>,
+#> #   mailing_zip <chr>, status <chr>, total_receipts <chr>,
+#> #   total_from_individuals <chr>, total_from_pacs <chr>,
+#> #   total_contributions <chr>, candidate_loans <chr>,
+#> #   total_disbursements <chr>, begin_cash <chr>, end_cash <chr>,
+#> #   total_refunds <chr>, debts_owed <chr>, date_coverage_from <chr>,
+#> #   date_coverage_to <chr>, independent_expenditures <chr>,
+#> #   coordinated_expenditures <chr>
 ```
 
 ## Geographic API
@@ -282,26 +285,25 @@ geo_search(country_code = 'US')
 #> 1     OK         100
 #> 
 #> $data
-#> Source: local data frame [100 x 27]
-#> 
-#>    concept_id          concept_name geocode_id geoname_id          name
-#>         (chr)                 (chr)      (int)      (int)         (chr)
-#> 1       26660   Los Angeles (Calif)        132    5368361   Los Angeles
-#> 2       27500      New Orleans (La)        148    4335045   New Orleans
-#> 3       24084         Chicago (Ill)        160    4887398       Chicago
-#> 4       28084          Pennsylvania        172    6254927  Pennsylvania
-#> 5       26916         Massachusetts        180    6254926 Massachusetts
-#> 6       27740                  Ohio        188    5165418          Ohio
-#> 7       30096              Virginia        208    6254928      Virginia
-#> 8       28808 San Francisco (Calif)        212    5391959 San Francisco
-#> 9       25908                  Iowa        228    4862182          Iowa
-#> 10      22828               Arizona        232    5551752       Arizona
-#> ..        ...                   ...        ...        ...           ...
-#> Variables not shown: latitude (dbl), longitude (dbl), elevation (int),
-#>   population (int), country_code (chr), country_name (chr), admin_code1
-#>   (chr), admin_code2 (chr), admin_code3 (lgl), admin_code4 (lgl),
-#>   admin_name1 (chr), admin_name2 (chr), admin_name3 (lgl), admin_name4
-#>   (lgl), feature_class (chr), feature_code (chr), feature_code_name (chr),
-#>   time_zone_id (chr), dst_offset (dbl), gmt_offset (dbl), geocodes_created
-#>   (chr), geocodes_updated (chr)
+#> # A tibble: 100 x 27
+#>    concept_id              concept_name geocode_id geoname_id
+#>  *      <chr>                     <chr>      <int>      <int>
+#>  1      22456             Abilene (Tex)       4500    4669635
+#>  2      22460             Abingdon (Va)       7752    4743815
+#>  3      22480 Acadia National Park (Me)       4504    4956449
+#>  4      22508 Adirondack Mountains (NY)       1488    5106772
+#>  5      22548                   Alabama        364    4829764
+#>  6      22556                    Alaska        292    5879092
+#>  7      22564               Albany (NY)        464    5106834
+#>  8      22572          Albuquerque (NM)       1596    5454711
+#>  9      22576  Alcatraz (San Francisco)       7772    5322901
+#> 10      22580           Alexandria (Va)       4008    4744091
+#> # ... with 90 more rows, and 23 more variables: name <chr>,
+#> #   latitude <dbl>, longitude <dbl>, elevation <int>, population <int>,
+#> #   country_code <chr>, country_name <chr>, admin_code1 <chr>,
+#> #   admin_code2 <chr>, admin_code3 <lgl>, admin_code4 <lgl>,
+#> #   admin_name1 <chr>, admin_name2 <chr>, admin_name3 <lgl>,
+#> #   admin_name4 <lgl>, feature_class <chr>, feature_code <chr>,
+#> #   feature_code_name <chr>, time_zone_id <chr>, dst_offset <dbl>,
+#> #   gmt_offset <dbl>, geocodes_created <chr>, geocodes_updated <chr>
 ```

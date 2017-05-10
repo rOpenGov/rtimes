@@ -31,16 +31,16 @@ First, get an API key for the Article Search API at [developer.nytimes.com/apps/
 
 
 ```r
-options(nytimes_as_key = '<your api key>')
+Sys.setenv(NYTIMES_AS_KEY = '<your api key>')
 ```
 
 ## Query the NYTimes Article Search API
 
-Set dates
+Set dates. Here, one query per year from 1881 to 1985
 
 
 ```r
-dates <- format(seq(as.Date("1851/1/1"), as.Date("2015/1/1"), by = "3 months"), "%Y%m%d")
+dates <- format(seq(as.Date("1880/1/1"), as.Date("2000/1/1"), by = "5 years"), "%Y%m%d")
 ```
 
 Make a data.frame to put data in to
@@ -54,13 +54,12 @@ Loop through dates
 
 
 ```r
-for (i in 1:(length(dates) - 1)) {
+for (i in seq_len(length(dates) - 1)) {
   Sys.sleep(1)
-  cat(i, "\n")
   counts <- NA
   counts <- as_search(q = "affirmative action",
                       begin_date = dates[i],
-                      end_date = dates[i + 1])$meta[1]
+                      end_date = dates[i + 1])$meta$hits[1]
   results[i, ] <- c(dates[i], dates[i + 1], counts)
 }
 ```
@@ -82,6 +81,7 @@ Convert dates to class `date`
 
 ```r
 results$startDate <- as.Date(as.character(results$startDate), format = "%Y%m%d")
+results$afam <- as.numeric(results$afam)
 ```
 
 Plot mentions of _Affirmative Action_
@@ -94,22 +94,8 @@ ggplot(results, aes(x = startDate, y = afam)) +
               size = 1, colour = "#777777", alpha = 0.05, se = FALSE) +
   ylab("No. Articles Containing the phrase 'Affirmative Action'") +
   xlab("Year") +
-  theme_bw() +
   scale_x_date(breaks = pretty_breaks(n = 10)) +
-  theme(panel.grid.major.y = element_line(colour = "#e3e3e3", linetype = "dotted"),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.x = element_line(colour = "#f7f7f7", linetype = "solid"),
-        panel.border       = element_blank(),
-        legend.position  = "bottom",
-        legend.key       = element_blank(),
-        legend.key.width = unit(1,"cm"),
-        axis.title   = element_text(size = 18),
-        axis.text    = element_text(size = 16),
-        axis.ticks.y = element_blank(),
-        axis.line.x  = element_line(colour = 'red', size = 3, linetype = 'dashed'),
-        axis.title.x = element_text(vjust = -1),
-        axis.title.y = element_text(vjust = 1),
-        plot.margin = unit(c(0,.5,.5,.5), "cm"))
+  theme_grey(base_size = 18)
 ```
 
-![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png) 
+![plot of chunk unnamed-chunk-9](../../tools/unnamed-chunk-9-1.png)

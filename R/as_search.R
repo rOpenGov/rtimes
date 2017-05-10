@@ -88,41 +88,42 @@
   databin <- list()
   for (i in seq_along(todo)) {
     tmp <- dat[, todo[[i]]]
-    switch(
-      class(tmp[[1]]),
-      list = {
-        tmp[vapply(tmp, length, 1) == 0] <- NA_character_
-        dat[[todo[[i]]]] <- unlist(tmp)
-      },
-      data.frame = {
-        ncol_ <- vapply(tmp, NCOL, 1)
-        if (any(ncol_  > 0)) {
-          col_names <- paste(names(todo)[i], names(tmp[which.max(ncol_)][[1]]), 
-                             sep = "_")
-          z <- lapply(tmp, function(w) {
-            if (NCOL(w) > 0 && inherits(w, "data.frame")) {
-              stats::setNames(
-                w, 
-                paste(names(todo)[i], names(w), sep = "_")
-              )
-            } else {
-              df <- tibble::as_tibble(t(rep(NA_character_, times = max(ncol_))))
-              stats::setNames(df, col_names)
-            }
-          })
-          zdat <- bind(z, idcol = TRUE)
-          databin[[i]] <- zdat
-        }
+    clzz <- unique(vapply(tmp, class, character(1)))
+    if (all("list" %in% clzz)) {
+      tmp[vapply(tmp, length, 1) == 0] <- NA_character_
+      dat[[todo[[i]]]] <- unlist(tmp)
+    } else if ("data.frame" %in% clzz) {
+      ncol_ <- vapply(tmp, NCOL, 1)
+      if (any(ncol_  > 0)) {
+        col_names <- paste(names(todo)[i], names(tmp[which.max(ncol_)][[1]]), 
+                           sep = "_")
+        z <- lapply(tmp, function(w) {
+          if (NCOL(w) > 0 && inherits(w, "data.frame")) {
+            stats::setNames(
+              w, 
+              paste(names(todo)[i], names(w), sep = "_")
+            )
+          } else {
+            df <- tibble::as_tibble(t(rep(NA_character_, times = max(ncol_))))
+            stats::setNames(df, col_names)
+          }
+        })
+        zdat <- bind(z, idcol = TRUE)
+        databin[[i]] <- zdat
       }
-    )
+    } else {
+      databin[[i]] <- todo[[i]]
+    }
   }
   
   # remove old columns
-  for (i in seq_along(todo)) {
-    if (!is.null(databin[[i]])) {
-      dat <- merge(dat, databin[[i]], by = ".id")
+  if (length(databin)) {
+    for (i in seq_along(todo)) {
+      if (!is.null(databin[[i]])) {
+        dat <- merge(dat, databin[[i]], by = ".id")
+      }
+      dat[[ names(todo)[i] ]] <- NULL
     }
-    dat[[ names(todo)[i] ]] <- NULL
   }
   dat$.id <- NULL
   

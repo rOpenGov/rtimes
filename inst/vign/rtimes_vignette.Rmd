@@ -22,10 +22,10 @@ rtimes vignette - R client for New York Times APIs
 
 Functions in `rtimes` that wrap these APIs are prefixed by two letter acronyms fo reach API + the function name itself, e.g.: `cg` + `fxn`
 
-* `cg` for the [Congress API](http://developer.nytimes.com/docs/congress_api)
-* `as` for the [Article Search API](http://developer.nytimes.com/docs/read/article_search_api_v2)
-* `cf` for the [Campaign Finance API](http://propublica.github.io/campaign-finance-api-docs)
-* `geo` for the [Geographic API](http://developer.nytimes.com/docs/geographic_api)
+* `cg` for the [Congress API](https://propublica.github.io/congress-api-docs)
+* `as` for the [Article Search API](http://developer.nytimes.com/article_search_v2.json)
+* `cf` for the [Campaign Finance API](https://propublica.github.io/campaign-finance-api-docs)
+* `geo` for the [Geographic API](http://developer.nytimes.com/geo_api_v2.json)
 
 Please get your own API keys at http://developer.nytimes.com/apps/register - you'll need a different key for each API.
 
@@ -34,10 +34,9 @@ be called on startup of R, and then you don't have to enter your API key for eac
 of a function. Add entries for an R session like
 
 ```
-Sys.setenv(NYTIMES_CG_KEY = "YOURKEYHERE")
-Sys.setenv(NYTIMES_AS_KEY = "YOURKEYHERE")
-Sys.setenv(NYTIMES_CF_KEY = "YOURKEYHERE")
 Sys.setenv(NYTIMES_GEO_KEY = "YOURKEYHERE")
+Sys.setenv(NYTIMES_AS_KEY = "YOURKEYHERE")
+Sys.setenv(PROPUBLICA_API_KEY = "YOURKEYHERE")
 ```
 
 Or set them across sessions by putting entries in your `.Renviron` file like
@@ -45,12 +44,11 @@ Or set them across sessions by putting entries in your `.Renviron` file like
 ```
 NYTIMES_GEO_KEY=<yourkey>
 NYTIMES_AS_KEY=<yourkey>
-NYTIMES_CG_KEY=<yourkey>
-NYTIMES_CF_KEY=<yourkey>
+PROPUBLICA_API_KEY=<yourkey>
 ```
 
 You can also pass in your key in a function call, but be careful not to expose your keys in
-code committed to public repositories. If you do pass in a function call, use e.g., `Sys.getenv("NYTIMES_CG_KEY")`.
+code committed to public repositories. If you do pass in a function call, use e.g., `Sys.getenv("NYTIMES_GEO_KEY")`.
 
 ## Install rtimes
 
@@ -77,20 +75,6 @@ _Note: Member ID S001181 is Jeanne Shaheen_
 
 ## Congress API
 
-There are currently 11 functions to work with the congress API
-
-* `cg_billscosponsor`
-* `cg_memberappear`
-* `cg_memberbioroles`
-* `cg_memberbystatedistrict`
-* `cg_membersleaving`
-* `cg_memberslist`
-* `cg_membersponsorcompare`
-* `cg_membervotecompare`
-* `cg_membervotepositions`
-* `cg_newmembers`
-* `cg_rollcallvote`
-
 ### Bill cosponsorship data for a member
 
 ```{r cg_billscosponsor}
@@ -116,25 +100,20 @@ Here, we search for _bailout_ between two dates, Oct 1 2008 and Dec 1 2008
 
 ```{r}
 res <- as_search(q="bailout", begin_date = "20081001", end_date = '20081201')
-res$copyright # copyright
-res$meta # number of hits
-res$data[[1]]
-res$data[[1]]$snippet
+res$copyright
+res$meta
+res$data
 ```
 
 Another e.g., Search for keyword _money_, within the _Sports_ and _Foreign_ news desks
 
 ```{r}
 res <- as_search(q = "money", fq = 'news_desk:("Sports" "Foreign")')
-res$data[1:3]
+res$data
 ```
 
 ## Campaign Finance API
 
-There are currently two functions to work with the campaign finance API
-
-* `cf_candidate_details`
-* `cf_candidate_leaders`
 
 Here, we search for campaign details for the 2008 cycle, with FEC ID number P80003338
 

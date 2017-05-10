@@ -14,11 +14,11 @@ some of which now live at Propublica.
 Functions in `rtimes` that wrap these APIs are prefixed by two letter acronyms fo reach API + the function name itself, e.g.: `cg` + `fxn`
 
 * `cg` for the [Congress API](https://propublica.github.io/congress-api-docs)
-* `as` for the [Article Search API](http://developer.nytimes.com/docs/read/article_search_api_v2)
+* `as` for the [Article Search API](http://developer.nytimes.com/article_search_v2.json)
 * `cf` for the [Campaign Finance API](https://propublica.github.io/campaign-finance-api-docs)
-* `geo` for the [Geographic API](http://developer.nytimes.com/docs/geographic_api)
+* `geo` for the [Geographic API](http://developer.nytimes.com/geo_api_v2.json)
 
-Please get your own API keys at <http://developer.nytimes.com/apps/register> for `as` and `geo` 
+Please get your own API keys at <http://developer.nytimes.com/> for `as` and `geo` 
 functions, and for `cg` and `cf` functions by emailing Propublica at [apihelp@propublica.org](mailto:apihelp@propublica.org). 
 
 You'll need a different key for each API of the Nytimes APIs, but only one key for the Propublica
@@ -30,7 +30,7 @@ Data from the New York Times API is provided by The New York Times.
 
 And data from Propublica API is provided by Propublica
 
-xxxx
+<a border="0" href="https://www.propublica.org/datastore/apis" ><img src="tools/propublica.jpg" alt="Propublica API" width="100" /></a>
 
 I set up the functions so that you can put the key in your `.Renviron` file (or any
 file on your system that holds env vars), which will be called on startup of R, and then you 
@@ -82,30 +82,38 @@ out$votes
 
 ```r
 x <- as_search(q = "bailout", begin_date = "20081001", end_date = '20081201')
-x$data[1:3]
-#> [[1]]
-#> <NYTimes article>Toxic Bailout
-#>   Type: News
-#>   Published: 2008-10-05T00:00:00Z
-#>   Word count: 913
-#>   URL: http://www.nytimes.com/2008/10/05/magazine/05wwln-safire-t.html
-#>   Snippet: How can you be naked wearing shorts?
-#> 
-#> [[2]]
-#> <NYTimes article>Bailout (and Buildup)
-#>   Type: Op-Ed
-#>   Published: 2008-10-22T00:00:00Z
-#>   Word count: 810
-#>   URL: http://www.nytimes.com/2008/10/22/opinion/22friedman.html
-#>   Snippet: We can’t afford a financial bailout that also isn’t a green buildup — a buildup of a new clean energy industry that strengthens America.
-#> 
-#> [[3]]
-#> <NYTimes article>Bailout to Nowhere
-#>   Type: Op-Ed
-#>   Published: 2008-11-14T00:00:00Z
-#>   Word count: 820
-#>   URL: http://www.nytimes.com/2008/11/14/opinion/14brooks.html
-#>   Snippet: The biggest threat to a healthy economy is the politically powerful capitalists who use their influence to create a stagnant corporate welfare state.
+x$data
+#> # A tibble: 38 x 41
+#>                                                               web_url
+#>                                                                 <chr>
+#>  1   https://www.nytimes.com/2008/10/05/magazine/05wwln-safire-t.html
+#>  2   https://www.nytimes.com/2008/10/05/magazine/05wwln-safire-t.html
+#>  3   https://www.nytimes.com/2008/10/05/magazine/05wwln-safire-t.html
+#>  4   https://www.nytimes.com/2008/10/05/magazine/05wwln-safire-t.html
+#>  5   https://krugman.blogs.nytimes.com/2008/10/01/bailout-narratives/
+#>  6       https://economix.blogs.nytimes.com/2008/10/28/bailout-tally/
+#>  7 https://www.nytimes.com/2008/11/19/business/economy/19bailout.html
+#>  8 https://www.nytimes.com/2008/11/19/business/economy/19bailout.html
+#>  9 https://www.nytimes.com/2008/11/19/business/economy/19bailout.html
+#> 10 https://www.nytimes.com/2008/11/19/business/economy/19bailout.html
+#> # ... with 28 more rows, and 40 more variables: snippet <chr>,
+#> #   lead_paragraph <chr>, abstract <chr>, print_page <chr>, source <chr>,
+#> #   pub_date <chr>, document_type <chr>, news_desk <chr>,
+#> #   section_name <chr>, subsection_name <chr>, type_of_material <chr>,
+#> #   `_id` <chr>, word_count <chr>, slideshow_credits <lgl>,
+#> #   headline.main <chr>, headline.content_kicker <chr>,
+#> #   headline.kicker <chr>, headline.print_headline <chr>,
+#> #   byline.original <chr>, multimedia_width <chr>, multimedia_url <chr>,
+#> #   multimedia_height <chr>, multimedia_subtype <chr>,
+#> #   multimedia_type <chr>, multimedia_legacy.xlargewidth <chr>,
+#> #   multimedia_legacy.xlarge <chr>, multimedia_legacy.xlargeheight <chr>,
+#> #   multimedia_legacy.thumbnailheight <chr>,
+#> #   multimedia_legacy.thumbnail <chr>,
+#> #   multimedia_legacy.thumbnailwidth <chr>, keywords_rank <chr>,
+#> #   keywords_is_major <chr>, keywords_name <chr>, keywords_value <chr>,
+#> #   byline.person_organization <chr>, byline.person_role <chr>,
+#> #   byline.person_firstname <chr>, byline.person_rank <chr>,
+#> #   byline.person_lastname <chr>, byline.person_middlename <chr>
 ```
 
 ## Campaign Finance API
@@ -117,7 +125,7 @@ cf_candidate_details(campaign_cycle = 2008, fec_id = 'P80003338')
 #> [1] "OK"
 #> 
 #> $copyright
-#> [1] "Copyright (c) 2016 ProPublica Inc. All Rights Reserved."
+#> [1] "Copyright (c) 2017 ProPublica Inc. All Rights Reserved."
 #> 
 #> $data
 #> # A tibble: 1 x 24
@@ -139,7 +147,7 @@ cf_candidate_details(campaign_cycle = 2008, fec_id = 'P80003338')
 
 
 ```r
-geo_search(elevation = '2000_3000', feature_class = 'P')
+geo_search(country_code = "US")
 #> $copyright
 #> [1] "Copyright (c) 2015 The New York Times Company.  All Rights Reserved."
 #> 
@@ -149,31 +157,31 @@ geo_search(elevation = '2000_3000', feature_class = 'P')
 #> 
 #> $data
 #> # A tibble: 100 x 27
-#>    concept_id          concept_name geocode_id geoname_id          name
-#>         <chr>                 <chr>      <int>      <int>         <chr>
-#> 1       26660   Los Angeles (Calif)        132    5368361   Los Angeles
-#> 2       27500      New Orleans (La)        148    4335045   New Orleans
-#> 3       24084         Chicago (Ill)        160    4887398       Chicago
-#> 4       27988        Paris (France)        196    2988507         Paris
-#> 5       28808 San Francisco (Calif)        212    5391959 San Francisco
-#> 6       23464         Boston (Mass)        240    4930956        Boston
-#> 7       25760             Hong Kong        288    1819729     Hong Kong
-#> 8       26636      London (England)        308    2643743        London
-#> 9       23196       Beijing (China)        312    1816670       Beijing
-#> 10      24576        Detroit (Mich)        328    4990729       Detroit
-#> # ... with 90 more rows, and 22 more variables: latitude <dbl>,
-#> #   longitude <dbl>, elevation <int>, population <int>,
+#>    concept_id              concept_name geocode_id geoname_id
+#>  *      <chr>                     <chr>      <int>      <int>
+#>  1      22456             Abilene (Tex)       4500    4669635
+#>  2      22460             Abingdon (Va)       7752    4743815
+#>  3      22480 Acadia National Park (Me)       4504    4956449
+#>  4      22508 Adirondack Mountains (NY)       1488    5106772
+#>  5      22548                   Alabama        364    4829764
+#>  6      22556                    Alaska        292    5879092
+#>  7      22564               Albany (NY)        464    5106834
+#>  8      22572          Albuquerque (NM)       1596    5454711
+#>  9      22576  Alcatraz (San Francisco)       7772    5322901
+#> 10      22580           Alexandria (Va)       4008    4744091
+#> # ... with 90 more rows, and 23 more variables: name <chr>,
+#> #   latitude <dbl>, longitude <dbl>, elevation <int>, population <int>,
 #> #   country_code <chr>, country_name <chr>, admin_code1 <chr>,
-#> #   admin_code2 <chr>, admin_code3 <chr>, admin_code4 <chr>,
-#> #   admin_name1 <chr>, admin_name2 <chr>, admin_name3 <chr>,
-#> #   admin_name4 <chr>, feature_class <chr>, feature_code <chr>,
+#> #   admin_code2 <chr>, admin_code3 <lgl>, admin_code4 <lgl>,
+#> #   admin_name1 <chr>, admin_name2 <chr>, admin_name3 <lgl>,
+#> #   admin_name4 <lgl>, feature_class <chr>, feature_code <chr>,
 #> #   feature_code_name <chr>, time_zone_id <chr>, dst_offset <dbl>,
 #> #   gmt_offset <dbl>, geocodes_created <chr>, geocodes_updated <chr>
 ```
 
 ## Meta
 
-+ Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
-+ Maintainer: Scott Chamberlain
-+ License: MIT
-+ Report any problems in the [Issues Tracker](https://github.com/ropengov/rtimes/issues), or just fork and submit changes, etc.
+* Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+* Maintainer: Scott Chamberlain
+* License: MIT
+* Report any problems in the [Issues Tracker](https://github.com/ropengov/rtimes/issues), or just fork and submit changes, etc.
