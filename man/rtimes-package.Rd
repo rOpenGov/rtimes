@@ -61,9 +61,9 @@ Rate limits vary for the different APIs:
 
 \itemize{
  \item Congress API: 2/sec, 5,000/day
- \item Article Search API: 10/sec, 10,000/day
  \item Campaign Finance API: 50/sec, 5,000/day
- \item Geographic API: 8/sec, 5,000/day
+ \item Article Search API: 1/sec, 1,000/day
+ \item Geographic API: 5/sec, 1,000/day
 }
 }
 
