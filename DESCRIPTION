@@ -23,6 +23,5 @@ Suggests:
     lubridate,
     ggplot2,
     scales,
-    grid,
-    covr
+    grid
 RoxygenNote: 5.0.1
