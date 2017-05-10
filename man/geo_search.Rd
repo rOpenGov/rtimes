@@ -103,19 +103,29 @@ of results or a maximum of 20 results are returned. BEWARE - this parameter does
 \item{key}{your New York Times API key; pass in, or loads from .Rprofile as
 \code{nytimes_geo_key}, or from .Renviron as \code{NYTIMES_GEO_KEY}}
 
-\item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
+\item{...}{Curl options (debugging tools mostly) passed to 
+\code{\link[httr]{GET}}}
 }
 \description{
 Geographic search NYTimes API
 }
+\details{
+BEWARE: the docs are a hot mess - the README page has examples that
+include parameters that are not in their list of accepted query
+parameters. Some query parameter that used to work don't work now. There
+seems to be no way to get a response from them. So good luck.
+}
 \examples{
 \dontrun{
 geo_search(country_code = 'US')
-geo_search(elevation = '2000_', feature_class='P')
-geo_search(elevation = '_3000', feature_class='P')
-geo_search(elevation = '2000_3000', feature_class='P')
 geo_search(feature_class='P', country_code='US', population='50000_')
-geo_search(nearby=c(38.920833,-94.622222), population='100000_', feature_class='P')
+
+# FIXME: these should work, but don't anymore
+#geo_search(elevation = '2000_', feature_class='P')
+#geo_search(elevation = '_3000', feature_class='P')
+#geo_search(elevation = '2000_3000', feature_class='P')
+# geo_search(nearby=c(38.920833,-94.622222), population='100000_', 
+#   feature_class='P')
 
 # curl options
 library("httr")
@@ -123,5 +133,5 @@ geo_search(country_code = 'US', config = verbose())
 }
 }
 \references{
-\url{http://developer.nytimes.com/docs/geographic_api}
+\url{http://developer.nytimes.com/geo_api_v2.json}
 }

@@ -66,3 +66,8 @@ to_df <- function(x) {
     data.frame(x, stringsAsFactors = FALSE)
   }))
 }
+
+null_to_na <- function(y) {
+  y[sapply(y, is.null)] <- NA
+  y
+}

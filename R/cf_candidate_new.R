@@ -2,6 +2,7 @@
 #'
 #' @export
 #' @template finance
+#' @template nyt
 #' @references \url{http://propublica.github.io/campaign-finance-api-docs}
 #' @examples \dontrun{
 #' cf_candidate_new(campaign_cycle = 2016)

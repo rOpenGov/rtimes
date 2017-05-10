@@ -30,6 +30,9 @@
 #' @param ... Futher args pass into query
 #' @param callopts Curl options (debugging tools mostly) passed to 
 #' \code{\link[httr]{GET}}
+#' @param all_results (logical) return all results. Default: \code{FALSE} 
+#' @param sleep (integer) seconds to sleep between successive requests, only
+#' used when \code{all_results=TRUE}
 #' 
 #' @details
 #' \code{fl} parameter options are: 

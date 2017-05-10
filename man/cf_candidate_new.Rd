@@ -12,6 +12,8 @@ cf_candidate_new(campaign_cycle = NULL, key = NULL, ...)
 
 \item{key}{(character) your Propublica API key; pass in, or loads from .Renviron as 
 \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
+
+\item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
 }
 \description{
 Campaign finance - get new candidates

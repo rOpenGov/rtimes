@@ -4,15 +4,23 @@
 #' @template geographic
 #' @param key your New York Times API key; pass in, or loads from .Rprofile as
 #' \code{nytimes_geo_key}, or from .Renviron as \code{NYTIMES_GEO_KEY}
-#' @param ... Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}
-#' @references \url{http://developer.nytimes.com/docs/geographic_api}
+#' @param ... Curl options (debugging tools mostly) passed to 
+#' \code{\link[httr]{GET}}
+#' @references \url{http://developer.nytimes.com/geo_api_v2.json}
+#' @details BEWARE: the docs are a hot mess - the README page has examples that
+#' include parameters that are not in their list of accepted query
+#' parameters. Some query parameter that used to work don't work now. There
+#' seems to be no way to get a response from them. So good luck. 
 #' @examples \dontrun{
 #' geo_search(country_code = 'US')
-#' geo_search(elevation = '2000_', feature_class='P')
-#' geo_search(elevation = '_3000', feature_class='P')
-#' geo_search(elevation = '2000_3000', feature_class='P')
 #' geo_search(feature_class='P', country_code='US', population='50000_')
-#' geo_search(nearby=c(38.920833,-94.622222), population='100000_', feature_class='P')
+#' 
+#' # FIXME: these should work, but don't anymore
+#' #geo_search(elevation = '2000_', feature_class='P')
+#' #geo_search(elevation = '_3000', feature_class='P')
+#' #geo_search(elevation = '2000_3000', feature_class='P')
+#' # geo_search(nearby=c(38.920833,-94.622222), population='100000_', 
+#' #   feature_class='P')
 #'
 #' # curl options
 #' library("httr")
@@ -39,32 +47,10 @@
       bounding_box=bounding_box,nearby=nearby,
       offset=offset, perpage=limit, `api-key`=check_key(key)))
 
-  res <- rtimes_GET(paste0(t_base(), "semantic/v2/geocodes/query.json"), args, list(), ...)
+  res <- rtimes_GET(paste0(t_base(), "semantic/v2/geocodes/query.json"), args, ...)
   list(
-    copyright = cright(), 
-    meta = meta(res), 
-    data = tibble::as_data_frame(bind_rows(lapply(res$results, geo_proc)))
+    copyright = cright(),
+    meta = meta(res),
+    data = tibble::as_data_frame(res$results)
   )
 }
-
-geo_proc <- function(y) {
-  y <- null_to_na(y)
-  data.frame(y, stringsAsFactors = FALSE)
-#   df <- data.frame(pop(y, "geocode"), stringsAsFactors = FALSE)
-#   tmp <- data.frame(t(sapply(pop(y$geocode, "geocode_id"), nnlna, USE.NAMES = FALSE)), stringsAsFactors = FALSE)
-#   cbind(df, tmp)
-}
-
-null_to_na <- function(y) {
-  y[sapply(y, is.null)] <- NA
-  y
-}
-
-# popply <- function(x, name, type) {
-#   getnames <- names(x)[!names(x) %in% name]
-#   if (missing(type)) {
-#     lapply(x, "[[", getnames)
-#   } else {
-#     vapply(x, "[[", getnames, FUN.VALUE = type)
-#   }
-# }

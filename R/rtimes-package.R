@@ -58,6 +58,7 @@
 #' @importFrom httr GET content stop_for_status
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr bind_rows
+#' @importFrom utils setTxtProgressBar txtProgressBar
 #' @name rtimes-package
 #' @aliases rtimes
 #' @docType package

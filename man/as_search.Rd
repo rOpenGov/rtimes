@@ -40,6 +40,8 @@ results (it does not indicate the starting number of the result set). For
 example, page=0 corresponds to records 0-9. To return records 10-19, set 
 page to 1, not 10.}
 
+\item{all_results}{(logical) return all results. Default: \code{FALSE}}
+
 \item{facet_field}{(character) Specifies the sets of facet values to include 
 in the facets array at the end of response, which collects the facet values 
 from all the search results. By default no facet fields will be returned. 
@@ -49,6 +51,9 @@ See Details for options.}
 \code{TRUE}, facet counts will respect any applied filters (fq, date range, 
 etc.) in addition to the main query term. To filter facet counts, specifying 
 at least one facet_field is required.}
+
+\item{sleep}{(integer) seconds to sleep between successive requests, only
+used when \code{all_results=TRUE}}
 
 \item{...}{Futher args pass into query}
 
