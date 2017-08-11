@@ -2,8 +2,8 @@ Package: rtimes
 Title: Client for New York Times 'APIs'
 Description: Interface to Congress, Campaign Finance, Article Search, and
     Geographic 'APIs' from the New York Times (http://developer.nytimes.com/)
-    and ProPublica (https://www.propublica.org/datastore/apis). This client 
-    covers a subset of the New York Times and ProPublica 'APIs'.
+    and 'ProPublica' (https://www.propublica.org/datastore/apis). This client 
+    covers a subset of the New York Times and 'ProPublica' 'APIs'.
 Version: 0.5.0
 License: MIT + file LICENSE
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
