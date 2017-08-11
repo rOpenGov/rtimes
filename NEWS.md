@@ -1,12 +1,24 @@
+rtimes 0.5.0
+===============
+
+### MINOR IMPROVEMENTS
+
+* Now using `crul` as the HTTP client under the hood (#16)
+* Updated docs with links to new API docs for all 4 APIs (#17)
+* Moved to using markdown docs - though all those in templated
+`man/` still in old style (#18)
+
+
+
 rtimes 0.4.0
 ===============
 
-### NEW FEATURES 
+### NEW FEATURES
 
-* `as_search` gains new parameter `all_results` to internally 
+* `as_search` gains new parameter `all_results` to internally
 paginate to get all results. In addition, user can optionally
-have the function attempt to flatten completely the output 
-data.frame, but sometimes may fail so isn't turned on by 
+have the function attempt to flatten completely the output
+data.frame, but sometimes may fail so isn't turned on by
 default (#15)
 
 ### MINOR IMPROVEMENTS
@@ -21,6 +33,6 @@ for the move, but many routes still not covered. (#13)
 rtimes 0.3.0
 ===============
 
-### NEW FEATURES 
+### NEW FEATURES
 
 * released to CRAN
