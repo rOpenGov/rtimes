@@ -68,13 +68,11 @@ library("rtimes")
 ```r
 out <- cg_rollcallvote(congress_no = 105, chamber = 'house', session_no = 2, rollcall_no = 38)
 out$votes
-#> # A tibble: 4 x 6
-#>      category   yes    no present not_voting majority_position
-#>         <chr> <chr> <chr>   <chr>      <chr>             <chr>
-#> 1  democratic   194     0       0          9               Yes
-#> 2  republican   219     1       0          6               Yes
-#> 3 independent     1     0       0          0              <NA>
-#> 4       total   414     1       0         15              <NA>
+#>      category yes no present not_voting majority_position
+#> 1  democratic 194  0       0          9               Yes
+#> 2  republican 219  1       0          6               Yes
+#> 3 independent   1  0       0          0              <NA>
+#> 4       total 414  1       0         15              <NA>
 ```
 
 ## Article Search API
@@ -83,37 +81,25 @@ out$votes
 ```r
 x <- as_search(q = "bailout", begin_date = "20081001", end_date = '20081201')
 x$data
-#> # A tibble: 38 x 41
-#>                                                               web_url
-#>                                                                 <chr>
-#>  1   https://www.nytimes.com/2008/10/05/magazine/05wwln-safire-t.html
-#>  2   https://www.nytimes.com/2008/10/05/magazine/05wwln-safire-t.html
-#>  3   https://www.nytimes.com/2008/10/05/magazine/05wwln-safire-t.html
-#>  4   https://www.nytimes.com/2008/10/05/magazine/05wwln-safire-t.html
-#>  5   https://krugman.blogs.nytimes.com/2008/10/01/bailout-narratives/
-#>  6       https://economix.blogs.nytimes.com/2008/10/28/bailout-tally/
-#>  7 https://www.nytimes.com/2008/11/19/business/economy/19bailout.html
-#>  8 https://www.nytimes.com/2008/11/19/business/economy/19bailout.html
-#>  9 https://www.nytimes.com/2008/11/19/business/economy/19bailout.html
-#> 10 https://www.nytimes.com/2008/11/19/business/economy/19bailout.html
-#> # ... with 28 more rows, and 40 more variables: snippet <chr>,
-#> #   lead_paragraph <chr>, abstract <chr>, print_page <chr>, source <chr>,
-#> #   pub_date <chr>, document_type <chr>, news_desk <chr>,
-#> #   section_name <chr>, subsection_name <chr>, type_of_material <chr>,
-#> #   `_id` <chr>, word_count <chr>, slideshow_credits <lgl>,
-#> #   headline.main <chr>, headline.content_kicker <chr>,
-#> #   headline.kicker <chr>, headline.print_headline <chr>,
-#> #   byline.original <chr>, multimedia_width <chr>, multimedia_url <chr>,
-#> #   multimedia_height <chr>, multimedia_subtype <chr>,
-#> #   multimedia_type <chr>, multimedia_legacy.xlargewidth <chr>,
-#> #   multimedia_legacy.xlarge <chr>, multimedia_legacy.xlargeheight <chr>,
-#> #   multimedia_legacy.thumbnailheight <chr>,
-#> #   multimedia_legacy.thumbnail <chr>,
-#> #   multimedia_legacy.thumbnailwidth <chr>, keywords_rank <chr>,
-#> #   keywords_is_major <chr>, keywords_name <chr>, keywords_value <chr>,
-#> #   byline.person_organization <chr>, byline.person_role <chr>,
-#> #   byline.person_firstname <chr>, byline.person_rank <chr>,
-#> #   byline.person_lastname <chr>, byline.person_middlename <chr>
+#> # A tibble: 10 x 19
+#>                                                                        web_url
+#>  *                                                                       <chr>
+#>  1 https://dealbook.nytimes.com/2008/10/17/nader-displays-new-fervor-on-the-ba
+#>  2              https://dealbook.nytimes.com/2008/10/07/its-the-economy-redux/
+#>  3                https://www.nytimes.com/2008/12/01/opinion/l01citigroup.html
+#>  4             https://www.nytimes.com/2008/12/01/business/economy/01auto.html
+#>  5                    https://www.nytimes.com/2008/12/01/business/01tanta.html
+#>  6                      https://www.nytimes.com/2008/12/01/business/01uaw.html
+#>  7         https://www.nytimes.com/2008/12/01/business/economy/01stimulus.html
+#>  8                      https://www.nytimes.com/2008/11/30/opinion/30sun1.html
+#>  9                    https://www.nytimes.com/2008/11/30/opinion/30boskin.html
+#> 10                   https://www.nytimes.com/2008/11/30/business/30dealer.html
+#> # ... with 18 more variables: snippet <chr>, abstract <chr>, source <chr>,
+#> #   multimedia <list>, keywords <list>, pub_date <chr>,
+#> #   document_type <chr>, section_name <chr>, type_of_material <chr>,
+#> #   `_id` <chr>, word_count <int>, score <dbl>, print_page <chr>,
+#> #   new_desk <chr>, headline.main <chr>, headline.kicker <chr>,
+#> #   headline.print_headline <chr>, byline.original <chr>
 ```
 
 ## Campaign Finance API

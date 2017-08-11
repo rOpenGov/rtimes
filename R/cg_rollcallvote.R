@@ -27,15 +27,16 @@ cg_rollcallvote <- function(congress_no = NULL, chamber = NULL, session_no = NUL
                  chamber, session_no, rollcall_no)
   res <- rtimes_GET(url, list(), FALSE, 
                     list(...), add_key(check_key(key, "PROPUBLICA_API_KEY")))
+  res$results$votes$vote$positions <- 
+    lapply(res$results$votes$vote$positions, rc)
   dat <- tibble::as_data_frame(rbind_all_df(res$results$votes$vote$positions))
   meta <- tibble::as_data_frame(res$results$votes$vote[c('congress', 'session', 
                                                          'chamber', 'roll_call',
       'question', 'description', 'vote_type', 'date', 'time', 'result')])
-  votes <- bind_rows(
+  votes <- data.table::setDF(data.table::rbindlist(
     res$results$votes$vote[c('democratic', 'republican', 
-                             'independent', 'total')], 
-    .id = "category"
-  )
+                             'independent', 'total')], use.names = TRUE, 
+    fill = TRUE, idcol = "category"))
   list(copyright = cright(),
        bill_info = res$results$votes$vote$bill,
        meta = meta,
