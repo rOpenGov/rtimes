@@ -5,7 +5,7 @@
 #' @param key your New York Times API key; pass in, or loads from .Rprofile as
 #' \code{nytimes_geo_key}, or from .Renviron as \code{NYTIMES_GEO_KEY}
 #' @param ... Curl options (debugging tools mostly) passed to 
-#' \code{\link[httr]{GET}}
+#' \code{\link[crul]{HttpClient}}
 #' @references \url{http://developer.nytimes.com/geo_api_v2.json}
 #' @details BEWARE: the docs are a hot mess - the README page has examples that
 #' include parameters that are not in their list of accepted query
@@ -23,8 +23,7 @@
 #' #   feature_class='P')
 #'
 #' # curl options
-#' library("httr")
-#' geo_search(country_code = 'US', config = verbose())
+#' geo_search(country_code = 'US', verbose = TRUE)
 #' }
 
 `geo_search` <- function(name = NULL, latitude = NULL, longitude = NULL, elevation = NULL,
@@ -47,7 +46,8 @@
       bounding_box=bounding_box,nearby=nearby,
       offset=offset, perpage=limit, `api-key`=check_key(key)))
 
-  res <- rtimes_GET(paste0(t_base(), "semantic/v2/geocodes/query.json"), args, ...)
+  res <- rtimes_GET(paste0(t_base(), "semantic/v2/geocodes/query.json"), args,
+                    TRUE, list(...))
   list(
     copyright = cright(),
     meta = meta(res),

@@ -9,16 +9,17 @@ t_base <- function() "https://api.nytimes.com/svc/"
 p_base <- function() "https://api.propublica.org/"
 cf_base <- function(version = "v1") paste0(p_base(), "campaign-finance/", version)
 cg_base <- function(version = "v1") paste0(p_base(), "congress/", version)
-add_key <- function(x) httr::add_headers('X-API-Key' = x)
+add_key <- function(x) list(`X-API-Key` = x)
 
-rtimes_GET <- function(url, args, parse = TRUE, ...) {
-  ans <- GET(url, query = args, ...)
-  stop_for_status(ans)
-  if (parse) return(jsonlite::fromJSON(cu8(ans), TRUE, flatten = TRUE))
-  jsonlite::fromJSON(cu8(ans), FALSE)
+rtimes_GET <- function(url, args, parse = TRUE, curlopts = list(), 
+                       headers = list()) {
+  cli <- crul::HttpClient$new(url = url, opts = curlopts, headers = headers)
+  ans <- cli$get(query = args)
+  ans$raise_for_status()
+  if (parse) return(jsonlite::fromJSON(ans$parse("UTF-8"), TRUE, 
+                                       flatten = TRUE))
+  jsonlite::fromJSON(ans$parse("UTF-8"), FALSE)
 }
-
-cu8 <- function(x) content(x, as = "text", encoding = "UTF-8")
 
 meta <- function(x){
   data.frame(pop(x, c("results","copyright")), stringsAsFactors = FALSE)

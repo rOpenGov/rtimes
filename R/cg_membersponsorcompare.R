@@ -24,7 +24,8 @@ cg_membersponsorcompare <- function(memberid_1 = NULL, memberid_2 = NULL,
   
   url <- sprintf('%s/members/%s/bills/%s/%s/%s.json', cg_base(), memberid_1, memberid_2, 
                  congress_no, chamber)
-  res <- rtimes_GET(url, list(), FALSE, add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
+  res <- rtimes_GET(url, list(), FALSE, 
+                    list(...), add_key(check_key(key, "PROPUBLICA_API_KEY")))
   df <- tibble::as_data_frame(to_df(res$results[[1]]$bills))
   list(status = res$status, copyright = res$copyright,
        meta = do_data_frame(res, "bills"), data = df)

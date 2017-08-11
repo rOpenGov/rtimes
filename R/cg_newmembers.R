@@ -8,7 +8,8 @@
 #' }
 cg_newmembers <- function(key = NULL, ...) {
   url <- file.path(cg_base(), "members/new.json")
-  res <- rtimes_GET(url, list(), FALSE, add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
+  res <- rtimes_GET(url, list(), FALSE, 
+                    list(...), add_key(check_key(key, "PROPUBLICA_API_KEY")))
   df <- tibble::as_data_frame(to_df(res$results[[1]]$members))
   list(status = res$status, copyright = res$copyright,
        meta = do_data_frame(res), data = df)

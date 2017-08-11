@@ -23,7 +23,7 @@ cg_rollcallvote <- function(congress_no = NULL, chamber = NULL, session_no = NUL
   url <- sprintf('%s/%s/%s/sessions/%s/votes/%s.json', cg_base(), congress_no, 
                  chamber, session_no, rollcall_no)
   res <- rtimes_GET(url, list(), FALSE, 
-                    add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
+                    list(...), add_key(check_key(key, "PROPUBLICA_API_KEY")))
   dat <- tibble::as_data_frame(rbind_all_df(res$results$votes$vote$positions))
   meta <- tibble::as_data_frame(res$results$votes$vote[c('congress', 'session', 
                                                          'chamber', 'roll_call',

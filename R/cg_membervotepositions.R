@@ -16,7 +16,8 @@
 #' }
 cg_membervotepositions <- function(memberid = NULL, key = NULL, ...) {
   url <- sprintf("%s/members/%s/votes.json", cg_base(), memberid)
-  res <- rtimes_GET(url, list(), FALSE, add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
+  res <- rtimes_GET(url, list(), FALSE, 
+                    list(...), add_key(check_key(key, "PROPUBLICA_API_KEY")))
   dat <-  lapply(res$results[[1]]$votes, function(z) {
     if (length(z$bill) == 0) z$bill <- NULL
     as.list(unlist(z, recursive = TRUE))

@@ -26,7 +26,7 @@ Use the index ID as member-id in your request.}
 \item{key}{(character) your Propublica API key; pass in, or loads from .Renviron
 as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
 
-\item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
+\item{...}{Curl options (debugging tools mostly) passed to \code{\link[crul]{HttpClient}}}
 }
 \value{
 Compare bill sponsorship between two members who served in the same

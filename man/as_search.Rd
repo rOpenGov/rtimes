@@ -62,7 +62,7 @@ used when \code{all_results=TRUE}}
 \item{...}{Futher args pass into query}
 
 \item{callopts}{Curl options (debugging tools mostly) passed to 
-\code{\link[httr]{GET}}}
+\code{\link[crul]{HttpClient}}}
 }
 \description{
 Article search
@@ -130,6 +130,10 @@ Sys.sleep(1)
 ## with facet filtering
 as_search(q="bailout", facet_field = 'section_name', begin_date = "20081001",
    end_date = '20081201', facet_filter = TRUE)
+   
+# curl options
+as_search(q="bailout", begin_date = "20081001", 
+  end_date = '20081005', callopts = list(verbose = TRUE))
 }
 }
 \references{

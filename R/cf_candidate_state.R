@@ -31,7 +31,7 @@
   }
   url <- paste0(url, ".json")
   res <- rtimes_GET(url, list(), FALSE, 
-                    add_key(check_key(key, "PROPUBLICA_API_KEY")), ...)
+                    list(...), add_key(check_key(key, "PROPUBLICA_API_KEY")))
   dat <-  lapply(res$results[[1]]$other_cycles, function(z) {
     if (length(z$bill) == 0) z$bill <- NULL
     as.list(unlist(z, recursive = TRUE))

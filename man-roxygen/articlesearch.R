@@ -29,7 +29,7 @@
 #' limits.
 #' @param ... Futher args pass into query
 #' @param callopts Curl options (debugging tools mostly) passed to 
-#' \code{\link[httr]{GET}}
+#' \code{\link[crul]{HttpClient}}
 #' @param all_results (logical) return all results. Default: \code{FALSE}
 #' @param try_flatten (logical) attempt to completely flatten data.frame, 
 #' which may fail in some cases as its hard to account for all edge cases. 

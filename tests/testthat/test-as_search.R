@@ -25,7 +25,7 @@ test_that("returns the correct stuff", {
   expect_is(b$meta, "data.frame")
   expect_is(b$data, "tbl_df")
   expect_named(b, c("copyright", "meta", "data", "facets"))
-  expect_named(b$data, c("word_count"))
+  expect_named(b$data, c("word_count", "score"))
   
   expect_is(d, "list")
   expect_is(d$meta, "data.frame")

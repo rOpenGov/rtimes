@@ -18,7 +18,7 @@ Use the index ID as member-id in your request.}
 \item{key}{(character) your Propublica API key; pass in, or loads from .Renviron
 as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
 
-\item{...}{Curl options (debugging tools mostly) passed to \code{\link[httr]{GET}}}
+\item{...}{Curl options (debugging tools mostly) passed to \code{\link[crul]{HttpClient}}}
 }
 \value{
 List of members of a particular chamber in a particular Congress.

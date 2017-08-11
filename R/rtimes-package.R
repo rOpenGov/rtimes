@@ -55,7 +55,7 @@
 #'  \item Geographic API: 5/sec, 1,000/day
 #' }
 #'
-#' @importFrom httr GET content stop_for_status
+#' @importFrom crul HttpClient
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr bind_rows
 #' @importFrom utils setTxtProgressBar txtProgressBar
