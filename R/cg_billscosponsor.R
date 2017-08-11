@@ -25,6 +25,8 @@
   url <- sprintf("%s/members/%s/bills/%s.json", cg_base(), memberid, type)
   res <- rtimes_GET(url, list(), FALSE, 
                     list(...), add_key(check_key(key, "PROPUBLICA_API_KEY")))
+  res$results[[1]]$bills <- 
+    lapply(res$results[[1]]$bills, rc)
   dat <- tibble::as_data_frame(rbind_all_df(res$results[[1]]$bills))
   meta <- tibble::as_data_frame(pop(res$results[[1]], "bills"))
   list(copyright = cright(), meta = meta, data = dat)

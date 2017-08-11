@@ -77,37 +77,37 @@ _Note: Member ID S001181 is Jeanne Shaheen_
 ```r
 out <- cg_billscosponsor(memberid='S001181', type='cosponsored')
 out$data
-#> # A tibble: 20 x 25
-#>    congress       bill_id bill_type       number
-#>       <chr>         <chr>     <chr>        <chr>
-#>  1      115     s1068-115         s       S.1068
-#>  2      115     s1045-115         s       S.1045
-#>  3      115   sres154-115      sres    S.RES.154
-#>  4      115   sres155-115      sres    S.RES.155
-#>  5      115     s1035-115         s       S.1035
-#>  6      115     s1025-115         s       S.1025
-#>  7      115   sres153-115      sres    S.RES.153
-#>  8      115     s1006-115         s       S.1006
-#>  9      115      s372-115         s        S.372
-#> 10      115      s708-115         s        S.708
-#> 11      115      s985-115         s        S.985
-#> 12      115      s980-115         s        S.980
-#> 13      115      s955-115         s        S.955
-#> 14      115      s954-115         s        S.954
-#> 15      115      s944-115         s        S.944
-#> 16      115 sconres13-115   sconres S.CON.RES.13
-#> 17      115      s497-115         s        S.497
-#> 18      115      s936-115         s        S.936
-#> 19      115      s766-115         s        S.766
-#> 20      115      s912-115         s        S.912
-#> # ... with 21 more variables: bill_uri <chr>, title <chr>,
-#> #   cosponsored_date <chr>, sponsor_id <chr>, sponsor_uri <chr>,
-#> #   gpo_pdf_uri <chr>, congressdotgov_url <chr>, govtrack_url <chr>,
-#> #   introduced_date <chr>, active <chr>, house_passage <chr>,
-#> #   senate_passage <chr>, enacted <chr>, vetoed <chr>, cosponsors <chr>,
-#> #   committees <chr>, primary_subject <chr>, summary <chr>,
-#> #   summary_short <chr>, latest_major_action_date <chr>,
-#> #   latest_major_action <chr>
+#> # A tibble: 20 x 26
+#>    congress     bill_id bill_type    number
+#>       <chr>       <chr>     <chr>     <chr>
+#>  1      115    s756-115         s     S.756
+#>  2      115   s1616-115         s    S.1616
+#>  3      115   s1738-115         s    S.1738
+#>  4      115    s581-115         s     S.581
+#>  5      115   s1710-115         s    S.1710
+#>  6      115   s1715-115         s    S.1715
+#>  7      115   s1726-115         s    S.1726
+#>  8      115   s1730-115         s    S.1730
+#>  9      115   s1706-115         s    S.1706
+#> 10      115   s1692-115         s    S.1692
+#> 11      115   s1693-115         s    S.1693
+#> 12      115   s1688-115         s    S.1688
+#> 13      115 sres241-115      sres S.RES.241
+#> 14      115   s1675-115         s    S.1675
+#> 15      115   s1654-115         s    S.1654
+#> 16      115 sres234-115      sres S.RES.234
+#> 17      115   s1640-115         s    S.1640
+#> 18      115 sres233-115      sres S.RES.233
+#> 19      115   s1629-115         s    S.1629
+#> 20      115 sres230-115      sres S.RES.230
+#> # ... with 22 more variables: bill_uri <chr>, title <chr>,
+#> #   cosponsored_date <chr>, sponsor_title <chr>, sponsor_id <chr>,
+#> #   sponsor_name <chr>, sponsor_state <chr>, sponsor_party <chr>,
+#> #   sponsor_uri <chr>, gpo_pdf_uri <chr>, congressdotgov_url <chr>,
+#> #   govtrack_url <chr>, introduced_date <chr>, active <lgl>,
+#> #   senate_passage <chr>, cosponsors <int>, committees <chr>,
+#> #   primary_subject <chr>, summary <chr>, summary_short <chr>,
+#> #   latest_major_action_date <chr>, latest_major_action <chr>
 ```
 
 ### Member appearances
@@ -159,42 +159,32 @@ res$copyright
 #> [1] "Copyright (c) 2015 The New York Times Company.  All Rights Reserved."
 res$meta
 #> # A tibble: 1 x 3
-#>    hits  time offset
-#>   <int> <int>  <int>
-#> 1  1209     6      0
+#>    hits offset  time
+#>   <int>  <int> <int>
+#> 1  1203      0     8
 res$data
-#> # A tibble: 38 x 41
-#>                                                               web_url
-#>                                                                 <chr>
-#>  1   https://www.nytimes.com/2008/10/05/magazine/05wwln-safire-t.html
-#>  2   https://www.nytimes.com/2008/10/05/magazine/05wwln-safire-t.html
-#>  3   https://www.nytimes.com/2008/10/05/magazine/05wwln-safire-t.html
-#>  4   https://www.nytimes.com/2008/10/05/magazine/05wwln-safire-t.html
-#>  5   https://krugman.blogs.nytimes.com/2008/10/01/bailout-narratives/
-#>  6       https://economix.blogs.nytimes.com/2008/10/28/bailout-tally/
-#>  7 https://www.nytimes.com/2008/11/19/business/economy/19bailout.html
-#>  8 https://www.nytimes.com/2008/11/19/business/economy/19bailout.html
-#>  9 https://www.nytimes.com/2008/11/19/business/economy/19bailout.html
-#> 10 https://www.nytimes.com/2008/11/19/business/economy/19bailout.html
-#> # ... with 28 more rows, and 40 more variables: snippet <chr>,
-#> #   lead_paragraph <chr>, abstract <chr>, print_page <chr>, source <chr>,
-#> #   pub_date <chr>, document_type <chr>, news_desk <chr>,
-#> #   section_name <chr>, subsection_name <chr>, type_of_material <chr>,
-#> #   `_id` <chr>, word_count <chr>, slideshow_credits <lgl>,
-#> #   headline.main <chr>, headline.content_kicker <chr>,
-#> #   headline.kicker <chr>, headline.print_headline <chr>,
-#> #   byline.original <chr>, multimedia_width <chr>, multimedia_url <chr>,
-#> #   multimedia_height <chr>, multimedia_subtype <chr>,
-#> #   multimedia_type <chr>, multimedia_legacy.xlargewidth <chr>,
-#> #   multimedia_legacy.xlarge <chr>, multimedia_legacy.xlargeheight <chr>,
-#> #   multimedia_legacy.thumbnailheight <chr>,
-#> #   multimedia_legacy.thumbnail <chr>,
-#> #   multimedia_legacy.thumbnailwidth <chr>, keywords_rank <chr>,
-#> #   keywords_is_major <chr>, keywords_name <chr>, keywords_value <chr>,
-#> #   byline.person_organization <chr>, byline.person_role <chr>,
-#> #   byline.person_firstname <chr>, byline.person_rank <chr>,
-#> #   byline.person_lastname <chr>, byline.person_middlename <chr>
+#> # A tibble: 10 x 19
+#>                                                                        web_url
+#>  *                                                                       <chr>
+#>  1 https://dealbook.nytimes.com/2008/10/17/nader-displays-new-fervor-on-the-ba
+#>  2              https://dealbook.nytimes.com/2008/10/07/its-the-economy-redux/
+#>  3                https://www.nytimes.com/2008/12/01/opinion/l01citigroup.html
+#>  4             https://www.nytimes.com/2008/12/01/business/economy/01auto.html
+#>  5                    https://www.nytimes.com/2008/12/01/business/01tanta.html
+#>  6                      https://www.nytimes.com/2008/12/01/business/01uaw.html
+#>  7         https://www.nytimes.com/2008/12/01/business/economy/01stimulus.html
+#>  8                      https://www.nytimes.com/2008/11/30/opinion/30sun1.html
+#>  9                    https://www.nytimes.com/2008/11/30/opinion/30boskin.html
+#> 10                   https://www.nytimes.com/2008/11/30/business/30dealer.html
+#> # ... with 18 more variables: snippet <chr>, abstract <chr>, source <chr>,
+#> #   multimedia <list>, keywords <list>, pub_date <chr>,
+#> #   document_type <chr>, section_name <chr>, type_of_material <chr>,
+#> #   `_id` <chr>, word_count <int>, score <dbl>, print_page <chr>,
+#> #   new_desk <chr>, headline.main <chr>, headline.kicker <chr>,
+#> #   headline.print_headline <chr>, byline.original <chr>
 ```
+
+
 
 Another e.g., Search for keyword _money_, within the _Sports_ and _Foreign_ news desks
 
@@ -202,39 +192,25 @@ Another e.g., Search for keyword _money_, within the _Sports_ and _Foreign_ news
 ```r
 res <- as_search(q = "money", fq = 'news_desk:("Sports" "Foreign")')
 res$data
-#> # A tibble: 92 x 44
+#> # A tibble: 10 x 19
 #>                                                                        web_url
-#>                                                                          <chr>
-#>  1 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
-#>  2 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
-#>  3 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
-#>  4 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
-#>  5 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
-#>  6 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
-#>  7 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
-#>  8 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
-#>  9 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
-#> 10 https://www.nytimes.com/2017/04/04/world/americas/argentina-cristina-fernan
-#> # ... with 82 more rows, and 43 more variables: snippet <chr>,
-#> #   lead_paragraph <chr>, abstract <chr>, print_page <chr>, source <chr>,
-#> #   pub_date <chr>, document_type <chr>, news_desk <chr>,
-#> #   section_name <chr>, subsection_name <chr>, type_of_material <chr>,
-#> #   `_id` <chr>, word_count <int>, slideshow_credits <lgl>,
-#> #   headline.main <chr>, headline.print_headline <chr>,
-#> #   headline.kicker <chr>, byline.original <chr>, multimedia_width <chr>,
-#> #   multimedia_url <chr>, multimedia_rank <chr>, multimedia_height <chr>,
-#> #   multimedia_subtype <chr>, multimedia_type <chr>,
-#> #   multimedia_legacy.thumbnailheight <chr>,
-#> #   multimedia_legacy.thumbnail <chr>,
-#> #   multimedia_legacy.thumbnailwidth <chr>,
-#> #   multimedia_legacy.xlargewidth <chr>, multimedia_legacy.xlarge <chr>,
-#> #   multimedia_legacy.xlargeheight <chr>, multimedia_legacy.wide <chr>,
-#> #   multimedia_legacy.widewidth <chr>, multimedia_legacy.wideheight <chr>,
-#> #   keywords_isMajor <chr>, keywords_rank <int>, keywords_name <chr>,
-#> #   keywords_value <chr>, byline.person_organization <chr>,
-#> #   byline.person_role <chr>, byline.person_rank <int>,
-#> #   byline.person_firstname <chr>, byline.person_lastname <chr>,
-#> #   byline.person_middlename <chr>
+#>  *                                                                       <chr>
+#>  1 https://www.nytimes.com/2017/06/16/world/asia/1mdb-malaysia-najib-razak.htm
+#>  2 https://www.nytimes.com/2017/07/28/sports/football/giants-odell-beckham-con
+#>  3     https://www.nytimes.com/2017/08/04/sports/soccer/neymar-psg-soccer.html
+#>  4 https://www.nytimes.com/2017/08/10/sports/soccer/soccer-capital-lure-of-lon
+#>  5 https://www.nytimes.com/2017/07/19/world/europe/grenfell-tower-fire-donatio
+#>  6 https://www.nytimes.com/2017/07/12/sports/basketball/the-two-men-who-make-m
+#>  7 https://www.nytimes.com/2017/06/24/world/africa/angola-luanda-jose-eduardo-
+#>  8 https://www.nytimes.com/2017/08/04/sports/soccer/wolverhampton-jorge-mendes
+#>  9 https://www.nytimes.com/2017/06/15/sports/soccer/fifa-jorge-luis-arzuaga-pl
+#> 10 https://www.nytimes.com/2017/06/26/sports/tennis/itf-pro-circuit-wozniak-st
+#> # ... with 18 more variables: snippet <chr>, print_page <chr>,
+#> #   source <chr>, multimedia <list>, keywords <list>, pub_date <chr>,
+#> #   document_type <chr>, new_desk <chr>, section_name <chr>,
+#> #   type_of_material <chr>, `_id` <chr>, word_count <int>, score <dbl>,
+#> #   uri <chr>, headline.main <chr>, headline.print_headline <chr>,
+#> #   headline.kicker <chr>, byline.original <chr>
 ```
 
 ## Campaign Finance API

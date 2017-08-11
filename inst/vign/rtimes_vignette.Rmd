@@ -105,6 +105,10 @@ res$meta
 res$data
 ```
 
+```{r echo=FALSE}
+Sys.sleep(3)
+```
+
 Another e.g., Search for keyword _money_, within the _Sports_ and _Foreign_ news desks
 
 ```{r}
