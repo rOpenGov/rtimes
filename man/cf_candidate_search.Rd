@@ -30,4 +30,10 @@ cf_candidate_search(campaign_cycle = 2008, query='obama')
 \references{
 \url{http://propublica.github.io/campaign-finance-api-docs}
 }
+\seealso{
+Other campaign-finance: \code{\link{cf_candidate_details}},
+  \code{\link{cf_candidate_leaders}},
+  \code{\link{cf_candidate_new}},
+  \code{\link{cf_candidate_state}}
+}
 \keyword{internal}

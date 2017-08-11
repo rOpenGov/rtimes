@@ -3,8 +3,8 @@
 #' @export
 #' @template articlesearch
 #' @references 
-#' \url{http://developer.nytimes.com/docs/read/article_search_api_v2}
-#' \url{http://developer.nytimes.com/article_search_v2.json#/README}
+#' <http://developer.nytimes.com/docs/read/article_search_api_v2>
+#' <http://developer.nytimes.com/article_search_v2.json#/README>
 #' @examples \dontrun{
 #' # basic search - copyright, metadata, data, and facet slots
 #' (x <- as_search(q="bailout", begin_date = "20081001", 

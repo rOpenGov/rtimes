@@ -104,7 +104,7 @@ of results or a maximum of 20 results are returned. BEWARE - this parameter does
 \code{nytimes_geo_key}, or from .Renviron as \code{NYTIMES_GEO_KEY}}
 
 \item{...}{Curl options (debugging tools mostly) passed to
-\code{\link[crul]{HttpClient}}}
+\link[crul:HttpClient]{crul::HttpClient}}
 }
 \description{
 Geographic search NYTimes API

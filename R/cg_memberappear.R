@@ -14,6 +14,7 @@
 #'    House or Senate floor.
 #' @references Congress API docs 
 #' <https://projects.propublica.org/api-docs/congress-api/>
+#' @family congress
 #' @examples \dontrun{
 #' cg_memberappear(memberid='S001181')
 #' }

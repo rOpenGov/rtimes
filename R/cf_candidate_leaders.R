@@ -15,7 +15,8 @@
 #'  \item Receipts Total `receipts-total`
 #'  \item Refund Total `refund-total`
 #' }
-#' @references \url{http://propublica.github.io/campaign-finance-api-docs}
+#' @references <http://propublica.github.io/campaign-finance-api-docs>
+#' @family campaign-finance
 #' @examples \dontrun{
 #' cf_candidate_leaders(campaign_cycle = 2010, category='end-cash')
 #' cf_candidate_leaders(campaign_cycle = 2008, category='receipts-total')

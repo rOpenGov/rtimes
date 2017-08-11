@@ -12,6 +12,7 @@
 #' @return List of members of a particular chamber in a particular Congress.
 #' @references Congress API docs 
 #' <https://projects.propublica.org/api-docs/congress-api/>
+#' @family congress
 #' @examples \dontrun{
 #' cg_memberslist(congress_no = 112, chamber = 'senate', state = "TX")
 #' cg_memberslist(112, 'senate', 'NH')

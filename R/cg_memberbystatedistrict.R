@@ -11,6 +11,7 @@
 #' @return List of new members of he current Congress.
 #' @references Congress API docs 
 #' <https://projects.propublica.org/api-docs/congress-api/>
+#' @family congress
 #' @examples \dontrun{
 #' cg_memberbystatedistrict(chamber='senate', state='NH')
 #' cg_memberbystatedistrict(chamber='senate', state='CA')

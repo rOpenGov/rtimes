@@ -3,10 +3,10 @@
 #' @export
 #' @template geographic
 #' @param key your New York Times API key; pass in, or loads from .Rprofile as
-#' \code{nytimes_geo_key}, or from .Renviron as \code{NYTIMES_GEO_KEY}
+#' `nytimes_geo_key`, or from .Renviron as `NYTIMES_GEO_KEY`
 #' @param ... Curl options (debugging tools mostly) passed to 
-#' \code{\link[crul]{HttpClient}}
-#' @references \url{http://developer.nytimes.com/geo_api_v2.json}
+#' [crul::HttpClient]
+#' @references <http://developer.nytimes.com/geo_api_v2.json>
 #' @details BEWARE: the docs are a hot mess - the README page has examples that
 #' include parameters that are not in their list of accepted query
 #' parameters. Some query parameter that used to work don't work now. There

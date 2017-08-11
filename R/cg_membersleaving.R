@@ -7,6 +7,7 @@
 #' @return List of new members of he current Congress.
 #' @references Congress API docs 
 #' <https://projects.propublica.org/api-docs/congress-api/>
+#' @family congress
 #' @examples \dontrun{
 #' cg_membersleaving(congress_no = 112, chamber = 'house')
 #' }

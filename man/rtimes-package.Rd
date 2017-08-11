@@ -65,7 +65,7 @@ like
 
 You can also pass in your key in a function call, but be careful not to
 expose your keys in code committed to public repositories. If you do pass
-in a function call, use e.g., \code{Sys.getenv("NYTIMES_AS_KEY")}.
+in a function call, use e.g., \code{Sys.getenv("NYTIMES_AS_KEY")}
 }
 
 \section{Rate limits}{

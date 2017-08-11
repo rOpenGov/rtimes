@@ -34,28 +34,28 @@
 #' <https://www.propublica.org/datastore/api/campaign-finance-api> - as far
 #' as I know, you can use the same key for both APIs
 #'
-#' We set up the functions so that you can put the key in your \code{.Renviron} 
+#' We set up the functions so that you can put the key in your `.Renviron`
 #' file, which will be called on startup of R, and then you don't have to enter 
 #' your API key for each run of a function. Add entries for an R session like
 #'
 #' \itemize{
-#'  \item \code{Sys.setenv(NYTIMES_AS_KEY = "YOURKEYHERE")}
-#'  \item \code{Sys.setenv(NYTIMES_GEO_KEY = "YOURKEYHERE")}
-#'  \item \code{Sys.setenv(PROPUBLICA_API_KEY = "YOURKEYHERE")}
+#'  \item `Sys.setenv(NYTIMES_AS_KEY = "YOURKEYHERE")`
+#'  \item `Sys.setenv(NYTIMES_GEO_KEY = "YOURKEYHERE")`
+#'  \item `Sys.setenv(PROPUBLICA_API_KEY = "YOURKEYHERE")`
 #' }
 #'
-#' Or set them across sessions by putting entries in your \code{.Renviron} file 
+#' Or set them across sessions by putting entries in your `.Renviron` file 
 #' like
 #'
 #' \itemize{
-#'  \item \code{NYTIMES_AS_KEY=<yourkey>}
-#'  \item \code{NYTIMES_GEO_KEY=<yourkey>}
-#'  \item \code{PROPUBLICA_API_KEY=<yourkey>}
+#'  \item `NYTIMES_AS_KEY=<yourkey>`
+#'  \item `NYTIMES_GEO_KEY=<yourkey>`
+#'  \item `PROPUBLICA_API_KEY=<yourkey>`
 #' }
 #'
 #' You can also pass in your key in a function call, but be careful not to 
 #' expose your keys in code committed to public repositories. If you do pass 
-#' in a function call, use e.g., \code{Sys.getenv("NYTIMES_AS_KEY")}.
+#' in a function call, use e.g., `Sys.getenv("NYTIMES_AS_KEY")`
 #'
 #' @section Rate limits:
 #' Rate limits vary for the different APIs:

@@ -17,6 +17,7 @@
 #'    Congress and chamber.
 #' @references Congress API docs 
 #' <https://projects.propublica.org/api-docs/congress-api/>
+#' @family congress
 #' @examples \dontrun{
 #' cg_membersponsorcompare(memberid_1 = 'S001181', memberid_2 = 'A000368', 
 #'  congress_no = 112, chamber = 'senate')

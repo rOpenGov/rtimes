@@ -14,6 +14,7 @@
 #' @return List of new members of he current Congress.
 #' @references Congress API docs 
 #' <https://projects.propublica.org/api-docs/congress-api/>
+#' @family congress
 #' @examples \dontrun{
 #' cg_membervotecompare(memberid_1 = 'S001181', memberid_2 = 'A000368', 
 #'  congress_no = 112, chamber = 'senate')
