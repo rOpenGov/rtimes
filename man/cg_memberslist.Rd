@@ -19,10 +19,12 @@ a district, you must also specify a state. If the district number you
 specify is higher than the total number of districts for that state,
 a 404 response will be returned.}
 
-\item{key}{(character) your Propublica API key; pass in, or loads from .Renviron
-as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
+\item{key}{(character) your Propublica API key; pass in, or loads from 
+.Renviron as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} 
+for info on rate limits.}
 
-\item{...}{Curl options (debugging tools mostly) passed to \code{\link[crul]{HttpClient}}}
+\item{...}{Curl options (debugging tools mostly) passed to 
+\code{\link[crul]{HttpClient}}}
 }
 \value{
 List of members of a particular chamber in a particular Congress.
@@ -36,4 +38,8 @@ cg_memberslist(congress_no = 112, chamber = 'senate', state = "TX")
 cg_memberslist(112, 'senate', 'NH')
 cg_memberslist(110, 'senate', 'NH')
 }
+}
+\references{
+Congress API docs
+\url{https://projects.propublica.org/api-docs/congress-api/}
 }

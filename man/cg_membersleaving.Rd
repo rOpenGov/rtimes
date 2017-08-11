@@ -11,10 +11,12 @@ cg_membersleaving(congress_no = NULL, chamber = NULL, key = NULL, ...)
 
 \item{chamber}{One of 'house' or 'senate.}
 
-\item{key}{(character) your Propublica API key; pass in, or loads from .Renviron
-as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
+\item{key}{(character) your Propublica API key; pass in, or loads from 
+.Renviron as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} 
+for info on rate limits.}
 
-\item{...}{Curl options (debugging tools mostly) passed to \code{\link[crul]{HttpClient}}}
+\item{...}{Curl options (debugging tools mostly) passed to 
+\code{\link[crul]{HttpClient}}}
 }
 \value{
 List of new members of he current Congress.
@@ -26,4 +28,8 @@ Get a list of members who have left the Senate or House or have announced plans 
 \dontrun{
 cg_membersleaving(congress_no = 112, chamber = 'house')
 }
+}
+\references{
+Congress API docs
+\url{https://projects.propublica.org/api-docs/congress-api/}
 }

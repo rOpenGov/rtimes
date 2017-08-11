@@ -1,6 +1,7 @@
 #' Compare bill sponsorship between two members who served in the same Congress
 #' and chamber.
 #'
+#' @export
 #' @template propubkey
 #' @param memberid_1 The member's unique ID number (alphanumeric). To find a
 #'    member's ID number, get the list of members for the appropriate House
@@ -14,7 +15,8 @@
 #' @param chamber One of 'house' or 'senate.
 #' @return Compare bill sponsorship between two members who served in the same
 #'    Congress and chamber.
-#' @export
+#' @references Congress API docs 
+#' <https://projects.propublica.org/api-docs/congress-api/>
 #' @examples \dontrun{
 #' cg_membersponsorcompare(memberid_1 = 'S001181', memberid_2 = 'A000368', 
 #'  congress_no = 112, chamber = 'senate')

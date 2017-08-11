@@ -12,6 +12,8 @@
 #'    Use the index ID as member-id in your request.
 #' @return Get information about a particular member's appearances on the
 #'    House or Senate floor.
+#' @references Congress API docs 
+#' <https://projects.propublica.org/api-docs/congress-api/>
 #' @examples \dontrun{
 #' cg_memberappear(memberid='S001181')
 #' }

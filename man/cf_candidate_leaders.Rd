@@ -13,15 +13,15 @@ cf_candidate_leaders(campaign_cycle = NULL, category = NULL, key = NULL,
 
 \item{category}{Category. Specify one of these categories:
 \itemize{
- \item Candidate Loan `candidate-loan`
- \item Contribution Total `contribution-total`
- \item Debts Owed `debts-owed`
- \item Disbursements Total `disbursements-total`
- \item End Cash `end-cash`
- \item Individual Total `individual-total`
- \item PAC Total `pac-total`
- \item Receipts Total `receipts-total`
- \item Refund Total `refund-total`
+\item Candidate Loan \code{candidate-loan}
+\item Contribution Total \code{contribution-total}
+\item Debts Owed \code{debts-owed}
+\item Disbursements Total \code{disbursements-total}
+\item End Cash \code{end-cash}
+\item Individual Total \code{individual-total}
+\item PAC Total \code{pac-total}
+\item Receipts Total \code{receipts-total}
+\item Refund Total \code{refund-total}
 }}
 
 \item{key}{(character) your Propublica API key; pass in, or loads from .Renviron as 

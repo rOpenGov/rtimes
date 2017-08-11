@@ -5,6 +5,8 @@
 #' @param congress_no The number of the Congress during which the members served.
 #' @param chamber One of 'house' or 'senate.
 #' @return List of new members of he current Congress.
+#' @references Congress API docs 
+#' <https://projects.propublica.org/api-docs/congress-api/>
 #' @examples \dontrun{
 #' cg_membersleaving(congress_no = 112, chamber = 'house')
 #' }

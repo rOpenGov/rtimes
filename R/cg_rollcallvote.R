@@ -13,6 +13,8 @@
 #'    and US House (http://artandhistory.house.gov/house_history/index.aspx).
 #' @return Get a specific roll-call vote, including a complete list of member
 #'    positions. A list with metadata about the bill, and vote results.
+#' @references Congress API docs 
+#' <https://projects.propublica.org/api-docs/congress-api/>
 #' @examples \dontrun{
 #' cg_rollcallvote(congress_no = 105, chamber = 'house', session_no = 2, 
 #'   rollcall_no = 38)

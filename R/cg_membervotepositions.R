@@ -11,6 +11,8 @@
 #'    http://bioguide.congress.gov/scripts/biodisplay.pl?index=C001041).
 #'    Use the index ID as member-id in your request.
 #' @return List of new members of he current Congress.
+#' @references Congress API docs 
+#' <https://projects.propublica.org/api-docs/congress-api/>
 #' @examples \dontrun{
 #' cg_membervotepositions('S001181')
 #' }

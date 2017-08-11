@@ -132,7 +132,7 @@ as_search(q="bailout", facet_field = 'section_name', begin_date = "20081001",
    end_date = '20081201', facet_filter = TRUE)
    
 # curl options
-as_search(q="bailout", begin_date = "20081001", 
+x <- as_search(q="bailout", begin_date = "20081001", 
   end_date = '20081005', callopts = list(verbose = TRUE))
 }
 }

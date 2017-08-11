@@ -15,8 +15,8 @@ cf_candidate_state(campaign_cycle, state, chamber = NULL, district = NULL,
 
 \item{chamber}{(character) house or senate. required.}
 
-\item{district}{(character) Specify the district number. Use 1 for states 
-with a single representative. (House requests only - districts with 
+\item{district}{(character) Specify the district number. Use 1 for states
+with a single representative. (House requests only - districts with
 Senate requests will be ignored.). required.}
 
 \item{key}{(character) your Propublica API key; pass in, or loads from .Renviron as 

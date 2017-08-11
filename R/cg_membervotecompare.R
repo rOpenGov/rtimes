@@ -1,5 +1,6 @@
 #' Get a list of members who have left the Senate or House or have announced plans to do so.
 #'
+#' @export
 #' @template propubkey
 #' @param memberid_1,memberid_2 The member's unique ID number (alphanumeric). To find a
 #'    member's ID number, get the list of members for the appropriate House
@@ -11,7 +12,8 @@
 #' @param congress_no The number of the Congress during which the members served.
 #' @param chamber One of 'house' or 'senate.
 #' @return List of new members of he current Congress.
-#' @export
+#' @references Congress API docs 
+#' <https://projects.propublica.org/api-docs/congress-api/>
 #' @examples \dontrun{
 #' cg_membervotecompare(memberid_1 = 'S001181', memberid_2 = 'A000368', 
 #'  congress_no = 112, chamber = 'senate')

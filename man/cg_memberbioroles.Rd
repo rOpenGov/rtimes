@@ -15,10 +15,12 @@ name is linked to a record by index ID (e.g.,
 http://bioguide.congress.gov/scripts/biodisplay.pl?index=C001041).
 Use the index ID as member-id in your request.}
 
-\item{key}{(character) your Propublica API key; pass in, or loads from .Renviron
-as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
+\item{key}{(character) your Propublica API key; pass in, or loads from 
+.Renviron as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} 
+for info on rate limits.}
 
-\item{...}{Curl options (debugging tools mostly) passed to \code{\link[crul]{HttpClient}}}
+\item{...}{Curl options (debugging tools mostly) passed to 
+\code{\link[crul]{HttpClient}}}
 }
 \value{
 List of members of a particular chamber in a particular Congress.
@@ -30,4 +32,8 @@ Get biographical and Congressional role information for a particular member of C
 \dontrun{
 cg_memberbioroles(memberid = 'S001181')
 }
+}
+\references{
+Congress API docs
+\url{https://projects.propublica.org/api-docs/congress-api/}
 }

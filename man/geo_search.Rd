@@ -103,7 +103,7 @@ of results or a maximum of 20 results are returned. BEWARE - this parameter does
 \item{key}{your New York Times API key; pass in, or loads from .Rprofile as
 \code{nytimes_geo_key}, or from .Renviron as \code{NYTIMES_GEO_KEY}}
 
-\item{...}{Curl options (debugging tools mostly) passed to 
+\item{...}{Curl options (debugging tools mostly) passed to
 \code{\link[crul]{HttpClient}}}
 }
 \description{

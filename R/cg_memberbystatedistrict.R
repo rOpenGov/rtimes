@@ -9,6 +9,8 @@
 #'    specify is higher than the total number of districts for that state,
 #'    a 404 response will be returned.
 #' @return List of new members of he current Congress.
+#' @references Congress API docs 
+#' <https://projects.propublica.org/api-docs/congress-api/>
 #' @examples \dontrun{
 #' cg_memberbystatedistrict(chamber='senate', state='NH')
 #' cg_memberbystatedistrict(chamber='senate', state='CA')

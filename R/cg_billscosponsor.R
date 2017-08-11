@@ -14,7 +14,8 @@
 #'    by member-id) or 'withdrawn' (the 20 most recently withdrawn
 #'    cosponsorships for member-id).
 #' @return List of new members of he current Congress.
-#'
+#' @references Congress API docs 
+#' <https://projects.propublica.org/api-docs/congress-api/>
 #' @examples \dontrun{
 #' cg_billscosponsor(memberid='B001260', type='cosponsored')
 #' }

@@ -21,14 +21,16 @@ of the US Senate
 (http://www.senate.gov/pagelayout/legislative/a_three_sections_with_teasers/votes.htm),
 and US House (http://artandhistory.house.gov/house_history/index.aspx).}
 
-\item{key}{(character) your Propublica API key; pass in, or loads from .Renviron
-as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
+\item{key}{(character) your Propublica API key; pass in, or loads from 
+.Renviron as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} 
+for info on rate limits.}
 
-\item{...}{Curl options (debugging tools mostly) passed to \code{\link[crul]{HttpClient}}}
+\item{...}{Curl options (debugging tools mostly) passed to 
+\code{\link[crul]{HttpClient}}}
 }
 \value{
 Get a specific roll-call vote, including a complete list of member
-   positions. A list with metadata about the bill, and vote results.
+positions. A list with metadata about the bill, and vote results.
 }
 \description{
 Get a specific roll-call vote, including a complete list of member positions.
@@ -38,4 +40,8 @@ Get a specific roll-call vote, including a complete list of member positions.
 cg_rollcallvote(congress_no = 105, chamber = 'house', session_no = 2, 
   rollcall_no = 38)
 }
+}
+\references{
+Congress API docs
+\url{https://projects.propublica.org/api-docs/congress-api/}
 }
