@@ -40,7 +40,9 @@ results (it does not indicate the starting number of the result set). For
 example, page=0 corresponds to records 0-9. To return records 10-19, set 
 page to 1, not 10.}
 
-\item{all_results}{(logical) return all results. Default: \code{FALSE}}
+\item{all_results}{(logical) return all results. Default: \code{FALSE}
+Internally, we do paging for you. We get first up to 10 results, then if
+there's more we page through results to get all of them.}
 
 \item{try_flatten}{(logical) attempt to completely flatten data.frame, 
 which may fail in some cases as its hard to account for all edge cases. 
@@ -137,6 +139,6 @@ x <- as_search(q="bailout", begin_date = "20081001",
 }
 }
 \references{
-\url{http://developer.nytimes.com/docs/read/article_search_api_v2}
+\url{http://developer.nytimes.com},
 \url{http://developer.nytimes.com/article_search_v2.json#/README}
 }

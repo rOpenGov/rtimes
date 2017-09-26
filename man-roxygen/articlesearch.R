@@ -31,6 +31,8 @@
 #' @param callopts Curl options (debugging tools mostly) passed to 
 #' \code{\link[crul]{HttpClient}}
 #' @param all_results (logical) return all results. Default: \code{FALSE}
+#' Internally, we do paging for you. We get first up to 10 results, then if
+#' there's more we page through results to get all of them.
 #' @param try_flatten (logical) attempt to completely flatten data.frame, 
 #' which may fail in some cases as its hard to account for all edge cases. 
 #' Default: \code{FALSE}

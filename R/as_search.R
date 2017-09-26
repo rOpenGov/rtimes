@@ -3,7 +3,7 @@
 #' @export
 #' @template articlesearch
 #' @references 
-#' <http://developer.nytimes.com/docs/read/article_search_api_v2>
+#' <http://developer.nytimes.com>,
 #' <http://developer.nytimes.com/article_search_v2.json#/README>
 #' @examples \dontrun{
 #' # basic search - copyright, metadata, data, and facet slots
@@ -71,9 +71,10 @@
   res <- rtimes_GET(paste0(t_base(), "search/v2/articlesearch.json"), 
                     c(args, ...), TRUE, callopts)
   
-  if (all_results) {
+  if (all_results && res$response$meta$hits > 10) {
     hits <- res$response$meta$hits
-    pgs <- 1:floor(hits/10)
+    # pgs <- 1:floor(hits/10)
+    pgs <- seq_len(floor(hits/10)) 
     out <- list()
     pb <- txtProgressBar(min = 0, max = length(pgs), initial = 0, style = 3)
     on.exit(close(pb))
@@ -85,7 +86,7 @@
                              c(args, ...), TRUE, callopts)
     }
     
-    dat <- bind(lapply(out, function(z) z$response$docs))
+    dat <- bind(lapply(c(list(res), out), function(z) z$response$docs))
   } else {
     dat <- res$response$docs
   }
