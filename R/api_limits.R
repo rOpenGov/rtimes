@@ -31,7 +31,9 @@ api_limits <- function(api = "as", key = NULL) {
                     geo = check_key(key, "NYTIMES_GEO_KEY"))
   
   client_url <- paste0(t_base(), api_url)
-  head_path  <- sprintf("svc/%s?api-key=%s", api_url, api_key)
+  head_path  <- switch(api,
+                       as = sprintf("svc/%s?api-key=%s", api_url, api_key),
+                       geo = sprintf("svc/%s?api-key=%s&country_code=EE", api_url, api_key))
   
   cli <- crul::HttpClient$new(url = client_url, opts = list(), headers = list())
   ans <- cli$head(path = head_path)
