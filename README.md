@@ -18,8 +18,8 @@ Functions in `rtimes` that wrap these APIs are prefixed by two letter acronyms f
 * `cf` for the [Campaign Finance API](https://propublica.github.io/campaign-finance-api-docs)
 * `geo` for the [Geographic API](http://developer.nytimes.com/geo_api_v2.json)
 
-Please get your own API keys at <http://developer.nytimes.com/> for `as` and `geo` 
-functions, and for `cg` and `cf` functions by emailing Propublica at [apihelp@propublica.org](mailto:apihelp@propublica.org). 
+Please get your own API keys at <http://developer.nytimes.com/> for `as` and `geo`
+functions, and for `cg` and `cf` functions by emailing Propublica at [apihelp@propublica.org](mailto:apihelp@propublica.org).
 
 You'll need a different key for each API of the Nytimes APIs, but only one key for the Propublica
 APIs
@@ -33,12 +33,22 @@ And data from Propublica API is provided by Propublica
 <a border="0" href="https://www.propublica.org/datastore/apis" ><img src="tools/propublica.jpg" alt="Propublica API" width="100" /></a>
 
 I set up the functions so that you can put the key in your `.Renviron` file (or any
-file on your system that holds env vars), which will be called on startup of R, and then you 
-don't have to enter your API key for each run of a function. Use the following env var names 
+file on your system that holds env vars), which will be called on startup of R, and then you
+don't have to enter your API key for each run of a function. Use the following env var names
 
 * `NYTIMES_GEO_KEY` - for `geo` methods
 * `NYTIMES_AS_KEY` - for `as` methods
 * `PROPUBLICA_API_KEY` - for `cg` and `cf` methods
+
+
+**Note about full-text content**
+
+This packge only gives you access to article metadata (url, headline, byline, summary, etc.), and does not return full article content.
+
+You can get access to full article content from 1987-2007 from UPenn for non-commercial use at <https://catalog.ldc.upenn.edu/ldc2008t19>
+
+For commercial use, full article content can be purchased from the NYT Syndication site at <https://www.nytsyn.com/>
+
 
 ## Installation
 
@@ -109,10 +119,10 @@ x$data
 cf_candidate_details(campaign_cycle = 2008, fec_id = 'P80003338')
 #> $status
 #> [1] "OK"
-#> 
+#>
 #> $copyright
 #> [1] "Copyright (c) 2017 ProPublica Inc. All Rights Reserved."
-#> 
+#>
 #> $data
 #> # A tibble: 1 x 24
 #>          id          name party
@@ -136,11 +146,11 @@ cf_candidate_details(campaign_cycle = 2008, fec_id = 'P80003338')
 geo_search(country_code = "US")
 #> $copyright
 #> [1] "Copyright (c) 2015 The New York Times Company.  All Rights Reserved."
-#> 
+#>
 #> $meta
 #>   status num_results
 #> 1     OK         100
-#> 
+#>
 #> $data
 #> # A tibble: 100 x 27
 #>    concept_id              concept_name geocode_id geoname_id
