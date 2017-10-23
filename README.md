@@ -41,7 +41,7 @@ don't have to enter your API key for each run of a function. Use the following e
 * `PROPUBLICA_API_KEY` - for `cg` and `cf` methods
 
 
-**Note about full-text content**
+#### Note about full-text content
 
 This packge only gives you access to article metadata (url, headline, byline, summary, etc.), and does not return full article content.
 
