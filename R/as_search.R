@@ -71,7 +71,7 @@
   res <- rtimes_GET(paste0(t_base(), "search/v2/articlesearch.json"), 
                     c(args, ...), TRUE, callopts)
   
-  if (all_results && res$response$meta$hits > 10) {
+  if (all_results & res$response$meta$hits > 10) {
     hits <- res$response$meta$hits
     # pgs <- 1:floor(hits/10)
     pgs <- seq_len(floor(hits/10)) 
