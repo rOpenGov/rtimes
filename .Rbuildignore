@@ -8,5 +8,7 @@ man-roxygen/
 ^\.Rproj\.user$
 cran-comments.md
 README.Rmd
-^CONDUCT\.md$
+^CODE_OF_CONDUCT\.md$
 ^cran-comments\.md$
+.github
+
