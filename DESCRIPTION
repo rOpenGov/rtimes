@@ -27,6 +27,5 @@ Suggests:
     ggplot2,
     scales,
     grid,
-    webmockr,
     vcr
 RoxygenNote: 6.0.1
