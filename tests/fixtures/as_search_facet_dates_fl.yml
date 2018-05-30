@@ -1,0 +1,36 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://api.nytimes.com/svc/search/v2/articlesearch.json?q=bailout&fl=word_count&page=0&begin_date=20081001&end_date=20081201&api-key=e1fceed09cc7c21b9a279759efe7ab1d%3A16%3A59434183&facet_field=section_name
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.54.0 r-curl/3.2 crul/0.5.2
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json;charset=UTF-8
+      date: Wed, 30 May 2018 20:32:12 GMT
+      server: nginx/1.12.2
+      via: kong/0.9.5
+      x-kong-proxy-latency: '5'
+      x-kong-upstream-latency: '111'
+      x-ratelimit-limit-day: '1000'
+      x-ratelimit-limit-second: '1'
+      x-ratelimit-remaining-day: '985'
+      x-ratelimit-remaining-second: '0'
+      content-length: '571'
+      connection: keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"status":"OK","copyright":"Copyright (c) 2018 The New York Times Company.
+        All Rights Reserved.","response":{"docs":[{"word_count":826,"score":2.6911076E-11},{"word_count":477,"score":2.5130665E-11},{"word_count":60,"score":2.3960717E-11},{"word_count":51,"score":2.3699646E-11},{"word_count":226,"score":2.3492716E-11},{"word_count":9345,"score":2.2810896E-11},{"word_count":814,"score":2.2415935E-11},{"word_count":2029,"score":2.2147147E-11},{"word_count":960,"score":2.2140094E-11},{"word_count":913,"score":2.1942722E-11}],"meta":{"hits":1204,"offset":0,"time":58}}}'
+  recorded_at: 2018-05-30 20:32:12 GMT
+  recorded_with: vcr/0.1.0, webmockr/0.2.6, crul/0.5.2

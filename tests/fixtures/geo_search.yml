@@ -1,0 +1,1169 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://api.nytimes.com/svc/semantic/v2/geocodes/query.json?country_code=US&perpage=100&api-key=febbf4787ac1bc02eab114a5f29216ea%3A12%3A59434183
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.54.0 r-curl/3.2 crul/0.5.2
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      date: Wed, 30 May 2018 20:42:40 GMT
+      server: nginx/1.13.12
+      via: kong/0.9.5
+      x-kong-proxy-latency: '5'
+      x-kong-upstream-latency: '155'
+      x-ratelimit-limit-day: '1000'
+      x-ratelimit-limit-second: '5'
+      x-ratelimit-remaining-day: '985'
+      x-ratelimit-remaining-second: '4'
+      content-length: '85702'
+      connection: keep-alive
+    body:
+      encoding: UTF-8
+      string: "{ \n\t\"status\": \"OK\",\n\t\"copyright\": \"Copyright (c) 2015 The
+        New York Times Company. All Rights Reserved.\",\n\t\"num_results\": 100,\n\t\"results\":
+        [\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\": \"22456\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\":
+        \"Abilene (Tex)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 4500,\n\t\t\t\t\"geoname_id\":
+        4669635,\n\t\t\t\t\"name\": \"Abilene\",\n\t\t\t\t\"latitude\": 32.448736,\n\t\t\t\t\"longitude\":
+        -99.733144,\n\t\t\t\t\"elevation\": 524,\n\t\t\t\t\"population\": 114247,\n\t\t\t\t\"country_code\":
+        \"US\",\n\t\t\t\t\"country_name\": \"United States\",\n\t\t\t\t\"admin_code1\":
+        \"TX\",\n\t\t\t\t\"admin_code2\": \"441\",\n\t\t\t\t\"admin_code3\": null,\n\t\t\t\t\"admin_code4\":
+        null,\n\t\t\t\t\"admin_name1\": \"Texas\",\n\t\t\t\t\"admin_name2\": \"Taylor
+        County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\": null,\n\t\t\t\t\"feature_class\":
+        \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Chicago\",\n\t\t\t\t\"dst_offset\":
+        -5.0,\n\t\t\t\t\"gmt_offset\": -6.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22460\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Abingdon (Va)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        7752,\n\t\t\t\t\"geoname_id\": 4743815,\n\t\t\t\t\"name\": \"Abingdon\",\n\t\t\t\t\"latitude\":
+        36.709834,\n\t\t\t\t\"longitude\": -81.977348,\n\t\t\t\t\"elevation\": 629,\n\t\t\t\t\"population\":
+        7735,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"VA\",\n\t\t\t\t\"admin_code2\": \"191\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Virginia\",\n\t\t\t\t\"admin_name2\":
+        \"Washington County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22480\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Acadia National
+        Park (Me)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 4504,\n\t\t\t\t\"geoname_id\":
+        4956449,\n\t\t\t\t\"name\": \"Acadia National Park\",\n\t\t\t\t\"latitude\":
+        44.35008,\n\t\t\t\t\"longitude\": -68.282793,\n\t\t\t\t\"elevation\": 171,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"ME\",\n\t\t\t\t\"admin_code2\": \"009\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Maine\",\n\t\t\t\t\"admin_name2\":
+        \"Hancock County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"L\",\n\t\t\t\t\"feature_code\": \"PRK\",\n\t\t\t\t\"feature_code_name\":
+        \"park\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22508\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Adirondack Mountains
+        (NY)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 1488,\n\t\t\t\t\"geoname_id\":
+        5106772,\n\t\t\t\t\"name\": \"Adirondack Mountains\",\n\t\t\t\t\"latitude\":
+        44.000338,\n\t\t\t\t\"longitude\": -74.499888,\n\t\t\t\t\"elevation\": 544,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NY\",\n\t\t\t\t\"admin_code2\": \"041\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\":
+        \"Hamilton County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"T\",\n\t\t\t\t\"feature_code\": \"MTS\",\n\t\t\t\t\"feature_code_name\":
+        \"mountains\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22548\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Alabama\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        364,\n\t\t\t\t\"geoname_id\": 4829764,\n\t\t\t\t\"name\": \"Alabama\",\n\t\t\t\t\"latitude\":
+        32.750406,\n\t\t\t\t\"longitude\": -86.750262,\n\t\t\t\t\"elevation\": 141,\n\t\t\t\t\"population\":
+        4530315,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"AL\",\n\t\t\t\t\"admin_code2\": null,\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Alabama\",\n\t\t\t\t\"admin_name2\":
+        null,\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\": null,\n\t\t\t\t\"feature_class\":
+        \"A\",\n\t\t\t\t\"feature_code\": \"ADM1\",\n\t\t\t\t\"feature_code_name\":
+        \"first-order administrative division\",\n\t\t\t\t\"time_zone_id\": \"America/Indiana/Knox\",\n\t\t\t\t\"dst_offset\":
+        -5.0,\n\t\t\t\t\"gmt_offset\": -6.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22556\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Alaska\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        292,\n\t\t\t\t\"geoname_id\": 5879092,\n\t\t\t\t\"name\": \"Alaska\",\n\t\t\t\t\"latitude\":
+        64.000278,\n\t\t\t\t\"longitude\": -150.000278,\n\t\t\t\t\"elevation\": 421,\n\t\t\t\t\"population\":
+        660633,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"AK\",\n\t\t\t\t\"admin_code2\": null,\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Alaska\",\n\t\t\t\t\"admin_name2\":
+        null,\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\": null,\n\t\t\t\t\"feature_class\":
+        \"A\",\n\t\t\t\t\"feature_code\": \"ADM1\",\n\t\t\t\t\"feature_code_name\":
+        \"first-order administrative division\",\n\t\t\t\t\"time_zone_id\": \"America/Anchorage\",\n\t\t\t\t\"dst_offset\":
+        -8.0,\n\t\t\t\t\"gmt_offset\": -9.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22564\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Albany (NY)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        464,\n\t\t\t\t\"geoname_id\": 5106834,\n\t\t\t\t\"name\": \"Albany\",\n\t\t\t\t\"latitude\":
+        42.652579,\n\t\t\t\t\"longitude\": -73.756232,\n\t\t\t\t\"elevation\": 45,\n\t\t\t\t\"population\":
+        95658,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NY\",\n\t\t\t\t\"admin_code2\": \"001\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\":
+        \"Albany County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPLA\",\n\t\t\t\t\"feature_code_name\":
+        \"seat of a first-order administrative division\",\n\t\t\t\t\"time_zone_id\":
+        \"America/New_York\",\n\t\t\t\t\"dst_offset\": -4.0,\n\t\t\t\t\"gmt_offset\":
+        -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25 15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\":
+        \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22572\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Albuquerque (NM)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        1596,\n\t\t\t\t\"geoname_id\": 5454711,\n\t\t\t\t\"name\": \"Albuquerque\",\n\t\t\t\t\"latitude\":
+        35.084491,\n\t\t\t\t\"longitude\": -106.651137,\n\t\t\t\t\"elevation\": 1511,\n\t\t\t\t\"population\":
+        487378,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NM\",\n\t\t\t\t\"admin_code2\": \"001\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New Mexico\",\n\t\t\t\t\"admin_name2\":
+        \"Bernalillo County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Denver\",\n\t\t\t\t\"dst_offset\":
+        -6.0,\n\t\t\t\t\"gmt_offset\": -7.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22576\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Alcatraz (San
+        Francisco)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 7772,\n\t\t\t\t\"geoname_id\":
+        5322901,\n\t\t\t\t\"name\": \"Alcatraz Island\",\n\t\t\t\t\"latitude\": 37.826595,\n\t\t\t\t\"longitude\":
+        -122.423305,\n\t\t\t\t\"elevation\": 37,\n\t\t\t\t\"population\": null,\n\t\t\t\t\"country_code\":
+        \"US\",\n\t\t\t\t\"country_name\": \"United States\",\n\t\t\t\t\"admin_code1\":
+        \"CA\",\n\t\t\t\t\"admin_code2\": \"075\",\n\t\t\t\t\"admin_code3\": null,\n\t\t\t\t\"admin_code4\":
+        null,\n\t\t\t\t\"admin_name1\": \"California\",\n\t\t\t\t\"admin_name2\":
+        \"San Francisco County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"T\",\n\t\t\t\t\"feature_code\": \"ISL\",\n\t\t\t\t\"feature_code_name\":
+        \"island\",\n\t\t\t\t\"time_zone_id\": \"America/Los_Angeles\",\n\t\t\t\t\"dst_offset\":
+        -7.0,\n\t\t\t\t\"gmt_offset\": -8.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22580\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Alexandria (Va)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        4008,\n\t\t\t\t\"geoname_id\": 4744091,\n\t\t\t\t\"name\": \"Alexandria\",\n\t\t\t\t\"latitude\":
+        38.804836,\n\t\t\t\t\"longitude\": -77.046921,\n\t\t\t\t\"elevation\": 12,\n\t\t\t\t\"population\":
+        127273,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"VA\",\n\t\t\t\t\"admin_code2\": \"510\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Virginia\",\n\t\t\t\t\"admin_name2\":
+        \"City of Alexandria\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22584\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Alexandria Bay
+        (NY)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 7776,\n\t\t\t\t\"geoname_id\":
+        5106950,\n\t\t\t\t\"name\": \"Alexandria Bay\",\n\t\t\t\t\"latitude\": 44.335884,\n\t\t\t\t\"longitude\":
+        -75.917731,\n\t\t\t\t\"elevation\": 82,\n\t\t\t\t\"population\": 1090,\n\t\t\t\t\"country_code\":
+        \"US\",\n\t\t\t\t\"country_name\": \"United States\",\n\t\t\t\t\"admin_code1\":
+        \"NY\",\n\t\t\t\t\"admin_code2\": \"045\",\n\t\t\t\t\"admin_code3\": null,\n\t\t\t\t\"admin_code4\":
+        null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\": \"Jefferson
+        County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\": null,\n\t\t\t\t\"feature_class\":
+        \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22612\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Allegheny National
+        Forest (Pa)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 7676,\n\t\t\t\t\"geoname_id\":
+        5178053,\n\t\t\t\t\"name\": \"Allegheny National Forest\",\n\t\t\t\t\"latitude\":
+        41.627839,\n\t\t\t\t\"longitude\": -79.016427,\n\t\t\t\t\"elevation\": 570,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"PA\",\n\t\t\t\t\"admin_code2\": \"123\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Pennsylvania\",\n\t\t\t\t\"admin_name2\":
+        \"Warren County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"V\",\n\t\t\t\t\"feature_code\": \"FRST\",\n\t\t\t\t\"feature_code_name\":
+        \"forest(s)\",\n\t\t\t\t\"time_zone_id\": \"America/Detroit\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22628\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Alta (Utah)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        4484,\n\t\t\t\t\"geoname_id\": 5770692,\n\t\t\t\t\"name\": \"Alta\",\n\t\t\t\t\"latitude\":
+        40.588839,\n\t\t\t\t\"longitude\": -111.637979,\n\t\t\t\t\"elevation\": 2609,\n\t\t\t\t\"population\":
+        360,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"UT\",\n\t\t\t\t\"admin_code2\": \"035\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Utah\",\n\t\t\t\t\"admin_name2\":
+        \"Salt Lake County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Shiprock\",\n\t\t\t\t\"dst_offset\":
+        -6.0,\n\t\t\t\t\"gmt_offset\": -7.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22632\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Amagansett (NY)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        4976,\n\t\t\t\t\"geoname_id\": 5107091,\n\t\t\t\t\"name\": \"Amagansett\",\n\t\t\t\t\"latitude\":
+        40.973712,\n\t\t\t\t\"longitude\": -72.143688,\n\t\t\t\t\"elevation\": 9,\n\t\t\t\t\"population\":
+        1084,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NY\",\n\t\t\t\t\"admin_code2\": \"103\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\":
+        \"Suffolk County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22644\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Amarillo (Tex)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        5048,\n\t\t\t\t\"geoname_id\": 5516233,\n\t\t\t\t\"name\": \"Amarillo\",\n\t\t\t\t\"latitude\":
+        35.221997,\n\t\t\t\t\"longitude\": -101.831297,\n\t\t\t\t\"elevation\": 1118,\n\t\t\t\t\"population\":
+        181766,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"TX\",\n\t\t\t\t\"admin_code2\": \"375\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Texas\",\n\t\t\t\t\"admin_name2\":
+        \"Potter County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Chicago\",\n\t\t\t\t\"dst_offset\":
+        -5.0,\n\t\t\t\t\"gmt_offset\": -6.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22664\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Amelia Island
+        (Fla)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 5984,\n\t\t\t\t\"geoname_id\":
+        4145972,\n\t\t\t\t\"name\": \"Amelia Island\",\n\t\t\t\t\"latitude\": 30.607738,\n\t\t\t\t\"longitude\":
+        -81.460091,\n\t\t\t\t\"elevation\": 4,\n\t\t\t\t\"population\": null,\n\t\t\t\t\"country_code\":
+        \"US\",\n\t\t\t\t\"country_name\": \"United States\",\n\t\t\t\t\"admin_code1\":
+        \"FL\",\n\t\t\t\t\"admin_code2\": \"089\",\n\t\t\t\t\"admin_code3\": null,\n\t\t\t\t\"admin_code4\":
+        null,\n\t\t\t\t\"admin_name1\": \"Florida\",\n\t\t\t\t\"admin_name2\": \"Nassau
+        County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\": null,\n\t\t\t\t\"feature_class\":
+        \"T\",\n\t\t\t\t\"feature_code\": \"ISL\",\n\t\t\t\t\"feature_code_name\":
+        \"island\",\n\t\t\t\t\"time_zone_id\": \"America/Kentucky/Monticello\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22668\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Amenia (NY)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        5988,\n\t\t\t\t\"geoname_id\": 5107115,\n\t\t\t\t\"name\": \"Amenia\",\n\t\t\t\t\"latitude\":
+        41.84926,\n\t\t\t\t\"longitude\": -73.556792,\n\t\t\t\t\"elevation\": 173,\n\t\t\t\t\"population\":
+        1134,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NY\",\n\t\t\t\t\"admin_code2\": \"027\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\":
+        \"Dutchess County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22676\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Amherst (Mass)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        4516,\n\t\t\t\t\"geoname_id\": 4929022,\n\t\t\t\t\"name\": \"Amherst\",\n\t\t\t\t\"latitude\":
+        42.380368,\n\t\t\t\t\"longitude\": -72.523143,\n\t\t\t\t\"elevation\": 82,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"MA\",\n\t\t\t\t\"admin_code2\": \"015\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Massachusetts\",\n\t\t\t\t\"admin_name2\":
+        \"Hampshire County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22692\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Anchorage (Alaska)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        1568,\n\t\t\t\t\"geoname_id\": 5879400,\n\t\t\t\t\"name\": \"Anchorage\",\n\t\t\t\t\"latitude\":
+        61.218056,\n\t\t\t\t\"longitude\": -149.900278,\n\t\t\t\t\"elevation\": 31,\n\t\t\t\t\"population\":
+        260283,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"AK\",\n\t\t\t\t\"admin_code2\": \"020\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Alaska\",\n\t\t\t\t\"admin_name2\":
+        \"Anchorage Municipality\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Juneau\",\n\t\t\t\t\"dst_offset\":
+        -8.0,\n\t\t\t\t\"gmt_offset\": -9.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22736\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Ann Arbor (Mich)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        2700,\n\t\t\t\t\"geoname_id\": 4984247,\n\t\t\t\t\"name\": \"Ann Arbor\",\n\t\t\t\t\"latitude\":
+        42.277563,\n\t\t\t\t\"longitude\": -83.740883,\n\t\t\t\t\"elevation\": 269,\n\t\t\t\t\"population\":
+        113810,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"MI\",\n\t\t\t\t\"admin_code2\": \"161\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Michigan\",\n\t\t\t\t\"admin_name2\":
+        \"Washtenaw County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Detroit\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22740\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Anna Maria Island
+        (Fla)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 1920,\n\t\t\t\t\"geoname_id\":
+        4146085,\n\t\t\t\t\"name\": \"Anna Maria Island\",\n\t\t\t\t\"latitude\":
+        27.514204,\n\t\t\t\t\"longitude\": -82.718989,\n\t\t\t\t\"elevation\": null,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"FL\",\n\t\t\t\t\"admin_code2\": \"081\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Florida\",\n\t\t\t\t\"admin_name2\":
+        \"Manatee County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"T\",\n\t\t\t\t\"feature_code\": \"ISL\",\n\t\t\t\t\"feature_code_name\":
+        \"island\",\n\t\t\t\t\"time_zone_id\": \"America/Kentucky/Monticello\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22744\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Annapolis (Md)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        2628,\n\t\t\t\t\"geoname_id\": 4347242,\n\t\t\t\t\"name\": \"Annapolis\",\n\t\t\t\t\"latitude\":
+        38.978445,\n\t\t\t\t\"longitude\": -76.492183,\n\t\t\t\t\"elevation\": 12,\n\t\t\t\t\"population\":
+        36252,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"MD\",\n\t\t\t\t\"admin_code2\": \"003\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Maryland\",\n\t\t\t\t\"admin_name2\":
+        \"Anne Arundel County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPLA\",\n\t\t\t\t\"feature_code_name\":
+        \"seat of a first-order administrative division\",\n\t\t\t\t\"time_zone_id\":
+        \"America/New_York\",\n\t\t\t\t\"dst_offset\": -4.0,\n\t\t\t\t\"gmt_offset\":
+        -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25 15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\":
+        \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22772\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Anza-Borrego Desert
+        State Park (Calif)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 5076,\n\t\t\t\t\"geoname_id\":
+        5324261,\n\t\t\t\t\"name\": \"Anza-Borrego Desert State Park\",\n\t\t\t\t\"latitude\":
+        33.228929,\n\t\t\t\t\"longitude\": -116.261119,\n\t\t\t\t\"elevation\": 146,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"CA\",\n\t\t\t\t\"admin_code2\": \"073\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"California\",\n\t\t\t\t\"admin_name2\":
+        \"San Diego County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"L\",\n\t\t\t\t\"feature_code\": \"PRK\",\n\t\t\t\t\"feature_code_name\":
+        \"park\",\n\t\t\t\t\"time_zone_id\": \"America/Los_Angeles\",\n\t\t\t\t\"dst_offset\":
+        -7.0,\n\t\t\t\t\"gmt_offset\": -8.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22776\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Apalachicola (Fla)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        6008,\n\t\t\t\t\"geoname_id\": 4146148,\n\t\t\t\t\"name\": \"Apalachicola\",\n\t\t\t\t\"latitude\":
+        29.725768,\n\t\t\t\t\"longitude\": -84.983243,\n\t\t\t\t\"elevation\": 4,\n\t\t\t\t\"population\":
+        2284,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"FL\",\n\t\t\t\t\"admin_code2\": \"037\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Florida\",\n\t\t\t\t\"admin_name2\":
+        \"Franklin County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22784\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Appalachian Trail\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        2980,\n\t\t\t\t\"geoname_id\": 4744577,\n\t\t\t\t\"name\": \"Appalachian National
+        Scenic Trail\",\n\t\t\t\t\"latitude\": 38.619844,\n\t\t\t\t\"longitude\":
+        -78.345282,\n\t\t\t\t\"elevation\": 996,\n\t\t\t\t\"population\": null,\n\t\t\t\t\"country_code\":
+        \"US\",\n\t\t\t\t\"country_name\": \"United States\",\n\t\t\t\t\"admin_code1\":
+        \"VA\",\n\t\t\t\t\"admin_code2\": \"139\",\n\t\t\t\t\"admin_code3\": null,\n\t\t\t\t\"admin_code4\":
+        null,\n\t\t\t\t\"admin_name1\": \"Virginia\",\n\t\t\t\t\"admin_name2\": \"Page
+        County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\": null,\n\t\t\t\t\"feature_class\":
+        \"R\",\n\t\t\t\t\"feature_code\": \"TRL\",\n\t\t\t\t\"feature_code_name\":
+        \"trail\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22804\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Arctic National
+        Wildlife Refuge\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 1420,\n\t\t\t\t\"geoname_id\":
+        5879632,\n\t\t\t\t\"name\": \"Arctic National Wildlife Refuge\",\n\t\t\t\t\"latitude\":
+        68.750556,\n\t\t\t\t\"longitude\": -144.500556,\n\t\t\t\t\"elevation\": 1479,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"AK\",\n\t\t\t\t\"admin_code2\": \"185\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Alaska\",\n\t\t\t\t\"admin_name2\":
+        \"North Slope Borough\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"L\",\n\t\t\t\t\"feature_code\": \"PRK\",\n\t\t\t\t\"feature_code_name\":
+        \"park\",\n\t\t\t\t\"time_zone_id\": \"America/Anchorage\",\n\t\t\t\t\"dst_offset\":
+        -8.0,\n\t\t\t\t\"gmt_offset\": -9.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22828\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Arizona\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        232,\n\t\t\t\t\"geoname_id\": 5551752,\n\t\t\t\t\"name\": \"Arizona\",\n\t\t\t\t\"latitude\":
+        34.500304,\n\t\t\t\t\"longitude\": -111.500976,\n\t\t\t\t\"elevation\": 1927,\n\t\t\t\t\"population\":
+        5863809,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"AZ\",\n\t\t\t\t\"admin_code2\": null,\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Arizona\",\n\t\t\t\t\"admin_name2\":
+        null,\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\": null,\n\t\t\t\t\"feature_class\":
+        \"A\",\n\t\t\t\t\"feature_code\": \"ADM1\",\n\t\t\t\t\"feature_code_name\":
+        \"first-order administrative division\",\n\t\t\t\t\"time_zone_id\": \"America/Phoenix\",\n\t\t\t\t\"dst_offset\":
+        -7.0,\n\t\t\t\t\"gmt_offset\": -7.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22832\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Arkansas\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        560,\n\t\t\t\t\"geoname_id\": 4099753,\n\t\t\t\t\"name\": \"Arkansas\",\n\t\t\t\t\"latitude\":
+        34.75037,\n\t\t\t\t\"longitude\": -92.500436,\n\t\t\t\t\"elevation\": 185,\n\t\t\t\t\"population\":
+        2757631,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"AR\",\n\t\t\t\t\"admin_code2\": null,\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Arkansas\",\n\t\t\t\t\"admin_name2\":
+        null,\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\": null,\n\t\t\t\t\"feature_class\":
+        \"A\",\n\t\t\t\t\"feature_code\": \"ADM1\",\n\t\t\t\t\"feature_code_name\":
+        \"first-order administrative division\",\n\t\t\t\t\"time_zone_id\": \"America/Indiana/Knox\",\n\t\t\t\t\"dst_offset\":
+        -5.0,\n\t\t\t\t\"gmt_offset\": -6.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22836\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Arkansas River\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        6016,\n\t\t\t\t\"geoname_id\": 4099736,\n\t\t\t\t\"name\": \"Arkansas River\",\n\t\t\t\t\"latitude\":
+        33.77511,\n\t\t\t\t\"longitude\": -91.070943,\n\t\t\t\t\"elevation\": 33,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"AR\",\n\t\t\t\t\"admin_code2\": \"041\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Arkansas\",\n\t\t\t\t\"admin_name2\":
+        \"Desha County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"H\",\n\t\t\t\t\"feature_code\": \"STM\",\n\t\t\t\t\"feature_code_name\":
+        \"stream\",\n\t\t\t\t\"time_zone_id\": \"America/Indiana/Knox\",\n\t\t\t\t\"dst_offset\":
+        -5.0,\n\t\t\t\t\"gmt_offset\": -6.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22848\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Armonk (NY)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        5020,\n\t\t\t\t\"geoname_id\": 5107346,\n\t\t\t\t\"name\": \"Armonk\",\n\t\t\t\t\"latitude\":
+        41.126485,\n\t\t\t\t\"longitude\": -73.714019,\n\t\t\t\t\"elevation\": 118,\n\t\t\t\t\"population\":
+        3829,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NY\",\n\t\t\t\t\"admin_code2\": \"119\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\":
+        \"Westchester County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22860\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Arvada (Colo)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        7716,\n\t\t\t\t\"geoname_id\": 5412199,\n\t\t\t\t\"name\": \"Arvada\",\n\t\t\t\t\"latitude\":
+        39.802764,\n\t\t\t\t\"longitude\": -105.087484,\n\t\t\t\t\"elevation\": 1629,\n\t\t\t\t\"population\":
+        101732,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"CO\",\n\t\t\t\t\"admin_code2\": \"059\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Colorado\",\n\t\t\t\t\"admin_name2\":
+        \"Jefferson County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Denver\",\n\t\t\t\t\"dst_offset\":
+        -6.0,\n\t\t\t\t\"gmt_offset\": -7.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22864\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Asbury Park (NJ)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        3220,\n\t\t\t\t\"geoname_id\": 5095281,\n\t\t\t\t\"name\": \"Asbury Park\",\n\t\t\t\t\"latitude\":
+        40.220391,\n\t\t\t\t\"longitude\": -74.012082,\n\t\t\t\t\"elevation\": 6,\n\t\t\t\t\"population\":
+        16507,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NJ\",\n\t\t\t\t\"admin_code2\": \"025\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New Jersey\",\n\t\t\t\t\"admin_name2\":
+        \"Monmouth County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22868\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Asheville (NC)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        4004,\n\t\t\t\t\"geoname_id\": 4453066,\n\t\t\t\t\"name\": \"Asheville\",\n\t\t\t\t\"latitude\":
+        35.600945,\n\t\t\t\t\"longitude\": -82.554015,\n\t\t\t\t\"elevation\": 650,\n\t\t\t\t\"population\":
+        68795,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NC\",\n\t\t\t\t\"admin_code2\": \"021\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"North Carolina\",\n\t\t\t\t\"admin_name2\":
+        \"Buncombe County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22876\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Ashland (Ore)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        7724,\n\t\t\t\t\"geoname_id\": 5711789,\n\t\t\t\t\"name\": \"Ashland\",\n\t\t\t\t\"latitude\":
+        42.194576,\n\t\t\t\t\"longitude\": -122.709477,\n\t\t\t\t\"elevation\": 593,\n\t\t\t\t\"population\":
+        20888,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"OR\",\n\t\t\t\t\"admin_code2\": \"029\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Oregon\",\n\t\t\t\t\"admin_name2\":
+        \"Jackson County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Los_Angeles\",\n\t\t\t\t\"dst_offset\":
+        -7.0,\n\t\t\t\t\"gmt_offset\": -8.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22880\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Aspen (Colo)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        1184,\n\t\t\t\t\"geoname_id\": 5412230,\n\t\t\t\t\"name\": \"Aspen\",\n\t\t\t\t\"latitude\":
+        39.191098,\n\t\t\t\t\"longitude\": -106.817539,\n\t\t\t\t\"elevation\": 2405,\n\t\t\t\t\"population\":
+        5760,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"CO\",\n\t\t\t\t\"admin_code2\": \"097\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Colorado\",\n\t\t\t\t\"admin_name2\":
+        \"Pitkin County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Denver\",\n\t\t\t\t\"dst_offset\":
+        -6.0,\n\t\t\t\t\"gmt_offset\": -7.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22888\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Assateague Island
+        National Seashore\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 5932,\n\t\t\t\t\"geoname_id\":
+        4347570,\n\t\t\t\t\"name\": \"Assateague Island National Seashore\",\n\t\t\t\t\"latitude\":
+        38.083453,\n\t\t\t\t\"longitude\": -75.199633,\n\t\t\t\t\"elevation\": null,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"MD\",\n\t\t\t\t\"admin_code2\": \"047\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Maryland\",\n\t\t\t\t\"admin_name2\":
+        \"Worcester County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"L\",\n\t\t\t\t\"feature_code\": \"PRK\",\n\t\t\t\t\"feature_code_name\":
+        \"park\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22896\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Astoria (Ore)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        5940,\n\t\t\t\t\"geoname_id\": 5711847,\n\t\t\t\t\"name\": \"Astoria\",\n\t\t\t\t\"latitude\":
+        46.187884,\n\t\t\t\t\"longitude\": -123.831253,\n\t\t\t\t\"elevation\": 7,\n\t\t\t\t\"population\":
+        9535,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"OR\",\n\t\t\t\t\"admin_code2\": \"007\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Oregon\",\n\t\t\t\t\"admin_name2\":
+        \"Clatsop County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Los_Angeles\",\n\t\t\t\t\"dst_offset\":
+        -7.0,\n\t\t\t\t\"gmt_offset\": -8.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22912\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Atlanta (Ga)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        472,\n\t\t\t\t\"geoname_id\": 4180439,\n\t\t\t\t\"name\": \"Atlanta\",\n\t\t\t\t\"latitude\":
+        33.748995,\n\t\t\t\t\"longitude\": -84.387982,\n\t\t\t\t\"elevation\": 320,\n\t\t\t\t\"population\":
+        422908,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"GA\",\n\t\t\t\t\"admin_code2\": \"121\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Georgia\",\n\t\t\t\t\"admin_name2\":
+        \"Fulton County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPLA\",\n\t\t\t\t\"feature_code_name\":
+        \"seat of a first-order administrative division\",\n\t\t\t\t\"time_zone_id\":
+        \"America/New_York\",\n\t\t\t\t\"dst_offset\": -4.0,\n\t\t\t\t\"gmt_offset\":
+        -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25 15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\":
+        \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22916\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Atlantic Beach
+        (NY)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 7736,\n\t\t\t\t\"geoname_id\":
+        5107481,\n\t\t\t\t\"name\": \"Atlantic Beach\",\n\t\t\t\t\"latitude\": 40.588994,\n\t\t\t\t\"longitude\":
+        -73.729021,\n\t\t\t\t\"elevation\": 5,\n\t\t\t\t\"population\": 1973,\n\t\t\t\t\"country_code\":
+        \"US\",\n\t\t\t\t\"country_name\": \"United States\",\n\t\t\t\t\"admin_code1\":
+        \"NY\",\n\t\t\t\t\"admin_code2\": \"059\",\n\t\t\t\t\"admin_code3\": null,\n\t\t\t\t\"admin_code4\":
+        null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\": \"Nassau
+        County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\": null,\n\t\t\t\t\"feature_class\":
+        \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22920\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Atlantic City
+        (NJ)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 1124,\n\t\t\t\t\"geoname_id\":
+        4500546,\n\t\t\t\t\"name\": \"Atlantic City\",\n\t\t\t\t\"latitude\": 39.364283,\n\t\t\t\t\"longitude\":
+        -74.422927,\n\t\t\t\t\"elevation\": 2,\n\t\t\t\t\"population\": 40554,\n\t\t\t\t\"country_code\":
+        \"US\",\n\t\t\t\t\"country_name\": \"United States\",\n\t\t\t\t\"admin_code1\":
+        \"NJ\",\n\t\t\t\t\"admin_code2\": \"001\",\n\t\t\t\t\"admin_code3\": null,\n\t\t\t\t\"admin_code4\":
+        null,\n\t\t\t\t\"admin_name1\": \"New Jersey\",\n\t\t\t\t\"admin_name2\":
+        \"Atlantic County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22944\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Austin (Tex)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        916,\n\t\t\t\t\"geoname_id\": 4671654,\n\t\t\t\t\"name\": \"Austin\",\n\t\t\t\t\"latitude\":
+        30.267153,\n\t\t\t\t\"longitude\": -97.743061,\n\t\t\t\t\"elevation\": 149,\n\t\t\t\t\"population\":
+        678368,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"TX\",\n\t\t\t\t\"admin_code2\": \"453\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Texas\",\n\t\t\t\t\"admin_name2\":
+        \"Travis County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPLA\",\n\t\t\t\t\"feature_code_name\":
+        \"seat of a first-order administrative division\",\n\t\t\t\t\"time_zone_id\":
+        \"America/Chicago\",\n\t\t\t\t\"dst_offset\": -5.0,\n\t\t\t\t\"gmt_offset\":
+        -6.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25 15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\":
+        \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"22996\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Badlands National
+        Park (SD)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 7608,\n\t\t\t\t\"geoname_id\":
+        5762546,\n\t\t\t\t\"name\": \"Badlands National Park\",\n\t\t\t\t\"latitude\":
+        43.625267,\n\t\t\t\t\"longitude\": -102.875742,\n\t\t\t\t\"elevation\": 830,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"SD\",\n\t\t\t\t\"admin_code2\": \"103\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"South Dakota\",\n\t\t\t\t\"admin_name2\":
+        \"Pennington County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"L\",\n\t\t\t\t\"feature_code\": \"PRK\",\n\t\t\t\t\"feature_code_name\":
+        \"park\",\n\t\t\t\t\"time_zone_id\": \"America/Denver\",\n\t\t\t\t\"dst_offset\":
+        -6.0,\n\t\t\t\t\"gmt_offset\": -7.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23036\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Baltimore (Md)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        776,\n\t\t\t\t\"geoname_id\": 4347778,\n\t\t\t\t\"name\": \"Baltimore\",\n\t\t\t\t\"latitude\":
+        39.290385,\n\t\t\t\t\"longitude\": -76.612189,\n\t\t\t\t\"elevation\": 10,\n\t\t\t\t\"population\":
+        610892,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"MD\",\n\t\t\t\t\"admin_code2\": \"510\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Maryland\",\n\t\t\t\t\"admin_name2\":
+        \"City of Baltimore\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23052\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bandon (Ore)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        4028,\n\t\t\t\t\"geoname_id\": 5712417,\n\t\t\t\t\"name\": \"Bandon\",\n\t\t\t\t\"latitude\":
+        43.118998,\n\t\t\t\t\"longitude\": -124.408448,\n\t\t\t\t\"elevation\": 3,\n\t\t\t\t\"population\":
+        2830,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"OR\",\n\t\t\t\t\"admin_code2\": \"011\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Oregon\",\n\t\t\t\t\"admin_name2\":
+        \"Coos County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Los_Angeles\",\n\t\t\t\t\"dst_offset\":
+        -7.0,\n\t\t\t\t\"gmt_offset\": -8.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23076\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bar Harbor (Me)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        5080,\n\t\t\t\t\"geoname_id\": 4957320,\n\t\t\t\t\"name\": \"Bar Harbor\",\n\t\t\t\t\"latitude\":
+        44.387579,\n\t\t\t\t\"longitude\": -68.203902,\n\t\t\t\t\"elevation\": 18,\n\t\t\t\t\"population\":
+        6090,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"ME\",\n\t\t\t\t\"admin_code2\": \"009\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Maine\",\n\t\t\t\t\"admin_name2\":
+        \"Hancock County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23092\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Barnstable (Mass)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        7620,\n\t\t\t\t\"geoname_id\": 4929771,\n\t\t\t\t\"name\": \"Barnstable\",\n\t\t\t\t\"latitude\":
+        41.70011,\n\t\t\t\t\"longitude\": -70.299466,\n\t\t\t\t\"elevation\": 11,\n\t\t\t\t\"population\":
+        47821,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"MA\",\n\t\t\t\t\"admin_code2\": \"001\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Massachusetts\",\n\t\t\t\t\"admin_name2\":
+        \"Cape Cod\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\": null,\n\t\t\t\t\"feature_class\":
+        \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23116\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Baton Rouge (La)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        3216,\n\t\t\t\t\"geoname_id\": 4315588,\n\t\t\t\t\"name\": \"Baton Rouge\",\n\t\t\t\t\"latitude\":
+        30.450746,\n\t\t\t\t\"longitude\": -91.154551,\n\t\t\t\t\"elevation\": 14,\n\t\t\t\t\"population\":
+        223349,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"LA\",\n\t\t\t\t\"admin_code2\": \"033\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Louisiana\",\n\t\t\t\t\"admin_name2\":
+        \"East Baton Rouge Parish\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPLA\",\n\t\t\t\t\"feature_code_name\":
+        \"seat of a first-order administrative division\",\n\t\t\t\t\"time_zone_id\":
+        \"America/Chicago\",\n\t\t\t\t\"dst_offset\": -5.0,\n\t\t\t\t\"gmt_offset\":
+        -6.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25 15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\":
+        \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23128\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Baxter State Park
+        (Me)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 7628,\n\t\t\t\t\"geoname_id\":
+        4957608,\n\t\t\t\t\"name\": \"Baxter State Park\",\n\t\t\t\t\"latitude\":
+        46.091156,\n\t\t\t\t\"longitude\": -68.956435,\n\t\t\t\t\"elevation\": 441,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"ME\",\n\t\t\t\t\"admin_code2\": \"021\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Maine\",\n\t\t\t\t\"admin_name2\":
+        \"Piscataquis County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"L\",\n\t\t\t\t\"feature_code\": \"PRK\",\n\t\t\t\t\"feature_code_name\":
+        \"park\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23136\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bay Shore (NY)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        4488,\n\t\t\t\t\"geoname_id\": 5108169,\n\t\t\t\t\"name\": \"Bay Shore\",\n\t\t\t\t\"latitude\":
+        40.725099,\n\t\t\t\t\"longitude\": -73.245395,\n\t\t\t\t\"elevation\": 5,\n\t\t\t\t\"population\":
+        24969,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NY\",\n\t\t\t\t\"admin_code2\": \"103\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\":
+        \"Suffolk County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23156\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bayonne (NJ)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        3532,\n\t\t\t\t\"geoname_id\": 5095445,\n\t\t\t\t\"name\": \"Bayonne\",\n\t\t\t\t\"latitude\":
+        40.668714,\n\t\t\t\t\"longitude\": -74.114309,\n\t\t\t\t\"elevation\": 12,\n\t\t\t\t\"population\":
+        59878,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NJ\",\n\t\t\t\t\"admin_code2\": \"017\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New Jersey\",\n\t\t\t\t\"admin_name2\":
+        \"Hudson County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23160\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bayport (NY)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        7644,\n\t\t\t\t\"geoname_id\": 5108191,\n\t\t\t\t\"name\": \"Bayport\",\n\t\t\t\t\"latitude\":
+        40.738432,\n\t\t\t\t\"longitude\": -73.050666,\n\t\t\t\t\"elevation\": 5,\n\t\t\t\t\"population\":
+        9082,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NY\",\n\t\t\t\t\"admin_code2\": \"103\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\":
+        \"Suffolk County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23168\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Beacon (NY)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        3128,\n\t\t\t\t\"geoname_id\": 5108219,\n\t\t\t\t\"name\": \"Beacon\",\n\t\t\t\t\"latitude\":
+        41.504816,\n\t\t\t\t\"longitude\": -73.969583,\n\t\t\t\t\"elevation\": 42,\n\t\t\t\t\"population\":
+        18644,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NY\",\n\t\t\t\t\"admin_code2\": \"027\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\":
+        \"Dutchess County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23172\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bear Mountain
+        State Park (NY)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 5968,\n\t\t\t\t\"geoname_id\":
+        5108301,\n\t\t\t\t\"name\": \"Bear Mountain State Park\",\n\t\t\t\t\"latitude\":
+        41.296761,\n\t\t\t\t\"longitude\": -73.992085,\n\t\t\t\t\"elevation\": 86,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NY\",\n\t\t\t\t\"admin_code2\": \"087\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\":
+        \"Rockland County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"L\",\n\t\t\t\t\"feature_code\": \"PRK\",\n\t\t\t\t\"feature_code_name\":
+        \"park\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23180\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Beaufort (NC)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        7652,\n\t\t\t\t\"geoname_id\": 4454370,\n\t\t\t\t\"name\": \"Beaufort\",\n\t\t\t\t\"latitude\":
+        34.718217,\n\t\t\t\t\"longitude\": -76.663819,\n\t\t\t\t\"elevation\": 3,\n\t\t\t\t\"population\":
+        3883,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NC\",\n\t\t\t\t\"admin_code2\": \"031\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"North Carolina\",\n\t\t\t\t\"admin_name2\":
+        \"Carteret County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23188\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Beaver Creek (Colo)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        3300,\n\t\t\t\t\"geoname_id\": 6640293,\n\t\t\t\t\"name\": \"Beaver Creek\",\n\t\t\t\t\"latitude\":
+        39.606085,\n\t\t\t\t\"longitude\": -106.520691,\n\t\t\t\t\"elevation\": null,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"CO\",\n\t\t\t\t\"admin_code2\": \"037\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Colorado\",\n\t\t\t\t\"admin_name2\":
+        \"Eagle County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Denver\",\n\t\t\t\t\"dst_offset\":
+        -6.0,\n\t\t\t\t\"gmt_offset\": -7.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23192\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bedford-Stuyvesant
+        (NYC)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 1260,\n\t\t\t\t\"geoname_id\":
+        5108554,\n\t\t\t\t\"name\": \"Bedford-Stuyvesant\",\n\t\t\t\t\"latitude\":
+        40.683436,\n\t\t\t\t\"longitude\": -73.941249,\n\t\t\t\t\"elevation\": 15,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NY\",\n\t\t\t\t\"admin_code2\": \"047\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\":
+        \"Kings County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPLX\",\n\t\t\t\t\"feature_code_name\":
+        \"section of populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23236\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bellport (NY)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        5036,\n\t\t\t\t\"geoname_id\": 5108714,\n\t\t\t\t\"name\": \"Bellport\",\n\t\t\t\t\"latitude\":
+        40.757043,\n\t\t\t\t\"longitude\": -72.939273,\n\t\t\t\t\"elevation\": 8,\n\t\t\t\t\"population\":
+        2377,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NY\",\n\t\t\t\t\"admin_code2\": \"103\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\":
+        \"Suffolk County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23240\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Belmont (Calif)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        7664,\n\t\t\t\t\"geoname_id\": 5327455,\n\t\t\t\t\"name\": \"Belmont\",\n\t\t\t\t\"latitude\":
+        37.520215,\n\t\t\t\t\"longitude\": -122.275801,\n\t\t\t\t\"elevation\": 13,\n\t\t\t\t\"population\":
+        23998,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"CA\",\n\t\t\t\t\"admin_code2\": \"081\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"California\",\n\t\t\t\t\"admin_name2\":
+        \"San Mateo County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Los_Angeles\",\n\t\t\t\t\"dst_offset\":
+        -7.0,\n\t\t\t\t\"gmt_offset\": -8.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23248\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bennington (Vt)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        4460,\n\t\t\t\t\"geoname_id\": 5233748,\n\t\t\t\t\"name\": \"Bennington County\",\n\t\t\t\t\"latitude\":
+        43.033411,\n\t\t\t\t\"longitude\": -73.09955,\n\t\t\t\t\"elevation\": 665,\n\t\t\t\t\"population\":
+        35845,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"VT\",\n\t\t\t\t\"admin_code2\": \"003\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Vermont\",\n\t\t\t\t\"admin_name2\":
+        \"Bennington County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"A\",\n\t\t\t\t\"feature_code\": \"ADM2\",\n\t\t\t\t\"feature_code_name\":
+        \"second-order administrative division\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23268\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bergen County
+        (NJ)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 2804,\n\t\t\t\t\"geoname_id\":
+        5095598,\n\t\t\t\t\"name\": \"Bergen County\",\n\t\t\t\t\"latitude\": 40.933432,\n\t\t\t\t\"longitude\":
+        -74.049585,\n\t\t\t\t\"elevation\": 14,\n\t\t\t\t\"population\": 825380,\n\t\t\t\t\"country_code\":
+        \"US\",\n\t\t\t\t\"country_name\": \"United States\",\n\t\t\t\t\"admin_code1\":
+        \"NJ\",\n\t\t\t\t\"admin_code2\": \"003\",\n\t\t\t\t\"admin_code3\": null,\n\t\t\t\t\"admin_code4\":
+        null,\n\t\t\t\t\"admin_name1\": \"New Jersey\",\n\t\t\t\t\"admin_name2\":
+        \"Bergen County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"A\",\n\t\t\t\t\"feature_code\": \"ADM2\",\n\t\t\t\t\"feature_code_name\":
+        \"second-order administrative division\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23276\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Berkeley (Calif)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        1464,\n\t\t\t\t\"geoname_id\": 5327684,\n\t\t\t\t\"name\": \"Berkeley\",\n\t\t\t\t\"latitude\":
+        37.871593,\n\t\t\t\t\"longitude\": -122.272747,\n\t\t\t\t\"elevation\": 52,\n\t\t\t\t\"population\":
+        100158,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"CA\",\n\t\t\t\t\"admin_code2\": \"001\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"California\",\n\t\t\t\t\"admin_name2\":
+        \"Alameda County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Los_Angeles\",\n\t\t\t\t\"dst_offset\":
+        -7.0,\n\t\t\t\t\"gmt_offset\": -8.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23280\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Berkshires (Mass)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        1520,\n\t\t\t\t\"geoname_id\": 4930396,\n\t\t\t\t\"name\": \"Berkshire County\",\n\t\t\t\t\"latitude\":
+        42.33342,\n\t\t\t\t\"longitude\": -73.24955,\n\t\t\t\t\"elevation\": 307,\n\t\t\t\t\"population\":
+        139352,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"MA\",\n\t\t\t\t\"admin_code2\": \"003\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Massachusetts\",\n\t\t\t\t\"admin_name2\":
+        \"Berkshire County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"A\",\n\t\t\t\t\"feature_code\": \"ADM2\",\n\t\t\t\t\"feature_code_name\":
+        \"second-order administrative division\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23304\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bethel (Conn)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        4496,\n\t\t\t\t\"geoname_id\": 5282297,\n\t\t\t\t\"name\": \"Bethel\",\n\t\t\t\t\"latitude\":
+        41.371206,\n\t\t\t\t\"longitude\": -73.41401,\n\t\t\t\t\"elevation\": 116,\n\t\t\t\t\"population\":
+        9137,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"CT\",\n\t\t\t\t\"admin_code2\": \"001\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Connecticut\",\n\t\t\t\t\"admin_name2\":
+        \"Fairfield County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23308\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bethel (Me)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        3824,\n\t\t\t\t\"geoname_id\": 4958084,\n\t\t\t\t\"name\": \"Bethel\",\n\t\t\t\t\"latitude\":
+        44.404232,\n\t\t\t\t\"longitude\": -70.790625,\n\t\t\t\t\"elevation\": 221,\n\t\t\t\t\"population\":
+        2507,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"ME\",\n\t\t\t\t\"admin_code2\": \"017\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Maine\",\n\t\t\t\t\"admin_name2\":
+        \"Oxford County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23312\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bethel (NY)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        4608,\n\t\t\t\t\"geoname_id\": 5108927,\n\t\t\t\t\"name\": \"Bethel\",\n\t\t\t\t\"latitude\":
+        41.954537,\n\t\t\t\t\"longitude\": -73.633738,\n\t\t\t\t\"elevation\": 168,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NY\",\n\t\t\t\t\"admin_code2\": \"027\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\":
+        \"Dutchess County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23332\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Big Bend National
+        Park (Tex)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 5368,\n\t\t\t\t\"geoname_id\":
+        5516970,\n\t\t\t\t\"name\": \"Big Bend National Park\",\n\t\t\t\t\"latitude\":
+        29.250201,\n\t\t\t\t\"longitude\": -103.250452,\n\t\t\t\t\"elevation\": 1616,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"TX\",\n\t\t\t\t\"admin_code2\": \"043\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Texas\",\n\t\t\t\t\"admin_name2\":
+        \"Brewster County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"L\",\n\t\t\t\t\"feature_code\": \"PRK\",\n\t\t\t\t\"feature_code_name\":
+        \"park\",\n\t\t\t\t\"time_zone_id\": \"America/North_Dakota/New_Salem\",\n\t\t\t\t\"dst_offset\":
+        -5.0,\n\t\t\t\t\"gmt_offset\": -6.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23336\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Big Pine Key (Fla)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        5408,\n\t\t\t\t\"geoname_id\": 4147801,\n\t\t\t\t\"name\": \"Big Pine Key\",\n\t\t\t\t\"latitude\":
+        24.669865,\n\t\t\t\t\"longitude\": -81.353969,\n\t\t\t\t\"elevation\": 1,\n\t\t\t\t\"population\":
+        5516,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"FL\",\n\t\t\t\t\"admin_code2\": \"087\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Florida\",\n\t\t\t\t\"admin_name2\":
+        \"Monroe County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23340\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Big Sur (Calif)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        3212,\n\t\t\t\t\"geoname_id\": 5328563,\n\t\t\t\t\"name\": \"Big Sur\",\n\t\t\t\t\"latitude\":
+        36.270241,\n\t\t\t\t\"longitude\": -121.807454,\n\t\t\t\t\"elevation\": 44,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"CA\",\n\t\t\t\t\"admin_code2\": \"053\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"California\",\n\t\t\t\t\"admin_name2\":
+        \"Monterey County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Los_Angeles\",\n\t\t\t\t\"dst_offset\":
+        -7.0,\n\t\t\t\t\"gmt_offset\": -8.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23356\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Binghamton (NY)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        2520,\n\t\t\t\t\"geoname_id\": 5109177,\n\t\t\t\t\"name\": \"Binghamton\",\n\t\t\t\t\"latitude\":
+        42.098687,\n\t\t\t\t\"longitude\": -75.917974,\n\t\t\t\t\"elevation\": 264,\n\t\t\t\t\"population\":
+        45480,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NY\",\n\t\t\t\t\"admin_code2\": \"007\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\":
+        \"Broome County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23364\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Birmingham (Ala)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        2524,\n\t\t\t\t\"geoname_id\": 4049979,\n\t\t\t\t\"name\": \"Birmingham\",\n\t\t\t\t\"latitude\":
+        33.520661,\n\t\t\t\t\"longitude\": -86.80249,\n\t\t\t\t\"elevation\": 187,\n\t\t\t\t\"population\":
+        231621,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"AL\",\n\t\t\t\t\"admin_code2\": \"073\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Alabama\",\n\t\t\t\t\"admin_name2\":
+        \"Jefferson County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Chicago\",\n\t\t\t\t\"dst_offset\":
+        -5.0,\n\t\t\t\t\"gmt_offset\": -6.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23372\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Black Rock Desert
+        (Nev)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 1928,\n\t\t\t\t\"geoname_id\":
+        5701651,\n\t\t\t\t\"name\": \"Black Rock Desert\",\n\t\t\t\t\"latitude\":
+        40.910733,\n\t\t\t\t\"longitude\": -119.05601,\n\t\t\t\t\"elevation\": 1191,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NV\",\n\t\t\t\t\"admin_code2\": \"027\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Nevada\",\n\t\t\t\t\"admin_name2\":
+        \"Pershing County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"T\",\n\t\t\t\t\"feature_code\": \"DPR\",\n\t\t\t\t\"feature_code_name\":
+        \"depression(s)\",\n\t\t\t\t\"time_zone_id\": \"America/Los_Angeles\",\n\t\t\t\t\"dst_offset\":
+        -7.0,\n\t\t\t\t\"gmt_offset\": -8.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23384\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Block Island (RI)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        5832,\n\t\t\t\t\"geoname_id\": 5220971,\n\t\t\t\t\"name\": \"Block Island\",\n\t\t\t\t\"latitude\":
+        41.19177,\n\t\t\t\t\"longitude\": -71.574501,\n\t\t\t\t\"elevation\": null,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"RI\",\n\t\t\t\t\"admin_code2\": \"009\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Rhode Island\",\n\t\t\t\t\"admin_name2\":
+        \"Washington County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"T\",\n\t\t\t\t\"feature_code\": \"ISL\",\n\t\t\t\t\"feature_code_name\":
+        \"island\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23388\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Blue Hill (Me)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        5860,\n\t\t\t\t\"geoname_id\": 4958721,\n\t\t\t\t\"name\": \"Blue Hill\",\n\t\t\t\t\"latitude\":
+        44.413966,\n\t\t\t\t\"longitude\": -68.58669,\n\t\t\t\t\"elevation\": 7,\n\t\t\t\t\"population\":
+        2485,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"ME\",\n\t\t\t\t\"admin_code2\": \"009\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Maine\",\n\t\t\t\t\"admin_name2\":
+        \"Hancock County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23392\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Boca Raton (Fla)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        2680,\n\t\t\t\t\"geoname_id\": 4148411,\n\t\t\t\t\"name\": \"Boca Raton\",\n\t\t\t\t\"latitude\":
+        26.358689,\n\t\t\t\t\"longitude\": -80.083098,\n\t\t\t\t\"elevation\": 4,\n\t\t\t\t\"population\":
+        80689,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"FL\",\n\t\t\t\t\"admin_code2\": \"099\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Florida\",\n\t\t\t\t\"admin_name2\":
+        \"Palm Beach\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23408\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bogota (NJ)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        4524,\n\t\t\t\t\"geoname_id\": 5095808,\n\t\t\t\t\"name\": \"Bogota\",\n\t\t\t\t\"latitude\":
+        40.876211,\n\t\t\t\t\"longitude\": -74.029862,\n\t\t\t\t\"elevation\": 16,\n\t\t\t\t\"population\":
+        8119,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NJ\",\n\t\t\t\t\"admin_code2\": \"003\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New Jersey\",\n\t\t\t\t\"admin_name2\":
+        \"Bergen County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23412\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Boise (Idaho)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        2552,\n\t\t\t\t\"geoname_id\": 5586437,\n\t\t\t\t\"name\": \"Boise\",\n\t\t\t\t\"latitude\":
+        43.6135,\n\t\t\t\t\"longitude\": -116.20345,\n\t\t\t\t\"elevation\": 823,\n\t\t\t\t\"population\":
+        145987,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"ID\",\n\t\t\t\t\"admin_code2\": \"001\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Idaho\",\n\t\t\t\t\"admin_name2\":
+        \"Ada County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPLA\",\n\t\t\t\t\"feature_code_name\":
+        \"seat of a first-order administrative division\",\n\t\t\t\t\"time_zone_id\":
+        \"America/Boise\",\n\t\t\t\t\"dst_offset\": -6.0,\n\t\t\t\t\"gmt_offset\":
+        -7.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25 15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\":
+        \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23416\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bolivar Peninsula
+        (Tex)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 3980,\n\t\t\t\t\"geoname_id\":
+        4675536,\n\t\t\t\t\"name\": \"Bolivar Peninsula\",\n\t\t\t\t\"latitude\":
+        29.478288,\n\t\t\t\t\"longitude\": -94.579914,\n\t\t\t\t\"elevation\": 3,\n\t\t\t\t\"population\":
+        4227,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"TX\",\n\t\t\t\t\"admin_code2\": \"167\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Texas\",\n\t\t\t\t\"admin_name2\":
+        \"Galveston County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Chicago\",\n\t\t\t\t\"dst_offset\":
+        -5.0,\n\t\t\t\t\"gmt_offset\": -6.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23436\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Boone (NC)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        6056,\n\t\t\t\t\"geoname_id\": 4456703,\n\t\t\t\t\"name\": \"Boone\",\n\t\t\t\t\"latitude\":
+        36.216795,\n\t\t\t\t\"longitude\": -81.674552,\n\t\t\t\t\"elevation\": 982,\n\t\t\t\t\"population\":
+        12921,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NC\",\n\t\t\t\t\"admin_code2\": \"189\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"North Carolina\",\n\t\t\t\t\"admin_name2\":
+        \"Watauga County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23464\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Boston (Mass)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        240,\n\t\t\t\t\"geoname_id\": 4930956,\n\t\t\t\t\"name\": \"Boston\",\n\t\t\t\t\"latitude\":
+        42.358431,\n\t\t\t\t\"longitude\": -71.059773,\n\t\t\t\t\"elevation\": 13,\n\t\t\t\t\"population\":
+        589141,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"MA\",\n\t\t\t\t\"admin_code2\": \"025\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Massachusetts\",\n\t\t\t\t\"admin_name2\":
+        \"Suffolk County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPLA\",\n\t\t\t\t\"feature_code_name\":
+        \"seat of a first-order administrative division\",\n\t\t\t\t\"time_zone_id\":
+        \"America/New_York\",\n\t\t\t\t\"dst_offset\": -4.0,\n\t\t\t\t\"gmt_offset\":
+        -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25 15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\":
+        \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23472\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Boulder (Colo)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        2928,\n\t\t\t\t\"geoname_id\": 5574991,\n\t\t\t\t\"name\": \"Boulder\",\n\t\t\t\t\"latitude\":
+        40.014986,\n\t\t\t\t\"longitude\": -105.270546,\n\t\t\t\t\"elevation\": 1624,\n\t\t\t\t\"population\":
+        91521,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"CO\",\n\t\t\t\t\"admin_code2\": \"013\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Colorado\",\n\t\t\t\t\"admin_name2\":
+        \"Boulder County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Denver\",\n\t\t\t\t\"dst_offset\":
+        -6.0,\n\t\t\t\t\"gmt_offset\": -7.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23480\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Boundary Waters
+        Canoe Area (Minn)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 5044,\n\t\t\t\t\"geoname_id\":
+        5019025,\n\t\t\t\t\"name\": \"Boundary Waters Canoe Area Wilderness\",\n\t\t\t\t\"latitude\":
+        47.941562,\n\t\t\t\t\"longitude\": -91.215398,\n\t\t\t\t\"elevation\": 461,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"MN\",\n\t\t\t\t\"admin_code2\": \"031\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Minnesota\",\n\t\t\t\t\"admin_name2\":
+        \"Cook County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"None\",\n\t\t\t\t\"feature_code\": \"None\",\n\t\t\t\t\"feature_code_name\":
+        \"None\",\n\t\t\t\t\"time_zone_id\": \"America/Menominee\",\n\t\t\t\t\"dst_offset\":
+        -5.0,\n\t\t\t\t\"gmt_offset\": -6.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23496\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bozeman (Mont)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        3596,\n\t\t\t\t\"geoname_id\": 5641727,\n\t\t\t\t\"name\": \"Bozeman\",\n\t\t\t\t\"latitude\":
+        45.679653,\n\t\t\t\t\"longitude\": -111.038558,\n\t\t\t\t\"elevation\": 1468,\n\t\t\t\t\"population\":
+        33178,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"MT\",\n\t\t\t\t\"admin_code2\": \"031\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Montana\",\n\t\t\t\t\"admin_name2\":
+        \"Gallatin County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Denver\",\n\t\t\t\t\"dst_offset\":
+        -6.0,\n\t\t\t\t\"gmt_offset\": -7.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23508\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Branford (Conn)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        5976,\n\t\t\t\t\"geoname_id\": 5283054,\n\t\t\t\t\"name\": \"Branford\",\n\t\t\t\t\"latitude\":
+        41.279541,\n\t\t\t\t\"longitude\": -72.815099,\n\t\t\t\t\"elevation\": 14,\n\t\t\t\t\"population\":
+        29438,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"CT\",\n\t\t\t\t\"admin_code2\": \"009\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Connecticut\",\n\t\t\t\t\"admin_name2\":
+        \"New Haven County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23512\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Branson (Mo)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        4796,\n\t\t\t\t\"geoname_id\": 4378219,\n\t\t\t\t\"name\": \"Branson\",\n\t\t\t\t\"latitude\":
+        36.643673,\n\t\t\t\t\"longitude\": -93.218514,\n\t\t\t\t\"elevation\": 237,\n\t\t\t\t\"population\":
+        6293,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"MO\",\n\t\t\t\t\"admin_code2\": \"213\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Missouri\",\n\t\t\t\t\"admin_name2\":
+        \"Taney County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Chicago\",\n\t\t\t\t\"dst_offset\":
+        -5.0,\n\t\t\t\t\"gmt_offset\": -6.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23520\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Brattleboro (Vt)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        4892,\n\t\t\t\t\"geoname_id\": 5234141,\n\t\t\t\t\"name\": \"Brattleboro\",\n\t\t\t\t\"latitude\":
+        42.850915,\n\t\t\t\t\"longitude\": -72.557868,\n\t\t\t\t\"elevation\": 68,\n\t\t\t\t\"population\":
+        13373,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"VT\",\n\t\t\t\t\"admin_code2\": \"025\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Vermont\",\n\t\t\t\t\"admin_name2\":
+        \"Windham County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23528\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Breckenridge (Colo)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        2136,\n\t\t\t\t\"geoname_id\": 5414872,\n\t\t\t\t\"name\": \"Breckenridge\",\n\t\t\t\t\"latitude\":
+        39.481654,\n\t\t\t\t\"longitude\": -106.038352,\n\t\t\t\t\"elevation\": 2965,\n\t\t\t\t\"population\":
+        2840,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"CO\",\n\t\t\t\t\"admin_code2\": \"117\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Colorado\",\n\t\t\t\t\"admin_name2\":
+        \"Summit County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Denver\",\n\t\t\t\t\"dst_offset\":
+        -6.0,\n\t\t\t\t\"gmt_offset\": -7.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23532\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Brewster (Mass)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        6072,\n\t\t\t\t\"geoname_id\": 4931273,\n\t\t\t\t\"name\": \"Brewster\",\n\t\t\t\t\"latitude\":
+        41.760109,\n\t\t\t\t\"longitude\": -70.082796,\n\t\t\t\t\"elevation\": 9,\n\t\t\t\t\"population\":
+        37107,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"MA\",\n\t\t\t\t\"admin_code2\": \"001\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Massachusetts\",\n\t\t\t\t\"admin_name2\":
+        \"Cape Cod\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\": null,\n\t\t\t\t\"feature_class\":
+        \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23536\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Briarcliff Manor
+        (NY)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 4940,\n\t\t\t\t\"geoname_id\":
+        5110108,\n\t\t\t\t\"name\": \"Briarcliff Manor\",\n\t\t\t\t\"latitude\": 41.145651,\n\t\t\t\t\"longitude\":
+        -73.823746,\n\t\t\t\t\"elevation\": 76,\n\t\t\t\t\"population\": 8021,\n\t\t\t\t\"country_code\":
+        \"US\",\n\t\t\t\t\"country_name\": \"United States\",\n\t\t\t\t\"admin_code1\":
+        \"NY\",\n\t\t\t\t\"admin_code2\": \"119\",\n\t\t\t\t\"admin_code3\": null,\n\t\t\t\t\"admin_code4\":
+        null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\": \"Westchester
+        County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\": null,\n\t\t\t\t\"feature_class\":
+        \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23540\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bridgehampton
+        (NY)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 4956,\n\t\t\t\t\"geoname_id\":
+        5110130,\n\t\t\t\t\"name\": \"Bridgehampton\",\n\t\t\t\t\"latitude\": 40.937878,\n\t\t\t\t\"longitude\":
+        -72.300916,\n\t\t\t\t\"elevation\": 13,\n\t\t\t\t\"population\": 1223,\n\t\t\t\t\"country_code\":
+        \"US\",\n\t\t\t\t\"country_name\": \"United States\",\n\t\t\t\t\"admin_code1\":
+        \"NY\",\n\t\t\t\t\"admin_code2\": \"103\",\n\t\t\t\t\"admin_code3\": null,\n\t\t\t\t\"admin_code4\":
+        null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\": \"Suffolk
+        County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\": null,\n\t\t\t\t\"feature_class\":
+        \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23544\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bridgeport (Conn)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        1496,\n\t\t\t\t\"geoname_id\": 5282804,\n\t\t\t\t\"name\": \"Bridgeport\",\n\t\t\t\t\"latitude\":
+        41.167041,\n\t\t\t\t\"longitude\": -73.204835,\n\t\t\t\t\"elevation\": 1,\n\t\t\t\t\"population\":
+        139090,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"CT\",\n\t\t\t\t\"admin_code2\": \"001\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Connecticut\",\n\t\t\t\t\"admin_name2\":
+        \"Fairfield County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23548\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bridgewater (Conn)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        6076,\n\t\t\t\t\"geoname_id\": 5282825,\n\t\t\t\t\"name\": \"Bridgewater\",\n\t\t\t\t\"latitude\":
+        41.535095,\n\t\t\t\t\"longitude\": -73.36623,\n\t\t\t\t\"elevation\": 206,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"CT\",\n\t\t\t\t\"admin_code2\": \"005\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Connecticut\",\n\t\t\t\t\"admin_name2\":
+        \"Litchfield County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23552\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bridgewater (NJ)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        6080,\n\t\t\t\t\"geoname_id\": 5095957,\n\t\t\t\t\"name\": \"Bridgewater Township\",\n\t\t\t\t\"latitude\":
+        40.600103,\n\t\t\t\t\"longitude\": -74.649604,\n\t\t\t\t\"elevation\": 54,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NJ\",\n\t\t\t\t\"admin_code2\": \"035\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New Jersey\",\n\t\t\t\t\"admin_name2\":
+        \"Somerset County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"A\",\n\t\t\t\t\"feature_code\": \"ADMD\",\n\t\t\t\t\"feature_code_name\":
+        \"administrative division\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23572\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bristol Bay (Alaska)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        4476,\n\t\t\t\t\"geoname_id\": 5858047,\n\t\t\t\t\"name\": \"Bristol Bay\",\n\t\t\t\t\"latitude\":
+        57.326389,\n\t\t\t\t\"longitude\": -159.808056,\n\t\t\t\t\"elevation\": null,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"AK\",\n\t\t\t\t\"admin_code2\": \"070\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Alaska\",\n\t\t\t\t\"admin_name2\":
+        \"Dillingham Census Area\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"H\",\n\t\t\t\t\"feature_code\": \"BAY\",\n\t\t\t\t\"feature_code_name\":
+        \"bay\",\n\t\t\t\t\"time_zone_id\": \"America/Anchorage\",\n\t\t\t\t\"dst_offset\":
+        -8.0,\n\t\t\t\t\"gmt_offset\": -9.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23588\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bronx River\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        2124,\n\t\t\t\t\"geoname_id\": 5110262,\n\t\t\t\t\"name\": \"Bronx River\",\n\t\t\t\t\"latitude\":
+        40.808157,\n\t\t\t\t\"longitude\": -73.867635,\n\t\t\t\t\"elevation\": null,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NY\",\n\t\t\t\t\"admin_code2\": \"005\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\":
+        \"Bronx County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"H\",\n\t\t\t\t\"feature_code\": \"STM\",\n\t\t\t\t\"feature_code_name\":
+        \"stream\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23592\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Brookhaven (NY)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        4480,\n\t\t\t\t\"geoname_id\": 5110292,\n\t\t\t\t\"name\": \"Brookhaven\",\n\t\t\t\t\"latitude\":
+        40.779265,\n\t\t\t\t\"longitude\": -72.915383,\n\t\t\t\t\"elevation\": 3,\n\t\t\t\t\"population\":
+        3775,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NY\",\n\t\t\t\t\"admin_code2\": \"103\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\":
+        \"Suffolk County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23612\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bryce Canyon National
+        Park\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\": 4108,\n\t\t\t\t\"geoname_id\":
+        5535943,\n\t\t\t\t\"name\": \"Bryce Canyon National Park\",\n\t\t\t\t\"latitude\":
+        37.583316,\n\t\t\t\t\"longitude\": -112.217418,\n\t\t\t\t\"elevation\": 2492,\n\t\t\t\t\"population\":
+        null,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"UT\",\n\t\t\t\t\"admin_code2\": \"017\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Utah\",\n\t\t\t\t\"admin_name2\":
+        \"Garfield County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"L\",\n\t\t\t\t\"feature_code\": \"PRK\",\n\t\t\t\t\"feature_code_name\":
+        \"park\",\n\t\t\t\t\"time_zone_id\": \"America/Shiprock\",\n\t\t\t\t\"dst_offset\":
+        -6.0,\n\t\t\t\t\"gmt_offset\": -7.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23620\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Bucks County (Pa)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        5820,\n\t\t\t\t\"geoname_id\": 5182201,\n\t\t\t\t\"name\": \"Bucks County\",\n\t\t\t\t\"latitude\":
+        40.500378,\n\t\t\t\t\"longitude\": -75.374902,\n\t\t\t\t\"elevation\": 180,\n\t\t\t\t\"population\":
+        541174,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"PA\",\n\t\t\t\t\"admin_code2\": \"017\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Pennsylvania\",\n\t\t\t\t\"admin_name2\":
+        \"Bucks County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"A\",\n\t\t\t\t\"feature_code\": \"ADM2\",\n\t\t\t\t\"feature_code_name\":
+        \"second-order administrative division\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23632\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Buffalo (NY)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        1104,\n\t\t\t\t\"geoname_id\": 5110629,\n\t\t\t\t\"name\": \"Buffalo\",\n\t\t\t\t\"latitude\":
+        42.886447,\n\t\t\t\t\"longitude\": -78.878369,\n\t\t\t\t\"elevation\": 183,\n\t\t\t\t\"population\":
+        279557,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"NY\",\n\t\t\t\t\"admin_code2\": \"029\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"New York\",\n\t\t\t\t\"admin_name2\":
+        \"Erie County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23652\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Burlington (Vt)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        3380,\n\t\t\t\t\"geoname_id\": 5234372,\n\t\t\t\t\"name\": \"Burlington\",\n\t\t\t\t\"latitude\":
+        44.475883,\n\t\t\t\t\"longitude\": -73.212072,\n\t\t\t\t\"elevation\": 61,\n\t\t\t\t\"population\":
+        38601,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"VT\",\n\t\t\t\t\"admin_code2\": \"007\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Vermont\",\n\t\t\t\t\"admin_name2\":
+        \"Chittenden County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/New_York\",\n\t\t\t\t\"dst_offset\":
+        -4.0,\n\t\t\t\t\"gmt_offset\": -5.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\n\t\t\t\t\"concept_id\":
+        \"23668\",\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\"concept_name\": \"Butte (Mont)\",\n\t\t\t\t\n\t\t\t\t\"geocode_id\":
+        4292,\n\t\t\t\t\"geoname_id\": 5642934,\n\t\t\t\t\"name\": \"Butte\",\n\t\t\t\t\"latitude\":
+        46.003815,\n\t\t\t\t\"longitude\": -112.534745,\n\t\t\t\t\"elevation\": 1688,\n\t\t\t\t\"population\":
+        34190,\n\t\t\t\t\"country_code\": \"US\",\n\t\t\t\t\"country_name\": \"United
+        States\",\n\t\t\t\t\"admin_code1\": \"MT\",\n\t\t\t\t\"admin_code2\": \"093\",\n\t\t\t\t\"admin_code3\":
+        null,\n\t\t\t\t\"admin_code4\": null,\n\t\t\t\t\"admin_name1\": \"Montana\",\n\t\t\t\t\"admin_name2\":
+        \"Silver Bow County\",\n\t\t\t\t\"admin_name3\": null,\n\t\t\t\t\"admin_name4\":
+        null,\n\t\t\t\t\"feature_class\": \"P\",\n\t\t\t\t\"feature_code\": \"PPL\",\n\t\t\t\t\"feature_code_name\":
+        \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Denver\",\n\t\t\t\t\"dst_offset\":
+        -6.0,\n\t\t\t\t\"gmt_offset\": -7.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
+        15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t}\n\t\t\t]\n}"
+  recorded_at: 2018-05-30 20:42:40 GMT
+  recorded_with: vcr/0.1.0, webmockr/0.2.6, crul/0.5.2

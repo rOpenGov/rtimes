@@ -1,12 +1,10 @@
 context("api_limits")
 
-key <- Sys.getenv("NYTIMES_AS_KEY")
-
 test_that("returns list with limits", {
-  skip_on_cran()
-  
-  expect_is(api_limits("as"), "list")
-  expect_is(api_limits("geo"), "list")
+  vcr::use_cassette("api_limits", {
+    expect_is(api_limits("as"), "list")
+    expect_is(api_limits("geo"), "list")
+  })
 })
 
 test_that("fails well", {

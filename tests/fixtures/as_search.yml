@@ -1,0 +1,122 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://api.nytimes.com/svc/search/v2/articlesearch.json?q=bailout&page=0&begin_date=20081001&end_date=20081201&api-key=e1fceed09cc7c21b9a279759efe7ab1d%3A16%3A59434183
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.54.0 r-curl/3.2 crul/0.5.2
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json;charset=UTF-8
+      date: Wed, 30 May 2018 20:28:55 GMT
+      server: nginx/1.12.2
+      via: kong/0.9.5
+      x-kong-proxy-latency: '5'
+      x-kong-upstream-latency: '41'
+      x-ratelimit-limit-day: '1000'
+      x-ratelimit-limit-second: '1'
+      x-ratelimit-remaining-day: '992'
+      x-ratelimit-remaining-second: '0'
+      content-length: '14465'
+      connection: keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"status":"OK","copyright":"Copyright (c) 2018 The New York Times Company.
+        All Rights Reserved.","response":{"docs":[{"web_url":"https://www.nytimes.com/2008/11/14/opinion/14brooks.html","snippet":"The
+        biggest threat to a healthy economy is the politically powerful capitalists
+        who use their influence to create a stagnant corporate welfare state.","print_page":"33","blog":{},"source":"The
+        New York Times","multimedia":[{"rank":0,"subtype":"xlarge","caption":null,"credit":null,"type":"image","url":"images/2014/11/01/opinion/brooks-circular/brooks-circular-articleLarge-v2.jpg","height":588,"width":600,"legacy":{"xlargewidth":600,"xlarge":"images/2014/11/01/opinion/brooks-circular/brooks-circular-articleLarge-v2.jpg","xlargeheight":588},"subType":"xlarge","crop_name":null},{"rank":0,"subtype":"wide","caption":null,"credit":null,"type":"image","url":"images/2014/11/01/opinion/brooks-circular/brooks-circular-thumbWide-v5.jpg","height":126,"width":190,"legacy":{"wide":"images/2014/11/01/opinion/brooks-circular/brooks-circular-thumbWide-v5.jpg","widewidth":190,"wideheight":126},"subType":"wide","crop_name":null},{"rank":0,"subtype":"thumbnail","caption":null,"credit":null,"type":"image","url":"images/2014/11/01/opinion/brooks-circular/brooks-circular-thumbStandard-v5.jpg","height":75,"width":75,"legacy":{"thumbnailheight":75,"thumbnail":"images/2014/11/01/opinion/brooks-circular/brooks-circular-thumbStandard-v5.jpg","thumbnailwidth":75},"subType":"thumbnail","crop_name":null}],"headline":{"main":"Bailout
+        to Nowhere","kicker":"Op-Ed Columnist","content_kicker":"Op-Ed Columnist","print_headline":"Bailout
+        to Nowhere","name":null,"seo":null,"sub":null},"keywords":[{"name":"subject","value":"Automobiles","rank":1,"major":"N"},{"name":"subject","value":"Subprime
+        Mortgage Crisis","rank":2,"major":"N"},{"name":"persons","value":"Obama, Barack","rank":3,"major":"N"},{"name":"subject","value":"Lobbying
+        and Lobbyists","rank":4,"major":"N"},{"name":"subject","value":"United States
+        Politics and Government","rank":5,"major":"N"},{"name":"organizations","value":"Ford
+        Motor Co","rank":6,"major":"N"},{"name":"organizations","value":"Chrysler
+        LLC","rank":7,"major":"N"},{"name":"organizations","value":"General Motors
+        Corp","rank":8,"major":"N"}],"pub_date":"2008-11-18T18:04:48+0000","document_type":"article","new_desk":"Editorial","byline":{"original":"By
+        DAVID BROOKS","person":[{"firstname":"David","middlename":null,"lastname":"BROOKS","qualifier":null,"title":null,"role":"reported","organization":"","rank":1}],"organization":null},"type_of_material":"Op-Ed","_id":"545db51738f0d877bc740c84","word_count":826,"score":2.6911499E-11,"uri":"nyt://article/d5c4cfeb-8c78-56a2-a1fc-8b206e4ceae1"},{"web_url":"https://opinionator.blogs.nytimes.com/2008/11/10/a-bigger-bailout/","snippet":"The
+        government deems its $123 billion bailout of A.I.G. too modest.","abstract":"The
+        government deems its $123 billion bailout of A.I.G. too modest.","blog":{},"source":"The
+        New York Times","multimedia":[],"headline":{"main":"A Bigger Bailout","kicker":"Opinionator","content_kicker":null,"print_headline":null,"name":null,"seo":null,"sub":null},"keywords":[{"name":"type_of_material","value":"News","rank":1,"major":null}],"pub_date":"2008-11-10T08:32:05Z","document_type":"blogpost","byline":{"original":"By
+        TOBIN HARSHAW","person":[{"firstname":"Tobin","middlename":null,"lastname":"HARSHAW","qualifier":null,"title":null,"role":"reported","organization":"","rank":1}],"organization":null},"type_of_material":"Blog","_id":"4fd393078eb7c8105d8c6196","word_count":477,"score":2.5131121E-11},{"web_url":"https://economix.blogs.nytimes.com/2008/10/28/bailout-tally/","snippet":"ProPublica
+        has been keeping a list of the banks that have announced participation in
+        the Treasury''s capital injection plan.","abstract":"ProPublica has been keeping
+        a list of the banks that have announced participation in the Treasury''s capital
+        injection plan.","blog":{},"source":"The New York Times","multimedia":[],"headline":{"main":"Bailout
+        Tally","kicker":"Economix","content_kicker":null,"print_headline":null,"name":null,"seo":null,"sub":null},"keywords":[{"name":"type_of_material","value":"News","rank":1,"major":null}],"pub_date":"2008-10-28T18:12:45Z","document_type":"blogpost","byline":{"original":"By
+        CATHERINE RAMPELL","person":[{"firstname":"Catherine","middlename":null,"lastname":"RAMPELL","qualifier":null,"title":null,"role":"reported","organization":"","rank":1}],"organization":null},"type_of_material":"Blog","_id":"4fd3925a8eb7c8105d8c4a04","word_count":60,"score":2.3961095E-11},{"web_url":"https://ideas.blogs.nytimes.com/2008/11/27/how-big-is-the-bailout-this-big/","snippet":"Finance
+        | The credit crisis bailout is now the largest outlay in American history,
+        the author of \"Bailout Nation\" writes -- bigger than the Marshall Plan,
+        the race to the moon, the Iraq war, the Louisiana Purchase, the S&L crisis
+        and Vietnam war c...","abstract":"Finance | The credit crisis bailout is now
+        the largest outlay in American history, the author of \"Bailout Nation\" writes
+        -- bigger than the Marshall Plan, the race to the moon, the Iraq war, the
+        Louisiana Purchase, the S&L crisis and Vietnam war combined, and more. Here
+        are inflation-adjusted numbers. [ritholtz.com]","blog":{},"source":"The New
+        York Times","multimedia":[],"headline":{"main":"How Big Is the Bailout? This
+        Big.","kicker":"Idea of the Day","content_kicker":null,"print_headline":null,"name":null,"seo":null,"sub":null},"keywords":[{"name":"type_of_material","value":"News","rank":1,"major":null}],"pub_date":"2008-11-27T04:59:31Z","document_type":"blogpost","byline":{"original":"By
+        TOM KUNTZ","person":[{"firstname":"Tom","middlename":null,"lastname":"KUNTZ","qualifier":null,"title":null,"role":"reported","organization":"","rank":1}],"organization":null},"type_of_material":"Blog","_id":"4fd392c78eb7c8105d8c5851","word_count":51,"score":2.3699888E-11},{"web_url":"https://www.nytimes.com/2008/12/01/opinion/l01citigroup.html","snippet":"To
+        the Editor:.","print_page":"28","blog":{},"source":"The New York Times","multimedia":[],"headline":{"main":"A
+        Bailout Foretold","kicker":null,"content_kicker":"Letter","print_headline":"A
+        Bailout Foretold","name":null,"seo":null,"sub":"(1 Letter)"},"keywords":[{"name":"organizations","value":"Citigroup
+        Incorporated","rank":1,"major":null},{"name":"subject","value":"United States
+        Economy","rank":2,"major":null},{"name":"subject","value":"Emergency Economic
+        Stabilization Act (2008)","rank":3,"major":null},{"name":"subject","value":"Banks
+        and Banking","rank":4,"major":null}],"pub_date":"2008-12-01T00:00:00Z","document_type":"article","new_desk":"Letters","type_of_material":"Letter","_id":"547aa36e38f0d803f445bdd8","word_count":226,"score":2.349328E-11},{"web_url":"https://dealbook.nytimes.com/2008/11/26/pandit-speaks-on-the-bailout/","snippet":"\"We
+        thought that this was an issue about confidence in Citi, not about capital,
+        not about - not about our earnings. And somehow, we needed to make sure that
+        we got control of the situation.\" So said Vikram S. Pandit, the chief executive
+        of Citigro...","abstract":"\"We thought that this was an issue about confidence
+        in Citi, not about capital, not about - not about our earnings. And somehow,
+        we needed to make sure that we got control of the situation.\" So said Vikram
+        S. Pandit, the chief executive of Citigroup, on \"Charlie Rose\" Tuesday night,
+        as the banker talked about [...]","blog":{},"source":"The New York Times","multimedia":[],"headline":{"main":"Pandit
+        Speaks on the Bailout","kicker":"DealBook","content_kicker":null,"print_headline":null,"name":null,"seo":null,"sub":null},"keywords":[{"name":"type_of_material","value":"News","rank":1,"major":null}],"pub_date":"2008-11-26T09:12:40Z","document_type":"blogpost","byline":{"original":"By
+        DEALBOOK","person":[{"firstname":null,"middlename":null,"lastname":null,"qualifier":null,"title":null,"role":"reported","organization":"","rank":1}],"organization":null},"type_of_material":"Blog","_id":"4fd392828eb7c8105d8c4f33","word_count":9345,"score":2.281119E-11},{"web_url":"https://www.nytimes.com/2008/10/22/opinion/22friedman.html","snippet":"We
+        can’t afford a financial bailout that also isn’t a green buildup — a buildup
+        of a new clean energy industry that strengthens America.","print_page":"33","blog":{},"source":"The
+        New York Times","multimedia":[{"rank":0,"subtype":"wide","caption":null,"credit":null,"type":"image","url":"images/2014/11/01/opinion/friedman-circular/friedman-circular-thumbWide-v2.png","height":126,"width":190,"legacy":{"wide":"images/2014/11/01/opinion/friedman-circular/friedman-circular-thumbWide-v2.png","widewidth":190,"wideheight":126},"subType":"wide","crop_name":null},{"rank":0,"subtype":"thumbnail","caption":null,"credit":null,"type":"image","url":"images/2014/11/01/opinion/friedman-circular/friedman-circular-thumbStandard-v2.png","height":75,"width":75,"legacy":{"thumbnailheight":75,"thumbnail":"images/2014/11/01/opinion/friedman-circular/friedman-circular-thumbStandard-v2.png","thumbnailwidth":75},"subType":"thumbnail","crop_name":null}],"headline":{"main":"Bailout
+        (and Buildup)","kicker":"Op-Ed Columnist","content_kicker":"Op-Ed Columnist","print_headline":"Bailout
+        (and Buildup)","name":null,"seo":null,"sub":null},"keywords":[{"name":"subject","value":"United
+        States Economy","rank":1,"major":"N"},{"name":"subject","value":"Energy Efficiency","rank":2,"major":"N"},{"name":"subject","value":"Economic
+        Stimulus Act (2008)","rank":3,"major":"N"},{"name":"subject","value":"Subprime
+        Mortgage Crisis","rank":4,"major":"N"}],"pub_date":"2008-10-22T03:35:54+0000","document_type":"article","new_desk":"Editorial","byline":{"original":"By
+        THOMAS L. FRIEDMAN","person":[{"firstname":"Thomas","middlename":"L.","lastname":"FRIEDMAN","qualifier":null,"title":null,"role":"reported","organization":"","rank":1}],"organization":null},"type_of_material":"Op-Ed","_id":"545d8ee438f0d877bc740b32","word_count":814,"score":2.2416237E-11,"uri":"nyt://article/223f07b5-681f-5f2d-b6c7-7bc76b9e609e"},{"web_url":"https://economix.blogs.nytimes.com/2008/11/18/live-blogging-the-bailout-hearing/","snippet":"Treasury
+        Secretary Henry Paulson, Fed Chairman Ben Bernanke and F.D.I.C. Chairman Sheila
+        Bair testify before the House Financial Services Committee about the use of
+        bailout funds thus far.","abstract":"Treasury Secretary Henry Paulson, Fed
+        Chairman Ben Bernanke and F.D.I.C. Chairman Sheila Bair testify before the
+        House Financial Services Committee about the use of bailout funds thus far.","blog":{},"source":"The
+        New York Times","multimedia":[],"headline":{"main":"Live-Blogging the Bailout
+        Hearing","kicker":"Economix","content_kicker":null,"print_headline":null,"name":null,"seo":null,"sub":null},"keywords":[{"name":"type_of_material","value":"News","rank":1,"major":null}],"pub_date":"2008-11-18T09:46:20Z","document_type":"blogpost","byline":{"original":"By
+        CATHERINE RAMPELL","person":[{"firstname":"Catherine","middlename":null,"lastname":"RAMPELL","qualifier":null,"title":null,"role":"reported","organization":"","rank":1}],"organization":null},"type_of_material":"Blog","_id":"4fd393168eb7c8105d8c636c","word_count":2029,"score":2.2147421E-11},{"web_url":"https://www.nytimes.com/2008/11/19/business/economy/19bailout.html","snippet":"Financial
+        officials faced new calls from Congress to aim more of the relief package
+        at helping homeowners.","print_page":"1","blog":{},"source":"The New York
+        Times","multimedia":[{"rank":0,"subtype":"xlarge","caption":null,"credit":null,"type":"image","url":"images/2008/11/18/business/18paulson2_600.jpg","height":343,"width":600,"legacy":{"xlargewidth":"600","xlarge":"images/2008/11/18/business/18paulson2_600.jpg","xlargeheight":"343"},"subType":"xlarge","crop_name":null},{"rank":0,"subtype":"thumbnail","caption":null,"credit":null,"type":"image","url":"images/2008/11/18/business/18paulson2_75.jpg","height":75,"width":75,"legacy":{"thumbnailheight":"75","thumbnail":"images/2008/11/18/business/18paulson2_75.jpg","thumbnailwidth":"75"},"subType":"thumbnail","crop_name":null}],"headline":{"main":"Treasury
+        Denounced Over Bailout","kicker":null,"content_kicker":null,"print_headline":"Treasury
+        Denounced Over Bailout","name":null,"seo":null,"sub":null},"keywords":[{"name":"persons","value":"Paulson,
+        Henry M Jr","rank":1,"major":null},{"name":"subject","value":"Emergency Economic
+        Stabilization Act (2008)","rank":2,"major":null},{"name":"subject","value":"Subprime
+        Mortgage Crisis","rank":3,"major":null},{"name":"subject","value":"Foreclosures","rank":4,"major":null},{"name":"persons","value":"Bernanke,
+        Ben S","rank":5,"major":null},{"name":"subject","value":"Automobiles","rank":6,"major":null},{"name":"persons","value":"Bair,
+        Sheila C","rank":7,"major":null},{"name":"organizations","value":"House of
+        Representatives","rank":8,"major":null},{"name":"organizations","value":"Senate","rank":9,"major":null}],"pub_date":"2008-11-19T00:00:00Z","document_type":"article","new_desk":"Business","section_name":"Economy","byline":{"original":"By
+        EDMUND L. ANDREWS","person":[{"firstname":"Edmund","middlename":"L.","lastname":"ANDREWS","qualifier":null,"title":null,"role":"reported","organization":"","rank":1}],"organization":null},"type_of_material":"News","_id":"5474e07238f0d8119c6af064","word_count":960,"score":2.214037E-11},{"web_url":"https://www.nytimes.com/2008/10/05/magazine/05wwln-safire-t.html","snippet":"How
+        can you be naked wearing shorts?","print_page":"14","blog":{},"source":"The
+        New York Times","multimedia":[],"headline":{"main":"Toxic Bailout","kicker":"On
+        Language","content_kicker":"On Language","print_headline":"TOXIC BAILOUT","name":null,"seo":null,"sub":null},"keywords":[{"name":"subject","value":"Language
+        and Languages","rank":1,"major":null},{"name":"subject","value":"English Language","rank":2,"major":null},{"name":"subject","value":"United
+        States Economy","rank":3,"major":null},{"name":"subject","value":"Economic
+        Conditions and Trends","rank":4,"major":null}],"pub_date":"2008-10-05T00:00:00Z","document_type":"article","new_desk":"Magazine","byline":{"original":"By
+        WILLIAM SAFIRE","person":[{"firstname":"William","middlename":null,"lastname":"SAFIRE","qualifier":null,"title":null,"role":"reported","organization":"","rank":1}],"organization":null},"type_of_material":"News","_id":"5478834638f0d854b20b3396","word_count":913,"score":2.1943128E-11}],"meta":{"hits":1204,"offset":0,"time":19}}}'
+  recorded_at: 2018-05-30 20:28:56 GMT
+  recorded_with: vcr/0.1.0, webmockr/0.2.6, crul/0.5.2
