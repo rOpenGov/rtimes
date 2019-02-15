@@ -27,6 +27,13 @@ With recent changes at NYTimes APIs, you can use the same key for all APIs
 
 Same for Propublica, get one key to use for all their APIs.
 
+
+**IMPORTANT**: NYT updated their developer portal recently - API keys with colons are no longer supported.
+If you are still using the older NYT API keys with colons, you'll need to crop your current key at the first
+colon. For example: `aaaaa:12:34567890` becomes `aaaaa`
+
+---
+
 Data from the New York Times API is provided by The New York Times.
 
 <a border="0" href="http://developer.nytimes.com" ><img src="http://graphics8.nytimes.com/packages/images/developer/logos/poweredby_nytimes_200b.png" alt="NYT API" /></a>
