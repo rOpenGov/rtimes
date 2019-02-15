@@ -4,18 +4,19 @@
 \alias{cg_membersleaving}
 \title{Get a list of members who have left the Senate or House or have announced plans to do so.}
 \usage{
-cg_membersleaving(congress_no = NULL, chamber = NULL, key = NULL, ...)
+cg_membersleaving(congress_no = NULL, chamber = NULL, key = NULL,
+  ...)
 }
 \arguments{
 \item{congress_no}{The number of the Congress during which the members served.}
 
 \item{chamber}{One of 'house' or 'senate.}
 
-\item{key}{(character) your Propublica API key; pass in, or loads from 
-.Renviron as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} 
+\item{key}{(character) your Propublica API key; pass in, or loads from
+.Renviron as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}}
 for info on rate limits.}
 
-\item{...}{Curl options (debugging tools mostly) passed to 
+\item{...}{Curl options (debugging tools mostly) passed to
 \code{\link[crul]{HttpClient}}}
 }
 \value{
@@ -45,3 +46,4 @@ Other congress: \code{\link{cg_billscosponsor}},
   \code{\link{cg_newmembers}},
   \code{\link{cg_rollcallvote}}
 }
+\concept{congress}

@@ -22,33 +22,31 @@ rtimes vignette - R client for New York Times APIs
 
 Functions in `rtimes` that wrap these APIs are prefixed by two letter acronyms fo reach API + the function name itself, e.g.: `cg` + `fxn`
 
-* `cg` for the [Congress API](https://propublica.github.io/congress-api-docs)
-* `as` for the [Article Search API](http://developer.nytimes.com/article_search_v2.json)
+* `cg` for the [Congress API](https://projects.propublica.org/api-docs/congress-api/)
+* `as` for the [Article Search API](https://developer.nytimes.com/docs/articlesearch-product/1/overview)
 * `cf` for the [Campaign Finance API](https://propublica.github.io/campaign-finance-api-docs)
-* `geo` for the [Geographic API](http://developer.nytimes.com/geo_api_v2.json)
+* `geo` for the [Geographic API](https://developer.nytimes.com/docs/geo-product/1/routes/query.json/get)
 
-Please get your own API keys at http://developer.nytimes.com/apps/register - you'll need a different key for each API.
+Please get your own API keys at https://developer.nytimes.com/ - you can use one API key for all their APIs.
 
 I set up the functions so that you can put the key in your `.Renviron` file, which will
 be called on startup of R, and then you don't have to enter your API key for each run
 of a function. Add entries for an R session like
 
 ```
-Sys.setenv(NYTIMES_GEO_KEY = "YOURKEYHERE")
-Sys.setenv(NYTIMES_AS_KEY = "YOURKEYHERE")
+Sys.setenv(NYTIMES_API_KEY = "YOURKEYHERE")
 Sys.setenv(PROPUBLICA_API_KEY = "YOURKEYHERE")
 ```
 
 Or set them across sessions by putting entries in your `.Renviron` file like
 
 ```
-NYTIMES_GEO_KEY=<yourkey>
-NYTIMES_AS_KEY=<yourkey>
+NYTIMES_API_KEY=<yourkey>
 PROPUBLICA_API_KEY=<yourkey>
 ```
 
 You can also pass in your key in a function call, but be careful not to expose your keys in
-code committed to public repositories. If you do pass in a function call, use e.g., `Sys.getenv("NYTIMES_GEO_KEY")`.
+code committed to public repositories. If you do pass in a function call, use e.g., `Sys.getenv("NYTIMES_API_KEY")`.
 
 ## Install rtimes
 

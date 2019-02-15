@@ -10,10 +10,10 @@ cf_candidate_new(campaign_cycle = NULL, key = NULL, ...)
 \item{campaign_cycle}{An even-numbdered year in YYYY format. Presidential data:
 2008-present; Congressional data: 2000-present}
 
-\item{key}{(character) your Propublica API key; pass in, or loads from .Renviron as 
+\item{key}{(character) your Propublica API key; pass in, or loads from .Renviron as
 \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
 
-\item{...}{Curl options (debugging tools mostly) passed to 
+\item{...}{Curl options (debugging tools mostly) passed to
 \code{\link[crul]{HttpClient}}}
 }
 \description{
@@ -35,3 +35,4 @@ Other campaign-finance: \code{\link{cf_candidate_details}},
   \code{\link{cf_candidate_search}},
   \code{\link{cf_candidate_state}}
 }
+\concept{campaign-finance}

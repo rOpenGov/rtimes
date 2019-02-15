@@ -4,7 +4,8 @@
 \alias{cf_candidate_search}
 \title{Campaign finance - candidate search}
 \usage{
-cf_candidate_search(campaign_cycle = NULL, query = NULL, key = NULL, ...)
+cf_candidate_search(campaign_cycle = NULL, query = NULL, key = NULL,
+  ...)
 }
 \arguments{
 \item{campaign_cycle}{An even-numbdered year in YYYY format. Presidential data:
@@ -12,10 +13,10 @@ cf_candidate_search(campaign_cycle = NULL, query = NULL, key = NULL, ...)
 
 \item{query}{Last name of a candidate}
 
-\item{key}{(character) your Propublica API key; pass in, or loads from .Renviron as 
+\item{key}{(character) your Propublica API key; pass in, or loads from .Renviron as
 \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} for info on rate limits.}
 
-\item{...}{Curl options (debugging tools mostly) passed to 
+\item{...}{Curl options (debugging tools mostly) passed to
 \code{\link[crul]{HttpClient}}}
 }
 \description{
@@ -36,4 +37,5 @@ Other campaign-finance: \code{\link{cf_candidate_details}},
   \code{\link{cf_candidate_new}},
   \code{\link{cf_candidate_state}}
 }
+\concept{campaign-finance}
 \keyword{internal}

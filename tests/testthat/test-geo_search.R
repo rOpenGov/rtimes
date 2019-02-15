@@ -1,6 +1,6 @@
 context("geo_search")
 
-key <- Sys.getenv("NYTIMES_GEO_KEY")
+key <- Sys.getenv("NYTIMES_API_KEY")
 
 test_that("returns the correct stuff", {  
   vcr::use_cassette("geo_search", {

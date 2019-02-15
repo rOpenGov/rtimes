@@ -25,7 +25,7 @@
 #' etc.) in addition to the main query term. To filter facet counts, specifying 
 #' at least one facet_field is required.
 #' @param key your New York Times API key; pass in, or loads from .Renviron as 
-#' \code{NYTIMES_AS_KEY}. See \code{\link{rtimes-package}} for info on rate 
+#' \code{NYTIMES_KEY}. See \code{\link{rtimes-package}} for info on rate 
 #' limits.
 #' @param ... Futher args pass into query
 #' @param callopts Curl options (debugging tools mostly) passed to 

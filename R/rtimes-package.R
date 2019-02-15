@@ -26,8 +26,8 @@
 #'
 #' @section Authentication:
 #' Get your own API keys for NYTimes APIs at 
-#' <http://developer.nytimes.com/signup> - you'll need a different key for 
-#' each of the article saerch and geo NYTimes APIs.
+#' <https://developer.nytimes.com/accounts/create> - you can use one API key for 
+#' both the article search and geo NYTimes APIs.
 #' 
 #' Get your Propublica API key for Congress and Campaign Finance APIs at either
 #' <https://www.propublica.org/datastore/api/propublica-congress-api> or 
@@ -39,8 +39,7 @@
 #' your API key for each run of a function. Add entries for an R session like
 #'
 #' \itemize{
-#'  \item `Sys.setenv(NYTIMES_AS_KEY = "YOURKEYHERE")`
-#'  \item `Sys.setenv(NYTIMES_GEO_KEY = "YOURKEYHERE")`
+#'  \item `Sys.setenv(NYTIMES_API_KEY = "YOURKEYHERE")`
 #'  \item `Sys.setenv(PROPUBLICA_API_KEY = "YOURKEYHERE")`
 #' }
 #'
@@ -48,14 +47,13 @@
 #' like
 #'
 #' \itemize{
-#'  \item `NYTIMES_AS_KEY=<yourkey>`
-#'  \item `NYTIMES_GEO_KEY=<yourkey>`
+#'  \item `NYTIMES_API_KEY=<yourkey>`
 #'  \item `PROPUBLICA_API_KEY=<yourkey>`
 #' }
 #'
 #' You can also pass in your key in a function call, but be careful not to 
 #' expose your keys in code committed to public repositories. If you do pass 
-#' in a function call, use e.g., `Sys.getenv("NYTIMES_AS_KEY")`
+#' in a function call, use e.g., `Sys.getenv("NYTIMES_API_KEY")`
 #'
 #' @section Rate limits:
 #' Rate limits vary for the different APIs:

@@ -22,16 +22,17 @@ some of which now live at Propublica.
 
 Functions in `rtimes` that wrap these APIs are prefixed by two letter acronyms fo reach API + the function name itself, e.g.: `cg` + `fxn`
 
-* `cg` for the [Congress API](https://propublica.github.io/congress-api-docs)
-* `as` for the [Article Search API](http://developer.nytimes.com/article_search_v2.json)
+* `cg` for the [Congress API](https://projects.propublica.org/api-docs/congress-api/)
+* `as` for the [Article Search API](https://developer.nytimes.com/docs/articlesearch-product/1/overview)
 * `cf` for the [Campaign Finance API](https://propublica.github.io/campaign-finance-api-docs)
-* `geo` for the [Geographic API](http://developer.nytimes.com/geo_api_v2.json)
+* `geo` for the [Geographic API](https://developer.nytimes.com/docs/geo-product/1/routes/query.json/get)
 
 Please get your own API keys at <http://developer.nytimes.com/> for `as` and `geo`
 functions, and for `cg` and `cf` functions by emailing Propublica at [apihelp@propublica.org](mailto:apihelp@propublica.org).
 
-You'll need a different key for each API of the Nytimes APIs, but only one key for the Propublica
-APIs
+With recent changes at NYTimes APIs, you can use the same key for all APIs
+
+Same for Propublica, get one key to use for all their APIs.
 
 Data from the New York Times API is provided by The New York Times.
 
@@ -45,8 +46,7 @@ I set up the functions so that you can put the key in your `.Renviron` file (or 
 file on your system that holds env vars), which will be called on startup of R, and then you
 don't have to enter your API key for each run of a function. Use the following env var names
 
-* `NYTIMES_GEO_KEY` - for `geo` methods
-* `NYTIMES_AS_KEY` - for `as` methods
+* `NYTIMES_API_KEY` - for `as` and `geo` methods
 * `PROPUBLICA_API_KEY` - for `cg` and `cf` methods
 
 

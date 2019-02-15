@@ -4,58 +4,58 @@
 \alias{as_search}
 \title{Article search}
 \usage{
-as_search(q, fq = NULL, sort = NULL, begin_date = NULL, end_date = NULL,
-  key = NULL, fl = NULL, hl = FALSE, page = 0, all_results = FALSE,
-  try_flatten = FALSE, facet_field = NULL, facet_filter = NULL,
-  sleep = 2, ..., callopts = list())
+as_search(q, fq = NULL, sort = NULL, begin_date = NULL,
+  end_date = NULL, key = NULL, fl = NULL, hl = FALSE, page = 0,
+  all_results = FALSE, try_flatten = FALSE, facet_field = NULL,
+  facet_filter = NULL, sleep = 2, ..., callopts = list())
 }
 \arguments{
-\item{q}{Search query term. Search is performed on the article body, 
+\item{q}{Search query term. Search is performed on the article body,
 headline and byline.}
 
-\item{fq}{Filtered search query using standard Lucene syntax. The filter 
-query can be specified with or without a limiting field: label. See 
+\item{fq}{Filtered search query using standard Lucene syntax. The filter
+query can be specified with or without a limiting field: label. See
 \code{fq_fields} for the filter query fields.}
 
-\item{sort}{(character) Default NULL. One of newest or oldest . By default, 
-search results are sorted by their relevance to the query term (q). Use the 
+\item{sort}{(character) Default NULL. One of newest or oldest . By default,
+search results are sorted by their relevance to the query term (q). Use the
 sort parameter to sort by pub_date.}
 
 \item{begin_date}{Begin date - Restricts responses to results with publication
 dates of the date specified or later. In the form YYYYMMDD}
 
-\item{end_date}{End date - Restricts responses to results with publication 
+\item{end_date}{End date - Restricts responses to results with publication
 dates of the date specified or earlier. In the form YYYYMMDD}
 
-\item{key}{your New York Times API key; pass in, or loads from .Renviron as 
-\code{NYTIMES_AS_KEY}. See \code{\link{rtimes-package}} for info on rate 
+\item{key}{your New York Times API key; pass in, or loads from .Renviron as
+\code{NYTIMES_KEY}. See \code{\link{rtimes-package}} for info on rate
 limits.}
 
 \item{fl}{(character) Vector of fields to return. default: all fields}
 
 \item{hl}{(logical) Highlight or not, default: \code{FALSE}}
 
-\item{page}{Page number. The value of page corresponds to a set of 10 
-results (it does not indicate the starting number of the result set). For 
-example, page=0 corresponds to records 0-9. To return records 10-19, set 
+\item{page}{Page number. The value of page corresponds to a set of 10
+results (it does not indicate the starting number of the result set). For
+example, page=0 corresponds to records 0-9. To return records 10-19, set
 page to 1, not 10.}
 
 \item{all_results}{(logical) return all results. Default: \code{FALSE}
 Internally, we do paging for you. We get first up to 10 results, then if
 there's more we page through results to get all of them.}
 
-\item{try_flatten}{(logical) attempt to completely flatten data.frame, 
-which may fail in some cases as its hard to account for all edge cases. 
+\item{try_flatten}{(logical) attempt to completely flatten data.frame,
+which may fail in some cases as its hard to account for all edge cases.
 Default: \code{FALSE}}
 
-\item{facet_field}{(character) Specifies the sets of facet values to include 
-in the facets array at the end of response, which collects the facet values 
-from all the search results. By default no facet fields will be returned. 
+\item{facet_field}{(character) Specifies the sets of facet values to include
+in the facets array at the end of response, which collects the facet values
+from all the search results. By default no facet fields will be returned.
 See Details for options.}
 
-\item{facet_filter}{(logical) Fields to facet on, as vector. When set to 
-\code{TRUE}, facet counts will respect any applied filters (fq, date range, 
-etc.) in addition to the main query term. To filter facet counts, specifying 
+\item{facet_filter}{(logical) Fields to facet on, as vector. When set to
+\code{TRUE}, facet counts will respect any applied filters (fq, date range,
+etc.) in addition to the main query term. To filter facet counts, specifying
 at least one facet_field is required.}
 
 \item{sleep}{(integer) seconds to sleep between successive requests, only
@@ -63,48 +63,48 @@ used when \code{all_results=TRUE}}
 
 \item{...}{Futher args pass into query}
 
-\item{callopts}{Curl options (debugging tools mostly) passed to 
+\item{callopts}{Curl options (debugging tools mostly) passed to
 \code{\link[crul]{HttpClient}}}
 }
 \description{
 Article search
 }
 \details{
-\code{fl} parameter options are: 
+\code{fl} parameter options are:
 \itemize{
- \item web_url
- \item snippet
- \item lead_paragraph
- \item abstract
- \item print_page
- \item blog
- \item source
- \item multimedia
- \item headline
- \item keywords
- \item pub_date 
- \item document_type
- \item news_desk
- \item byline
- \item type_of_material
- \item _id
- \item word_count
+\item web_url
+\item snippet
+\item lead_paragraph
+\item abstract
+\item print_page
+\item blog
+\item source
+\item multimedia
+\item headline
+\item keywords
+\item pub_date
+\item document_type
+\item news_desk
+\item byline
+\item type_of_material
+\item _id
+\item word_count
 }
 
-\code{facet_field} param options are: 
+\code{facet_field} param options are:
 \itemize{
- \item section_name
- \item document_type
- \item type_of_material
- \item source
- \item day_of_week
+\item section_name
+\item document_type
+\item type_of_material
+\item source
+\item day_of_week
 }
 }
 \examples{
 \dontrun{
 # basic search - copyright, metadata, data, and facet slots
 (x <- as_search(q="bailout", begin_date = "20081001", 
-  end_date = '20081005'))
+  end_date = '20081005', callopts = list(verbose = TRUE)))
 x$copyright
 x$meta
 x$data
@@ -140,5 +140,5 @@ x <- as_search(q="bailout", begin_date = "20081001",
 }
 \references{
 \url{http://developer.nytimes.com},
-\url{http://developer.nytimes.com/article_search_v2.json#/README}
+\url{https://developer.nytimes.com/docs/articlesearch-product/1/overview}
 }

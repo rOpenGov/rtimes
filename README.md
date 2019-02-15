@@ -2,6 +2,7 @@ rtimes
 ======
 
 
+
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![cran checks](https://cranchecks.info/badges/worst/rtimes)](https://cranchecks.info/pkgs/rtimes)
 [![Build Status](https://api.travis-ci.org/rOpenGov/rtimes.png)](https://travis-ci.org/rOpenGov/rtimes)
@@ -14,16 +15,17 @@ some of which now live at Propublica.
 
 Functions in `rtimes` that wrap these APIs are prefixed by two letter acronyms fo reach API + the function name itself, e.g.: `cg` + `fxn`
 
-* `cg` for the [Congress API](https://propublica.github.io/congress-api-docs)
-* `as` for the [Article Search API](http://developer.nytimes.com/article_search_v2.json)
+* `cg` for the [Congress API](https://projects.propublica.org/api-docs/congress-api/)
+* `as` for the [Article Search API](https://developer.nytimes.com/docs/articlesearch-product/1/overview)
 * `cf` for the [Campaign Finance API](https://propublica.github.io/campaign-finance-api-docs)
-* `geo` for the [Geographic API](http://developer.nytimes.com/geo_api_v2.json)
+* `geo` for the [Geographic API](https://developer.nytimes.com/docs/geo-product/1/routes/query.json/get)
 
 Please get your own API keys at <http://developer.nytimes.com/> for `as` and `geo`
 functions, and for `cg` and `cf` functions by emailing Propublica at [apihelp@propublica.org](mailto:apihelp@propublica.org).
 
-You'll need a different key for each API of the Nytimes APIs, but only one key for the Propublica
-APIs
+With recent changes at NYTimes APIs, you can use the same key for all APIs
+
+Same for Propublica, get one key to use for all their APIs.
 
 Data from the New York Times API is provided by The New York Times.
 
@@ -37,8 +39,7 @@ I set up the functions so that you can put the key in your `.Renviron` file (or 
 file on your system that holds env vars), which will be called on startup of R, and then you
 don't have to enter your API key for each run of a function. Use the following env var names
 
-* `NYTIMES_GEO_KEY` - for `geo` methods
-* `NYTIMES_AS_KEY` - for `as` methods
+* `NYTIMES_API_KEY` - for `as` and `geo` methods
 * `PROPUBLICA_API_KEY` - for `cg` and `cf` methods
 
 
@@ -49,7 +50,6 @@ This packge only gives you access to article metadata (url, headline, byline, su
 You can get access to full article content from 1987-2007 from UPenn for non-commercial use at <https://catalog.ldc.upenn.edu/ldc2008t19>
 
 For commercial use, full article content can be purchased from the NYT Syndication site at <https://www.nytsyn.com/>
-
 
 ## Installation
 
@@ -92,25 +92,26 @@ out$votes
 ```r
 x <- as_search(q = "bailout", begin_date = "20081001", end_date = '20081201')
 x$data
-#> # A tibble: 10 x 19
-#>                                                                        web_url
-#>  *                                                                       <chr>
-#>  1 https://dealbook.nytimes.com/2008/10/17/nader-displays-new-fervor-on-the-ba
-#>  2              https://dealbook.nytimes.com/2008/10/07/its-the-economy-redux/
-#>  3                https://www.nytimes.com/2008/12/01/opinion/l01citigroup.html
-#>  4             https://www.nytimes.com/2008/12/01/business/economy/01auto.html
-#>  5                    https://www.nytimes.com/2008/12/01/business/01tanta.html
-#>  6                      https://www.nytimes.com/2008/12/01/business/01uaw.html
-#>  7         https://www.nytimes.com/2008/12/01/business/economy/01stimulus.html
-#>  8                      https://www.nytimes.com/2008/11/30/opinion/30sun1.html
-#>  9                    https://www.nytimes.com/2008/11/30/opinion/30boskin.html
-#> 10                   https://www.nytimes.com/2008/11/30/business/30dealer.html
-#> # ... with 18 more variables: snippet <chr>, abstract <chr>, source <chr>,
-#> #   multimedia <list>, keywords <list>, pub_date <chr>,
-#> #   document_type <chr>, section_name <chr>, type_of_material <chr>,
-#> #   `_id` <chr>, word_count <int>, score <dbl>, print_page <chr>,
-#> #   new_desk <chr>, headline.main <chr>, headline.kicker <chr>,
-#> #   headline.print_headline <chr>, byline.original <chr>
+#> # A tibble: 10 x 27
+#>    web_url snippet lead_paragraph print_page source multimedia keywords
+#>    <chr>   <chr>   <chr>          <chr>      <chr>  <list>     <list>  
+#>  1 https:… Govern… Governments s… 2          The N… <data.fra… <data.f…
+#>  2 https:… The bi… The biggest t… 33         The N… <data.fra… <data.f…
+#>  3 https:… How ca… How can you b… 14         The N… <data.fra… <data.f…
+#>  4 https:… ProPub… "ProPublica h… <NA>       The N… <data.fra… <data.f…
+#>  5 https:… The go… The governmen… <NA>       The N… <data.fra… <data.f…
+#>  6 https:… If ban… If banks can … <NA>       The N… <data.fra… <data.f…
+#>  7 https:… In the… In the rush t… <NA>       The N… <data.fra… <data.f…
+#>  8 https:… To the… To the Editor… 28         The N… <data.fra… <data.f…
+#>  9 https:… "Finan… "Finance | Th… <NA>       The N… <data.fra… <data.f…
+#> 10 https:… Two lo… Two longtime … 4          The N… <data.fra… <data.f…
+#> # … with 20 more variables: pub_date <chr>, document_type <chr>,
+#> #   news_desk <chr>, section_name <chr>, type_of_material <chr>,
+#> #   `_id` <chr>, word_count <int>, score <dbl>, uri <chr>,
+#> #   subsectoinName <chr>, headline.main <chr>, headline.kicker <chr>,
+#> #   headline.content_kicker <chr>, headline.print_headline <chr>,
+#> #   headline.name <lgl>, headline.seo <chr>, headline.sub <chr>,
+#> #   byline.original <chr>, byline.person <list>, byline.organization <chr>
 ```
 
 ## Campaign Finance API
@@ -120,24 +121,22 @@ x$data
 cf_candidate_details(campaign_cycle = 2008, fec_id = 'P80003338')
 #> $status
 #> [1] "OK"
-#>
+#> 
 #> $copyright
-#> [1] "Copyright (c) 2017 ProPublica Inc. All Rights Reserved."
-#>
+#> [1] "Copyright (c) 2019 ProPublica Inc. All Rights Reserved."
+#> 
 #> $data
 #> # A tibble: 1 x 24
-#>          id          name party
-#>       <chr>         <chr> <chr>
-#> 1 P80003338 OBAMA, BARACK   DEM
-#> # ... with 21 more variables: fec_uri <chr>, committee <chr>,
-#> #   mailing_address <chr>, mailing_city <chr>, mailing_state <chr>,
-#> #   mailing_zip <chr>, status <chr>, total_receipts <chr>,
-#> #   total_from_individuals <chr>, total_from_pacs <chr>,
-#> #   total_contributions <chr>, candidate_loans <chr>,
-#> #   total_disbursements <chr>, begin_cash <chr>, end_cash <chr>,
-#> #   total_refunds <chr>, debts_owed <chr>, date_coverage_from <chr>,
-#> #   date_coverage_to <chr>, independent_expenditures <chr>,
-#> #   coordinated_expenditures <chr>
+#>   id    name  party fec_uri committee mailing_address mailing_city
+#>   <chr> <chr> <chr> <chr>   <chr>     <chr>           <chr>       
+#> 1 P800… OBAM… DEM   http:/… /committ… 5450 SOUTH EAS… CHICAGO     
+#> # … with 17 more variables: mailing_state <chr>, mailing_zip <chr>,
+#> #   status <chr>, total_receipts <chr>, total_from_individuals <chr>,
+#> #   total_from_pacs <chr>, total_contributions <chr>,
+#> #   candidate_loans <chr>, total_disbursements <chr>, begin_cash <chr>,
+#> #   end_cash <chr>, total_refunds <chr>, debts_owed <chr>,
+#> #   date_coverage_from <chr>, date_coverage_to <chr>,
+#> #   independent_expenditures <chr>, coordinated_expenditures <chr>
 ```
 
 ## Geographic API
@@ -147,33 +146,33 @@ cf_candidate_details(campaign_cycle = 2008, fec_id = 'P80003338')
 geo_search(country_code = "US")
 #> $copyright
 #> [1] "Copyright (c) 2015 The New York Times Company.  All Rights Reserved."
-#>
+#> 
 #> $meta
 #>   status num_results
 #> 1     OK         100
-#>
+#> 
 #> $data
 #> # A tibble: 100 x 27
-#>    concept_id              concept_name geocode_id geoname_id
-#>  *      <chr>                     <chr>      <int>      <int>
-#>  1      22456             Abilene (Tex)       4500    4669635
-#>  2      22460             Abingdon (Va)       7752    4743815
-#>  3      22480 Acadia National Park (Me)       4504    4956449
-#>  4      22508 Adirondack Mountains (NY)       1488    5106772
-#>  5      22548                   Alabama        364    4829764
-#>  6      22556                    Alaska        292    5879092
-#>  7      22564               Albany (NY)        464    5106834
-#>  8      22572          Albuquerque (NM)       1596    5454711
-#>  9      22576  Alcatraz (San Francisco)       7772    5322901
-#> 10      22580           Alexandria (Va)       4008    4744091
-#> # ... with 90 more rows, and 23 more variables: name <chr>,
-#> #   latitude <dbl>, longitude <dbl>, elevation <int>, population <int>,
-#> #   country_code <chr>, country_name <chr>, admin_code1 <chr>,
-#> #   admin_code2 <chr>, admin_code3 <lgl>, admin_code4 <lgl>,
-#> #   admin_name1 <chr>, admin_name2 <chr>, admin_name3 <lgl>,
-#> #   admin_name4 <lgl>, feature_class <chr>, feature_code <chr>,
-#> #   feature_code_name <chr>, time_zone_id <chr>, dst_offset <dbl>,
-#> #   gmt_offset <dbl>, geocodes_created <chr>, geocodes_updated <chr>
+#>    concept_id concept_name geocode_id geoname_id name  latitude longitude
+#>    <chr>      <chr>             <int>      <int> <chr>    <dbl>     <dbl>
+#>  1 22456      Abilene (Te…       4500    4669635 Abil…     32.4     -99.7
+#>  2 22460      Abingdon (V…       7752    4743815 Abin…     36.7     -82.0
+#>  3 22480      Acadia Nati…       4504    4956449 Acad…     44.4     -68.3
+#>  4 22508      Adirondack …       1488    5106772 Adir…     44.0     -74.5
+#>  5 22548      Alabama             364    4829764 Alab…     32.8     -86.8
+#>  6 22556      Alaska              292    5879092 Alas…     64.0    -150. 
+#>  7 22564      Albany (NY)         464    5106834 Alba…     42.7     -73.8
+#>  8 22572      Albuquerque…       1596    5454711 Albu…     35.1    -107. 
+#>  9 22576      Alcatraz (S…       7772    5322901 Alca…     37.8    -122. 
+#> 10 22580      Alexandria …       4008    4744091 Alex…     38.8     -77.0
+#> # … with 90 more rows, and 20 more variables: elevation <int>,
+#> #   population <int>, country_code <chr>, country_name <chr>,
+#> #   admin_code1 <chr>, admin_code2 <chr>, admin_code3 <lgl>,
+#> #   admin_code4 <lgl>, admin_name1 <chr>, admin_name2 <chr>,
+#> #   admin_name3 <lgl>, admin_name4 <lgl>, feature_class <chr>,
+#> #   feature_code <chr>, feature_code_name <chr>, time_zone_id <chr>,
+#> #   dst_offset <dbl>, gmt_offset <dbl>, geocodes_created <chr>,
+#> #   geocodes_updated <chr>
 ```
 
 ## Meta

@@ -4,11 +4,11 @@
 #' @template articlesearch
 #' @references 
 #' <http://developer.nytimes.com>,
-#' <http://developer.nytimes.com/article_search_v2.json#/README>
+#' <https://developer.nytimes.com/docs/articlesearch-product/1/overview>
 #' @examples \dontrun{
 #' # basic search - copyright, metadata, data, and facet slots
 #' (x <- as_search(q="bailout", begin_date = "20081001", 
-#'   end_date = '20081005'))
+#'   end_date = '20081005', callopts = list(verbose = TRUE)))
 #' x$copyright
 #' x$meta
 #' x$data
@@ -66,7 +66,7 @@
   hl <- if (hl) 'true' else NULL
   args <- rc(list(q = q, fq = fq, fl = fl, sort = sort, hl = hl, page = page,
                   begin_date = begin_date, end_date = end_date, 
-                  `api-key` = check_key(key, "NYTIMES_AS_KEY"),
+                  `api-key` = check_key(key, "NYTIMES_API_KEY"),
                   facet_field = facet_field, facet_filter = facet_filter))
   res <- rtimes_GET(paste0(t_base(), "search/v2/articlesearch.json"), 
                     c(args, ...), TRUE, callopts)

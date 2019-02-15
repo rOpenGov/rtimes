@@ -36,8 +36,8 @@ See the vignette for help.
 \section{Authentication}{
 
 Get your own API keys for NYTimes APIs at
-\url{http://developer.nytimes.com/signup} - you'll need a different key for
-each of the article saerch and geo NYTimes APIs.
+\url{https://developer.nytimes.com/accounts/create} - you can use one API key for
+both the article search and geo NYTimes APIs.
 
 Get your Propublica API key for Congress and Campaign Finance APIs at either
 \url{https://www.propublica.org/datastore/api/propublica-congress-api} or
@@ -49,8 +49,7 @@ file, which will be called on startup of R, and then you don't have to enter
 your API key for each run of a function. Add entries for an R session like
 
 \itemize{
-\item \code{Sys.setenv(NYTIMES_AS_KEY = "YOURKEYHERE")}
-\item \code{Sys.setenv(NYTIMES_GEO_KEY = "YOURKEYHERE")}
+\item \code{Sys.setenv(NYTIMES_API_KEY = "YOURKEYHERE")}
 \item \code{Sys.setenv(PROPUBLICA_API_KEY = "YOURKEYHERE")}
 }
 
@@ -58,14 +57,13 @@ Or set them across sessions by putting entries in your \code{.Renviron} file
 like
 
 \itemize{
-\item \code{NYTIMES_AS_KEY=<yourkey>}
-\item \code{NYTIMES_GEO_KEY=<yourkey>}
+\item \code{NYTIMES_API_KEY=<yourkey>}
 \item \code{PROPUBLICA_API_KEY=<yourkey>}
 }
 
 You can also pass in your key in a function call, but be careful not to
 expose your keys in code committed to public repositories. If you do pass
-in a function call, use e.g., \code{Sys.getenv("NYTIMES_AS_KEY")}
+in a function call, use e.g., \code{Sys.getenv("NYTIMES_API_KEY")}
 }
 
 \section{Rate limits}{

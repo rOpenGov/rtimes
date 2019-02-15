@@ -4,8 +4,8 @@
 \alias{cg_rollcallvote}
 \title{Get a specific roll-call vote, including a complete list of member positions.}
 \usage{
-cg_rollcallvote(congress_no = NULL, chamber = NULL, session_no = NULL,
-  rollcall_no = NULL, key = NULL, ...)
+cg_rollcallvote(congress_no = NULL, chamber = NULL,
+  session_no = NULL, rollcall_no = NULL, key = NULL, ...)
 }
 \arguments{
 \item{congress_no}{The number of the Congress during which the members served.}
@@ -21,11 +21,11 @@ of the US Senate
 (http://www.senate.gov/pagelayout/legislative/a_three_sections_with_teasers/votes.htm),
 and US House (http://artandhistory.house.gov/house_history/index.aspx).}
 
-\item{key}{(character) your Propublica API key; pass in, or loads from 
-.Renviron as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} 
+\item{key}{(character) your Propublica API key; pass in, or loads from
+.Renviron as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}}
 for info on rate limits.}
 
-\item{...}{Curl options (debugging tools mostly) passed to 
+\item{...}{Curl options (debugging tools mostly) passed to
 \code{\link[crul]{HttpClient}}}
 }
 \value{
@@ -57,3 +57,4 @@ Other congress: \code{\link{cg_billscosponsor}},
   \code{\link{cg_membervotepositions}},
   \code{\link{cg_newmembers}}
 }
+\concept{congress}

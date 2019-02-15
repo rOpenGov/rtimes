@@ -17,6 +17,7 @@
 #' @examples 
 #' \dontrun{
 #' api_limits("as")
+#' api_limits("geo")
 #' }
 api_limits <- function(api = "as", key = NULL) {
   if (!api %in% c("as", "geo")) {
@@ -27,8 +28,8 @@ api_limits <- function(api = "as", key = NULL) {
                     as = "search/v2/articlesearch.json",
                     geo = "semantic/v2/geocodes/query.json")
   api_key <- switch(api,
-                    as = check_key(key, "NYTIMES_AS_KEY"),
-                    geo = check_key(key, "NYTIMES_GEO_KEY"))
+                    as = check_key(key, "NYTIMES_API_KEY"),
+                    geo = check_key(key, "NYTIMES_API_KEY"))
   
   client_url <- paste0(t_base(), api_url)
   head_path  <- switch(api,

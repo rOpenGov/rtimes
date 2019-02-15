@@ -11,8 +11,8 @@ geo_search(name = NULL, latitude = NULL, longitude = NULL,
   admin_name3 = NULL, admin_code4 = NULL, admin_name4 = NULL,
   feature_class = NULL, feature_class_name = NULL,
   feature_code_name = NULL, time_zone_id = NULL, dst_offset = NULL,
-  gmt_offset = NULL, bounding_box = NULL, nearby = NULL, offset = NULL,
-  limit = 100, key = NULL, ...)
+  gmt_offset = NULL, bounding_box = NULL, nearby = NULL,
+  offset = NULL, limit = 100, key = NULL, ...)
 }
 \arguments{
 \item{name}{(character) A displayable name for the specified place.}
@@ -61,15 +61,15 @@ the specified place. This is infrequently used and never used for US locations.}
 \item{feature_class}{(character) The high-level feature class of the location. The feature
 classes are as follows:
 \itemize{
- \item A - Administrative Boundary Features
- \item H - Hydrographic Features
- \item L - Area Features
- \item P - Populated Place Features
- \item R - Road / Railroad Features
- \item S - Spot Features
- \item T - Hypsographic Features
- \item U - Undersea Features
- \item V - Vegetation Features
+\item A - Administrative Boundary Features
+\item H - Hydrographic Features
+\item L - Area Features
+\item P - Populated Place Features
+\item R - Road / Railroad Features
+\item S - Spot Features
+\item T - Hypsographic Features
+\item U - Undersea Features
+\item V - Vegetation Features
 }}
 
 \item{feature_class_name}{(character) See list of name values associated with feature_class
@@ -101,7 +101,7 @@ of results or a maximum of 20 results are returned. BEWARE - this parameter does
 (as of 2015-08-10).}
 
 \item{key}{your New York Times API key; pass in, or loads from .Rprofile as
-\code{nytimes_geo_key}, or from .Renviron as \code{NYTIMES_GEO_KEY}}
+\code{nytimes_api_key}, or from .Renviron as \code{NYTIMES_API_KEY}}
 
 \item{...}{Curl options (debugging tools mostly) passed to
 \link[crul:HttpClient]{crul::HttpClient}}
@@ -117,20 +117,14 @@ seems to be no way to get a response from them. So good luck.
 }
 \examples{
 \dontrun{
-geo_search(country_code = 'US')
+geo_search(country_code = 'US', verbose = TRUE)
 geo_search(feature_class='P', country_code='US', population='50000_')
-
-# FIXME: these should work, but don't anymore
-#geo_search(elevation = '2000_', feature_class='P')
-#geo_search(elevation = '_3000', feature_class='P')
-#geo_search(elevation = '2000_3000', feature_class='P')
-# geo_search(nearby=c(38.920833,-94.622222), population='100000_', 
-#   feature_class='P')
 
 # curl options
 geo_search(country_code = 'US', verbose = TRUE)
 }
 }
 \references{
-\url{http://developer.nytimes.com/geo_api_v2.json}
+\url{http://developer.nytimes.com},
+\url{https://developer.nytimes.com/docs/geo-product/1/routes/query.json/get}
 }

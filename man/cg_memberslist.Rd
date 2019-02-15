@@ -19,11 +19,11 @@ a district, you must also specify a state. If the district number you
 specify is higher than the total number of districts for that state,
 a 404 response will be returned.}
 
-\item{key}{(character) your Propublica API key; pass in, or loads from 
-.Renviron as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} 
+\item{key}{(character) your Propublica API key; pass in, or loads from
+.Renviron as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}}
 for info on rate limits.}
 
-\item{...}{Curl options (debugging tools mostly) passed to 
+\item{...}{Curl options (debugging tools mostly) passed to
 \code{\link[crul]{HttpClient}}}
 }
 \value{
@@ -55,3 +55,4 @@ Other congress: \code{\link{cg_billscosponsor}},
   \code{\link{cg_newmembers}},
   \code{\link{cg_rollcallvote}}
 }
+\concept{congress}

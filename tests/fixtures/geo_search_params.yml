@@ -1,12 +1,12 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.nytimes.com/svc/semantic/v2/geocodes/query.json?population=50000_&country_code=US&feature_class=P&perpage=100&api-key=febbf4787ac1bc02eab114a5f29216ea%3A12%3A59434183
+    uri: https://api.nytimes.com/svc/semantic/v2/geocodes/query.json?population=50000_&country_code=US&feature_class=P&perpage=100&api-key=<<nytimes_api_key>>
     body:
       encoding: ''
       string: ''
     headers:
-      User-Agent: libcurl/7.54.0 r-curl/3.2 crul/0.5.2
+      User-Agent: libcurl/7.54.0 r-curl/3.3 crul/0.7.0
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -16,18 +16,16 @@ http_interactions:
       explanation: Request fulfilled, document follows
     headers:
       status: HTTP/1.1 200 OK
-      content-type: application/json; charset=utf-8
-      date: Wed, 30 May 2018 20:42:41 GMT
-      server: nginx/1.13.12
-      via: kong/0.9.5
-      x-kong-proxy-latency: '3'
-      x-kong-upstream-latency: '156'
-      x-ratelimit-limit-day: '1000'
-      x-ratelimit-limit-second: '5'
-      x-ratelimit-remaining-day: '983'
-      x-ratelimit-remaining-second: '4'
+      date: Fri, 15 Feb 2019 17:36:42 GMT
+      content-type: application/json
       content-length: '85246'
       connection: keep-alive
+      server: nginx
+      access-control-allow-headers: Accept, Content-Type, Origin, X-Forwarded-For,
+        X-Prototype-Version, X-Requested-With
+      access-control-allow-methods: GET, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: Content-Length, X-JSON
     body:
       encoding: UTF-8
       string: "{ \n\t\"status\": \"OK\",\n\t\"copyright\": \"Copyright (c) 2015 The
@@ -1150,5 +1148,5 @@ http_interactions:
         \"populated place\",\n\t\t\t\t\"time_zone_id\": \"America/Denver\",\n\t\t\t\t\"dst_offset\":
         -6.0,\n\t\t\t\t\"gmt_offset\": -7.0,\n\t\t\t\t\"geocodes_created\": \"2013-02-25
         15:10:12-05:00\",\n\t\t\t\t\"geocodes_updated\": \"2013-02-25 15:10:12-05:00\"\n\t\t\t\t}\n\t\t\t]\n}"
-  recorded_at: 2018-05-30 20:42:41 GMT
-  recorded_with: vcr/0.1.0, webmockr/0.2.6, crul/0.5.2
+  recorded_at: 2019-02-15 17:36:42 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4

@@ -15,11 +15,11 @@ name is linked to a record by index ID (e.g.,
 http://bioguide.congress.gov/scripts/biodisplay.pl?index=C001041).
 Use the index ID as member-id in your request.}
 
-\item{key}{(character) your Propublica API key; pass in, or loads from 
-.Renviron as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}} 
+\item{key}{(character) your Propublica API key; pass in, or loads from
+.Renviron as \code{PROPUBLICA_API_KEY}. See \code{\link{rtimes-package}}
 for info on rate limits.}
 
-\item{...}{Curl options (debugging tools mostly) passed to 
+\item{...}{Curl options (debugging tools mostly) passed to
 \code{\link[crul]{HttpClient}}}
 }
 \value{
@@ -49,3 +49,4 @@ Other congress: \code{\link{cg_billscosponsor}},
   \code{\link{cg_newmembers}},
   \code{\link{cg_rollcallvote}}
 }
+\concept{congress}
